@@ -7,12 +7,16 @@ from eodag import EODataAccessGateway
 import shapefile
 
 ###############################################################################
-
+## important parameter
 default_search_criteria = dict(
     productType="S2_MSI_L2A_MAJA",
     start="2018-02-27",
     end="2018-03-31",
 )
+
+cloudCover = 70
+tile_id = "31TCJ"
+###############################################################################
 
 workspace = "eodag_workspace_locations_tiles"
 if not os.path.isdir(workspace):
@@ -51,8 +55,8 @@ dag = EODataAccessGateway(locations_conf_path=locations_filepath)
 dag.set_preferred_provider("theia")
 
 products = dag.search_all(
-    locations=dict(s2_tile_centroid="31TCJ"),
-    cloudCover=80,
+    locations=dict(s2_tile_centroid=tile_id),
+    cloudCover=cloudCover,
     relativeOrbitNumber=51,
     **default_search_criteria
 )
