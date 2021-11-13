@@ -5,7 +5,7 @@ Found two approcahes to download SENTINAL 2 L2A data from Theia:
     - command: python3 theia_download.py -c SENTINEL2 -t T31TCJ -a config_theia.cfg -r 51 --level 80 LEVEL2A -d 2018-01-01 -f 2018-02-27
     - Limitation: Token only valid for two hour.
 - [EODAG](https://github.com/CS-SI/eodag)
-    - edit $script.py$ to the start date and end date, and cloud cover
+    - edit script.py to the start date and end date, and cloud cover
     - auxdata is needed to filter based on tile_id
     - Works fine so far.
 
