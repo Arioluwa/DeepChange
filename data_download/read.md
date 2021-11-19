@@ -22,3 +22,16 @@ Found two approcahes to download SENTINAL 2 L2A data from Theia:
 │       ├── config_theia.cfg
 │       └── theia_download.py
 ```
+
+## File Sentinel 2 Level2A Download
+---
+Tile - T31TCJ  
+RelativeOrbitNumber - 51  
+Coverage - Full   
+- 2018
+    - 37
+
+- 2019
+    - 33
+
+Total 70
