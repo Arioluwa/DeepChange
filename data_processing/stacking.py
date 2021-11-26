@@ -1111,7 +1111,15 @@ def L2A_gapfilling_main_process(
     gapfilled_image_tif = os.path.join(output_path, "%s_GapFilled_Image.tif" % tile)
     print("====================================================================")
     print("=========================Gapfilling Process=========================")
-    image_timeseries_gapfilling(otb_path, image_tif_path, mask_tif_path, gapfilled_image_tif, original_dates_file, out_dates_list_file, ram_processing)
+    image_timeseries_gapfilling(
+        otb_path,
+        image_tif_path,
+        mask_tif_path,
+        gapfilled_image_tif,
+        original_dates_file,
+        out_dates_list_file,
+        ram_processing,
+    )
     print("========================Gapfilling finished=========================")
     print("====================================================================")
 
@@ -1236,7 +1244,7 @@ if __name__ == "__main__":
     ram_processing = 4000
     ram_preview = 1000
 
-    tile_names = ["T31TCJ "]
+    tile_names = ["T30UVU", "T30UWU"]
 
     for tile in tile_names:
         print("CHA: tile: ", tile)
@@ -1263,4 +1271,3 @@ if __name__ == "__main__":
             ram_processing,
             ram_preview,
         )
-

@@ -1,0 +1,4 @@
+shapefiles:
+  - name: s2_tile_centroid
+    path: c:\Users\Adebowale\Documents\GitHub\DeepChange\data_download\eodag\auxdata\sentinel2_tiling_grid_centroids.shp
+    attr: tile_id
