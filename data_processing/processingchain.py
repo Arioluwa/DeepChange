@@ -20,8 +20,8 @@ _otb_path = "/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin"
 # _field = "lc_id"
 
 # --PREV: _gapfilled_dates = "/data/BreizhCrops/L2A_img/output/gapfilled_dates.txt"
-_gapfilled_dates = "/share/projects/erasmus/deepchange/data/theiaL2A_zip_img/subset/gapfilled_dates.txt"
-_shp_file = "/share/projects/erasmus/deepchange/data/samples_shapefiles/samples_oso2019_T31TCJ.shp"
+_gapfilled_dates = "/share/projects/erasmus/deepchange/data/theiaL2A_zip_img/subset/gapfilled08_dates.txt"
+_shp_file = "/share/projects/erasmus/deepchange/data/samples_shapefiles/samples_oso2018_T31TCJ.shp"
 _shp_mask_folder = (
     "/share/projects/erasmus/deepchange/data/theiaL2A_zip_img/TileBorders"
 )
