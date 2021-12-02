@@ -1,0 +1,502 @@
+2021-12-01 13:33:04 (INFO) ImageTimeSeriesGapFilling: Default RAM limit for OTB is 256 MB
+2021-12-01 13:33:04 (INFO) ImageTimeSeriesGapFilling: GDAL maximum cache size is 12878 MB
+2021-12-01 13:33:04 (INFO) ImageTimeSeriesGapFilling: OTB will use at most 48 threads
+2021-12-01 13:33:04 (INFO) ImageTimeSeriesGapFilling: Using date file ../../data/theiaL2A_zip_img/subset/output/2018/2018/original_dates.txt
+2021-12-01 13:33:04 (INFO) ImageTimeSeriesGapFilling: Using output date file /share/projects/erasmus/deepchange/codebase/DeepChange/data_processing/gapfilled08_dates.txt
+2021-12-01 13:33:04 (INFO) ImageTimeSeriesGapFilling: Using linear interpolation and 10 components per date 
+2021-12-01 13:33:04 (INFO): Estimated memory for full processing: 117274MB (avail.: 15000 MB), optimal image partitioning: 8 blocks
+2021-12-01 13:33:04 (INFO): File ../../data/theiaL2A_zip_img/subset/output/2018/2018/2018_GapFilled_Image.tif will be written in 9 blocks of 10980x1221 pixels
+Writing ../../data/theiaL2A_zip_img/subset/output/2018/2018/2018_GapFilled_Image.tif...: 100% [**************************************************] (9m 15s)
+2021-12-01 13:42:46 (INFO) ConcatenateImages: Default RAM limit for OTB is 256 MB
+2021-12-01 13:42:46 (INFO) ConcatenateImages: GDAL maximum cache size is 12878 MB
+2021-12-01 13:42:46 (INFO) ConcatenateImages: OTB will use at most 48 threads
+2021-12-01 13:42:46 (INFO): Estimated memory for full processing: 35872.1MB (avail.: 15000 MB), optimal image partitioning: 3 blocks
+2021-12-01 13:42:46 (INFO): File ../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20180215_Image.tif will be written in 4 blocks of 10980x2746 pixels
+Writing ../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20180215_Image.tif...: 100% [**************************************************] (1m 13s)
+2021-12-01 13:44:00 (INFO) ConcatenateImages: Default RAM limit for OTB is 256 MB
+2021-12-01 13:44:00 (INFO) ConcatenateImages: GDAL maximum cache size is 12878 MB
+2021-12-01 13:44:00 (INFO) ConcatenateImages: OTB will use at most 48 threads
+2021-12-01 13:44:00 (INFO): Estimated memory for full processing: 35872.1MB (avail.: 15000 MB), optimal image partitioning: 3 blocks
+2021-12-01 13:44:00 (INFO): File ../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20180908_Image.tif will be written in 4 blocks of 10980x2746 pixels
+Writing ../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20180908_Image.tif...: 100% [**************************************************] (1m 20s)
+2021-12-01 13:45:22 (INFO) ConcatenateImages: Default RAM limit for OTB is 256 MB
+2021-12-01 13:45:22 (INFO) ConcatenateImages: GDAL maximum cache size is 12878 MB
+2021-12-01 13:45:22 (INFO) ConcatenateImages: OTB will use at most 48 threads
+2021-12-01 13:45:22 (INFO): Estimated memory for full processing: 35872.1MB (avail.: 15000 MB), optimal image partitioning: 3 blocks
+2021-12-01 13:45:22 (INFO): File ../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20180928_Image.tif will be written in 4 blocks of 10980x2746 pixels
+Writing ../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20180928_Image.tif...: 100% [**************************************************] (1m 15s)
+2021-12-01 13:46:39 (INFO) ConcatenateImages: Default RAM limit for OTB is 256 MB
+2021-12-01 13:46:39 (INFO) ConcatenateImages: GDAL maximum cache size is 12878 MB
+2021-12-01 13:46:39 (INFO) ConcatenateImages: OTB will use at most 48 threads
+2021-12-01 13:46:40 (INFO): Estimated memory for full processing: 35872.1MB (avail.: 15000 MB), optimal image partitioning: 3 blocks
+2021-12-01 13:46:40 (INFO): File ../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20181023_Image.tif will be written in 4 blocks of 10980x2746 pixels
+Writing ../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20181023_Image.tif...: 100% [**************************************************] (1m 16s)
+2021-12-01 13:47:57 (INFO) ConcatenateImages: Default RAM limit for OTB is 256 MB
+2021-12-01 13:47:57 (INFO) ConcatenateImages: GDAL maximum cache size is 12878 MB
+2021-12-01 13:47:57 (INFO) ConcatenateImages: OTB will use at most 48 threads
+2021-12-01 13:47:57 (INFO): Estimated memory for full processing: 35872.1MB (avail.: 15000 MB), optimal image partitioning: 3 blocks
+2021-12-01 13:47:57 (INFO): File ../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20181227_Image.tif will be written in 4 blocks of 10980x2746 pixels
+Writing ../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20181227_Image.tif...: 100% [**************************************************] (1m 13s)
+2021-12-01 13:49:12 (INFO) RigidTransformResample: Default RAM limit for OTB is 256 MB
+2021-12-01 13:49:12 (INFO) RigidTransformResample: GDAL maximum cache size is 12878 MB
+2021-12-01 13:49:12 (INFO) RigidTransformResample: OTB will use at most 48 threads
+2021-12-01 13:49:12 (INFO) RigidTransformResample: Output image size : [1098, 1098]
+2021-12-01 13:49:12 (INFO): Estimated memory for full processing: 23269.5MB (avail.: 15000 MB), optimal image partitioning: 2 blocks
+2021-12-01 13:49:12 (INFO): File ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/2018_GapFilled_Image_scaled.tif will be written in 3 blocks of 1098x367 pixels
+Writing ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/2018_GapFilled_Image_scaled.tif...: 100% [**************************************************] (2m 45s)
+2021-12-01 13:52:19 (INFO) ExtractROI: Default RAM limit for OTB is 256 MB
+2021-12-01 13:52:19 (INFO) ExtractROI: GDAL maximum cache size is 12878 MB
+2021-12-01 13:52:19 (INFO) ExtractROI: OTB will use at most 48 threads
+2021-12-01 13:52:19 (INFO): Estimated memory for full processing: 257.43MB (avail.: 15000 MB), optimal image partitioning: 1 blocks
+2021-12-01 13:52:19 (INFO): File ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20180215_select.tif will be written in 1 blocks of 1098x1098 pixels
+Writing ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20180215_select.tif...: 100% [**************************************************] (1s)
+2021-12-01 13:52:22 (INFO) DynamicConvert: Default RAM limit for OTB is 256 MB
+2021-12-01 13:52:22 (INFO) DynamicConvert: GDAL maximum cache size is 12878 MB
+2021-12-01 13:52:22 (INFO) DynamicConvert: OTB will use at most 48 threads
+2021-12-01 13:52:22 (INFO): Estimated memory for full processing: 68.8708MB (avail.: 15000 MB), optimal image partitioning: 1 blocks
+2021-12-01 13:52:22 (INFO): Estimation will be performed in 1 blocks of 1098x1098 pixels
+Computing shrink Image for min/max estimation...: 100% [**************************************************] (0s)
+2021-12-01 13:52:22 (WARNING): The file format of ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20180215_gapfilled_falsecolor.jpg does not support streaming. All data will be loaded to memory
+2021-12-01 13:52:22 (INFO): File ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20180215_gapfilled_falsecolor.jpg will be written in 1 blocks of 1098x1098 pixels
+Writing ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20180215_gapfilled_falsecolor.jpg...: 100% [**************************************************] (0s)
+2021-12-01 13:52:22 (INFO) ExtractROI: Default RAM limit for OTB is 256 MB
+2021-12-01 13:52:22 (INFO) ExtractROI: GDAL maximum cache size is 12878 MB
+2021-12-01 13:52:22 (INFO) ExtractROI: OTB will use at most 48 threads
+2021-12-01 13:52:22 (INFO): Estimated memory for full processing: 257.43MB (avail.: 15000 MB), optimal image partitioning: 1 blocks
+2021-12-01 13:52:22 (INFO): File ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20180908_select.tif will be written in 1 blocks of 1098x1098 pixels
+Writing ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20180908_select.tif...: 100% [**************************************************] (0s)
+2021-12-01 13:52:23 (INFO) DynamicConvert: Default RAM limit for OTB is 256 MB
+2021-12-01 13:52:23 (INFO) DynamicConvert: GDAL maximum cache size is 12878 MB
+2021-12-01 13:52:23 (INFO) DynamicConvert: OTB will use at most 48 threads
+2021-12-01 13:52:23 (INFO): Estimated memory for full processing: 68.8708MB (avail.: 15000 MB), optimal image partitioning: 1 blocks
+2021-12-01 13:52:23 (INFO): Estimation will be performed in 1 blocks of 1098x1098 pixels
+Computing shrink Image for min/max estimation...: 100% [**************************************************] (0s)
+2021-12-01 13:52:24 (WARNING): The file format of ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20180908_gapfilled_falsecolor.jpg does not support streaming. All data will be loaded to memory
+2021-12-01 13:52:24 (INFO): File ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20180908_gapfilled_falsecolor.jpg will be written in 1 blocks of 1098x1098 pixels
+Writing ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20180908_gapfilled_falsecolor.jpg...: 100% [**************************************************] (0s)
+2021-12-01 13:52:24 (INFO) ExtractROI: Default RAM limit for OTB is 256 MB
+2021-12-01 13:52:24 (INFO) ExtractROI: GDAL maximum cache size is 12878 MB
+2021-12-01 13:52:24 (INFO) ExtractROI: OTB will use at most 48 threads
+2021-12-01 13:52:24 (INFO): Estimated memory for full processing: 257.43MB (avail.: 15000 MB), optimal image partitioning: 1 blocks
+2021-12-01 13:52:24 (INFO): File ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20180928_select.tif will be written in 1 blocks of 1098x1098 pixels
+Writing ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20180928_select.tif...: 100% [**************************************************] (0s)
+2021-12-01 13:52:25 (INFO) DynamicConvert: Default RAM limit for OTB is 256 MB
+2021-12-01 13:52:25 (INFO) DynamicConvert: GDAL maximum cache size is 12878 MB
+2021-12-01 13:52:25 (INFO) DynamicConvert: OTB will use at most 48 threads
+2021-12-01 13:52:25 (INFO): Estimated memory for full processing: 68.8708MB (avail.: 15000 MB), optimal image partitioning: 1 blocks
+2021-12-01 13:52:25 (INFO): Estimation will be performed in 1 blocks of 1098x1098 pixels
+Computing shrink Image for min/max estimation...: 100% [**************************************************] (0s)
+2021-12-01 13:52:26 (WARNING): The file format of ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20180928_gapfilled_falsecolor.jpg does not support streaming. All data will be loaded to memory
+2021-12-01 13:52:26 (INFO): File ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20180928_gapfilled_falsecolor.jpg will be written in 1 blocks of 1098x1098 pixels
+Writing ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20180928_gapfilled_falsecolor.jpg...: 100% [**************************************************] (0s)
+2021-12-01 13:52:26 (INFO) ExtractROI: Default RAM limit for OTB is 256 MB
+2021-12-01 13:52:26 (INFO) ExtractROI: GDAL maximum cache size is 12878 MB
+2021-12-01 13:52:26 (INFO) ExtractROI: OTB will use at most 48 threads
+2021-12-01 13:52:26 (INFO): Estimated memory for full processing: 257.43MB (avail.: 15000 MB), optimal image partitioning: 1 blocks
+2021-12-01 13:52:26 (INFO): File ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20181023_select.tif will be written in 1 blocks of 1098x1098 pixels
+Writing ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20181023_select.tif...: 100% [**************************************************] (0s)
+2021-12-01 13:52:27 (INFO) DynamicConvert: Default RAM limit for OTB is 256 MB
+2021-12-01 13:52:27 (INFO) DynamicConvert: GDAL maximum cache size is 12878 MB
+2021-12-01 13:52:27 (INFO) DynamicConvert: OTB will use at most 48 threads
+2021-12-01 13:52:27 (INFO): Estimated memory for full processing: 68.8708MB (avail.: 15000 MB), optimal image partitioning: 1 blocks
+2021-12-01 13:52:27 (INFO): Estimation will be performed in 1 blocks of 1098x1098 pixels
+Computing shrink Image for min/max estimation...: 100% [**************************************************] (0s)
+2021-12-01 13:52:27 (WARNING): The file format of ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20181023_gapfilled_falsecolor.jpg does not support streaming. All data will be loaded to memory
+2021-12-01 13:52:27 (INFO): File ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20181023_gapfilled_falsecolor.jpg will be written in 1 blocks of 1098x1098 pixels
+Writing ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20181023_gapfilled_falsecolor.jpg...: 100% [**************************************************] (0s)
+2021-12-01 13:52:28 (INFO) ExtractROI: Default RAM limit for OTB is 256 MB
+2021-12-01 13:52:28 (INFO) ExtractROI: GDAL maximum cache size is 12878 MB
+2021-12-01 13:52:28 (INFO) ExtractROI: OTB will use at most 48 threads
+2021-12-01 13:52:28 (INFO): Estimated memory for full processing: 257.43MB (avail.: 15000 MB), optimal image partitioning: 1 blocks
+2021-12-01 13:52:28 (INFO): File ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20181227_select.tif will be written in 1 blocks of 1098x1098 pixels
+Writing ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20181227_select.tif...: 100% [**************************************************] (0s)
+2021-12-01 13:52:29 (INFO) DynamicConvert: Default RAM limit for OTB is 256 MB
+2021-12-01 13:52:29 (INFO) DynamicConvert: GDAL maximum cache size is 12878 MB
+2021-12-01 13:52:29 (INFO) DynamicConvert: OTB will use at most 48 threads
+2021-12-01 13:52:29 (INFO): Estimated memory for full processing: 68.8708MB (avail.: 15000 MB), optimal image partitioning: 1 blocks
+2021-12-01 13:52:29 (INFO): Estimation will be performed in 1 blocks of 1098x1098 pixels
+Computing shrink Image for min/max estimation...: 100% [**************************************************] (0s)
+2021-12-01 13:52:29 (WARNING): The file format of ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20181227_gapfilled_falsecolor.jpg does not support streaming. All data will be loaded to memory
+2021-12-01 13:52:29 (INFO): File ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20181227_gapfilled_falsecolor.jpg will be written in 1 blocks of 1098x1098 pixels
+Writing ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20181227_gapfilled_falsecolor.jpg...: 100% [**************************************************] (0s)
+====================================================================
+====================== Gapfilling process ==========================
+======================================================================
+
+
+Sorted image files by dates:
+
+
+Date: 20180215, Abs path: ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2
+Date: 20180908, Abs path: ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2
+Date: 20180928, Abs path: ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2
+Date: 20181023, Abs path: ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2
+Date: 20181227, Abs path: ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2
+======================================================================
+
+
+======================================================================
+===================Print paths of input images========================
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B2.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B3.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B4.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B5.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B5.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B6.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B6.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B7.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B7.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B8.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B8A.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B8A.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B11.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B11.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B12.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B12.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B2.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B3.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B4.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B5.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B5.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B6.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B6.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B7.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B7.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B8.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B8A.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B8A.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B11.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B11.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B12.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B12.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B2.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B3.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B4.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B5.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B5.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B6.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B6.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B7.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B7.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B8.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B8A.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B8A.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B11.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B11.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B12.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B12.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B2.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B3.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B4.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B5.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B5.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B6.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B6.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B7.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B7.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B8.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B8A.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B8A.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B11.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B11.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B12.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B12.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B2.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B3.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B4.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B5.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B5.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B6.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B6.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B7.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B7.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B8.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B8A.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B8A.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B11.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B11.tif']
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B12.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B12.tif']
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B2.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B3.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B4.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B5.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B6.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B7.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B8.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B8A.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B11.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B12.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B2.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B3.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B4.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B5.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B6.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B7.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B8.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B8A.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B11.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B12.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B2.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B3.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B4.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B5.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B6.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B7.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B8.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B8A.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B11.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B12.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B2.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B3.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B4.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B5.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B6.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B7.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B8.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B8A.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B11.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B12.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B2.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B3.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B4.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B5.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B6.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B7.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B8.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B8A.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B11.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B12.tif
+======================================================================
+====================================================================
+================Create preview for original images=================
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B3.tif has already been scaled.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B8.tif has already been scaled.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B4.tif has already been scaled.
+The stacked image has already existed at ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20180215_falsecolor.tif .
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Original/20180215_falsecolor.jpg has already been converted.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B4.tif has already been scaled.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B3.tif has already been scaled.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B8.tif has already been scaled.
+The stacked image has already existed at ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20180908_falsecolor.tif .
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Original/20180908_falsecolor.jpg has already been converted.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B8.tif has already been scaled.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B4.tif has already been scaled.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B3.tif has already been scaled.
+The stacked image has already existed at ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20180928_falsecolor.tif .
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Original/20180928_falsecolor.jpg has already been converted.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B4.tif has already been scaled.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B3.tif has already been scaled.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B8.tif has already been scaled.
+The stacked image has already existed at ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20181023_falsecolor.tif .
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Original/20181023_falsecolor.jpg has already been converted.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B4.tif has already been scaled.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B8.tif has already been scaled.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B3.tif has already been scaled.
+The stacked image has already existed at ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20181227_falsecolor.tif .
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Original/20181227_falsecolor.jpg has already been converted.
+====================================================================
+=================Preview for original images done. =================
+====================================================================
+====================================================================
+====================Convert masks to binary masks===================
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_BandMath -il ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_CLM_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_EDG_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_SAT_R1.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20180215_binary_mask.tif uint8 -exp '(im1b1>0?1:0) || (im2b1==1?1:0) || (im3b1==1?1:0)' -ram 15000 -progress 1
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20180215_binary_mask.tif has already existed.
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_BandMathX -il ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_CLM_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_EDG_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_SAT_R1.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20180215_three_bands_binary_mask.tif uint8 -exp '(im1b1>0?1:0);(im2b1==1?1:0);(im3b1==1?1:0)' -ram 15000 -progress 1
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20180215_three_bands_binary_mask.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20180215_three_bands_binary_mask.tif has already been scaled.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Mask/20180215_mask.jpg has already been converted.
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_BandMath -il ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_CLM_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_EDG_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_SAT_R1.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20180908_binary_mask.tif uint8 -exp '(im1b1>0?1:0) || (im2b1==1?1:0) || (im3b1==1?1:0)' -ram 15000 -progress 1
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20180908_binary_mask.tif has already existed.
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_BandMathX -il ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_CLM_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_EDG_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_SAT_R1.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20180908_three_bands_binary_mask.tif uint8 -exp '(im1b1>0?1:0);(im2b1==1?1:0);(im3b1==1?1:0)' -ram 15000 -progress 1
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20180908_three_bands_binary_mask.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20180908_three_bands_binary_mask.tif has already been scaled.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Mask/20180908_mask.jpg has already been converted.
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_BandMath -il ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_CLM_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_EDG_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_SAT_R1.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20180928_binary_mask.tif uint8 -exp '(im1b1>0?1:0) || (im2b1==1?1:0) || (im3b1==1?1:0)' -ram 15000 -progress 1
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20180928_binary_mask.tif has already existed.
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_BandMathX -il ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_CLM_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_EDG_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_SAT_R1.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20180928_three_bands_binary_mask.tif uint8 -exp '(im1b1>0?1:0);(im2b1==1?1:0);(im3b1==1?1:0)' -ram 15000 -progress 1
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20180928_three_bands_binary_mask.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20180928_three_bands_binary_mask.tif has already been scaled.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Mask/20180928_mask.jpg has already been converted.
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_BandMath -il ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_CLM_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_EDG_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_SAT_R1.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20181023_binary_mask.tif uint8 -exp '(im1b1>0?1:0) || (im2b1==1?1:0) || (im3b1==1?1:0)' -ram 15000 -progress 1
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20181023_binary_mask.tif has already existed.
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_BandMathX -il ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_CLM_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_EDG_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_SAT_R1.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20181023_three_bands_binary_mask.tif uint8 -exp '(im1b1>0?1:0);(im2b1==1?1:0);(im3b1==1?1:0)' -ram 15000 -progress 1
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20181023_three_bands_binary_mask.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20181023_three_bands_binary_mask.tif has already been scaled.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Mask/20181023_mask.jpg has already been converted.
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_BandMath -il ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_CLM_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_EDG_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_SAT_R1.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20181227_binary_mask.tif uint8 -exp '(im1b1>0?1:0) || (im2b1==1?1:0) || (im3b1==1?1:0)' -ram 15000 -progress 1
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20181227_binary_mask.tif has already existed.
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_BandMathX -il ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_CLM_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_EDG_R1.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_SAT_R1.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20181227_three_bands_binary_mask.tif uint8 -exp '(im1b1>0?1:0);(im2b1==1?1:0);(im3b1==1?1:0)' -ram 15000 -progress 1
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20181227_three_bands_binary_mask.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20181227_three_bands_binary_mask.tif has already been scaled.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Mask/20181227_mask.jpg has already been converted.
+===================== Mask Converting finished. ====================
+====================================================================
+====================================================================
+======================= Create sum mask file =======================
+../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/2018_sum_mask.tif has already created.
+================= Creatation of sum mask finished. =================
+====================================================================
+====================================================================
+===================Start to resample r20m images====================
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B5.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B6.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B7.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B8A.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B11.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B12.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B5.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B6.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B7.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B8A.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B11.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B12.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B5.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B6.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B7.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B8A.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B11.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B12.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B5.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B6.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B7.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B8A.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B11.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B12.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B5.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B6.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B7.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B8A.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B11.tif has already existed.
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B12.tif has already existed.
+=========================Resampling finished========================
+====================================================================
+====================================================================
+=======================print image list for stack===================
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B2.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B3.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B4.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B5.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B6.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B7.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B8.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B8A.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B11.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B12.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B2.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B3.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B4.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B5.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B6.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B7.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B8.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B8A.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B11.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B12.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B2.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B3.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B4.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B5.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B6.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B7.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B8.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B8A.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B11.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B12.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B2.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B3.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B4.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B5.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B6.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B7.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B8.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B8A.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B11.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B12.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B2.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B3.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B4.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B5.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B6.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B7.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B8.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B8A.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B11.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B12.tif
+====================================================================
+====================================================================
+=======================Start to stack images========================
+The stacked image has already existed at ../../data/theiaL2A_zip_img/subset/output/2018/2018/2018_Image.tif .
+======================Image Stacking finished========================
+=====================================================================
+====================================================================
+=======================print masks list for stack===================
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20180215_binary_mask.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20180908_binary_mask.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20180928_binary_mask.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20181023_binary_mask.tif
+../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20181227_binary_mask.tif
+====================================================================
+====================================================================
+=======================Start to stack masks=========================
+The stacked mask has already existed at ../../data/theiaL2A_zip_img/subset/output/2018/2018/2018_Mask.tif .
+======================Mask Stacking finished========================
+====================================================================
+
+
+====================================================================
+=========================Gapfilling Process=========================
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_ImageTimeSeriesGapFilling -in ../../data/theiaL2A_zip_img/subset/output/2018/2018/2018_Image.tif -mask ../../data/theiaL2A_zip_img/subset/output/2018/2018/2018_Mask.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/2018_GapFilled_Image.tif uint16 -comp 10 -it linear -id ../../data/theiaL2A_zip_img/subset/output/2018/2018/original_dates.txt -od /share/projects/erasmus/deepchange/codebase/DeepChange/data_processing/gapfilled08_dates.txt -ram 15000 -progress 1
+=================  Gapfilling done. ============================
+====================================================================
+========================Gapfilling finished=========================
+====================================================================
+===================================================================================
+============Extract images per date for original and gapfilles images==============
+['../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B2.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B3.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B4.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B5.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B6.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B7.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B8.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B8A.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B11.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B12.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B2.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B3.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B4.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B5.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B6.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B7.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B8.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B8A.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B11.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B12.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B2.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B3.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B4.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B5.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B6.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B7.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B8.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B8A.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B11.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B12.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B2.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B3.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B4.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B5.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B6.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B7.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B8.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B8A.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B11.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B12.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B2.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B3.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B4.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B5.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B6.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B7.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B8.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B8A.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B11.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B12.tif']
+##########
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_ConcatenateImages -il ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B2.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B3.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B4.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B5.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B6.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B7.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B8.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B8A.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B11.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20180215-105300-871_L2A_T31TCJ_C_V2-2_FRE_B12.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20180215_three_bands_binary_mask.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20180215_Image.tif uint16 -ram 15000 -progress 1
+=================  Image stacking done. ============================
+====================================================================
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_ConcatenateImages -il ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B2.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B3.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B4.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B5.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B6.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B7.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B8.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B8A.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B11.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180908-105708-531_L2A_T31TCJ_C_V2-2_FRE_B12.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20180908_three_bands_binary_mask.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20180908_Image.tif uint16 -ram 15000 -progress 1
+=================  Image stacking done. ============================
+====================================================================
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_ConcatenateImages -il ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B2.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B3.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B4.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B5.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B6.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B7.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B8.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B8A.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B11.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20180928-105515-685_L2A_T31TCJ_C_V2-2_FRE_B12.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20180928_three_bands_binary_mask.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20180928_Image.tif uint16 -ram 15000 -progress 1
+=================  Image stacking done. ============================
+====================================================================
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_ConcatenateImages -il ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B2.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B3.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B4.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B5.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B6.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B7.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B8.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B8A.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B11.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2B_20181023-105107-455_L2A_T31TCJ_C_V2-2_FRE_B12.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20181023_three_bands_binary_mask.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20181023_Image.tif uint16 -ram 15000 -progress 1
+=================  Image stacking done. ============================
+====================================================================
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_ConcatenateImages -il ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B2.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B3.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B4.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B5.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B6.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B7.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp_unzip/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B8.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B8A.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B11.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/SENTINEL2A_20181227-105851-748_L2A_T31TCJ_C_V2-2_FRE_B12.tif ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/20181227_three_bands_binary_mask.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20181227_Image.tif uint16 -ram 15000 -progress 1
+=================  Image stacking done. ============================
+====================================================================
+=================================Extraction done===================================
+===================================================================================
+====================================================================
+================Create preview for gapfilled images=================
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_RigidTransformResample -in ../../data/theiaL2A_zip_img/subset/output/2018/2018/2018_GapFilled_Image.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/2018_GapFilled_Image_scaled.tif -transform.type.id.scalex 0.1 -transform.type.id.scaley 0.1 uint16 -ram 15000 -progress 1
+======================  Rescaling done. ============================
+====================================================================
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_ExtractROI -in ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/2018_GapFilled_Image_scaled.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20180215_select.tif -mode standard -cl Channel2 Channel3 Channel7 -ram 15000 -progress 1
+=================== Selecting bands done. ==========================
+===================================================================================
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_DynamicConvert -in ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20180215_select.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20180215_gapfilled_falsecolor.jpg -quantile -channels rgb -channels.rgb.red 3 -channels.rgb.green 2 -channels.rgb.blue 1 -ram 15000 -progress 1
+====================== Convert JPG done. ============================
+====================================================================
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_ExtractROI -in ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/2018_GapFilled_Image_scaled.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20180908_select.tif -mode standard -cl Channel12 Channel13 Channel17 -ram 15000 -progress 1
+=================== Selecting bands done. ==========================
+===================================================================================
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_DynamicConvert -in ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20180908_select.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20180908_gapfilled_falsecolor.jpg -quantile -channels rgb -channels.rgb.red 3 -channels.rgb.green 2 -channels.rgb.blue 1 -ram 15000 -progress 1
+====================== Convert JPG done. ============================
+====================================================================
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_ExtractROI -in ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/2018_GapFilled_Image_scaled.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20180928_select.tif -mode standard -cl Channel22 Channel23 Channel27 -ram 15000 -progress 1
+=================== Selecting bands done. ==========================
+===================================================================================
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_DynamicConvert -in ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20180928_select.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20180928_gapfilled_falsecolor.jpg -quantile -channels rgb -channels.rgb.red 3 -channels.rgb.green 2 -channels.rgb.blue 1 -ram 15000 -progress 1
+====================== Convert JPG done. ============================
+====================================================================
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_ExtractROI -in ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/2018_GapFilled_Image_scaled.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20181023_select.tif -mode standard -cl Channel32 Channel33 Channel37 -ram 15000 -progress 1
+=================== Selecting bands done. ==========================
+===================================================================================
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_DynamicConvert -in ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20181023_select.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20181023_gapfilled_falsecolor.jpg -quantile -channels rgb -channels.rgb.red 3 -channels.rgb.green 2 -channels.rgb.blue 1 -ram 15000 -progress 1
+====================== Convert JPG done. ============================
+====================================================================
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_ExtractROI -in ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/2018_GapFilled_Image_scaled.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20181227_select.tif -mode standard -cl Channel42 Channel43 Channel47 -ram 15000 -progress 1
+=================== Selecting bands done. ==========================
+===================================================================================
+/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin/otbcli_DynamicConvert -in ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/tmp/20181227_select.tif -out ../../data/theiaL2A_zip_img/subset/output/2018/2018/preview/Gapfilled/20181227_gapfilled_falsecolor.jpg -quantile -channels rgb -channels.rgb.red 3 -channels.rgb.green 2 -channels.rgb.blue 1 -ram 15000 -progress 1
+====================== Convert JPG done. ============================
+====================================================================
+=================Preview for gapfilled images done. ================
+====================================================================
+====================================================================
+====================== Create SQLite file ==========================
+list_perdate_img_file:  ['../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20181227_Image.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20180908_Image.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20180928_Image.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20181023_Image.tif', '../../data/theiaL2A_zip_img/subset/output/2018/2018/perdate/Original/2018_20180215_Image.tif']
+tile_name:  2018_2
+====================================================================
+========================= Read EPSG ================================
+The projection system code is 32631.
+====================================================================
+====================================================================
+======================= Reproject ref data ==========================
+ogr2ogr ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/reproject_samples_oso2018_T31TCJ.shp -t_srs EPSG:32631 /share/projects/erasmus/deepchange/data/samples_shapefiles/samples_oso2018_T31TCJ.shp
+============================== Done. ================================
+====================================================================
+
+
+======================= Reproject mask data ==========================
+ogr2ogr ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/reproject_S2_tiles_2018.shp -t_srs EPSG:32631 /share/projects/erasmus/deepchange/data/theiaL2A_zip_img/TileBorders/S2_tiles_2018.shp
+=================== Reprojection failed. ===================
+Last command is: ogr2ogr ../../data/theiaL2A_zip_img/subset/output/2018/2018/tmp/reproject_S2_tiles_2018.shp -t_srs EPSG:32631 /share/projects/erasmus/deepchange/data/theiaL2A_zip_img/TileBorders/S2_tiles_2018.shp
+Exit status:  1
+====================================================================

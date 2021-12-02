@@ -20,7 +20,7 @@ _otb_path = "/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin"
 # _field = "lc_id"
 
 # --PREV: _gapfilled_dates = "/data/BreizhCrops/L2A_img/output/gapfilled_dates.txt"
-_gapfilled_dates = "/share/projects/erasmus/deepchange/codebase/DeepChange/data_processing/gapfilled08_dates.txt"
+_gapfilled_dates = "/share/projects/erasmus/deepchange/codebase/DeepChange/data_processing/gapfilled19_dates.txt"
 _shp_file = "/share/projects/erasmus/deepchange/data/samples_shapefiles/samples_oso2018_T31TCJ.shp"
 _shp_mask_folder = (
     "/share/projects/erasmus/deepchange/data/theiaL2A_zip_img/TileBorders"
@@ -124,7 +124,7 @@ if options.dir:
 
 tile_folder_path = options.atile
 tiles_dir_path = options.dir
-perdate = options.perdate
+perdate = options.perdate.lower() == "true"
 
 if options.tlist != None:
     tile_list = options.tlist.split(" ")
@@ -303,7 +303,7 @@ if tile_folder_path:
     otb_path = _otb_path
     img_file = os.path.join(output_path, "%s_Image.tif" % tile)
     shp_file = _shp_file
-    shp_mask = os.path.join(_shp_mask_folder, "S2_tiles_%s.shp" % tile)
+    shp_mask = os.path.join(_shp_mask_folder, "S2_tile_T31TCJ.shp")
     field = _field
 
     if perdate:
@@ -320,7 +320,6 @@ if tile_folder_path:
         if not os.path.exists(output_sqlite_path):
             img_file = os.path.join(output_path, "%s_GapFilled_Image.tif" % tile)
             shp_file = _shp_file
-            shp_mask = os.path.join(_shp_mask_folder, "S2_tiles_%s.shp" % tile)
             tile_lookup = _tiles_lookuptable
             field = _field
             print(
@@ -521,7 +520,7 @@ if tiles_dir_path:
             otb_path = _otb_path
             img_file = os.path.join(output_path, "%s_Image.tif" % tile)
             shp_file = _shp_file
-            shp_mask = os.path.join(_shp_mask_folder, "S2_tiles_%s.shp" % tile)
+            shp_mask = os.path.join(_shp_mask_folder, "S2_tile_T31TCJ.shp")
             field = _field
 
             if perdate:
@@ -555,8 +554,7 @@ if tiles_dir_path:
                     img_file = os.path.join(
                         output_path, "%s_GapFilled_Image.tif" % tile
                     )
-                    shp_file = _shp_file
-                    shp_mask = os.path.join(_shp_mask_folder, "S2_tiles_%s.shp" % tile)
+                    shp_file = _shp_file                    
                     tile_lookup = _tiles_lookuptable
                     field = _field
                     print(
