@@ -26,8 +26,8 @@ def read_epsg(img_file):
 		os.remove(tmp_gdalinfo)
 	os.system(cmd)
 	epsg_list = []
-	#pattern = re.compile(r'AUTHORITY\[\"EPSG\",\"\d+\"\]') ###--- prev version of gdal
-	pattern = re.compile(r'ID\[\"EPSG\",\d+\]')
+	pattern = re.compile(r'AUTHORITY\[\"EPSG\",\"\d+\"\]') ###--- prev version of gdal
+	#pattern = re.compile(r'ID\[\"EPSG\",\d+\]')
 	with open(tmp_gdalinfo) as input_f:
 		for line in input_f.readlines():
 			match = pattern.search(line)
@@ -345,7 +345,8 @@ def generate_sqlite(otb_path, img_file, shp_file, shp_mask, tile_lookup, field, 
 			output_path: the output path of sqlite file
 	:return:
 	"""
-	tile_name = os.path.split(img_file)[1][0:6]
+	#tile_name = os.path.split(img_file)[1][0:6]
+	tile_name = os.path.split(img_file)[1].split('_')[0]
 	tile_output_path = output_path
 	tile_output_tmp_path = os.path.join(tile_output_path, "tmp")
 	if not os.path.exists(tile_output_tmp_path):
