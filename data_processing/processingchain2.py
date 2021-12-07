@@ -340,7 +340,7 @@ if tile_folder_path:
         if not os.path.exists(output_sqlite_path):
             img_file = os.path.join(output_path, "%s_GapFilled_Image.tif" % tile)
             #shp_file = options._shp_file
-	    shp_file = _shp_file
+	        shp_file = _shp_file
             tile_lookup = _tiles_lookuptable
             field = _field
             print(
@@ -543,7 +543,7 @@ if tiles_dir_path:
             otb_path = _otb_path
             img_file = os.path.join(output_path, "%s_Image.tif" % tile)
             #shp_file = options._shp_file
-	    shp_file = _shp_file
+	        shp_file = _shp_file
             shp_mask = os.path.join(_shp_mask_folder, "S2_tile_T31TCJ.shp")
             field = _field
 
@@ -579,7 +579,7 @@ if tiles_dir_path:
                         output_path, "%s_GapFilled_Image.tif" % tile
                     )
                     #shp_file = options._shp_file                    
-		    shp_file = _shp_file
+		            shp_file = _shp_file
                     tile_lookup = _tiles_lookuptable
                     field = _field
                     print(
