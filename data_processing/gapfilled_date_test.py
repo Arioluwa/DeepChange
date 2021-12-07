@@ -24,7 +24,7 @@ def sort_original_image_folders(input_path):
     # print("======================================================================")
     # print('\n')
     return list_of_tuples
-path = "/share/projects/erasmus/deepchange/data/theiaL2A_zip_img/subset/2019/"
+path = "/share/projects/erasmus/deepchange/data/theiaL2A_zip_img/2019/"
 
 out_date_list = sort_original_image_folders(path)
 out_date_list_file = "gapfilled19_dates.txt"

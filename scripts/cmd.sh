@@ -1,4 +1,6 @@
 #! /bin/bash
 
-conda activate python37
-python data_processing/processingchain.py --atile ../../data/theia2A_zip_img/subset/2019 --output_dir ../../data/theiaL2A_zip_img/subset/output --preview True >> logs/log202112021435.txt
+#conda activate python37
+python data_processing/processingchain2.py --atile ../../data/theia2A_zip_img/2019 --output_dir ../../data/theiaL2A_zip_img/output --preview True >> logs/log202112071700.txt
+
+#python data_processing/processingchain.py --atile ../../data/theia2A_zip_img/2019 --output_dir ../../data/theiaL2A_zip_img/output --gfd "data_processing/gapfilled19_dates.txt" --shf "../../data/samples_shapefiles/samples_oso2019_T31TCJ.shp" --preview True >> logs/log202112071559.txt
