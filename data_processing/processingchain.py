@@ -20,12 +20,12 @@ _otb_path = "/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin"
 # _field = "lc_id"
 
 # --PREV: _gapfilled_dates = "/data/BreizhCrops/L2A_img/output/gapfilled_dates.txt"
-_gapfilled_dates = "/share/projects/erasmus/deepchange/codebase/DeepChange/data_processing/gapfilled19_dates.txt"
-_shp_file = "/share/projects/erasmus/deepchange/data/samples_shapefiles/samples_oso2018_T31TCJ.shp"
+# _gapfilled_dates = "/share/projects/erasmus/deepchange/codebase/DeepChange/data_processing/gapfilled19_dates.txt"
+# _shp_file = "/share/projects/erasmus/deepchange/data/samples_shapefiles/samples_oso2018_T31TCJ.shp"
 _shp_mask_folder = (
     "/share/projects/erasmus/deepchange/data/theiaL2A_zip_img/TileBorders"
 )
-_tiles_lookuptable = ""  # -- No need here
+_tiles_lookuptable = ""  # -- No need 
 _field = "code"
 
 
@@ -104,6 +104,23 @@ else:
         type="string",
         help="Create per date images.",
         default="FALSE",
+    )
+    ######### Shp and gapfilled dates###############
+    parser.add_option(
+        "-g",
+        "--gfd",
+        dest="_gapfilled_dates",
+        action="store",
+        type="string",
+        help="Directory path to gapfilled dates.",
+    )
+    parser.add_option(
+        "-s",
+        "--shf",
+        dest="_shp_file",
+        action="store",
+        type="string",
+        help="Directory path to the sample shapefile.",
     )
     (options, args) = parser.parse_args()
 
@@ -207,7 +224,8 @@ if tile_folder_path:
             perdate_path = None
 
         # synthetic dates file path
-        out_dates_list_file = _gapfilled_dates
+        # out_dates_list_file = _gapfilled_dates
+        out_dates_list_file = options._gapfilled_dates
         # out_dates_list_file = original_dates_file
         original_dates_file = os.path.join(output_path, "original_dates.txt")
         in_dates_list_file = original_dates_file
@@ -238,7 +256,8 @@ if tile_folder_path:
 
         # Initial parameters
         otb_path = _otb_path
-        out_dates_list_file = _gapfilled_dates
+        # out_dates_list_file = _gapfilled_dates
+        out_dates_list_file = options._gapfilled_dates
         # out_dates_list_file = original_dates_file
         in_dates_list_file = original_dates_file
 
@@ -302,7 +321,7 @@ if tile_folder_path:
     ########################### STEP 2: Create SQLite file ############################
     otb_path = _otb_path
     img_file = os.path.join(output_path, "%s_Image.tif" % tile)
-    shp_file = _shp_file
+    shp_file = options._shp_file
     shp_mask = os.path.join(_shp_mask_folder, "S2_tile_T31TCJ.shp")
     field = _field
 
@@ -319,7 +338,7 @@ if tile_folder_path:
         output_sqlite_path = os.path.join(output_path, tile + "_sample_extract.sqlite")
         if not os.path.exists(output_sqlite_path):
             img_file = os.path.join(output_path, "%s_GapFilled_Image.tif" % tile)
-            shp_file = _shp_file
+            shp_file = options._shp_file
             tile_lookup = _tiles_lookuptable
             field = _field
             print(
@@ -422,7 +441,8 @@ if tiles_dir_path:
                 # ram_preview = 1000
 
                 # synthetic dates file path
-                out_dates_list_file = _gapfilled_dates
+                # out_dates_list_file = _gapfilled_dates
+                out_dates_list_file = options._gapfilled_dates
                 # out_dates_list_file = original_dates_file
                 in_dates_list_file = original_dates_file
 
@@ -455,7 +475,8 @@ if tiles_dir_path:
 
                 # Initial parameters
                 otb_path = _otb_path
-                out_dates_list_file = _gapfilled_dates
+                # out_dates_list_file = _gapfilled_dates
+                out_dates_list_file = options._gapfilled_dates
                 # out_dates_list_file = original_dates_file
                 in_dates_list_file = original_dates_file
                 output_tif = os.path.join(output_path, "%s_GapFilled_Image.tif" % tile)
@@ -519,7 +540,7 @@ if tiles_dir_path:
             otb_path = _otb_path
             otb_path = _otb_path
             img_file = os.path.join(output_path, "%s_Image.tif" % tile)
-            shp_file = _shp_file
+            shp_file = options._shp_file
             shp_mask = os.path.join(_shp_mask_folder, "S2_tile_T31TCJ.shp")
             field = _field
 
@@ -554,7 +575,7 @@ if tiles_dir_path:
                     img_file = os.path.join(
                         output_path, "%s_GapFilled_Image.tif" % tile
                     )
-                    shp_file = _shp_file                    
+                    shp_file = options._shp_file                    
                     tile_lookup = _tiles_lookuptable
                     field = _field
                     print(
