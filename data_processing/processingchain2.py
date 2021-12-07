@@ -340,7 +340,7 @@ if tile_folder_path:
         if not os.path.exists(output_sqlite_path):
             img_file = os.path.join(output_path, "%s_GapFilled_Image.tif" % tile)
             #shp_file = options._shp_file
-	        shp_file = _shp_file
+            shp_file = _shp_file
             tile_lookup = _tiles_lookuptable
             field = _field
             print(
