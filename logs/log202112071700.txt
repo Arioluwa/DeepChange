@@ -25,3 +25,1141 @@ Sorted image files by dates:
 ======================= Create sum mask file =======================
 ==================== Create sum mask failed =======================
 ===================================================================
+====================================================================
+====================== Gapfilling process ==========================
+======================================================================
+
+
+Sorted image files by dates:
+
+
+======================================================================
+
+
+======================================================================
+===================Print paths of input images========================
+======================================================================
+====================================================================
+================Create preview for original images=================
+====================================================================
+=================Preview for original images done. =================
+====================================================================
+====================================================================
+====================Convert masks to binary masks===================
+===================== Mask Converting finished. ====================
+====================================================================
+====================================================================
+======================= Create sum mask file =======================
+==================== Create sum mask failed =======================
+===================================================================
+====================================================================
+====================== Gapfilling process ==========================
+======================================================================
+
+
+Sorted image files by dates:
+
+
+======================================================================
+
+
+======================================================================
+===================Print paths of input images========================
+======================================================================
+====================================================================
+================Create preview for original images=================
+====================================================================
+=================Preview for original images done. =================
+====================================================================
+====================================================================
+====================Convert masks to binary masks===================
+===================== Mask Converting finished. ====================
+====================================================================
+====================================================================
+======================= Create sum mask file =======================
+==================== Create sum mask failed =======================
+===================================================================
+====================================================================
+====================== Gapfilling process ==========================
+======================================================================
+
+
+Sorted image files by dates:
+
+
+======================================================================
+
+
+======================================================================
+===================Print paths of input images========================
+======================================================================
+====================================================================
+================Create preview for original images=================
+====================================================================
+=================Preview for original images done. =================
+====================================================================
+====================================================================
+====================Convert masks to binary masks===================
+===================== Mask Converting finished. ====================
+====================================================================
+====================================================================
+======================= Create sum mask file =======================
+==================== Create sum mask failed =======================
+===================================================================
+====================================================================
+===================== Unzip processing =============================
+======================= Unzip file failed. =======================
+Last command is: unzip -u ../../data/theia2A_zip_img/2019/\*.zip -x *_SRE_*.tif *_ATB_*.tif *R2.tif *_IAB_*.tif *_MG2_*.tif -d ../../data/theiaL2A_zip_img/output/2019/tmp_unzip
+Exit status:  9
+====================================================================
+====================================================================
+====================== Gapfilling process ==========================
+======================================================================
+
+
+Sorted image files by dates:
+
+
+======================================================================
+
+
+=============================================================
+
+
+Write original acquisition dates of images into ../../data/theiaL2A_zip_img/output/2019/original_dates.txt
+The original dates are written successfully.
+=============================================================
+
+
+======================================================================
+===================Print paths of input images========================
+======================================================================
+====================================================================
+================Create preview for original images=================
+====================================================================
+=================Preview for original images done. =================
+====================================================================
+====================================================================
+====================Convert masks to binary masks===================
+===================== Mask Converting finished. ====================
+====================================================================
+====================================================================
+======================= Create sum mask file =======================
+==================== Create sum mask failed =======================
+===================================================================
+====================================================================
+====================== Gapfilling process ==========================
+======================================================================
+
+
+Sorted image files by dates:
+
+
+======================================================================
+
+
+======================================================================
+===================Print paths of input images========================
+======================================================================
+====================================================================
+================Create preview for original images=================
+====================================================================
+=================Preview for original images done. =================
+====================================================================
+====================================================================
+====================Convert masks to binary masks===================
+===================== Mask Converting finished. ====================
+====================================================================
+====================================================================
+======================= Create sum mask file =======================
+==================== Create sum mask failed =======================
+===================================================================
+Archive:  ../../data/theiaL2A_zip_img/2019//SENTINEL2A_20190307-105852-883_L2A_T31TCJ_D.zip
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B5.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B12.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B8A.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B7.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B11.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B2.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_QKL_ALL.jpg  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_JPI_ALL.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/HDR.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/PXD.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/RTC.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/RTC.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/STO.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190126.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190128.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190222.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190218.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190212.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190227.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190225.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190220.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190307.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190213.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190203.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190215.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190217.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190223.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/NDT.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/CLD.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/CLD.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/STO.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/PXD.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/NDT.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/RCR.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/WAM.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/RCR.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/RTA.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/RTA.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/WAM.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190307.DBL.DIR/S2A_TEST_GIP_CKQLTL_S_ALLSITES_00001_20190626_21000101.EEF  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190307.DBL.DIR/S2A_TEST_GIP_L2COMM_L_ALLSITES_00001_20190626_21000101.EEF  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190307.DBL.DIR/L2VALD_T31TCJ_20190307_Toulouse_MF.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190307.DBL.DIR/S2A_TEST_GIP_CKEXTL_S_ALLSITES_00001_20190626_21000101.EEF  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190307.DBL.DIR/L2VALD_T31TCJ_20190307_Seysses.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190307.DBL.DIR/L2VALD_T31TCJ_20190307_Le_Fauga.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190307.HDR  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B6.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B4.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B8.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R1-D07.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_SAT_R1.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_EDG_R1.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R2-D07.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R2-D10.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R2-D06.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R1-D04.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R1-D06.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R1-D08.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R2-D08.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R1-D05.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R1-D10.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DFP_R1.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R2-D05.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R1-D09.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R2-D09.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R2-D04.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_CLM_R1.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B3.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_MTD_ALL.xml  
+
+Archive:  ../../data/theiaL2A_zip_img/2019//SENTINEL2A_20190715-105903-886_L2A_T31TCJ_D.zip
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_FRE_B11.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_FRE_B4.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/RCR.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/NDT.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/WAM.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/WAM.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/STO.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/STO.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/HDR.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/CLD.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/PXD.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/PXD.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/RCR.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/RTA.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/RTC.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190713.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181005.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190419.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190708.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190223.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190703.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181219.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180424.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181122.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180307.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170913.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171003.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190514.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190401.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180620.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180730.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170605.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180723.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180511.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181227.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180802.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190506.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180826.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180302.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181003.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190307.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180905.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180309.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190111.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20161217.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190322.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180925.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190513.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190413.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180710.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181217.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170516.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180806.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190324.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180319.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181129.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171117.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170317.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171026.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171227.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180918.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170625.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190213.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170406.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190225.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180712.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180625.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180901.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190408.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171018.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180212.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170225.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190212.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190103.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180423.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180708.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180215.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181023.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190627.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180928.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171114.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190602.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181125.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181210.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180821.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180317.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171125.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171127.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190320.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20161227.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190618.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180916.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181207.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190501.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190119.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190330.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180703.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180926.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171015.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180819.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181205.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20161207.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190109.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190705.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180707.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171025.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170327.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171214.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171028.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180827.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190612.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190516.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181115.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171224.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180822.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190630.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180910.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171212.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181112.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180920.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171119.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190218.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180401.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180519.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170705.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171013.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171219.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190628.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190608.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171107.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180314.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181124.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181127.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190715.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180715.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190217.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190613.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190511.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171115.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190215.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171207.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180911.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190227.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180908.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190222.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190203.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180811.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190710.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171124.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180831.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180602.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181013.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170824.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170903.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190325.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171102.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180622.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171030.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190409.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180521.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171031.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171130.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170215.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190712.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190116.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170526.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170126.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180315.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190312.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180718.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170923.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181025.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171209.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180623.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171023.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180812.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180426.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181006.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180227.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180930.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180419.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180225.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181030.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171122.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181117.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171020.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190622.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170804.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190327.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180613.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180727.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190523.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181020.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180523.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170506.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171230.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171215.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190329.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190220.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/RTA.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/CLD.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/NDT.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/RTC.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_JPI_ALL.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190715.DBL.DIR/L2VALD_T31TCJ_20190715_Le_Fauga.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190715.DBL.DIR/L2VALD_T31TCJ_20190715_Toulouse_MF.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190715.DBL.DIR/S2A_TEST_GIP_CKQLTL_S_31TJF____10005_20150703_21000101.EEF  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190715.DBL.DIR/S2A_TEST_GIP_CKEXTL_S_31TJF____10001_20150703_21000101.EEF  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190715.DBL.DIR/S2A_TEST_GIP_L2COMM_L_ALLSITES_10009_20150703_21000101.EEF  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190715.DBL.DIR/L2VALD_T31TCJ_20190715_Seysses.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190715.HDR  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_FRE_B8.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_FRE_B3.tif  ====================================================================
+===================== Unzip processing =============================
+====================================================================
+====================== Gapfilling process ==========================
+======================================================================
+
+
+Sorted image files by dates:
+
+
+======================================================================
+
+
+======================================================================
+===================Print paths of input images========================
+======================================================================
+====================================================================
+================Create preview for original images=================
+====================================================================
+=================Preview for original images done. =================
+====================================================================
+====================================================================
+====================Convert masks to binary masks===================
+===================== Mask Converting finished. ====================
+====================================================================
+====================================================================
+======================= Create sum mask file =======================
+==================== Create sum mask failed =======================
+===================================================================
+====================================================================
+====================== Gapfilling process ==========================
+======================================================================
+
+
+Sorted image files by dates:
+
+
+Date: 20190307, Abs path: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2
+Date: 20190715, Abs path: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2
+======================================================================
+
+
+=============================================================
+
+
+Write original acquisition dates of images into ../../data/theiaL2A_zip_img/output/original_dates.txt
+20190307
+20190715
+The original dates are written successfully.
+=============================================================
+
+
+======================================================================
+===================Print paths of input images========================
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B2.tif']
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B3.tif']
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B4.tif']
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B5.tif']
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B6.tif']
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B7.tif']
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B8.tif']
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B8A.tif']
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B11.tif']
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B12.tif']
+[]
+====================================================================
+====================== Gapfilling process ==========================
+======================================================================
+
+
+Sorted image files by dates:
+
+
+Date: 20190307, Abs path: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2
+Date: 20190715, Abs path: ../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2
+======================================================================
+
+
+======================================================================
+===================Print paths of input images========================
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B2.tif']
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B3.tif']
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B4.tif']
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B5.tif']
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B6.tif']
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B7.tif']
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B8.tif']
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B8A.tif']
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B11.tif']
+['../../data/theiaL2A_zip_img/output/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B12.tif']
+[]
+Archive:  ../../data/theiaL2A_zip_img/2019/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_D.zip
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B5.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B12.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B8A.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B7.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B11.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B2.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_QKL_ALL.jpg  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_JPI_ALL.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/HDR.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/PXD.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/RTC.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/RTC.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/STO.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190126.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190128.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190222.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190218.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190212.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190227.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190225.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190220.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190307.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190213.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190203.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190215.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190217.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190223.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/NDT.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/CLD.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/CLD.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/STO.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/PXD.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/NDT.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/RCR.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/WAM.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/RCR.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/RTA.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/RTA.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_PVD_ALL/WAM.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190307.DBL.DIR/S2A_TEST_GIP_CKQLTL_S_ALLSITES_00001_20190626_21000101.EEF  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190307.DBL.DIR/S2A_TEST_GIP_L2COMM_L_ALLSITES_00001_20190626_21000101.EEF  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190307.DBL.DIR/L2VALD_T31TCJ_20190307_Toulouse_MF.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190307.DBL.DIR/S2A_TEST_GIP_CKEXTL_S_ALLSITES_00001_20190626_21000101.EEF  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190307.DBL.DIR/L2VALD_T31TCJ_20190307_Seysses.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190307.DBL.DIR/L2VALD_T31TCJ_20190307_Le_Fauga.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190307.HDR  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B6.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B4.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B8.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R1-D07.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_SAT_R1.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_EDG_R1.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R2-D07.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R2-D10.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R2-D06.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R1-D04.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R1-D06.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R1-D08.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R2-D08.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R1-D05.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R1-D10.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DFP_R1.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R2-D05.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R1-D09.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R2-D09.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_DTF_R2-D04.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_CLM_R1.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_FRE_B3.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190307-105852-883_L2A_T31TCJ_C_V2-2_MTD_ALL.xml  
+
+Archive:  ../../data/theiaL2A_zip_img/2019/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_D.zip
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_FRE_B11.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_FRE_B4.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/RCR.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/NDT.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/WAM.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/WAM.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/STO.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/STO.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/HDR.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/CLD.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/PXD.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/PXD.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/RCR.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/RTA.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/RTC.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190713.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181005.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190419.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190708.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190223.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190703.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181219.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180424.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181122.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180307.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170913.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171003.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190514.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190401.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180620.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180730.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170605.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180723.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180511.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181227.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180802.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190506.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180826.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180302.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181003.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190307.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180905.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180309.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190111.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20161217.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190322.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180925.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190513.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190413.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180710.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181217.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170516.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180806.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190324.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180319.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181129.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171117.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170317.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171026.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171227.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180918.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170625.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190213.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170406.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190225.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180712.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180625.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180901.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190408.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171018.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180212.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170225.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190212.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190103.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180423.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180708.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180215.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181023.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190627.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180928.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171114.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190602.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181125.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181210.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180821.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180317.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171125.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171127.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190320.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20161227.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190618.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180916.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181207.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190501.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190119.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190330.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180703.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180926.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171015.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180819.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181205.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20161207.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190109.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190705.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180707.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171025.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170327.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171214.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171028.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180827.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190612.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190516.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181115.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171224.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180822.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190630.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180910.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171212.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181112.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180920.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171119.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190218.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180401.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180519.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170705.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171013.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171219.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190628.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190608.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171107.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180314.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181124.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181127.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190715.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180715.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190217.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190613.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190511.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171115.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190215.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171207.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180911.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190227.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180908.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190222.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190203.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180811.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190710.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171124.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180831.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180602.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181013.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170824.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170903.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190325.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171102.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180622.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171030.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190409.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180521.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171031.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171130.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170215.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190712.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190116.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170526.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170126.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180315.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190312.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180718.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170923.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181025.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171209.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180623.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171023.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180812.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180426.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181006.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180227.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180930.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180419.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180225.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181030.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171122.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181117.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171020.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190622.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170804.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190327.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180613.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180727.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190523.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181020.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180523.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170506.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171230.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171215.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190329.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190220.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/RTA.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/CLD.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/NDT.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_PVD_ALL/RTC.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_JPI_ALL.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190715.DBL.DIR/L2VALD_T31TCJ_20190715_Le_Fauga.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190715.DBL.DIR/L2VALD_T31TCJ_20190715_Toulouse_MF.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190715.DBL.DIR/S2A_TEST_GIP_CKQLTL_S_31TJF____10005_20150703_21000101.EEF  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190715.DBL.DIR/S2A_TEST_GIP_CKEXTL_S_31TJF____10001_20150703_21000101.EEF  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190715.DBL.DIR/S2A_TEST_GIP_L2COMM_L_ALLSITES_10009_20150703_21000101.EEF  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190715.DBL.DIR/L2VALD_T31TCJ_20190715_Seysses.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190715.HDR  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_FRE_B8.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_FRE_B3.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_MTD_ALL.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_QKL_ALL.jpg  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_FRE_B5.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_FRE_B12.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_FRE_B6.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_CLM_R1.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_DTF_R2-D04.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_DTF_R1-D06.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_DTF_R1-D07.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_DTF_R1-D09.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_DTF_R1-D10.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_DTF_R1-D05.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_DTF_R2-D07.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_DTF_R2-D05.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_DTF_R2-D06.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_EDG_R1.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_DTF_R1-D08.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_DTF_R2-D09.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_DTF_R2-D10.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_DTF_R2-D08.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_DTF_R1-D04.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_SAT_R1.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_DFP_R1.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_FRE_B2.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_FRE_B7.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190715-105903-886_L2A_T31TCJ_C_V2-2_FRE_B8A.tif  
+
+Archive:  ../../data/theiaL2A_zip_img/2019/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_D.zip
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_MTD_ALL.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_FRE_B6.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_DTF_R1-D10.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_CLM_R1.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_EDG_R1.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_DTF_R2-D07.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_DTF_R2-D09.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_DTF_R2-D06.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_DTF_R1-D07.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_DTF_R2-D04.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_SAT_R1.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_DTF_R2-D08.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_DTF_R1-D05.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_DTF_R1-D08.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_DTF_R2-D10.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_DTF_R1-D06.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_DFP_R1.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_DTF_R2-D05.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_DTF_R1-D04.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/MASKS/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_DTF_R1-D09.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_FRE_B12.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_FRE_B3.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_FRE_B8.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_FRE_B11.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_FRE_B8A.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_FRE_B2.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_JPI_ALL.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/RCR.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/STO.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/HDR.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/PXD.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/WAM.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/NDT.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/PXD.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190128.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190126.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/NDT.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/RCR.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/CLD.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/RTC.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/CLD.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/RTC.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/WAM.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/RTA.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/RTA.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_PVD_ALL/STO.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190126.DBL.DIR/S2A_TEST_GIP_L2COMM_L_ALLSITES_00001_20190626_21000101.EEF  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190126.DBL.DIR/L2VALD_T31TCJ_20190126_Toulouse_MF.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190126.DBL.DIR/L2VALD_T31TCJ_20190126_Seysses.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190126.DBL.DIR/S2A_TEST_GIP_CKQLTL_S_ALLSITES_00001_20190626_21000101.EEF  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190126.DBL.DIR/L2VALD_T31TCJ_20190126_Le_Fauga.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190126.DBL.DIR/S2A_TEST_GIP_CKEXTL_S_ALLSITES_00001_20190626_21000101.EEF  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_QUD_ALL/S2A_TEST_QCK_L2VALD_T31TCJ_20190126.HDR  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_QKL_ALL.jpg  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_FRE_B5.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_FRE_B7.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2/SENTINEL2A_20190126-105855-464_L2A_T31TCJ_C_V2-2_FRE_B4.tif  
+
+Archive:  ../../data/theiaL2A_zip_img/2019/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_D.zip
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_QKL_ALL.jpg  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_FRE_B5.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/RCR.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/NDT.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/WAM.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/WAM.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/STO.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/STO.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/HDR.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/CLD.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/PXD.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/PXD.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/RCR.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/RTA.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/RTC.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190713.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181005.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190419.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190708.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190223.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190703.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181219.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180424.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181122.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180307.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170913.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171003.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190514.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190401.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190831.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180620.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180730.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190821.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170605.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180723.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180511.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181227.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180802.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190506.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180826.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180302.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190725.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181003.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190826.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190307.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180905.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180309.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190111.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20161217.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190322.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180925.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190513.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190413.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190728.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180710.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181217.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170516.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180806.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190324.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190906.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180319.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190903.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181129.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190829.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171117.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170317.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171026.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171227.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180918.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170625.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190213.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170406.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190225.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180712.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180625.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190822.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180901.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190408.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190723.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190722.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171018.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180212.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170225.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190212.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190103.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180423.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180708.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180215.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181023.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190627.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180928.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171114.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190602.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181125.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181210.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180821.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180317.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171125.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171127.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190320.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20161227.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190618.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180916.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190814.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181207.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190501.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190119.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190330.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180703.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180926.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171015.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180819.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181205.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190802.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20161207.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190109.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190705.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180707.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171025.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170327.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171214.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171028.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180827.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190612.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190809.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190516.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181115.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171224.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180822.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190630.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180910.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171212.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181112.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180920.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171119.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190218.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180401.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180519.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170705.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171013.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171219.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190817.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190628.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190608.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171107.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180314.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181124.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181127.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190715.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180715.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190217.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190613.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190804.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190511.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171115.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190215.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171207.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180911.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190227.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180908.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190222.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190203.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180811.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190710.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171124.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180831.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180602.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181013.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170824.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170903.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190325.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171102.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180622.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171030.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190409.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180521.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171031.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171130.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170215.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190712.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190116.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170526.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170126.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180315.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190312.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180718.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170923.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181025.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171209.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180623.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171023.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190824.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180812.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180426.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181006.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180227.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180930.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180419.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180225.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181030.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171122.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181117.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171020.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190622.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170804.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190327.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180613.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180727.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190816.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190523.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20181020.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20180523.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20170506.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171230.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20171215.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190908.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190329.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190220.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/LTC/20190717.mha  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/RTA.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/CLD.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/NDT.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_PVD_ALL/RTC.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_QUD_ALL/S2B_TEST_QCK_L2VALD_T31TCJ_20190908.DBL.DIR/S2B_TEST_GIP_L2COMM_L_ALLSITES_10009_20150703_21000101.EEF  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_QUD_ALL/S2B_TEST_QCK_L2VALD_T31TCJ_20190908.DBL.DIR/L2VALD_T31TCJ_20190908_Seysses.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_QUD_ALL/S2B_TEST_QCK_L2VALD_T31TCJ_20190908.DBL.DIR/L2VALD_T31TCJ_20190908_Toulouse_MF.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_QUD_ALL/S2B_TEST_QCK_L2VALD_T31TCJ_20190908.DBL.DIR/S2B_TEST_GIP_CKEXTL_S_31TJF____10001_20150703_21000101.EEF  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_QUD_ALL/S2B_TEST_QCK_L2VALD_T31TCJ_20190908.DBL.DIR/S2B_TEST_GIP_CKQLTL_S_31TJF____10005_20150703_21000101.EEF  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_QUD_ALL/S2B_TEST_QCK_L2VALD_T31TCJ_20190908.DBL.DIR/L2VALD_T31TCJ_20190908_Le_Fauga.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_QUD_ALL/S2B_TEST_QCK_L2VALD_T31TCJ_20190908.HDR  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/DATA/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_JPI_ALL.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_FRE_B7.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_MTD_ALL.xml  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_FRE_B6.tif  
+  inflating: ../../data/theiaL2A_zip_img/output/2019/tmp_unzip/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2/SENTINEL2B_20190908-105900-404_L2A_T31TCJ_C_V2-2_FRE_B2.tif  ====================================================================
+===================== Unzip processing =============================
