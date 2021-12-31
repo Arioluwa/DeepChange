@@ -1,13 +1,14 @@
-## Folder description and contents  
----
+# Folder description and contents
+
 Found two approcahes to download SENTINAL 2 L2A data from Theia:
-- [theia_download](https://github.com/olivierhagolle/theia_download) source: https://theia.cnes.fr/atdistrib/rocket/#/help
-    - command: python3 theia_download.py -c SENTINEL2 -t T31TCJ -a config_theia.cfg -r 51 --level 80 LEVEL2A -d 2018-01-01 -f 2018-02-27
-    - Limitation: Token only valid for two hour.
+
+- [theia_download](https://github.com/olivierhagolle/theia_download) source: <https://theia.cnes.fr/atdistrib/rocket/#/help>
+  - command: python3 theia_download.py -c SENTINEL2 -t T31TCJ -a config_theia.cfg -r 51 --level 80 LEVEL2A -d 2018-01-01 -f 2018-02-27
+  - Limitation: Token only valid for two hour.
 - [EODAG](https://github.com/CS-SI/eodag)
-    - edit script.py to the start date and end date, and cloud cover
-    - auxdata is needed to filter based on tile_id
-    - Works fine so far.
+  - edit script.py to the start date and end date, and cloud cover
+  - auxdata is needed to filter based on tile_id
+  - Works fine so far.
 
 ```
 ├── data_download
@@ -24,14 +25,18 @@ Found two approcahes to download SENTINAL 2 L2A data from Theia:
 ```
 
 ## File Sentinel 2 Level2A Download
+
 ---
+
 Tile - T31TCJ  
 RelativeOrbitNumber - 51  
-Coverage - Full   
+Coverage - Full
+
 - 2018
-    - 37
+
+  - 37
 
 - 2019
-    - 33
+  - 33
 
 Total 70
