@@ -1,6 +1,6 @@
 # Content description
 
-This folder contain `sample_stats.md` and `readsqlite.py` files.  
+This folder contains two major files, `sample_stats.md` and `readsqlite.py`.  
 The `sample_stats.md` reports the sample statistics, which includes;
 
 - number of samples per year
@@ -13,10 +13,10 @@ The `sample_stats.md` reports the sample statistics, which includes;
 
 The `readsqlite.py` script is used to reads the sample extraction results from the SQLite database in chunks, selecting the code/label (y), the polygon ID (polygon_id) and time series variable (x) using the `readSITSData()` function.
 
-It further converts all the variables to numpy arrays and saved as a compressed .npz format. The variables are saved as .npz for fast loading and readability by other ML/DL frameworks. The choice of the compression format is based on the size of the data as it is expected to be large; which fails to read into memory while reading direclty from the sqlite db file. More information on the compression format can be found in the [here](https://stackoverflow.com/questions/9619199/best-way-to-preserve-numpy-arrays-on-disk).
+It converts all the variables to numpy arrays and saves them in a compressed .npz format. The variables are saved as .npz for fast loading and readability by other ML/DL frameworks. The choice of the compression format is based on the size of the data as it is expected to be large, which fails to read into memory while reading directly from the SQLite db file. More information on the compression format can be found in the [here](https://stackoverflow.com/questions/9619199/best-way-to-preserve-numpy-arrays-on-disk).
 
 **Important observations:**  
-The script was tested on a subset sqlite database (5 images) with size of 2.7GB.
+The script was tested on a subset SQLite database (5 images) with a size of 2.7GB.
 
 - Time taken to read the sqlite database in chunks (chunk size = 50000): 4m.11s
 
