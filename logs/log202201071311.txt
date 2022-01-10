@@ -1,0 +1,99 @@
+2022-01-07 13:11:31 (INFO) Rasterization: Default RAM limit for OTB is 256 MB
+2022-01-07 13:11:31 (INFO) Rasterization: GDAL maximum cache size is 19343 MB
+2022-01-07 13:11:31 (INFO) Rasterization: OTB will use at most 40 threads
+2022-01-07 13:11:31 (INFO) Rasterization: Input dataset extent is (497076, 6.23575e+06) (612532, 6.35552e+06)
+2022-01-07 13:11:31 (INFO) Rasterization: Input dataset projection reference system is: PROJCS["RGF93_Lambert_93",GEOGCS["GCS_RGF93",DATUM["Reseau_Geodesique_Francais_1993",SPHEROID["GRS 1980",6378137,298.257222101,AUTHORITY["EPSG","7019"]],AUTHORITY["EPSG","6171"]],PRIMEM["Greenwich",0],UNIT["Degree",0.0174532925199433]],PROJECTION["Lambert_Conformal_Conic_2SP"],PARAMETER["latitude_of_origin",46.5],PARAMETER["central_meridian",3],PARAMETER["standard_parallel_1",49],PARAMETER["standard_parallel_2",44],PARAMETER["false_easting",700000],PARAMETER["false_northing",6600000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH]]
+2022-01-07 13:11:32 (INFO) Rasterization: Output projection reference system is: PROJCS["WGS 84 / UTM zone 31N",
+    GEOGCS["WGS 84",
+        DATUM["WGS_1984",
+            SPHEROID["WGS 84",6378137,298.257223563,
+                AUTHORITY["EPSG","7030"]],
+            AUTHORITY["EPSG","6326"]],
+        PRIMEM["Greenwich",0,
+            AUTHORITY["EPSG","8901"]],
+        UNIT["degree",0.0174532925199433,
+            AUTHORITY["EPSG","9122"]],
+        AUTHORITY["EPSG","4326"]],
+    PROJECTION["Transverse_Mercator"],
+    PARAMETER["latitude_of_origin",0],
+    PARAMETER["central_meridian",3],
+    PARAMETER["scale_factor",0.9996],
+    PARAMETER["false_easting",500000],
+    PARAMETER["false_northing",0],
+    UNIT["metre",1,
+        AUTHORITY["EPSG","9001"]],
+    AXIS["Easting",EAST],
+    AXIS["Northing",NORTH],
+    AUTHORITY["EPSG","32631"]]
+2022-01-07 13:11:32 (INFO) Rasterization: Output origin: [300005, 4.90002e+06]
+2022-01-07 13:11:32 (INFO) Rasterization: Output size: [10980, 10980]
+2022-01-07 13:11:32 (INFO) Rasterization: Output spacing: [10, -10]
+2022-01-07 13:11:32 (INFO): Estimated memory for full processing: 2299.47MB (avail.: 2000 MB), optimal image partitioning: 2 blocks
+2022-01-07 13:11:32 (INFO): File 2018_rasterizedImage.tif will be written in 4 blocks of 7776x7776 pixels
+Writing 2018_rasterizedImage.tif...: 100% [**************************************************] (19s)
+2022-01-07 13:38:34 (INFO) Rasterization: Default RAM limit for OTB is 256 MB
+2022-01-07 13:38:34 (INFO) Rasterization: GDAL maximum cache size is 19343 MB
+2022-01-07 13:38:34 (INFO) Rasterization: OTB will use at most 40 threads
+2022-01-07 13:38:34 (INFO) Rasterization: Input dataset extent is (497076, 6.23575e+06) (612532, 6.35552e+06)
+2022-01-07 13:38:34 (INFO) Rasterization: Input dataset projection reference system is: PROJCS["RGF93_Lambert_93",GEOGCS["GCS_RGF93",DATUM["Reseau_Geodesique_Francais_1993",SPHEROID["GRS 1980",6378137,298.257222101,AUTHORITY["EPSG","7019"]],AUTHORITY["EPSG","6171"]],PRIMEM["Greenwich",0],UNIT["Degree",0.0174532925199433]],PROJECTION["Lambert_Conformal_Conic_2SP"],PARAMETER["latitude_of_origin",46.5],PARAMETER["central_meridian",3],PARAMETER["standard_parallel_1",49],PARAMETER["standard_parallel_2",44],PARAMETER["false_easting",700000],PARAMETER["false_northing",6600000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH]]
+2022-01-07 13:38:34 (INFO) Rasterization: Output projection reference system is: PROJCS["WGS 84 / UTM zone 31N",
+    GEOGCS["WGS 84",
+        DATUM["WGS_1984",
+            SPHEROID["WGS 84",6378137,298.257223563,
+                AUTHORITY["EPSG","7030"]],
+            AUTHORITY["EPSG","6326"]],
+        PRIMEM["Greenwich",0,
+            AUTHORITY["EPSG","8901"]],
+        UNIT["degree",0.0174532925199433,
+            AUTHORITY["EPSG","9122"]],
+        AUTHORITY["EPSG","4326"]],
+    PROJECTION["Transverse_Mercator"],
+    PARAMETER["latitude_of_origin",0],
+    PARAMETER["central_meridian",3],
+    PARAMETER["scale_factor",0.9996],
+    PARAMETER["false_easting",500000],
+    PARAMETER["false_northing",0],
+    UNIT["metre",1,
+        AUTHORITY["EPSG","9001"]],
+    AXIS["Easting",EAST],
+    AXIS["Northing",NORTH],
+    AUTHORITY["EPSG","32631"]]
+2022-01-07 13:38:34 (INFO) Rasterization: Output origin: [300005, 4.90002e+06]
+2022-01-07 13:38:34 (INFO) Rasterization: Output size: [10980, 10980]
+2022-01-07 13:38:34 (INFO) Rasterization: Output spacing: [10, -10]
+2022-01-07 13:38:34 (INFO): Estimated memory for full processing: 2299.47MB (avail.: 2000 MB), optimal image partitioning: 2 blocks
+2022-01-07 13:38:34 (INFO): File ../../../data/sample_rasterized/2018_rasterizedImage.tif will be written in 4 blocks of 7776x7776 pixels
+Writing ../../../data/sample_rasterized/2018_rasterizedImage.tif...: 100% [**************************************************] (20s)
+2022-01-07 13:50:18 (INFO) Rasterization: Default RAM limit for OTB is 256 MB
+2022-01-07 13:50:18 (INFO) Rasterization: GDAL maximum cache size is 19343 MB
+2022-01-07 13:50:18 (INFO) Rasterization: OTB will use at most 40 threads
+2022-01-07 13:50:18 (INFO) Rasterization: Input dataset extent is (497076, 6.23575e+06) (612532, 6.35552e+06)
+2022-01-07 13:50:18 (INFO) Rasterization: Input dataset projection reference system is: PROJCS["RGF93_Lambert_93",GEOGCS["GCS_RGF93",DATUM["Reseau_Geodesique_Francais_1993",SPHEROID["GRS 1980",6378137,298.257222101,AUTHORITY["EPSG","7019"]],AUTHORITY["EPSG","6171"]],PRIMEM["Greenwich",0],UNIT["Degree",0.0174532925199433]],PROJECTION["Lambert_Conformal_Conic_2SP"],PARAMETER["latitude_of_origin",46.5],PARAMETER["central_meridian",3],PARAMETER["standard_parallel_1",49],PARAMETER["standard_parallel_2",44],PARAMETER["false_easting",700000],PARAMETER["false_northing",6600000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH]]
+2022-01-07 13:50:18 (INFO) Rasterization: Output projection reference system is: PROJCS["WGS 84 / UTM zone 31N",
+    GEOGCS["WGS 84",
+        DATUM["WGS_1984",
+            SPHEROID["WGS 84",6378137,298.257223563,
+                AUTHORITY["EPSG","7030"]],
+            AUTHORITY["EPSG","6326"]],
+        PRIMEM["Greenwich",0,
+            AUTHORITY["EPSG","8901"]],
+        UNIT["degree",0.0174532925199433,
+            AUTHORITY["EPSG","9122"]],
+        AUTHORITY["EPSG","4326"]],
+    PROJECTION["Transverse_Mercator"],
+    PARAMETER["latitude_of_origin",0],
+    PARAMETER["central_meridian",3],
+    PARAMETER["scale_factor",0.9996],
+    PARAMETER["false_easting",500000],
+    PARAMETER["false_northing",0],
+    UNIT["metre",1,
+        AUTHORITY["EPSG","9001"]],
+    AXIS["Easting",EAST],
+    AXIS["Northing",NORTH],
+    AUTHORITY["EPSG","32631"]]
+2022-01-07 13:50:18 (INFO) Rasterization: Output origin: [300005, 4.90002e+06]
+2022-01-07 13:50:18 (INFO) Rasterization: Output size: [10980, 10980]
+2022-01-07 13:50:18 (INFO) Rasterization: Output spacing: [10, -10]
+2022-01-07 13:50:18 (INFO): Estimated memory for full processing: 2299.47MB (avail.: 2000 MB), optimal image partitioning: 2 blocks
+2022-01-07 13:50:18 (INFO): File ../../../data/sample_rasterized/2019_rasterizedImage.tif will be written in 4 blocks of 7776x7776 pixels
+Writing ../../../data/sample_rasterized/2019_rasterizedImage.tif...: 100% [**************************************************] (18s)

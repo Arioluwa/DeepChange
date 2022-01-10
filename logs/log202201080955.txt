@@ -1,0 +1,1 @@
+computation time for direct read and append data from sqlite: 2129.355655193329 seconds ---

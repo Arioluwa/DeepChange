@@ -1,0 +1,5 @@
+computation time for direct read, using matrix initialization: 2270.568527698517 seconds ---
+get L: 0.000598907470703125 seconds ---
+get the number of rows: 180.99503350257874 seconds ---
+read all variables 2129.298088312149 seconds ---
+computation time for direct read, using matrix initialization: 2310.2978575229645 seconds ---
