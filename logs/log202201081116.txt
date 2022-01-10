@@ -1,0 +1,4 @@
+read and append 2150.455242872238 seconds ---
+concatenate 4.2974982261657715 seconds ---
+npz compression 451.60663533210754 seconds ---
+Variables loading 60.412307262420654 seconds ---

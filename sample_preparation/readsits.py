@@ -22,7 +22,7 @@ def readSITSData(file_path):
 
 
     # read the data in chunks
-    for chunk in pd.read_sql_query("select * from output;", conn,  chunksize=50000):
+    for chunk in pd.read_sql_query("select * from output;", conn,  chunksize=5000):
         
         y_data = chunk.iloc[:,2]
         y_data = np.asarray(y_data.values, dtype='uint8')
@@ -31,7 +31,7 @@ def readSITSData(file_path):
         polygonID_data = np.asarray(polygonID_data.values, dtype='uint16')
 
         X_data = chunk.iloc[:,6:]
-        X_data = np.asarray(X_data.values, dtype='float32')  
+        X_data = np.asarray(X_data.values, dtype='uint16')  
 
         X.append(X_data)
         y.append(y_data)

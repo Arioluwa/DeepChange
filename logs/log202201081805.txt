@@ -1,0 +1,5 @@
+getting L: 0.0005784034729003906 seconds ---
+getting N: 180.85053491592407 seconds ---
+reading variables: 2126.540336370468 seconds ---
+compressing time: 396.9790070056915 seconds ---
+loading time: 85.992014169693 seconds ---
