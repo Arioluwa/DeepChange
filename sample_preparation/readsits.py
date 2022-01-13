@@ -20,7 +20,7 @@ def readSITSData(file_path):
     y = [] # Labels/codes
     polygon_ids = [] # Polygon ids
 
-
+    # start_time = time.time()
     # read the data in chunks
     for chunk in pd.read_sql_query("select * from output;", conn,  chunksize=5000):
         
