@@ -48,17 +48,33 @@
 | 2018 | 2438 | 12399 | 4782 | 285 | 2298 | 5016 | 1850 | 4571 | 19015 | 2860 | 381 | 2499 | 594 | 593 | 938 | 156 | 31  | 412 | 1225 | 62343 |
 | 2019 | 2438 | 1186  | 4782 | 285 | 2256 | 4669 | 372  | 4467 | 16165 | 5059 | 433 | 2499 | 594 | 593 | 938 | 156 | 31  | 412 | 1225 | 48560 |
 
-# Polygon intersection per class
+<!-- # Polygon intersection per class -->
 
 <!-- |      | 1   | 2     | 3   | 4   | 5       | 6        | 7   | 8          | 9     | 10         | 12  | 13  | 14  | 15  | 16  | 17  | 18  | 19  | 23  |
 | ---- | --- | ----- | --- | --- | ------- | -------- | --- | ---------- | ----- | ---------- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 2018 | Yes | No(1614*) | Yes | 285 | No(4\*) | No(29\*) | No  | No (421\*) | 19015 | No (366\*) | No  | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
 | 2019 | Yes | No(1614*)  | Yes | 285 | No(4\*) | No(29\*) | No  | No (421\*) | 16165 | No (366\*) | No  | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | -->
 
-|              | 1   | 2      | 3   | 4   | 5   | 6    | 7   | 8     | 9     | 10    | 12  | 13  | 14  | 15  | 16  | 17  | 18  | 19  | 23  |
+<!-- |              | 1   | 2      | 3   | 4   | 5   | 6    | 7   | 8     | 9     | 10    | 12  | 13  | 14  | 15  | 16  | 17  | 18  | 19  | 23  |
 | ------------ | --- | ------ | --- | --- | --- | ---- | --- | ----- | ----- | ----- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Intersection | Yes | 1614\* | Yes | -   | 4\* | 29\* | No  | 421\* | 192\* | 366\* | No  | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| Intersection | Yes | 1614\* | Yes | -   | 4\* | 29\* | No  | 421\* | 192\* | 366\* | No  | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | -->
 
-Yes - Complete intersection between 2018 and 2019 polygon.  
-No - Not intersection  
-$*$ - number of intersecting polygons
+<!-- Yes - Complete intersection between 2018 and 2019 polygon.
+No - Not intersection
+$*$ - number of intersecting polygons -->
+
+# Confusion matrix
+ 
+
+
+# Runtime comparison result
+
+|     | Direct reading (mins) | Npz commpression and Loading (mins) |
+| --- | ------------- | --------------------------- |
+| Appending | 35.489 | - read and append: 35.841 |
+|   | | - Npz compression: 7.527 |
+|   | | - loading: 60 sec |
+| Matrix Initialization | To get L and N: 3.017  | To get L and N: 3.014 |
+|   | read into matrix: 35.488 | read into matrix: 35.442 |
+|   |  | Npz compression: 6.616|
+|   |  | Loading: 85 sec |
