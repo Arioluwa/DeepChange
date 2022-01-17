@@ -22,6 +22,8 @@
 
 ## Grid split
 
+![grid split](./charts/grid_split.png)
+
 ## Runtime comparison result
 
 |                       | Direct reading (mins)    | Npz commpression and Loading (mins) |
