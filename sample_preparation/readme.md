@@ -1,6 +1,6 @@
 # Content description
 
-- Dataset description information
+- Dataset description [information](https://github.com/adebowaledaniel/DeepChange/blob/main/sample_preparation/sample_stats.md)
   - Number of samples per year
   - Class distribution per year (polygon-level)
   - Class distribution per year (pixels-level)
