@@ -1,4 +1,6 @@
-# Sample per year stats
+# Dataset distribution information
+
+## Number of samples per year
 
 | Year       | samples |     |
 | ---------- | ------- | --- |
@@ -6,75 +8,28 @@
 | 2019       | 48560   |     |
 | Difference | 13783   |     |
 
-<!-- ## Sample intersection/Overlap
+## Class distribution per year (polygon-level)
 
-### Using the overlap analysis tool in QGIS, considering the percentage overlap.
+![polygon count](./charts/Polygon_counts.png)
 
-- $\geq$ 30% overlap
-  - 21051 samples
-- $\geq$ 50% overlap
+## Class distribution per year (pixels-level)
 
-  - 20754 samples
+![pixel count](./charts/Pixels_counts.png)
 
-- $\geq$ 90% overlap
-  - 19836 samples -->
+## Dataset pixel-based confusion matrix between 2018 and 2019
 
-# Sample per class stats
+![confusion matrix](./charts/pixel_base_confusion_matrix.png)
 
-<!-- | Year       |  Class code  |     |     |  |  |  | |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| ---------- | ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | -->
+## Grid split
 
-| Year | 1      | 2       | 3      | 4     | 5      | 6       | 7      | 8       | 9       | 10      | 12    | 13     | 14     | 15    | 16     | 17    | 18    | 19    | 23     | Total    |
-| ---- | ------ | ------- | ------ | ----- | ------ | ------- | ------ | ------- | ------- | ------- | ----- | ------ | ------ | ----- | ------ | ----- | ----- | ----- | ------ | -------- |
-| 2018 | 128170 | 1536293 | 635047 | 76715 | 800695 | 1616709 | 473220 | 1436856 | 6262822 | 993941  | 56747 | 262823 | 110343 | 61612 | 192746 | 31422 | 90988 | 23762 | 339804 | 15130715 |
-| 2019 | 128170 | 556103  | 635047 | 76715 | 823854 | 1559056 | 132917 | 1438189 | 5272026 | 1847513 | 74609 | 262823 | 110343 | 61612 | 192746 | 31422 | 90988 | 23762 | 339804 | 13657699 |
+## Runtime comparison result
 
-<!-- 2018 -->
-
-<!-- 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 23
-
-128170, 1536293, 635047, 76715, 800695, 1616709, 473220, 1436856, 6262822, 993941, 56747, 262823, 110343, 61612, 192746, 31422, 90988, 23762, 339804 -->
-
-<!-- 2019 -->
-
-<!-- 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 23
-
-128170, 556103, 635047, 76715, 823854, 1559056, 132917, 1438189, 5272026, 1847513, 74609, 262823, 110343, 61612, 192746, 31422, 90988, 23762, 339804 -->
-
-# Number of Polygon per class
-
-| Year | 1    | 2     | 3    | 4   | 5    | 6    | 7    | 8    | 9     | 10   | 12  | 13   | 14  | 15  | 16  | 17  | 18  | 19  | 23   | Total |
-| ---- | ---- | ----- | ---- | --- | ---- | ---- | ---- | ---- | ----- | ---- | --- | ---- | --- | --- | --- | --- | --- | --- | ---- | ----- |
-| 2018 | 2438 | 12399 | 4782 | 285 | 2298 | 5016 | 1850 | 4571 | 19015 | 2860 | 381 | 2499 | 594 | 593 | 938 | 156 | 31  | 412 | 1225 | 62343 |
-| 2019 | 2438 | 1186  | 4782 | 285 | 2256 | 4669 | 372  | 4467 | 16165 | 5059 | 433 | 2499 | 594 | 593 | 938 | 156 | 31  | 412 | 1225 | 48560 |
-
-<!-- # Polygon intersection per class -->
-
-<!-- |      | 1   | 2     | 3   | 4   | 5       | 6        | 7   | 8          | 9     | 10         | 12  | 13  | 14  | 15  | 16  | 17  | 18  | 19  | 23  |
-| ---- | --- | ----- | --- | --- | ------- | -------- | --- | ---------- | ----- | ---------- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2018 | Yes | No(1614*) | Yes | 285 | No(4\*) | No(29\*) | No  | No (421\*) | 19015 | No (366\*) | No  | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
-| 2019 | Yes | No(1614*)  | Yes | 285 | No(4\*) | No(29\*) | No  | No (421\*) | 16165 | No (366\*) | No  | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | -->
-
-<!-- |              | 1   | 2      | 3   | 4   | 5   | 6    | 7   | 8     | 9     | 10    | 12  | 13  | 14  | 15  | 16  | 17  | 18  | 19  | 23  |
-| ------------ | --- | ------ | --- | --- | --- | ---- | --- | ----- | ----- | ----- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Intersection | Yes | 1614\* | Yes | -   | 4\* | 29\* | No  | 421\* | 192\* | 366\* | No  | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes | -->
-
-<!-- Yes - Complete intersection between 2018 and 2019 polygon.
-No - Not intersection
-$*$ - number of intersecting polygons -->
-
-# Confusion matrix
- 
-
-
-# Runtime comparison result
-
-|     | Direct reading (mins) | Npz commpression and Loading (mins) |
-| --- | ------------- | --------------------------- |
-| Appending | 35.489 | - read and append: 35.841 |
-|   | | - Npz compression: 7.527 |
-|   | | - loading: 60 sec |
-| Matrix Initialization | To get L and N: 3.017  | To get L and N: 3.014 |
-|   | read into matrix: 35.488 | read into matrix: 35.442 |
-|   |  | Npz compression: 6.616|
-|   |  | Loading: 85 sec |
+|                       | Direct reading (mins)    | Npz commpression and Loading (mins) |
+| --------------------- | ------------------------ | ----------------------------------- |
+| Appending             | 35.489                   | - read and append: 35.841           |
+|                       |                          | - Npz compression: 7.527            |
+|                       |                          | - loading: 60 sec                   |
+| Matrix Initialization | To get L and N: 3.017    | To get L and N: 3.014               |
+|                       | read into matrix: 35.488 | read into matrix: 35.442            |
+|                       |                          | Npz compression: 6.616              |
+|                       |                          | Loading: 85 sec                     |
