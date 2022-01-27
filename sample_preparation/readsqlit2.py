@@ -44,13 +44,13 @@ def readSITSData(chunk):
     y_data = chunk.iloc[:,2]
     y = np.asarray(y_data.values, dtype='uint8')
 
-    polygonID_data = chunk.iloc[:,4]
+    polygonID_data = chunk.iloc[:,3]
     polygon_ids = np.asarray(polygonID_data.values, dtype='uint16')
 
-    block_id_data = chunk.iloc[:,5]
+    block_id_data = chunk.iloc[:,4]
     block_ids = np.asarray(block_id_data.values, dtype='uint8')
 
-    X_data = chunk.iloc[:,6:]
+    X_data = chunk.iloc[:,7:]
     X = np.asarray(X_data.values, dtype='uint16')
 
     return  X, polygon_ids, block_ids ,y

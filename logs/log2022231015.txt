@@ -1,0 +1,3 @@
+read and append 2064.1570172309875 seconds ---
+concatenate 3.9465293884277344 seconds ---
+npz compression 420.5335793495178 seconds ---
