@@ -10,8 +10,8 @@ python data_processing/processingchain.py --atile ../../data/theiaL2A_zip_img/20
 python data_processing/processingchain.py --atile ../../data/theiaL2A_zip_img/subset --output_dir ../../data/theiaL2A_zip_img/subset/output/ --gfd data_processing/subset_dates_.txt --shf ../../data/samples_shapefiles/samples_oso2019_T31TCJ.shp --preview True >> logs/log202112151000.txt
 
 # for grid
-python data_processing/processingchain.py --atile ../../data/theiaL2A_zip_img/2019 --output_dir ../../data/theiaL2A_zip_img/output/ --gfd data_processing/gapfilled19_dates.txt --shf ../../data/samples_shapefiles/grided/grided_samples_oso2019_T31TCJ.shp --preview True >> logs/log202201200018.txt
-python data_processing/processingchain.py --atile ../../data/theiaL2A_zip_img/2018 --output_dir ../../data/theiaL2A_zip_img/output/ --gfd data_processing/gapfilled18_dates.txt --shf ../../data/samples_shapefiles/grided/grided_samples_oso2018_T31TCJ.shp --preview True >> logs/log202201200018.txt
+python data_processing/processingchain.py --atile ../../data/theiaL2A_zip_img/2019 --output_dir ../../data/theiaL2A_zip_img/output/ --gfd data_processing/gapfilled19_dates.txt --shf ../../data/sample_shapefiles/grided/grided_samples_oso2019_T31TCJ.shp --preview True >> logs/log202201220500.txt
+python data_processing/processingchain.py --atile ../../data/theiaL2A_zip_img/2018 --output_dir ../../data/theiaL2A_zip_img/output/ --gfd data_processing/gapfilled18_dates.txt --shf ../../data/sample_shapefiles/grided/grided_samples_oso2018_T31TCJ.shp --preview True >> logs/log202201220600.txt
 
 # Rasterization
 # To be run in /OTB-7.4.0-Linux64/bin
@@ -27,7 +27,10 @@ python data_processing/processingchain.py --atile ../../data/theiaL2A_zip_img/20
 python npz_init.py --sq ../../../data/theiaL2A_zip_img/output/2018/2018_sample_extract.sqlite --chk 5000 --o ../../../data/theiaL2A_zip_img/output/2018/ --d ../data_processing/gapfilled19_dates >> ../logs/log202201092254.txt
 
 # 2018
-python readsqlit2.py --sq ../../../data/theiaL2A_zip_img/output/2018/2018_sample_extract.sqlite --chk 5000 --o ../../../data/theiaL2A_zip_img/output/2018/  >> ../logs/log202201092254.txt
+python sample_preparation/readsqlit2.py --sq ../../data/theiaL2A_zip_img/output/2018/2018_sample_extract.sqlite --chk 5000 --o ../../data/theiaL2A_zip_img/output/2018/  >> logs/log202201272248.txt
 
 # 2019
-python readsqlit2.py --sq ../../../data/theiaL2A_zip_img/output/2019/2019_sample_extract.sqlite --chk 5000 --o ../../../data/theiaL2A_zip_img/output/2019/  >> ../logs/log202201092345.txt
+python sample_preparation/readsqlit2.py --sq ../../data/theiaL2A_zip_img/output/2019/2019_sample_extract.sqlite --chk 5000 --o ../../data/theiaL2A_zip_img/output/2019/  >> logs/log202201272250.txt
+
+# ndvi chart
+python ndvi.py -f ../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz -g ../data_processing/gapfilled19_dates.txt -o .
