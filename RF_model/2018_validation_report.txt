@@ -1,0 +1,25 @@
+                                 precision    recall  f1-score   support
+
+                      Sunflower       0.27      0.02      0.03     31835
+                           Corn       0.73      0.95      0.83    508159
+                           Rice       0.71      0.57      0.63    185373
+                   Tubers/roots       0.89      0.52      0.66     24651
+                            Soy       0.94      0.96      0.95    291936
+                  Straw cereals       0.89      0.96      0.93    581122
+                  Protein crops       0.83      0.56      0.67    195121
+                       Oilseeds       0.91      0.82      0.86    578473
+                     Grasslands       0.94      0.98      0.96   2239528
+                      Vineyards       0.95      0.87      0.90    447041
+                Hardwood forest       0.90      0.67      0.77     14693
+                Softwood forest       0.75      0.73      0.74    108527
+Natural grasslands and pastures       0.98      0.38      0.55     29951
+                Woody moorlands       0.87      0.23      0.36     19986
+            Dense built-up area       0.88      0.92      0.90     81691
+          Diffuse built-up area       0.85      0.76      0.80      9307
+Industrial and commercial areas       0.40      0.15      0.22     36729
+                          Roads       0.44      0.20      0.27      7527
+     Glaciers and eternal snows       1.00      0.99      1.00    144120
+
+                       accuracy                           0.89   5535770
+                      macro avg       0.80      0.64      0.69   5535770
+                   weighted avg       0.89      0.89      0.89   5535770
