@@ -1,22 +1,24 @@
 import os
 import argparse
+import time
 
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 # from sklearn.metrics import accuracy_score
-# from sklearn.metrics import confusion_matrix
+#from sklearn.metrics import confusion_matrix
 
 parser = argparse.ArgumentParser(description='RF model')
 
-parser.add_argument('--f', '--file_path', type=str, help='path to .npz file', required=True)
-parser.add_argument('--t', '--train_ids', type=str, help='path to train ids file', required=True)
+parser.add_argument('-f', '--file_path', type=str, help='path to .npz file', required=True)
+parser.add_argument('-t', '--train_ids', type=str, help='path to train ids file', required=True)
 
 args = parser.parse_args()
 
-npz_file = args.f
-train_ids_file = args.t
+npz_file = args.file_path
+train_ids_file = args.train_ids
 
+year = os.path.basename(npz_file).split('_')[0]
 # RF Model Script
 def load_npz(file_path):
     """
@@ -69,22 +71,54 @@ def load_set(set = "train"):
     else:
         raise ValueError("set must be either 'train', 'val' or 'eval'")
 
-# Random Forest model    
-rf = RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=20, max_features= np.sqrt(X.shape[1]), min_samples_leaf=5)
-
+def savereport(report, output_path):
+    """
+    Save classification report to file
+    """
+    with open(output_path, "w") as f:
+        f.write(report)
+start_time = time.time()
 # Train dataset
 Xtrain, ytrain = load_set("train")
+print("Loaded training set:", time.time() - start_time)
+
+start_time = time.time()
+# Random Forest model
+rf = RandomForestClassifier(n_estimators=100, max_depth = 25, n_jobs=20, max_features= "sqrt", min_samples_leaf=10, random_state=42)
+
 # Fit the model
 rf = rf.fit(Xtrain, ytrain)
+print("Fitted model:", time.time() - start_time)
 
 # Validation dataset
 Xval, yval = load_set("val")
 
+print("Validation set:", Xval.shape)
+print("Validation set:", yval.shape)
+
+
+start_time = time.time()
 # predict on validation set
 y_pred = rf.predict(Xval)
-
+print("Predicted on validation set:", time.time() - start_time)
 
 label = ['Sunflower', 'Corn', 'Rice', 'Tubers/roots', 'Soy', 'Straw cereals', 'Protein crops', 'Oilseeds', 'Grasslands', 'Vineyards', 'Hardwood forest', 'Softwood forest', 'Natural grasslands and pastures', 'Woody moorlands', 'Dense built-up area', 'Diffuse built-up area', 'Industrial and commercial areas', 'Roads', 'Glaciers and eternal snows']
-print(classification_report(yval, y_pred(), target_names=label))
+validation_report = classification_report(yval, y_pred, target_names=label)
+print(validation_report)
+# save validation report as txt file with year
+savereport(validation_report, "%s_validation_report.txt" % year)
+
+# Evaluation dataset
+Xeval, yeval = load_set("eval")
+
+start_time = time.time()
+# predict on evaluation set
+eval_predictions = rf.predict(Xeval)
+print("Predicted on evaluation set:", time.time() - start_time)
+
+evaluation_report = classification_report(yeval, eval_predictions, target_names=label)
+print(evaluation_report)
+# save evaluation report as txt file
+savereport(evaluation_report, "%s_evaluation_report.txt" % year)
 
 
