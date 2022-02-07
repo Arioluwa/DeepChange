@@ -84,12 +84,12 @@ print("Loaded training set:", time.time() - start_time)
 
 start_time = time.time()
 # Random Forest model
-rf = RandomForestClassifier(n_estimators=100, max_depth = 25, n_jobs=20, max_features= "sqrt", min_samples_leaf=10, random_state=42)
+rf = RandomForestClassifier(n_estimators=100, max_depth = 25, n_jobs=20, max_features= "sqrt", min_samples_leaf=10, random_state=42, oob_score=True)
 
 # Fit the model
 rf = rf.fit(Xtrain, ytrain)
 print("Fitted model:", time.time() - start_time)
-
+print("OOB Error: ",rf.oob_score_)
 # Validation dataset
 Xval, yval = load_set("val")
 
