@@ -155,6 +155,44 @@ def plot_chart_y(ndvi2018, title):
         plt.xlabel("Date")
         fig.savefig(os.path.join(output_path, "NDVI_mean_std_" + str(title.split()[-1]) + ".png"))
 
+def prepare_NDVI_for_random_pixel(f_path):
+    X, y = load_npz(f_path)
+    X_ = np.reshape(X, (X.shape[0], L, n_channel))
+    NDVI = computeNDVI(X_)
+
+    # concatenate NDVI and class
+    data = np.concatenate((NDVI, y[:, None]), axis=1)
+
+    # create a dataframe from data
+    df = pd.DataFrame(data)
+
+    # rename class labels index to 'code'
+    df.columns = [*df.columns[:-1], "code"]
+
+    # rename other columns to doy
+    df.columns = [*date_label, "code"]
+
+    random_sample = df.groupby("code").apply(lambda x: x.sample(n=1))
+
+    random_sample.drop(columns=["code"], inplace=True)
+
+    return random_sample
+
+
+def plot_chart_random(ndvi2018, ndvi2019, title):
+    fig, ax = plt.subplots(len(ndvi2018[0]), sharex=True, figsize=(15, 40), constrained_layout=True)
+
+    for i in range(len(ndvi2018)):
+        ax[i].plot(ndvi2018.iloc[i], color='#5ab4ac', label='2018')
+        ax[i].plot(ndvi2019.iloc[i], color= '#7fbf7b', linestyle='--', label='2019')
+
+        ax[i].set_title("Class: " + str(ndvi2018[i].index[i]))
+        ax[i].set_ylabel("NDVI")
+        ax[i].legend()
+        fig.suptitle(title)
+        plt.xlabel("Date")
+        fig.savefig(os.path.join(output_path, "NDVI_random_pixels.png"))
+
 def plot_NDVI():
     ndvi1 = prepare_NDVI(f_path)
     ndvi2 = prepare_NDVI(f_path2)
@@ -163,6 +201,7 @@ def plot_NDVI():
     plot_chart_m(ndvi1, ndvi2, "NDVI mean for 2018 and 2019")
     plot_chart_y(ndvi1, "NDVI mean for 2018")
     plot_chart_y(ndvi2, "NDVI mean for 2019")
+    plot_chart_random(ndvi1, ndvi2, "Class NDVI for random pixels 2018 and 2019")
     
 
 
