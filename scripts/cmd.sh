@@ -34,3 +34,9 @@ python sample_preparation/readsqlit2.py --sq ../../data/theiaL2A_zip_img/output/
 
 # ndvi chart
 python ndvi.py -f ../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz -g ../data_processing/gapfilled19_dates.txt -o .
+
+# RF model
+
+python main.py -f ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz -t train_val_eval.txt
+
+python ndvi2.py -f1 ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz -f2 ../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz -g ../data_processing/gapfilled19_dates.txt -o .
