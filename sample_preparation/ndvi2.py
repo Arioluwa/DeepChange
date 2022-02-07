@@ -105,7 +105,7 @@ def plot_chart_ms(ndvi2018, ndvi2019, title):
     for i in range(len(ndvi2018[0])):
         ax[i].plot(ndvi2018[0].iloc[i], color='#5ab4ac', label='2018')
         ax[i].plot(ndvi2019[0].iloc[i], color= '#7fbf7b', linestyle='--', label='2019')
-        ax[i].fill_between(range(L), ndvi2018[0].iloc[i] - ndvi2018[1].iloc[i], ndvi2018[0].iloc[i] + ndvi2018[1].iloc[i], alpha=0.1, color = '#CCD8D3', label = 'std 2018')
+        ax[i].fill_between(range(L), ndvi2018[0].iloc[i] - ndvi2018[1].iloc[i], ndvi2018[0].iloc[i] + ndvi2018[1].iloc[i], alpha=0.1, color = '#D89CCB', label = 'std 2018')
         ax[i].fill_between(range(L), ndvi2019[0].iloc[i] - ndvi2019[1].iloc[i], ndvi2019[0].iloc[i] + ndvi2019[1].iloc[i], alpha=0.2, color='#CBCD9C', label='std 2019')
         ax[i].set_title("Class: " + str(ndvi2018[0].index[i]))
         ax[i].set_ylabel("NDVI")
@@ -172,7 +172,7 @@ def prepare_NDVI_for_random_pixel(f_path):
     # rename other columns to doy
     df.columns = [*date_label, "code"]
 
-    random_sample = df.groupby("code").apply(lambda x: x.sample(n=1))
+    random_sample = df.groupby("code").apply(lambda x: x.sample(n=2))
 
     random_sample.drop(columns=["code"], inplace=True)
 
@@ -180,13 +180,13 @@ def prepare_NDVI_for_random_pixel(f_path):
 
 
 def plot_chart_random(ndvi2018, ndvi2019, title):
-    fig, ax = plt.subplots(len(ndvi2018[0]), sharex=True, figsize=(15, 40), constrained_layout=True)
+    fig, ax = plt.subplots(2*len(ndvi2018), sharex=True, figsize=(15, 40), constrained_layout=True)
 
     for i in range(len(ndvi2018)):
         ax[i].plot(ndvi2018.iloc[i], color='#5ab4ac', label='2018')
         ax[i].plot(ndvi2019.iloc[i], color= '#7fbf7b', linestyle='--', label='2019')
 
-        ax[i].set_title("Class: " + str(ndvi2018[i].index[i]))
+        ax[i].set_title("Class: " + str(ndvi2018.index[i]))
         ax[i].set_ylabel("NDVI")
         ax[i].legend()
         fig.suptitle(title)
@@ -194,15 +194,16 @@ def plot_chart_random(ndvi2018, ndvi2019, title):
         fig.savefig(os.path.join(output_path, "NDVI_random_pixels.png"))
 
 def plot_NDVI():
-    ndvi1 = prepare_NDVI(f_path)
-    ndvi2 = prepare_NDVI(f_path2)
+#    ndvi1 = prepare_NDVI(f_path)
+#    ndvi2 = prepare_NDVI(f_path2)
+    ndvi1 = prepare_NDVI_for_random_pixel(f_path)
+    ndvi2 = prepare_NDVI_for_random_pixel(f_path2)
 
-    plot_chart_ms(ndvi1, ndvi2, "NDVI mean and standard deviation for 2018 and 2019")
-    plot_chart_m(ndvi1, ndvi2, "NDVI mean for 2018 and 2019")
-    plot_chart_y(ndvi1, "NDVI mean for 2018")
-    plot_chart_y(ndvi2, "NDVI mean for 2019")
+#    plot_chart_ms(ndvi1, ndvi2, "NDVI mean and standard deviation for 2018 and 2019")
+#    plot_chart_m(ndvi1, ndvi2, "NDVI mean for 2018 and 2019")
+#    plot_chart_y(ndvi1, "NDVI mean for 2018")
+#    plot_chart_y(ndvi2, "NDVI mean for 2019")
     plot_chart_random(ndvi1, ndvi2, "Class NDVI for random pixels 2018 and 2019")
-    
 
 
 time_start = time.time()
