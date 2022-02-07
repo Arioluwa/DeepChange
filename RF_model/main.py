@@ -10,6 +10,8 @@ from sklearn.metrics import classification_report
 
 parser = argparse.ArgumentParser(description='RF model')
 
+
+
 parser.add_argument('-f', '--file_path', type=str, help='path to .npz file', required=True)
 parser.add_argument('-t', '--train_ids', type=str, help='path to train ids file', required=True)
 
