@@ -227,7 +227,7 @@ if __name__ == "__main__":
     # case 4: train on both source and target, but use validation set for target only
     # compute time in minutes
     start_time = time.time()
-    case_ = 3
+    case_ = 5
     model = RFmodel(case=case_)
     model.prepare_data()
     # check if case model file exits, skip training if it does
