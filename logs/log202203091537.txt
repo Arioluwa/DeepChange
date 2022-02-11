@@ -1,0 +1,43 @@
+Preparing data.........
+Loading npz files done.........
+Concatenating data done.........
+Loading train set done.........
+Loading test set done.........
+Preparing data completed.........
+Training model.........
+Training model done.........
+Training time: 24.22920420964559 minutes
+Model saved.........
+Testing model.........
+                                          precision    recall  f1-score   support
+
+                     Dense built-up area       0.29      0.01      0.02     31835
+                   Diffuse built-up area       0.75      0.95      0.84    508159
+         Industrial and commercial areas       0.73      0.56      0.64    185373
+                                   Roads       0.88      0.55      0.67     24651
+                     Oilseeds (Rapeseed)       0.95      0.96      0.95    291936
+Straw cereals (Wheat, Triticale, Barley)       0.90      0.97      0.93    581122
+            Protein crops (Beans / Peas)       0.85      0.60      0.70    195121
+                                     Soy       0.93      0.82      0.87    578473
+                               Sunflower       0.94      0.98      0.96   2239528
+                                    Corn       0.94      0.88      0.91    447041
+                            Tubers/roots       0.95      0.68      0.79     14693
+                              Grasslands       0.74      0.77      0.75    108527
+              Orchards and fruit growing       0.97      0.45      0.62     29951
+                               Vineyards       0.90      0.20      0.33     19986
+                         Hardwood forest       0.86      0.94      0.90     81691
+                         Softwood forest       0.85      0.80      0.82      9307
+         Natural grasslands and pastures       0.38      0.13      0.19     36729
+                         Woody moorlands       0.36      0.20      0.25      7527
+                                   Water       1.00      0.99      1.00    144120
+
+                                accuracy                           0.90   5535770
+                               macro avg       0.80      0.65      0.69   5535770
+                            weighted avg       0.89      0.90      0.89   5535770
+
+Testing model done.........
+Testing time: 1.268980046113332 minutes
+Writing report to txt file.........
+Writing report to txt file done.........
+Writing report time: 2.375443776448568e-05 minutes
+Total time taken: --- 29.050454791386922 minutes ---

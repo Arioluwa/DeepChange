@@ -3,4 +3,9 @@
 /development
 /eodag_workspace_locations_tiles
 /.ipynb_checkpoints
+<<<<<<< HEAD
 /__pycache__
+=======
+/__pycache__
+/RF_model/models
+>>>>>>> 1d364dbd00097303b2fd14b44f76d0b1770c0eed

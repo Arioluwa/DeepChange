@@ -180,7 +180,11 @@ def prepare_NDVI_for_random_pixel(f_path):
 
 
 def plot_chart_random(ndvi2018, ndvi2019, title):
+<<<<<<< HEAD
     fig, ax = plt.subplots(2*len(ndvi2018), sharex=True, figsize=(15, 40), constrained_layout=True)
+=======
+    fig, ax = plt.subplots(len(ndvi2018), sharex=True, figsize=(15, 40), constrained_layout=True)
+>>>>>>> 1d364dbd00097303b2fd14b44f76d0b1770c0eed
 
     for i in range(len(ndvi2018)):
         ax[i].plot(ndvi2018.iloc[i], color='#5ab4ac', label='2018')
@@ -194,6 +198,7 @@ def plot_chart_random(ndvi2018, ndvi2019, title):
         fig.savefig(os.path.join(output_path, "NDVI_random_pixels.png"))
 
 def plot_NDVI():
+<<<<<<< HEAD
 #    ndvi1 = prepare_NDVI(f_path)
 #    ndvi2 = prepare_NDVI(f_path2)
     ndvi1 = prepare_NDVI_for_random_pixel(f_path)
@@ -204,6 +209,18 @@ def plot_NDVI():
 #    plot_chart_y(ndvi1, "NDVI mean for 2018")
 #    plot_chart_y(ndvi2, "NDVI mean for 2019")
     plot_chart_random(ndvi1, ndvi2, "Class NDVI for random pixels 2018 and 2019")
+=======
+    ndvi1 = prepare_NDVI(f_path)
+    ndvi2 = prepare_NDVI(f_path2)
+    ndvi3 = prepare_NDVI_for_random_pixel(f_path)
+    ndvi4 = prepare_NDVI_for_random_pixel(f_path2)
+
+    plot_chart_ms(ndvi1, ndvi2, "NDVI mean and standard deviation for 2018 and 2019")
+    plot_chart_m(ndvi1, ndvi2, "NDVI mean for 2018 and 2019")
+    plot_chart_y(ndvi1, "NDVI mean for 2018")
+    plot_chart_y(ndvi2, "NDVI mean for 2019")
+    plot_chart_random(ndvi3, ndvi4, "Class NDVI for random pixels 2018 and 2019")
+>>>>>>> 1d364dbd00097303b2fd14b44f76d0b1770c0eed
 
 
 time_start = time.time()
