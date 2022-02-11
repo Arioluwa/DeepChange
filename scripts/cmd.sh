@@ -39,15 +39,9 @@ python ndvi.py -f ../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz 
 
 python main.py -f ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz -t train_val_eval.txt
 
-<<<<<<< HEAD
 python ndvi2.py -f1 ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz -f2 ../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz -g ../data_processing/gapfilled19_dates.txt -o .
 
 #map viz
 python classification_viz.py -m ../RF_model/models/rf_model_4.pkl -t ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz -i ../../../data/theiaL2A_zip_img/output/2018/2018_Image.tif -o .
 
-aacdf05ac5787aff6d75531251bdf59ddbf4993a
-
-77fe526464d80a7fc3314228ac9265d22e9d71f2
-=======
-python ndvi2.py -f1 ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz -f2 ../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz -g ../data_processing/gapfilled19_dates.txt -o .
->>>>>>> 1d364dbd00097303b2fd14b44f76d0b1770c0eed
+python classification_viz.py -m ../RF_model/models/rf_model_1.pkl -t ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz -i ../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif -o ../../../results/RF
