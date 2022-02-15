@@ -208,10 +208,10 @@ out_map_raster.SetGeoTransform([originX, spacingX, 0, originY, 0, spacingY])
 out_map_raster.SetProjection(out_raster_SRS.ExportToWkt())
 out_map_band = out_map_raster.GetRasterBand(1)
 
-out_confmap_raster = driver.Create(out_confmap, c, r, 1, gdal.GDT_Float32)
-out_confmap_raster.SetGeoTransform([originX, spacingX, 0, originY, 0, spacingY])
-out_confmap_raster.SetProjection(out_raster_SRS.ExportToWkt())
-out_confmap_band = out_confmap_raster.GetRasterBand(1)
+# out_confmap_raster = driver.Create(out_confmap, c, r, 1, gdal.GDT_Float32)
+# out_confmap_raster.SetGeoTransform([originX, spacingX, 0, originY, 0, spacingY])
+# out_confmap_raster.SetProjection(out_raster_SRS.ExportToWkt())
+# out_confmap_band = out_confmap_raster.GetRasterBand(1)
 
 
 #convert gps corners into image (x,y)
@@ -219,9 +219,6 @@ def gps_2_image_xy(x,y):
 	return (x-originX)/spacingX,(y-originY)/spacingY
 def gps_2_image_p(point):
 	return gps_2_image_xy(point[0],point[1])
-#print(c)
-#print(r)
-#sys.exit()
 
 size_areaX = 10980
 size_areaY = 500
@@ -265,16 +262,13 @@ for x in range(len(x_vec)-1):
 		y_test = [revert_class_map[k] for k in y_test]
 		y_test = np.array(y_test, dtype=np.uint8)
 		pred_array = y_test.reshape(sX,sY)
-		confpred_array = y_prob.reshape(sX,sY)
 		
 		start_time = time.time()
 		out_map_band.WriteArray(pred_array, xoff=xoff, yoff=yoff)
-		out_confmap_band.WriteArray(confpred_array, xoff=xoff, yoff=yoff)
 		print("Writing array: ", time.time()-start_time)
 
 		start_time = time.time()
 		out_map_band.FlushCache()
-		out_confmap_band.FlushCache()
 		print("Writing disk: ", time.time()-start_time)
 
     

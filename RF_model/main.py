@@ -12,7 +12,7 @@ _2018_SITS_data = "../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz
 _2019_SITS_data = "../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz"
 _train_val_eval = "train_val_eval_rf.txt"
 
-
+np.random.seed(0)
 class RFmodel:
     def __init__(
         self,
@@ -107,16 +107,8 @@ class RFmodel:
             self.Xtrain = self.Xtrain_t
             self.Ytrain = self.Ytrain_t
 
-        elif self.case == 4:
-            self.Xtrain = self.Xtrain_s
-            self.Ytrain = self.Ytrain_s
-
-        elif self.case == 5:
-            self.Xtrain = self.Xtrain_t
-            self.Ytrain = self.Ytrain_t
-
         else:
-            raise ValueError("Please choose a case between 1 and 5")
+            raise ValueError("Please choose a case between 1 and 3")
         
         self.Xtrain, self.Ytrain = shuffle(self.Xtrain, self.Ytrain)
         print("Preparing data completed.........")
@@ -149,9 +141,6 @@ class RFmodel:
         joblib.dump(self.model, "models/rf_model_" + str(self.case) + ".pkl", compress=3)
         print("Model saved.........")
 
-    # def savereport(rep):
-    #     with open("reports/report.txt", "a") as f:
-    #         f.write(rep)
     def test_model(self):
         """
         Test the model
@@ -164,70 +153,45 @@ class RFmodel:
         print("Testing model.........")
         start_time = time.time()
         self.Xtest_s, self.Ytest_s = shuffle(self.Xtest_s, self.Ytest_s)
-        if self.case == 4:
-            """Test the model on the source only"""
-            self.Ypred = self.model.predict(self.Xtest_s)
-            self.report = classification_report(self.Ytest_s, self.Ypred, target_names=label)
-            print(self.report)
         
-            # save report as txt with case value
-            with open("reports/rf_report_" + str(self.case) + ".txt", "w") as f:
-                f.write(self.report)
-                f.write("\n")
-                f.write("OOB score: " + str(self.model.oob_score_))
-                f.close()
-
-        elif self.case == 5:
-            """Test the model on the target only"""
-            self.Ypred = self.model.predict(self.Xtest_t)
-            self.report = classification_report(self.Ytest_t, self.Ypred, target_names=label)
-            print(self.report)
-
-            # save report as txt with case value
-            with open("reports/rf_report_" + str(self.case) + ".txt", "w") as f:
-                f.write(self.report)
-                f.write("\n")
-                f.write("OOB score: " + str(self.model.oob_score_))
-                f.close()
-        else:
-            """Test the model on the source and target"""
-            self.predictions_s = self.model.predict(self.Xtest_s)
-            self.predictions_t = self.model.predict(self.Xtest_t)
-            self.report_t = classification_report(self.Ytest_t, self.predictions_t, target_names=label)
-            self.report_s = classification_report(self.Ytest_s, self.predictions_s, target_names=label)
-            print("Target report: \n", self.report_t)
-            print("Source report: \n", self.report_s)
-            print("Writing report to txt file.........")
+        self.predictions_s = self.model.predict(self.Xtest_s)
+        self.predictions_t = self.model.predict(self.Xtest_t)
+        self.report_s = classification_report(self.Ytest_s, self.predictions_s, target_names=label)
+        self.report_t = classification_report(self.Ytest_t, self.predictions_t, target_names=label)
+        print("Source report: \n", self.report_s)
+        print("Target report: \n", self.report_t)
         
+        print("Writing report to txt file.........")
+        # self.Xtrain, self.Ytrain = shuffle(self.Xtrain, self.Ytrain)
+        unique, count = np.unique(self.Ytrain, return_counts = True)
+        n_sample = dict(zip(label,count))
+        print("Number of samples in each class: \n", n_sample)
             # save report as txt with case value
-            with open("reports/rf_report_" + str(self.case) + ".txt", "w") as f:
+        with open("reports/rf_report_" + str(self.case) + ".txt", "w") as f:
+                f.write("Source report: \n")
                 f.write(self.report_s)
                 f.write("\n")
+                f.write("Target report: \n")
                 f.write(self.report_t)
                 f.write("\n")
                 f.write("OOB score: " + str(self.model.oob_score_))
+                f.write("\n")
+                f.write("Number of samples in each class: \n")
+                f.write(str(n_sample))
                 f.close()
 
         print("Writing report to txt file done.........")
         print("Testing model done.........")
         print("Testing time: %s minutes" % ((time.time() - start_time)/60))       
-    
-
-    # def get_predictions(self):
-    #     """
-    #     Get predictions
-    #     """
-    #     return self.predictions
 
 
 if __name__ == "__main__":
     # case 1: train on both source and target
     # case 2: train on source only
     # case 3: train on target only
-    # case 4: train on both source and target, but use validation set for target only
     # compute time in minutes
     start_time = time.time()
-    case_ = 5
+    case_ = 1
     model = RFmodel(case=case_)
     model.prepare_data()
     # check if case model file exits, skip training if it does

@@ -1,0 +1,1 @@
+_otb_path = "/share/projects/erasmus/deepchange/codebase/OTB-7.4.0-Linux64/bin"
