@@ -159,7 +159,7 @@ if os.path.exists(out_map):
 	print("out_map ",out_map,"already exists => exit")
 	sys.exit("\n*** not overwriting out_map ***\n")
 
-out_confmap = out_path + '/' + image_name + '_' + model_name + '_confmap' + '.tif'
+#out_confmap = out_path + '/' + image_name + '_' + model_name + '_confmap' + '.tif'
 
 
 model = joblib.load(model_file)

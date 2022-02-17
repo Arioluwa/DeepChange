@@ -1,0 +1,115 @@
+out_map:  ../../../results/RF/2019_rf_model_2_map.tif
+class_map_file:  ../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data_classMap.txt
+class_map:  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 11, 12, 13, 14, 15, 16, 17, 18, 0, 0, 0, 19]
+revert_class_map:  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 23]
+r= 10980  -- c= 10980
+originX:  300000.0
+originY:  4900020.0
+spacingX:  10.0
+spacingY:  -10.0
+geotransform:  (300000.0, 10.0, 0.0, 4900020.0, 0.0, -10.0)
+top_left= (0, 0)  to bottom_right= (10980, 500)
+Reading:  53.85338306427002
+Prediction:  26.009650945663452
+Writing array:  0.003796100616455078
+Writing disk:  0.006189823150634766
+top_left= (0, 500)  to bottom_right= (10980, 1000)
+Reading:  55.65433931350708
+Prediction:  27.87231969833374
+Writing array:  0.001911163330078125
+Writing disk:  0.003293752670288086
+top_left= (0, 1000)  to bottom_right= (10980, 1500)
+Reading:  57.431235551834106
+Prediction:  27.312517642974854
+Writing array:  0.0028481483459472656
+Writing disk:  0.003330230712890625
+top_left= (0, 1500)  to bottom_right= (10980, 2000)
+Reading:  51.93125009536743
+Prediction:  28.431674242019653
+Writing array:  0.007967710494995117
+Writing disk:  0.0034961700439453125
+top_left= (0, 2000)  to bottom_right= (10980, 2500)
+Reading:  55.13770604133606
+Prediction:  25.904788732528687
+Writing array:  0.00748753547668457
+Writing disk:  0.0033986568450927734
+top_left= (0, 2500)  to bottom_right= (10980, 3000)
+Reading:  55.58027935028076
+Prediction:  25.561182975769043
+Writing array:  0.008478403091430664
+Writing disk:  0.003633260726928711
+top_left= (0, 3000)  to bottom_right= (10980, 3500)
+Reading:  55.34303164482117
+Prediction:  27.67859959602356
+Writing array:  0.008091449737548828
+Writing disk:  0.0035507678985595703
+top_left= (0, 3500)  to bottom_right= (10980, 4000)
+Reading:  54.99478554725647
+Prediction:  27.903242111206055
+Writing array:  0.01052403450012207
+Writing disk:  0.003801107406616211
+top_left= (0, 4000)  to bottom_right= (10980, 4500)
+Reading:  56.21401071548462
+Prediction:  28.31337833404541
+Writing array:  0.010816812515258789
+Writing disk:  0.0034072399139404297
+top_left= (0, 4500)  to bottom_right= (10980, 5000)
+Reading:  55.57346153259277
+Prediction:  26.068727254867554
+Writing array:  0.010891437530517578
+Writing disk:  0.003427267074584961
+top_left= (0, 5000)  to bottom_right= (10980, 5500)
+Reading:  53.67423176765442
+Prediction:  27.73935341835022
+Writing array:  0.010488748550415039
+Writing disk:  0.0035881996154785156
+top_left= (0, 5500)  to bottom_right= (10980, 6000)
+Reading:  54.49855899810791
+Prediction:  27.475754737854004
+Writing array:  0.01123499870300293
+Writing disk:  0.0033397674560546875
+top_left= (0, 6000)  to bottom_right= (10980, 6500)
+Reading:  59.99808216094971
+Prediction:  38.19795203208923
+Writing array:  0.011706829071044922
+Writing disk:  0.004154682159423828
+top_left= (0, 6500)  to bottom_right= (10980, 7000)
+Reading:  60.63667273521423
+Prediction:  38.96950101852417
+Writing array:  0.011175155639648438
+Writing disk:  0.0035119056701660156
+top_left= (0, 7000)  to bottom_right= (10980, 7500)
+Reading:  59.001052141189575
+Prediction:  38.45476675033569
+Writing array:  0.011509418487548828
+Writing disk:  0.00477910041809082
+top_left= (0, 7500)  to bottom_right= (10980, 8000)
+Reading:  58.604841232299805
+Prediction:  37.88368797302246
+Writing array:  0.016775846481323242
+Writing disk:  0.006357669830322266
+top_left= (0, 8000)  to bottom_right= (10980, 8500)
+Reading:  63.58414363861084
+Prediction:  46.12658739089966
+Writing array:  0.016056299209594727
+Writing disk:  0.005532026290893555
+top_left= (0, 8500)  to bottom_right= (10980, 9000)
+Reading:  63.23733139038086
+Prediction:  51.1953547000885
+Writing array:  0.01308131217956543
+Writing disk:  0.0040760040283203125
+top_left= (0, 9000)  to bottom_right= (10980, 9500)
+Reading:  58.37931537628174
+Prediction:  41.51871418952942
+Writing array:  0.020206689834594727
+Writing disk:  0.006551980972290039
+top_left= (0, 9500)  to bottom_right= (10980, 10000)
+Reading:  60.312819480895996
+Prediction:  37.73333668708801
+Writing array:  0.012361764907836914
+Writing disk:  0.00477910041809082
+top_left= (0, 10000)  to bottom_right= (10980, 10980)
+Reading:  117.80377149581909
+Prediction:  85.3946361541748
+Writing array:  0.0210268497467041
+Writing disk:  0.009132623672485352

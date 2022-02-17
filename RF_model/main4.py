@@ -3,6 +3,7 @@ import time
 
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import balanced_accuracy_score
 from sklearn.utils import shuffle
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
@@ -157,24 +158,25 @@ class RFmodel:
         
         self.predictions_s = self.model.predict(self.Xtest_s)
         self.predictions_t = self.model.predict(self.Xtest_t)
-#        self.report_s = classification_report(self.Ytest_s, self.predictions_s, target_names=label)
-#        self.report_t = classification_report(self.Ytest_t, self.predictions_t, target_names=label)
-#        print("Source report: \n", self.report_s)
-#        print("Target report: \n", self.report_t)
-        
+        self.report_s = classification_report(self.Ytest_s, self.predictions_s, target_names=label)
+        self.report_t = classification_report(self.Ytest_t, self.predictions_t, target_names=label)
+        print("Source report: \n", self.report_s)
+        print("Target report: \n", self.report_t)
+       # print balance score
+        print("source balance accuracy score:", balanced_accuracy_score(self.Ytest_s,self.predictions_s))
+        print("target balance accuracy score:", balanced_accuracy_score(self.Ytest_t,self.predictions_t))
         print("Writing report to txt file.........")
-        self.confusion_s = confusion_matrix(self.Ytest_s, self.predictions_s)
-        self.confusion_t = confusion_matrix(self.Ytest_t, self.predictions_t)
-        UA_s = self.confusion_s.diagonal() / self.confusion_s.sum(axis=1)
-        UA_t = self.confusion_t.diagonal() / self.confusion_t.sum(axis=1)
-        PA_s = self.confusion_s.diagonal() / self.confusion_s.sum(axis=0)
-        PA_t = self.confusion_t.diagonal() / self.confusion_t.sum(axis=0)
-        print("Source UA: \n", UA_s, "\nSource PA: \n", PA_s)
-        print("Target UA: \n", UA_t, "\nTarget PA: \n", PA_t)
-#        self.confusion_s
-#        self.confusion_t
-        print("Source: \n", self.confusion_s)
-        print("Target: \n", self.confusion_t)
+#        self.confusion_s = confusion_matrix(self.Ytest_s, self.predictions_s)
+#        self.confusion_t = confusion_matrix(self.Ytest_t, self.predictions_t)
+#        UA_s = self.confusion_s.diagonal() / self.confusion_s.sum(axis=1)
+#        UA_t = self.confusion_t.diagonal() / self.confusion_t.sum(axis=1)
+#        PA_s = self.confusion_s.diagonal() / self.confusion_s.sum(axis=0)
+#        PA_t = self.confusion_t.diagonal() / self.confusion_t.sum(axis=0)
+#        print("Source UA: \n", UA_s, "\nSource PA: \n", PA_s)
+#        print("Target UA: \n", UA_t, "\nTarget PA: \n", PA_t)
+
+#        print("Source: \n", self.confusion_s)
+#        print("Target: \n", self.confusion_t)
 #        unique_training = np.unique(self.Ytrain, return_counts = True)
 #        n_sample_training = dict(zip(label,unique_training[1]))
 #        unique_t = np.unique(self.Ytest_t, return_counts = True)
@@ -209,7 +211,7 @@ if __name__ == "__main__":
     # case 3: train on target only
     # compute time in minutes
     start_time = time.time()
-    case_ = 2
+    case_ = 1
     model = RFmodel(case=case_)
     model.prepare_data()
     # check if case model file exits, skip training if it does
