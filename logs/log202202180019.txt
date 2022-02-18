@@ -1,0 +1,151 @@
+2022-02-18 00:19:16 (INFO) ComputeConfusionMatrix: Default RAM limit for OTB is 256 MB
+2022-02-18 00:19:16 (INFO) ComputeConfusionMatrix: GDAL maximum cache size is 19343 MB
+2022-02-18 00:19:16 (INFO) ComputeConfusionMatrix: OTB will use at most 40 threads
+2022-02-18 00:19:16 (INFO): Estimated memory for full processing: 1839.57MB (avail.: 2000 MB), optimal image partitioning: 1 blocks
+2022-02-18 00:19:16 (INFO) ComputeConfusionMatrix: Number of stream divisions : 1
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[1] = 0
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[2] = 1
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[3] = 2
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[4] = 3
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[5] = 4
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[6] = 5
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[7] = 6
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[8] = 7
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[9] = 8
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[10] = 9
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[12] = 10
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[13] = 11
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[14] = 12
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[15] = 13
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[16] = 14
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[17] = 15
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[18] = 16
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[19] = 17
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesRef[23] = 18
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[1] = 0
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[2] = 1
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[3] = 2
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[4] = 3
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[5] = 4
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[6] = 5
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[7] = 6
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[8] = 7
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[9] = 8
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[10] = 9
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[12] = 10
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[13] = 11
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[14] = 12
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[15] = 13
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[16] = 14
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[17] = 15
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[18] = 16
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[19] = 17
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: mapOfClassesProd[23] = 18
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Reference class labels ordered according to the rows of the output confusion matrix: #Reference labels (rows):1,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18,19,23
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Produced class labels ordered according to the columns of the output confusion matrix: #Produced labels (columns):1,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18,19,23
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Confusion matrix (rows = reference labels, columns = produced labels):
+         [     1] [     2] [     3] [     4] [     5] [     6] [     7] [     8] [     9] [    10] [    12] [    13] [    14] [    15] [    16] [    17] [    18] [    19] [    23] 
+[     1]    41605     3378     3083       23        0        1        0        0        8        0        0       10        0        0       12        0        0        0        2 
+[     2]    61889  7675170   284293     1786    16937   159216    16475     8464   133262     5158      181    79836     1226     6888    16890     4139    13157     2051      222 
+[     3]     4589  7817477  2784135    85616   160704   881128   194017    58817   728295    54574     2228  1197589    20130    33451   126070    22870   163695    13645    45803 
+[     4]       40    17526    78701   163800      489     3522     1191      287     3551      167        5      548      655       51     1029      182     2282       33     4105 
+[     5]        4   138516    42075      213   110267  2385622   111314    32269   253283    40516     4315   116692      669      456       25        4     1948       90       12 
+[     6]       63   910202   188200     2735  2672008  4393494  1173672  1930064 13480165  2330586   165694   444623     1532     4059     6643     4715    22314     1448      909 
+[     7]        0     5500     2054       16    10179   449503    30141    22318    89707    16244     1148     3009      168       34        4        0      398       91        0 
+[     8]        3   156303    24809      201    71516  1976020   137196   468488   453221   395330     7715   101158     2207     2087    10718     3029     6405     1450      651 
+[     9]       13  1198976   143090     3176   231395 11715590   429216   358257  1558250   382488    16128   445164     6711    14360    27589     1723    49909    23713     2325 
+[    10]        0   197755    38640      423   123230  3796822    93607   413929   600681  2134616    13814    91851     3627     7411     8318      737     3339      665      368 
+[    12]        0     2932     2324        4     7100   221965    16726    14022    52025     8224     2544     2331       10       11       53        0      135      122        0 
+[    13]       70  3885362   334628      674   127745   678009   225892    67960   590934    37656     3376  9809484    10717    24190   118989     1372   184251    71277      727 
+[    14]        0   586664    19541     1420     2149    10771     2148     5388    34874     6555        4    55609   517008     2198    28200     1324     7287      801      971 
+[    15]        0   202936    10493       49     2599    20990     3388     2353    34379     3059       10    33112      566   159287      757     1308     3981      358        7 
+[    16]        0  1489481    50384      164      114     6448     1006     3228    35616     1336        1   185791    13349      249 11065178    28380   300024    63021     5558 
+[    17]        0   109567     6238       35        3      326       33      184      776       16        0     2900      720        2    84789   521630    25545     1011     4359 
+[    18]        0  1378553    89400     3870     2687    43530    34116     6585    74892     2189       58   199673     3730     5168   529454    21915  1337788    91015     8497 
+[    19]        0    70562     5657       11      195      754      993     1828    10232       60        0    52277      874      452    23669      162    39053   182223      138 
+[    23]       15    35399    45401     2973       81     1225      247       88      711       66       28      440      673       14     7021     4204    23841        2  1175162 
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [1] vs all: 0.384196
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [1] vs all: 0.864573
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [1] vs all: 0.531989
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [2] vs all: 0.296542
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [2] vs all: 0.904319
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [2] vs all: 0.446627
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [3] vs all: 0.670368
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [3] vs all: 0.193412
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [3] vs all: 0.300209
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [4] vs all: 0.613049
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [4] vs all: 0.588861
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [4] vs all: 0.600712
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [5] vs all: 0.0311542
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [5] vs all: 0.034051
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [5] vs all: 0.0325382
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [6] vs all: 0.164274
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [6] vs all: 0.15842
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [6] vs all: 0.161294
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [7] vs all: 0.012196
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [7] vs all: 0.0478039
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [7] vs all: 0.0194339
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [8] vs all: 0.138013
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [8] vs all: 0.122689
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [8] vs all: 0.1299
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [9] vs all: 0.0859257
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [9] vs all: 0.0938249
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [9] vs all: 0.0897017
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [10] vs all: 0.393925
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [10] vs all: 0.283488
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [10] vs all: 0.329704
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [12] vs all: 0.0117101
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [12] vs all: 0.00769678
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [12] vs all: 0.00928845
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [13] vs all: 0.765045
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [13] vs all: 0.606523
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [13] vs all: 0.676623
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [14] vs all: 0.884421
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [14] vs all: 0.402996
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [14] vs all: 0.553695
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [15] vs all: 0.611776
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [15] vs all: 0.332103
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [15] vs all: 0.430505
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [16] vs all: 0.91786
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [16] vs all: 0.83515
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [16] vs all: 0.874554
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [17] vs all: 0.84448
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [17] vs all: 0.688045
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [17] vs all: 0.758278
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [18] vs all: 0.612161
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [18] vs all: 0.349008
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [18] vs all: 0.444561
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [19] vs all: 0.402244
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [19] vs all: 0.468271
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [19] vs all: 0.432754
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of class [23] vs all: 0.940268
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of class [23] vs all: 0.905649
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of class [23] vs all: 0.922634
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Precision of the different classes: [0.384196, 0.296542, 0.670368, 0.613049, 0.0311542, 0.164274, 0.012196, 0.138013, 0.0859257, 0.393925, 0.0117101, 0.765045, 0.884421, 0.611776, 0.91786, 0.84448, 0.612161, 0.402244, 0.940268]
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Recall of the different classes: [0.864573, 0.904319, 0.193412, 0.588861, 0.034051, 0.15842, 0.0478039, 0.122689, 0.0938249, 0.283488, 0.00769678, 0.606523, 0.402996, 0.332103, 0.83515, 0.688045, 0.349008, 0.468271, 0.905649]
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: F-score of the different classes: [0.531989, 0.446627, 0.300209, 0.600712, 0.0325382, 0.161294, 0.0194339, 0.1299, 0.0897017, 0.329704, 0.00928845, 0.676623, 0.553695, 0.430505, 0.874554, 0.758278, 0.444561, 0.432754, 0.922634]
+
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Kappa index: 0.278255
+2022-02-18 00:19:20 (INFO) ComputeConfusionMatrix: Overall accuracy index: 0.366043

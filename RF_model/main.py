@@ -3,8 +3,10 @@ import time
 
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import balanced_accuracy_score
 from sklearn.utils import shuffle
 from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
 import joblib
 from utils.utils import load_npz, read_ids
 
@@ -160,25 +162,43 @@ class RFmodel:
         self.report_t = classification_report(self.Ytest_t, self.predictions_t, target_names=label)
         print("Source report: \n", self.report_s)
         print("Target report: \n", self.report_t)
-        
+       # print balance score
+        print("source balance accuracy score:", balanced_accuracy_score(self.Ytest_s,self.predictions_s))
+        print("target balance accuracy score:", balanced_accuracy_score(self.Ytest_t,self.predictions_t))
         print("Writing report to txt file.........")
-        # self.Xtrain, self.Ytrain = shuffle(self.Xtrain, self.Ytrain)
-        unique, count = np.unique(self.Ytrain, return_counts = True)
-        n_sample = dict(zip(label,count))
-        print("Number of samples in each class: \n", n_sample)
+#        self.confusion_s = confusion_matrix(self.Ytest_s, self.predictions_s)
+#        self.confusion_t = confusion_matrix(self.Ytest_t, self.predictions_t)
+#        UA_s = self.confusion_s.diagonal() / self.confusion_s.sum(axis=1)
+#        UA_t = self.confusion_t.diagonal() / self.confusion_t.sum(axis=1)
+#        PA_s = self.confusion_s.diagonal() / self.confusion_s.sum(axis=0)
+#        PA_t = self.confusion_t.diagonal() / self.confusion_t.sum(axis=0)
+#        print("Source UA: \n", UA_s, "\nSource PA: \n", PA_s)
+#        print("Target UA: \n", UA_t, "\nTarget PA: \n", PA_t)
+
+#        print("Source: \n", self.confusion_s)
+#        print("Target: \n", self.confusion_t)
+#        unique_training = np.unique(self.Ytrain, return_counts = True)
+#        n_sample_training = dict(zip(label,unique_training[1]))
+#        unique_t = np.unique(self.Ytest_t, return_counts = True)
+#        unique_s = np.unique(self.Ytest_s, return_counts = True)
+#        n_sample_t = dict(zip(label,unique_t[1]))
+#        n_sample_s = dict(zip(label,unique_s[1]))
+#        print("Number of samples in each class train: \n", n_sample_training, "\n  Total:", unique_training[1].sum())
+#        print("Number of samples in each class Source test: \n", n_sample_s, "\n  Total:", unique_s[1].sum())
+#        print("Number of samples in each class Target test: \n", n_sample_t, "\n  Total:", unique_t[1].sum())
             # save report as txt with case value
-        with open("reports/rf_report_" + str(self.case) + ".txt", "w") as f:
-                f.write("Source report: \n")
-                f.write(self.report_s)
-                f.write("\n")
-                f.write("Target report: \n")
-                f.write(self.report_t)
-                f.write("\n")
-                f.write("OOB score: " + str(self.model.oob_score_))
-                f.write("\n")
-                f.write("Number of samples in each class: \n")
-                f.write(str(n_sample))
-                f.close()
+#        with open("reports/rf_report_" + str(self.case) + ".txt", "w") as f:
+#                f.write("Source report: \n")
+#                f.write(self.report_s)
+#                f.write("\n")
+#                f.write("Target report: \n")
+#                f.write(self.report_t)
+#                f.write("\n")
+#                f.write("OOB score: " + str(self.model.oob_score_))
+#                f.write("\n")
+#                f.write("Number of samples training in each class: \n")
+#                f.write(str(n_sample))
+#                f.close()
 
         print("Writing report to txt file done.........")
         print("Testing model done.........")

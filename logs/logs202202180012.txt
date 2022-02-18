@@ -1,0 +1,15 @@
+2022-02-18 00:13:06 (INFO) MultivariateAlterationDetector: Default RAM limit for OTB is 256 MB
+2022-02-18 00:13:06 (INFO) MultivariateAlterationDetector: GDAL maximum cache size is 19343 MB
+2022-02-18 00:13:06 (INFO) MultivariateAlterationDetector: OTB will use at most 40 threads
+2022-02-18 00:13:06 (INFO): Estimated memory for full processing: 3679.14MB (avail.: 256 MB), optimal image partitioning: 15 blocks
+2022-02-18 00:13:06 (INFO): Estimation will be performed in 16 blocks of 10980x687 pixels
+2022-02-18 00:13:11 (INFO) MultivariateAlterationDetector: Input 1 mean: 8.36134
+2022-02-18 00:13:11 (INFO) MultivariateAlterationDetector: Input 2 mean: 8.69183
+2022-02-18 00:13:11 (INFO) MultivariateAlterationDetector: Input 1 transform: 0.20101 
+
+2022-02-18 00:13:11 (INFO) MultivariateAlterationDetector: Input 2 transform: 0.20353 
+
+2022-02-18 00:13:11 (INFO) MultivariateAlterationDetector: Rho: 0.674749
+2022-02-18 00:13:11 (INFO): Estimated memory for full processing: 1839.57MB (avail.: 2000 MB), optimal image partitioning: 1 blocks
+2022-02-18 00:13:11 (INFO): File ../results/RF/change_D/rf_model_1_cd_map.tif will be written in 1 blocks of 10980x10980 pixels
+Writing ../results/RF/change_D/rf_model_1_cd_map.tif...: 100% [**************************************************] (7s)
