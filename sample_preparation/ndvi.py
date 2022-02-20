@@ -2,7 +2,7 @@ from turtle import color
 import numpy as np
 import pandas as pd
 import datetime
-# import random
+import random
 import matplotlib.pyplot as plt
 import time
 import argparse
@@ -28,6 +28,11 @@ n_channel = 10
 
 year = os.path.basename(f_path).split('_')[0]
 
+# def convert_date_to_doy(gfdate_path):
+#     with open(gfdate_path, "r") as f:
+#         out_date_list = f.read().splitlines()
+#     return [datetime.datetime.strptime(o, "%Y%m%d").timetuple().tm_yday for o in out_date_list]
+
 def convert_date_to_doy(gfdate_path):
     with open(gfdate_path, "r") as f:
         out_date_list = f.readlines()
@@ -41,8 +46,6 @@ date_label = convert_date_to_doy(gfdate_path)
 
     # len of time series
 L = len(date_label)
-
-label = ["Dense built-up area", "Diffuse built-up area", "Industrial and commercial areas", "Roads", "Oilseeds (Rapeseed)", "Straw cereals (Wheat, Triticale, Barley)", "Protein crops (Beans / Peas)", "Soy", "Sunflower", "Corn",  "Tubers/roots", "Grasslands", "Orchards and fruit growing", "Vineyards", "Hardwood forest", "Softwood forest", "Natural grasslands and pastures", "Woody moorlands", "Water"]
 
 def load_npz(file_path):
     """
@@ -94,13 +97,17 @@ def prepare_NDVI(f_path):
 def plot_chart_ms(ndvi2018, ndvi2019, title):
     fig, ax = plt.subplots(len(ndvi2018[0]), sharex=True, figsize=(15, 40), constrained_layout=True)
 
+    # colorlist = [
+    #     "#" + "".join([random.choice("0123456789ABCDEF") for j in range(6)])
+    #     for i in range(19)
+    # ]
 
     for i in range(len(ndvi2018[0])):
         ax[i].plot(ndvi2018[0].iloc[i], color='#5ab4ac', label='2018')
         ax[i].plot(ndvi2019[0].iloc[i], color= '#7fbf7b', linestyle='--', label='2019')
         ax[i].fill_between(range(L), ndvi2018[0].iloc[i] - ndvi2018[1].iloc[i], ndvi2018[0].iloc[i] + ndvi2018[1].iloc[i], alpha=0.1, color = '#D89CCB', label = 'std 2018')
         ax[i].fill_between(range(L), ndvi2019[0].iloc[i] - ndvi2019[1].iloc[i], ndvi2019[0].iloc[i] + ndvi2019[1].iloc[i], alpha=0.2, color='#CBCD9C', label='std 2019')
-        ax[i].set_title(label[i])
+        ax[i].set_title("Class: " + str(ndvi2018[0].index[i]))
         ax[i].set_ylabel("NDVI")
         ax[i].legend()
         fig.suptitle(title)
@@ -121,7 +128,7 @@ def plot_chart_m(ndvi2018, ndvi2019, title):
         ax[i].plot(ndvi2019[0].iloc[i], color= '#7fbf7b', linestyle='--', label='2019')
         # ax[i].fill_between(range(L), ndvi2018[0].iloc[i] - ndvi2018[1].iloc[i], ndvi2018[0].iloc[i] + ndvi2018[1].iloc[i], alpha=0.1, color = '#BBD8CC', label = 'std 2018')
         # ax[i].fill_between(range(L), ndvi2019[0].iloc[i] - ndvi2019[1].iloc[i], ndvi2019[0].iloc[i] + ndvi2019[1].iloc[i], alpha=0.2, color='#CDA820', label='std 2019')
-        ax[i].set_title(label[i])
+        ax[i].set_title("Class: " + str(ndvi2018[0].index[i]))
         ax[i].set_ylabel("NDVI")
         ax[i].legend()
         fig.suptitle(title)
@@ -141,7 +148,7 @@ def plot_chart_y(ndvi2018, title):
         # ax[i].plot(ndvi2019[0].iloc[i], color= '#7fbf7b', linestyle='--', label='2019')
         ax[i].fill_between(range(L), ndvi2018[0].iloc[i] - ndvi2018[1].iloc[i], ndvi2018[0].iloc[i] + ndvi2018[1].iloc[i], alpha=0.1, color = '#BBD8CC', label = 'std')
         # ax[i].fill_between(range(L), ndvi2019[0].iloc[i] - ndvi2019[1].iloc[i], ndvi2019[0].iloc[i] + ndvi2019[1].iloc[i], alpha=0.2, color='#CDA820', label='std 2019')
-        ax[i].set_title(label[i])
+        ax[i].set_title("Class: " + str(ndvi2018[0].index[i]))
         ax[i].set_ylabel("NDVI")
         ax[i].legend()
         fig.suptitle(title)
@@ -165,7 +172,7 @@ def prepare_NDVI_for_random_pixel(f_path):
     # rename other columns to doy
     df.columns = [*date_label, "code"]
 
-    random_sample = df.groupby("code").apply(lambda x: x.sample(n=1))
+    random_sample = df.groupby("code").apply(lambda x: x.sample(n=2))
 
     random_sample.drop(columns=["code"], inplace=True)
 
@@ -178,7 +185,8 @@ def plot_chart_random(ndvi2018, ndvi2019, title):
     for i in range(len(ndvi2018)):
         ax[i].plot(ndvi2018.iloc[i], color='#5ab4ac', label='2018')
         ax[i].plot(ndvi2019.iloc[i], color= '#7fbf7b', linestyle='--', label='2019')
-        ax[i].set_title(label[i])
+
+        ax[i].set_title("Class: " + str(ndvi2018.index[i]))
         ax[i].set_ylabel("NDVI")
         ax[i].legend()
         fig.suptitle(title)
@@ -186,20 +194,19 @@ def plot_chart_random(ndvi2018, ndvi2019, title):
         fig.savefig(os.path.join(output_path, "NDVI_random_pixels.png"))
 
 def plot_NDVI():
-#    ndvi1 = prepare_NDVI(f_path)
-#    ndvi2 = prepare_NDVI(f_path2)
-     ndvi3 = prepare_NDVI_for_random_pixel(f_path)
-     ndvi4 = prepare_NDVI_for_random_pixel(f_path2)
+    ndvi1 = prepare_NDVI(f_path)
+    ndvi2 = prepare_NDVI(f_path2)
+    ndvi3 = prepare_NDVI_for_random_pixel(f_path)
+    ndvi4 = prepare_NDVI_for_random_pixel(f_path2)
 
-#    plot_chart_ms(ndvi1, ndvi2, "NDVI mean and standard deviation for 2018 and 2019")
-#    plot_chart_m(ndvi1, ndvi2, "NDVI mean for 2018 and 2019")
-#    plot_chart_y(ndvi1, "NDVI mean for 2018")
-#    plot_chart_y(ndvi2, "NDVI mean for 2019")
-     plot_chart_random(ndvi3, ndvi4, "Class NDVI for random pixels 2018 and 2019")
+    plot_chart_ms(ndvi1, ndvi2, "NDVI mean and standard deviation for 2018 and 2019")
+    plot_chart_m(ndvi1, ndvi2, "NDVI mean for 2018 and 2019")
+    plot_chart_y(ndvi1, "NDVI mean for 2018")
+    plot_chart_y(ndvi2, "NDVI mean for 2019")
+    plot_chart_random(ndvi3, ndvi4, "Class NDVI for random pixels 2018 and 2019")
 
 
 time_start = time.time()
 plot_NDVI()
 print("Time elapsed: ", time.time() - time_start)
-
 
