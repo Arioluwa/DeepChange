@@ -21,8 +21,11 @@ gt_target_path = '../development/2019_rasterizedImage.tif'
 gt_source = rasterio.open(gt_source_path).read(1)
 gt_target = rasterio.open(gt_target_path).read(1)
 # paths to the predicted map produced on source(2018) and target(2019) 
-pred_source_path = r'C:\Users\Adebowale\Documents\theia\RF_maps\2018_rf_model_2_map.tif'
-pred_target_path = r'C:\Users\Adebowale\Documents\theia\RF_maps\2019_rf_model_3_map.tif'
+# pred_source_path = r'C:\Users\Adebowale\Documents\theia\RF_maps\2018_rf_model_2_map.tif'
+# pred_target_path = r'C:\Users\Adebowale\Documents\theia\RF_maps\2019_rf_model_3_map.tif'
+
+pred_source_path = r'C:\Users\Adebowale\Documents\theia\RF_maps\2018_rf_model_1_map.tif'
+pred_target_path = r'C:\Users\Adebowale\Documents\theia\RF_maps\2019_rf_model_1_map.tif'
 
 # read the predicted map as a numpy array
 pred_source = rasterio.open(pred_source_path).read(1)
@@ -63,13 +66,14 @@ pred_binary_values = np.ma.compressed(pred_binary_mask) # [1,2] unique values
 # change matrix
 cm = confusion_matrix(gt_binary_values, pred_binary_values)
 
+cm_per = cm.astype('float') / np.sum(cm)
 # plot the change matrix
 label = ['No change', 'Change']
-cm_plot = sns.heatmap(cm, annot=True, fmt='d', cmap='Greens', xticklabels=label, yticklabels=label, cbar=False)
+cm_plot = sns.heatmap(cm_per, annot=True, fmt='.2%', cmap='Greens', xticklabels=label, yticklabels=label, cbar=False)
 cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
 cm_plot.set_title(title_)
 # save the plot
-plt.savefig('change_matrix.png')
+plt.savefig('change_matrix_percent_comb.png')
 
 # change map
 # Note:
@@ -80,16 +84,16 @@ plt.savefig('change_matrix.png')
 # 4 = (2 == 2) ~ Change = Change
 
 # change array - 
-change_array = np.empty_like(gt_binary_values) # as the same dimension as gt_binary_values
-change_array[(gt_binary_values == 1) & (pred_binary_values == 1)] = 1
-change_array[(gt_binary_values == 1) & (pred_binary_values == 2)] = 2
-change_array[(gt_binary_values == 2) & (pred_binary_values == 1)] = 3
-change_array[(gt_binary_values == 2) & (pred_binary_values == 2)] = 4
+# change_array = np.empty_like(gt_binary_values) # as the same dimension as gt_binary_values
+# change_array[(gt_binary_values == 1) & (pred_binary_values == 1)] = 1
+# change_array[(gt_binary_values == 1) & (pred_binary_values == 2)] = 2
+# change_array[(gt_binary_values == 2) & (pred_binary_values == 1)] = 3
+# change_array[(gt_binary_values == 2) & (pred_binary_values == 2)] = 4
 
-# change map
-change_map = np.empty_like(gt_binary)
-change_map[~gt_binary_mask.mask] = change_array.ravel() # returns 
+# # change map
+# change_map = np.empty_like(gt_binary)
+# change_map[~gt_binary_mask.mask] = change_array.ravel() # returns 
 
-# write the change map
-with rasterio.open('change_map.tif', 'w', **profile) as dst:
-    dst.write(change_map, 1)
+# # write the change map
+# with rasterio.open('change_map.tif', 'w', **profile) as dst:
+#     dst.write(change_map, 1)
