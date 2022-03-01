@@ -215,13 +215,13 @@ out_map_band = out_map_raster.GetRasterBand(1)
 
 
 #convert gps corners into image (x,y)
-def gps_2_image_xy(x,y):
-	return (x-originX)/spacingX,(y-originY)/spacingY
-def gps_2_image_p(point):
-	return gps_2_image_xy(point[0],point[1])
+# def gps_2_image_xy(x,y):
+# 	return (x-originX)/spacingX,(y-originY)/spacingY
+# def gps_2_image_p(point):
+# 	return gps_2_image_xy(point[0],point[1])
 
-size_areaX = 10980
-size_areaY = 500
+size_areaX = 256
+size_areaY = 256
 x_vec = list(range(int(c/size_areaX)))
 x_vec = [x*size_areaX for x in x_vec]
 y_vec = list(range(int(r/size_areaY)))

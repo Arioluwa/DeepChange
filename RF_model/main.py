@@ -87,7 +87,7 @@ class RFmodel:
         self.Xtrain_t, self.Ytrain_t = self.load_set("train", self.total_set_t)
         print("Loading train set done.........")
 
-        # Validation set for target and source
+        # Test set for target and source
         self.Xtest_s, self.Ytest_s = self.load_set("test", self.total_set_s)
         self.Xtest_t, self.Ytest_t = self.load_set("test", self.total_set_t)
         print("Loading test set done.........")
@@ -217,7 +217,7 @@ if __name__ == "__main__":
     start_time = time.time()
     case_ = 1
     model = RFmodel(case=case_)
-    model.prepare_data()
+    # model.prepare_data()
     # check if case model file exits, skip training if it does
     if not os.path.exists("models/rf_model_" + str(case_) + ".pkl"):
         model.train_model()
