@@ -159,7 +159,7 @@ if os.path.exists(out_map):
 	print("out_map ",out_map,"already exists => exit")
 	sys.exit("\n*** not overwriting out_map ***\n")
 
-#out_confmap = out_path + '/' + image_name + '_' + model_name + '_confmap' + '.tif'
+out_confmap = out_path + '/' + image_name + '_' + model_name + '_proba' + '.tif'
 
 
 model = joblib.load(model_file)
@@ -208,10 +208,10 @@ out_map_raster.SetGeoTransform([originX, spacingX, 0, originY, 0, spacingY])
 out_map_raster.SetProjection(out_raster_SRS.ExportToWkt())
 out_map_band = out_map_raster.GetRasterBand(1)
 
-# out_confmap_raster = driver.Create(out_confmap, c, r, 1, gdal.GDT_Float32)
-# out_confmap_raster.SetGeoTransform([originX, spacingX, 0, originY, 0, spacingY])
-# out_confmap_raster.SetProjection(out_raster_SRS.ExportToWkt())
-# out_confmap_band = out_confmap_raster.GetRasterBand(1)
+out_confmap_raster = driver.Create(out_confmap, c, r, 1, gdal.GDT_Float32)
+out_confmap_raster.SetGeoTransform([originX, spacingX, 0, originY, 0, spacingY])
+out_confmap_raster.SetProjection(out_raster_SRS.ExportToWkt())
+out_confmap_band = out_confmap_raster.GetRasterBand(1)
 
 
 #convert gps corners into image (x,y)
