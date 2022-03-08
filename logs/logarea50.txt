@@ -1,0 +1,106 @@
+Read model:  14.69293212890625
+Initiation:  0.009395837783813477
+top_left= (0, 0)  to bottom_right= (10980, 50)
+Reading:  1.4472084045410156
+Reading image in loop:  1.44734525680542
+predict:  3.4142279624938965
+append:  2.86102294921875e-06
+top_left= (0, 50)  to bottom_right= (10980, 100)
+Reading:  1.3936831951141357
+Reading image in loop:  6.255399703979492
+predict:  3.405006170272827
+append:  6.4373016357421875e-06
+top_left= (0, 100)  to bottom_right= (10980, 150)
+Reading:  1.3882989883422852
+Reading image in loop:  11.048920154571533
+predict:  3.1677165031433105
+append:  6.4373016357421875e-06
+top_left= (0, 150)  to bottom_right= (10980, 200)
+Reading:  1.38368821144104
+Reading image in loop:  15.600472211837769
+predict:  3.3970162868499756
+append:  7.152557373046875e-06
+top_left= (0, 200)  to bottom_right= (10980, 250)
+Reading:  1.5994389057159424
+Reading image in loop:  20.5971839427948
+predict:  3.073068618774414
+append:  5.9604644775390625e-06
+top_left= (0, 250)  to bottom_right= (10980, 300)
+Reading:  1.390066146850586
+Reading image in loop:  25.060476541519165
+predict:  3.198704481124878
+append:  1.049041748046875e-05
+top_left= (0, 300)  to bottom_right= (10980, 350)
+Reading:  1.4573171138763428
+Reading image in loop:  29.716855764389038
+predict:  3.697474956512451
+append:  3.719329833984375e-05
+top_left= (0, 350)  to bottom_right= (10980, 400)
+Reading:  1.454054355621338
+Reading image in loop:  34.868789196014404
+predict:  3.7205827236175537
+append:  9.775161743164062e-06
+top_left= (0, 400)  to bottom_right= (10980, 450)
+Reading:  1.415234088897705
+Reading image in loop:  40.004847288131714
+predict:  3.509352207183838
+append:  1.0967254638671875e-05
+top_left= (0, 450)  to bottom_right= (10980, 500)
+Reading:  1.4091465473175049
+Reading image in loop:  44.923593282699585
+predict:  3.098729133605957
+append:  7.3909759521484375e-06
+top_left= (0, 500)  to bottom_right= (10980, 550)
+Reading:  1.3971798419952393
+Reading image in loop:  49.41967511177063
+predict:  3.3017473220825195
+append:  3.5762786865234375e-06
+top_left= (0, 550)  to bottom_right= (10980, 600)
+Reading:  1.4351105690002441
+Reading image in loop:  54.15676927566528
+predict:  3.4071335792541504
+append:  7.62939453125e-06
+top_left= (0, 600)  to bottom_right= (10980, 650)
+Reading:  1.4206557273864746
+Reading image in loop:  58.98474192619324
+predict:  3.5157549381256104
+append:  7.62939453125e-06
+top_left= (0, 650)  to bottom_right= (10980, 700)
+Reading:  1.4001743793487549
+Reading image in loop:  63.90085959434509
+predict:  3.2032995223999023
+append:  3.337860107421875e-06
+top_left= (0, 700)  to bottom_right= (10980, 750)
+Reading:  1.4630820751190186
+Reading image in loop:  68.56740379333496
+predict:  3.1070189476013184
+append:  6.198883056640625e-06
+top_left= (0, 750)  to bottom_right= (10980, 800)
+Reading:  1.419633388519287
+Reading image in loop:  73.09425139427185
+predict:  3.304126739501953
+append:  7.3909759521484375e-06
+top_left= (0, 800)  to bottom_right= (10980, 850)
+Reading:  1.4545962810516357
+Reading image in loop:  77.85315346717834
+predict:  3.1708221435546875
+append:  5.245208740234375e-06
+top_left= (0, 850)  to bottom_right= (10980, 900)
+Reading:  1.423241376876831
+Reading image in loop:  82.44737482070923
+predict:  3.1013755798339844
+append:  1.0013580322265625e-05
+top_left= (0, 900)  to bottom_right= (10980, 950)
+Reading:  1.411475419998169
+Reading image in loop:  86.96038842201233
+predict:  3.4162771701812744
+append:  3.5762786865234375e-06
+top_left= (0, 950)  to bottom_right= (10980, 1000)
+Reading:  1.4481959342956543
+Reading image in loop:  91.82510614395142
+predict:  3.211557388305664
+append:  9.775161743164062e-06
+Concatenate:  1.4984748363494873
+done........
+Saving npy:  15.719635725021362
+Total taken:  126.95731139183044

@@ -1,0 +1,276 @@
+Read model:  14.60095763206482
+Initiation:  0.01940178871154785
+top_left= (0, 0)  to bottom_right= (10980, 200)
+Reading:  16.88649821281433
+Reading image in loop:  16.886648178100586
+predict:  11.791015148162842
+append:  5.245208740234375e-06
+top_left= (0, 200)  to bottom_right= (10980, 400)
+Reading:  11.463093757629395
+Reading image in loop:  40.14098811149597
+predict:  11.644176244735718
+append:  5.7220458984375e-06
+top_left= (0, 400)  to bottom_right= (10980, 600)
+Reading:  9.31548523902893
+Reading image in loop:  61.10088586807251
+predict:  11.352346658706665
+append:  5.4836273193359375e-06
+top_left= (0, 600)  to bottom_right= (10980, 800)
+Reading:  13.616323471069336
+Reading image in loop:  86.06979441642761
+predict:  11.033469200134277
+append:  5.0067901611328125e-06
+top_left= (0, 800)  to bottom_right= (10980, 1000)
+Reading:  7.473090410232544
+Reading image in loop:  104.57657480239868
+predict:  11.134093523025513
+append:  6.4373016357421875e-06
+top_left= (0, 1000)  to bottom_right= (10980, 1200)
+Reading:  7.779890060424805
+Reading image in loop:  123.49077606201172
+predict:  11.442693710327148
+append:  7.152557373046875e-06
+top_left= (0, 1200)  to bottom_right= (10980, 1400)
+Reading:  7.275869131088257
+Reading image in loop:  142.20960664749146
+predict:  11.761563301086426
+append:  7.152557373046875e-06
+top_left= (0, 1400)  to bottom_right= (10980, 1600)
+Reading:  8.262346982955933
+Reading image in loop:  162.2337350845337
+predict:  11.158929586410522
+append:  7.152557373046875e-06
+top_left= (0, 1600)  to bottom_right= (10980, 1800)
+Reading:  7.1787941455841064
+Reading image in loop:  180.57170605659485
+predict:  11.025564670562744
+append:  8.821487426757812e-06
+top_left= (0, 1800)  to bottom_right= (10980, 2000)
+Reading:  7.493849992752075
+Reading image in loop:  199.0913429260254
+predict:  11.129247188568115
+append:  5.4836273193359375e-06
+top_left= (0, 2000)  to bottom_right= (10980, 2200)
+Reading:  7.386455297470093
+Reading image in loop:  217.60726261138916
+predict:  11.034480571746826
+append:  5.0067901611328125e-06
+top_left= (0, 2200)  to bottom_right= (10980, 2400)
+Reading:  7.554340124130249
+Reading image in loop:  236.19639348983765
+predict:  11.358781814575195
+append:  8.821487426757812e-06
+top_left= (0, 2400)  to bottom_right= (10980, 2600)
+Reading:  8.576607942581177
+Reading image in loop:  256.1320118904114
+predict:  10.94422435760498
+append:  5.7220458984375e-06
+top_left= (0, 2600)  to bottom_right= (10980, 2800)
+Reading:  7.063436985015869
+Reading image in loop:  274.13990116119385
+predict:  10.847614526748657
+append:  6.67572021484375e-06
+top_left= (0, 2800)  to bottom_right= (10980, 3000)
+Reading:  7.7348291873931885
+Reading image in loop:  292.7537636756897
+predict:  10.948062181472778
+append:  1.0013580322265625e-05
+top_left= (0, 3000)  to bottom_right= (10980, 3200)
+Reading:  9.04108715057373
+Reading image in loop:  312.7431151866913
+predict:  10.93010663986206
+append:  5.4836273193359375e-06
+top_left= (0, 3200)  to bottom_right= (10980, 3400)
+Reading:  9.623907804489136
+Reading image in loop:  333.29736280441284
+predict:  11.220096349716187
+append:  5.7220458984375e-06
+top_left= (0, 3400)  to bottom_right= (10980, 3600)
+Reading:  10.398940086364746
+Reading image in loop:  354.91660809516907
+predict:  11.182249069213867
+append:  5.245208740234375e-06
+top_left= (0, 3600)  to bottom_right= (10980, 3800)
+Reading:  10.650665760040283
+Reading image in loop:  376.74971866607666
+predict:  11.102070331573486
+append:  1.4543533325195312e-05
+top_left= (0, 3800)  to bottom_right= (10980, 4000)
+Reading:  17.93190622329712
+Reading image in loop:  405.78389501571655
+predict:  11.285163402557373
+append:  5.4836273193359375e-06
+top_left= (0, 4000)  to bottom_right= (10980, 4200)
+Reading:  19.236873149871826
+Reading image in loop:  436.30617237091064
+predict:  11.123272895812988
+append:  5.4836273193359375e-06
+top_left= (0, 4200)  to bottom_right= (10980, 4400)
+Reading:  21.41889214515686
+Reading image in loop:  468.84856963157654
+predict:  10.970298528671265
+append:  5.0067901611328125e-06
+top_left= (0, 4400)  to bottom_right= (10980, 4600)
+Reading:  17.773165464401245
+Reading image in loop:  497.62961173057556
+predict:  10.961059331893921
+append:  1.0728836059570312e-05
+top_left= (0, 4600)  to bottom_right= (10980, 4800)
+Reading:  18.959131956100464
+Reading image in loop:  527.5500314235687
+predict:  10.87642216682434
+append:  1.3589859008789062e-05
+top_left= (0, 4800)  to bottom_right= (10980, 5000)
+Reading:  17.80158257484436
+Reading image in loop:  556.228239774704
+predict:  10.970774173736572
+append:  5.245208740234375e-06
+top_left= (0, 5000)  to bottom_right= (10980, 5200)
+Reading:  20.284468412399292
+Reading image in loop:  587.5051357746124
+predict:  10.90569806098938
+append:  9.5367431640625e-06
+top_left= (0, 5200)  to bottom_right= (10980, 5400)
+Reading:  17.21410632133484
+Reading image in loop:  615.6251578330994
+predict:  10.992515325546265
+append:  1.2874603271484375e-05
+top_left= (0, 5400)  to bottom_right= (10980, 5600)
+Reading:  21.355274438858032
+Reading image in loop:  647.9731674194336
+predict:  11.05445384979248
+append:  1.4066696166992188e-05
+top_left= (0, 5600)  to bottom_right= (10980, 5800)
+Reading:  20.121801614761353
+Reading image in loop:  679.1496551036835
+predict:  10.966050148010254
+append:  1.430511474609375e-05
+top_left= (0, 5800)  to bottom_right= (10980, 6000)
+Reading:  18.87696933746338
+Reading image in loop:  708.9929037094116
+predict:  10.982747316360474
+append:  1.430511474609375e-05
+top_left= (0, 6000)  to bottom_right= (10980, 6200)
+Reading:  19.57525086402893
+Reading image in loop:  739.5511004924774
+predict:  11.022613286972046
+append:  1.811981201171875e-05
+top_left= (0, 6200)  to bottom_right= (10980, 6400)
+Reading:  21.36320686340332
+Reading image in loop:  771.9371392726898
+predict:  11.06052827835083
+append:  1.3828277587890625e-05
+top_left= (0, 6400)  to bottom_right= (10980, 6600)
+Reading:  16.63178300857544
+Reading image in loop:  799.6296472549438
+predict:  11.108593463897705
+append:  8.106231689453125e-06
+top_left= (0, 6600)  to bottom_right= (10980, 6800)
+Reading:  19.865480422973633
+Reading image in loop:  830.6039748191833
+predict:  11.200174808502197
+append:  7.867813110351562e-06
+top_left= (0, 6800)  to bottom_right= (10980, 7000)
+Reading:  18.698887825012207
+Reading image in loop:  860.5032916069031
+predict:  11.416781187057495
+append:  7.3909759521484375e-06
+top_left= (0, 7000)  to bottom_right= (10980, 7200)
+Reading:  18.454253911972046
+Reading image in loop:  890.3745591640472
+predict:  11.103519439697266
+append:  1.2159347534179688e-05
+top_left= (0, 7200)  to bottom_right= (10980, 7400)
+Reading:  16.759705066680908
+Reading image in loop:  918.2380492687225
+predict:  11.218634843826294
+append:  7.62939453125e-06
+top_left= (0, 7400)  to bottom_right= (10980, 7600)
+Reading:  17.593513250350952
+Reading image in loop:  947.0504260063171
+predict:  11.188698768615723
+append:  7.62939453125e-06
+top_left= (0, 7600)  to bottom_right= (10980, 7800)
+Reading:  20.56081795692444
+Reading image in loop:  978.8001878261566
+predict:  11.299338817596436
+append:  1.0728836059570312e-05
+top_left= (0, 7800)  to bottom_right= (10980, 8000)
+Reading:  15.661499977111816
+Reading image in loop:  1005.7612452507019
+predict:  11.19887900352478
+append:  5.7220458984375e-06
+top_left= (0, 8000)  to bottom_right= (10980, 8200)
+Reading:  20.37867259979248
+Reading image in loop:  1037.3390395641327
+predict:  11.16893982887268
+append:  6.9141387939453125e-06
+top_left= (0, 8200)  to bottom_right= (10980, 8400)
+Reading:  18.56710696220398
+Reading image in loop:  1067.0753166675568
+predict:  11.201403617858887
+append:  7.152557373046875e-06
+top_left= (0, 8400)  to bottom_right= (10980, 8600)
+Reading:  20.34663677215576
+Reading image in loop:  1098.6235902309418
+predict:  11.185054063796997
+append:  8.58306884765625e-06
+top_left= (0, 8600)  to bottom_right= (10980, 8800)
+Reading:  20.26512098312378
+Reading image in loop:  1130.0739846229553
+predict:  11.174298763275146
+append:  6.9141387939453125e-06
+top_left= (0, 8800)  to bottom_right= (10980, 9000)
+Reading:  19.03031325340271
+Reading image in loop:  1160.2788269519806
+predict:  10.904595851898193
+append:  9.775161743164062e-06
+top_left= (0, 9000)  to bottom_right= (10980, 9200)
+Reading:  19.652947425842285
+Reading image in loop:  1190.8606383800507
+predict:  11.204257011413574
+append:  8.344650268554688e-06
+top_left= (0, 9200)  to bottom_right= (10980, 9400)
+Reading:  20.449011087417603
+Reading image in loop:  1222.5141644477844
+predict:  10.887064218521118
+append:  5.9604644775390625e-06
+top_left= (0, 9400)  to bottom_right= (10980, 9600)
+Reading:  14.646010637283325
+Reading image in loop:  1248.047489643097
+predict:  10.80527377128601
+append:  5.4836273193359375e-06
+top_left= (0, 9600)  to bottom_right= (10980, 9800)
+Reading:  15.966674327850342
+Reading image in loop:  1274.819661140442
+predict:  10.768930673599243
+append:  5.7220458984375e-06
+top_left= (0, 9800)  to bottom_right= (10980, 10000)
+Reading:  13.778414011001587
+Reading image in loop:  1299.3671786785126
+predict:  10.884245872497559
+append:  5.7220458984375e-06
+top_left= (0, 10000)  to bottom_right= (10980, 10200)
+Reading:  14.493631362915039
+Reading image in loop:  1324.7452788352966
+predict:  10.8727388381958
+append:  6.4373016357421875e-06
+top_left= (0, 10200)  to bottom_right= (10980, 10400)
+Reading:  15.36862564086914
+Reading image in loop:  1350.9868624210358
+predict:  11.192090034484863
+append:  2.4557113647460938e-05
+top_left= (0, 10400)  to bottom_right= (10980, 10600)
+Reading:  8.417952299118042
+Reading image in loop:  1370.5971608161926
+predict:  10.820022821426392
+append:  1.0967254638671875e-05
+top_left= (0, 10600)  to bottom_right= (10980, 10980)
+Reading:  14.437848329544067
+Reading image in loop:  1395.855235338211
+predict:  20.300286769866943
+append:  1.8358230590820312e-05
+Concatenate:  18.612679719924927
+done........
+Saving npy:  179.9584882259369
+Total taken:  1629.3473088741302
