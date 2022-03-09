@@ -1,0 +1,6 @@
+Run time: 0.09764204819997152 minutes for case 1
+Run time: 0.11950905720392863 minutes for case 2
+Run time: 0.10514334440231324 minutes for case 3
+Run time: 0.09106984138488769 minutes for case 1
+Run time: 0.10009480317433675 minutes for case 2
+Run time: 0.10186765988667806 minutes for case 3

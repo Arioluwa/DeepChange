@@ -1,0 +1,1380 @@
+gt_source,gt_target,pred_source,pred_target,count
+Industrial and commercial areas,Industrial and commercial areas,Diffuse built-up area,Industrial and commercial areas,90854
+Industrial and commercial areas,Industrial and commercial areas,Orchards and fruit growing,Industrial and commercial areas,23432
+Roads,Roads,Industrial and commercial areas,Roads,21128
+Soy,Soy,Sunflower,Soy,18525
+Vineyards,Vineyards,Industrial and commercial areas,Vineyards,14313
+Woody moorlands,Woody moorlands,Orchards and fruit growing,Woody moorlands,11573
+Hardwood forest,Hardwood forest,Sunflower,Hardwood forest,10881
+Dense built-up area,Dense built-up area,Diffuse built-up area,Dense built-up area,10373
+Corn,Corn,Sunflower,Corn,10226
+Corn,Corn,Soy,Corn,9930
+Industrial and commercial areas,Industrial and commercial areas,Sunflower,Industrial and commercial areas,9847
+Hardwood forest,Hardwood forest,Diffuse built-up area,Hardwood forest,9273
+Hardwood forest,Hardwood forest,Industrial and commercial areas,Hardwood forest,7982
+Industrial and commercial areas,Industrial and commercial areas,Industrial and commercial areas,Diffuse built-up area,7264
+Woody moorlands,Woody moorlands,Industrial and commercial areas,Woody moorlands,6908
+Orchards and fruit growing,Orchards and fruit growing,Sunflower,Orchards and fruit growing,6627
+Dense built-up area,Dense built-up area,Diffuse built-up area,Industrial and commercial areas,6418
+Woody moorlands,Woody moorlands,Softwood forest,Woody moorlands,5917
+Vineyards,Vineyards,Softwood forest,Vineyards,5642
+Orchards and fruit growing,Orchards and fruit growing,Industrial and commercial areas,Orchards and fruit growing,5522
+Industrial and commercial areas,Industrial and commercial areas,Softwood forest,Industrial and commercial areas,5377
+Diffuse built-up area,Diffuse built-up area,Industrial and commercial areas,Diffuse built-up area,5119
+Woody moorlands,Woody moorlands,Natural grasslands and pastures,Woody moorlands,4785
+Industrial and commercial areas,Industrial and commercial areas,Roads,Industrial and commercial areas,4563
+Vineyards,Vineyards,Orchards and fruit growing,Vineyards,4224
+Industrial and commercial areas,Industrial and commercial areas,Woody moorlands,Industrial and commercial areas,4075
+Water,Water,Orchards and fruit growing,Water,4025
+Orchards and fruit growing,Orchards and fruit growing,Woody moorlands,Orchards and fruit growing,3561
+Vineyards,Vineyards,Sunflower,Vineyards,3511
+Vineyards,Vineyards,Diffuse built-up area,Vineyards,3467
+Orchards and fruit growing,Orchards and fruit growing,Orchards and fruit growing,Woody moorlands,3458
+Orchards and fruit growing,Orchards and fruit growing,Softwood forest,Orchards and fruit growing,3185
+Orchards and fruit growing,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",Orchards and fruit growing,3005
+Industrial and commercial areas,Industrial and commercial areas,Vineyards,Industrial and commercial areas,2820
+Woody moorlands,Woody moorlands,Sunflower,Woody moorlands,2749
+Sunflower,Sunflower,Industrial and commercial areas,Sunflower,2421
+Woody moorlands,Woody moorlands,Diffuse built-up area,Woody moorlands,2308
+Hardwood forest,Hardwood forest,Vineyards,Hardwood forest,2286
+Dense built-up area,Dense built-up area,Industrial and commercial areas,Diffuse built-up area,2238
+Hardwood forest,Hardwood forest,Orchards and fruit growing,Hardwood forest,2229
+Dense built-up area,Dense built-up area,Industrial and commercial areas,Dense built-up area,2214
+Orchards and fruit growing,Orchards and fruit growing,Orchards and fruit growing,Industrial and commercial areas,2007
+Orchards and fruit growing,Orchards and fruit growing,Diffuse built-up area,Orchards and fruit growing,1990
+Woody moorlands,Woody moorlands,Orchards and fruit growing,Industrial and commercial areas,1916
+Softwood forest,Softwood forest,Woody moorlands,Softwood forest,1910
+Orchards and fruit growing,Orchards and fruit growing,Vineyards,Orchards and fruit growing,1803
+Roads,Roads,Roads,Industrial and commercial areas,1761
+Sunflower,Sunflower,"Straw cereals (Wheat, Triticale, Barley)",Sunflower,1728
+Industrial and commercial areas,Industrial and commercial areas,Sunflower,Diffuse built-up area,1656
+Orchards and fruit growing,Orchards and fruit growing,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",1621
+Soy,Soy,Industrial and commercial areas,Soy,1588
+Industrial and commercial areas,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",Industrial and commercial areas,1587
+Diffuse built-up area,Diffuse built-up area,Sunflower,Diffuse built-up area,1483
+Water,Water,Woody moorlands,Water,1449
+Softwood forest,Softwood forest,Orchards and fruit growing,Softwood forest,1429
+Soy,Soy,Corn,Soy,1396
+Vineyards,Vineyards,Woody moorlands,Vineyards,1388
+Diffuse built-up area,Diffuse built-up area,Diffuse built-up area,Industrial and commercial areas,1318
+Soy,Soy,Orchards and fruit growing,Soy,1316
+Sunflower,Sunflower,Sunflower,"Straw cereals (Wheat, Triticale, Barley)",1310
+Sunflower,Sunflower,Orchards and fruit growing,Sunflower,1274
+Woody moorlands,Woody moorlands,"Straw cereals (Wheat, Triticale, Barley)",Sunflower,1246
+Industrial and commercial areas,Industrial and commercial areas,Dense built-up area,Industrial and commercial areas,1239
+Roads,Roads,Woody moorlands,Roads,1202
+Soy,Soy,Soy,Sunflower,1123
+Water,Water,Softwood forest,Water,1072
+Hardwood forest,Hardwood forest,Diffuse built-up area,Industrial and commercial areas,1069
+Natural grasslands and pastures,Natural grasslands and pastures,Softwood forest,Natural grasslands and pastures,1060
+Industrial and commercial areas,Industrial and commercial areas,Oilseeds (Rapeseed),Industrial and commercial areas,1048
+Softwood forest,Softwood forest,Vineyards,Softwood forest,1045
+Dense built-up area,Dense built-up area,Orchards and fruit growing,Industrial and commercial areas,1009
+Soy,Soy,Protein crops (Beans / Peas),Soy,985
+Orchards and fruit growing,Orchards and fruit growing,Corn,Orchards and fruit growing,944
+Hardwood forest,Hardwood forest,Sunflower,Industrial and commercial areas,875
+Woody moorlands,Woody moorlands,Water,Woody moorlands,837
+Woody moorlands,Woody moorlands,Woody moorlands,Softwood forest,828
+Woody moorlands,Woody moorlands,Woody moorlands,Industrial and commercial areas,792
+Orchards and fruit growing,Orchards and fruit growing,Water,Orchards and fruit growing,789
+Industrial and commercial areas,Industrial and commercial areas,Industrial and commercial areas,Roads,770
+Roads,Roads,Orchards and fruit growing,Roads,764
+Industrial and commercial areas,Industrial and commercial areas,Industrial and commercial areas,Sunflower,755
+Vineyards,Vineyards,Orchards and fruit growing,Industrial and commercial areas,753
+Dense built-up area,Dense built-up area,Sunflower,Diffuse built-up area,745
+Soy,Soy,"Straw cereals (Wheat, Triticale, Barley)",Soy,734
+Orchards and fruit growing,Orchards and fruit growing,Oilseeds (Rapeseed),Orchards and fruit growing,719
+Orchards and fruit growing,Orchards and fruit growing,Orchards and fruit growing,Oilseeds (Rapeseed),705
+Industrial and commercial areas,Industrial and commercial areas,Water,Industrial and commercial areas,688
+Industrial and commercial areas,Industrial and commercial areas,Diffuse built-up area,Sunflower,678
+Orchards and fruit growing,Orchards and fruit growing,Diffuse built-up area,Industrial and commercial areas,670
+Orchards and fruit growing,Orchards and fruit growing,Orchards and fruit growing,Sunflower,668
+Orchards and fruit growing,Orchards and fruit growing,Industrial and commercial areas,Woody moorlands,664
+Sunflower,Sunflower,Oilseeds (Rapeseed),Sunflower,658
+Softwood forest,Softwood forest,Natural grasslands and pastures,Softwood forest,653
+Orchards and fruit growing,Orchards and fruit growing,Softwood forest,Woody moorlands,651
+Orchards and fruit growing,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",Sunflower,645
+Softwood forest,Softwood forest,Corn,Softwood forest,636
+Industrial and commercial areas,Industrial and commercial areas,Sunflower,"Straw cereals (Wheat, Triticale, Barley)",634
+Roads,Roads,Softwood forest,Roads,631
+Sunflower,Sunflower,Sunflower,Soy,628
+Water,Water,"Straw cereals (Wheat, Triticale, Barley)",Sunflower,623
+Natural grasslands and pastures,Natural grasslands and pastures,Woody moorlands,Natural grasslands and pastures,615
+Hardwood forest,Hardwood forest,Sunflower,Diffuse built-up area,611
+Corn,Corn,"Straw cereals (Wheat, Triticale, Barley)",Corn,607
+Soy,Soy,Oilseeds (Rapeseed),Soy,604
+Woody moorlands,Woody moorlands,Diffuse built-up area,Industrial and commercial areas,601
+Industrial and commercial areas,Industrial and commercial areas,Natural grasslands and pastures,Industrial and commercial areas,595
+Industrial and commercial areas,Industrial and commercial areas,Industrial and commercial areas,Orchards and fruit growing,587
+Softwood forest,Softwood forest,Water,Softwood forest,572
+Woody moorlands,Woody moorlands,Vineyards,Woody moorlands,565
+Vineyards,Vineyards,Hardwood forest,Vineyards,561
+Roads,Roads,Orchards and fruit growing,Industrial and commercial areas,560
+Sunflower,Sunflower,Soy,Sunflower,552
+Water,Water,Sunflower,Water,543
+Hardwood forest,Hardwood forest,Diffuse built-up area,Sunflower,533
+Natural grasslands and pastures,Natural grasslands and pastures,Orchards and fruit growing,Natural grasslands and pastures,522
+Orchards and fruit growing,Orchards and fruit growing,Soy,Orchards and fruit growing,520
+Oilseeds (Rapeseed),Oilseeds (Rapeseed),Oilseeds (Rapeseed),"Straw cereals (Wheat, Triticale, Barley)",488
+Sunflower,Sunflower,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",481
+Orchards and fruit growing,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",Soy,471
+Industrial and commercial areas,Industrial and commercial areas,Orchards and fruit growing,Diffuse built-up area,470
+Soy,Soy,Diffuse built-up area,Soy,458
+Dense built-up area,Dense built-up area,Sunflower,Industrial and commercial areas,445
+Roads,Roads,Diffuse built-up area,Industrial and commercial areas,437
+Vineyards,Vineyards,Diffuse built-up area,Industrial and commercial areas,430
+Hardwood forest,Hardwood forest,Industrial and commercial areas,Diffuse built-up area,421
+Orchards and fruit growing,Orchards and fruit growing,Oilseeds (Rapeseed),"Straw cereals (Wheat, Triticale, Barley)",420
+Hardwood forest,Hardwood forest,"Straw cereals (Wheat, Triticale, Barley)",Hardwood forest,420
+Soy,Soy,Soy,Corn,416
+Industrial and commercial areas,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",Sunflower,411
+Woody moorlands,Woody moorlands,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",411
+Roads,Roads,Woody moorlands,Industrial and commercial areas,402
+Hardwood forest,Hardwood forest,Woody moorlands,Hardwood forest,399
+Water,Water,Orchards and fruit growing,Woody moorlands,394
+Orchards and fruit growing,Orchards and fruit growing,Sunflower,Industrial and commercial areas,392
+Woody moorlands,Woody moorlands,Industrial and commercial areas,Diffuse built-up area,381
+Diffuse built-up area,Diffuse built-up area,Dense built-up area,Diffuse built-up area,380
+Industrial and commercial areas,Industrial and commercial areas,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",363
+Roads,Roads,Sunflower,Roads,355
+Softwood forest,Softwood forest,Softwood forest,Woody moorlands,354
+Softwood forest,Softwood forest,Industrial and commercial areas,Softwood forest,350
+Water,Water,Orchards and fruit growing,Industrial and commercial areas,348
+Oilseeds (Rapeseed),Oilseeds (Rapeseed),"Straw cereals (Wheat, Triticale, Barley)",Oilseeds (Rapeseed),339
+Hardwood forest,Hardwood forest,Sunflower,Soy,338
+Sunflower,Sunflower,Woody moorlands,Sunflower,327
+Vineyards,Vineyards,Softwood forest,Industrial and commercial areas,324
+Dense built-up area,Dense built-up area,Dense built-up area,Diffuse built-up area,320
+Water,Water,Industrial and commercial areas,Water,316
+Vineyards,Vineyards,Sunflower,Industrial and commercial areas,311
+Woody moorlands,Woody moorlands,Woody moorlands,Orchards and fruit growing,311
+Soy,Soy,Soy,"Straw cereals (Wheat, Triticale, Barley)",309
+Roads,Roads,Diffuse built-up area,Roads,309
+Natural grasslands and pastures,Natural grasslands and pastures,Sunflower,Natural grasslands and pastures,300
+Corn,Corn,Oilseeds (Rapeseed),Corn,300
+Vineyards,Vineyards,Natural grasslands and pastures,Vineyards,296
+Sunflower,Sunflower,Corn,Sunflower,295
+Vineyards,Vineyards,Soy,Vineyards,292
+Hardwood forest,Hardwood forest,Orchards and fruit growing,Industrial and commercial areas,289
+Industrial and commercial areas,Industrial and commercial areas,Industrial and commercial areas,Woody moorlands,285
+Orchards and fruit growing,Orchards and fruit growing,Orchards and fruit growing,Diffuse built-up area,284
+Orchards and fruit growing,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",Oilseeds (Rapeseed),284
+Orchards and fruit growing,Orchards and fruit growing,Sunflower,"Straw cereals (Wheat, Triticale, Barley)",282
+Industrial and commercial areas,Industrial and commercial areas,Orchards and fruit growing,Sunflower,282
+Woody moorlands,Woody moorlands,Sunflower,"Straw cereals (Wheat, Triticale, Barley)",281
+Industrial and commercial areas,Industrial and commercial areas,Diffuse built-up area,Orchards and fruit growing,281
+Sunflower,Sunflower,Sunflower,Oilseeds (Rapeseed),279
+Natural grasslands and pastures,Natural grasslands and pastures,Natural grasslands and pastures,Softwood forest,279
+Roads,Roads,Softwood forest,Industrial and commercial areas,278
+Vineyards,Vineyards,Water,Vineyards,275
+Vineyards,Vineyards,Corn,Vineyards,274
+Corn,Corn,Industrial and commercial areas,Corn,274
+Hardwood forest,Hardwood forest,Corn,Hardwood forest,273
+Woody moorlands,Woody moorlands,Woody moorlands,Water,260
+Water,Water,Water,Softwood forest,260
+Roads,Roads,Vineyards,Roads,257
+Woody moorlands,Woody moorlands,"Straw cereals (Wheat, Triticale, Barley)",Woody moorlands,257
+Sunflower,Sunflower,Sunflower,Protein crops (Beans / Peas),257
+Industrial and commercial areas,Industrial and commercial areas,Dense built-up area,Diffuse built-up area,255
+Water,Water,"Straw cereals (Wheat, Triticale, Barley)",Water,254
+Roads,Roads,Natural grasslands and pastures,Roads,250
+Natural grasslands and pastures,Natural grasslands and pastures,Industrial and commercial areas,Natural grasslands and pastures,248
+Industrial and commercial areas,Industrial and commercial areas,Sunflower,Orchards and fruit growing,246
+Sunflower,Sunflower,Diffuse built-up area,Sunflower,245
+Corn,Corn,Corn,Soy,237
+Roads,Roads,Vineyards,Industrial and commercial areas,236
+Industrial and commercial areas,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",Corn,227
+Vineyards,Vineyards,Industrial and commercial areas,Orchards and fruit growing,225
+Hardwood forest,Hardwood forest,Industrial and commercial areas,Sunflower,221
+Woody moorlands,Woody moorlands,Softwood forest,Industrial and commercial areas,218
+Vineyards,Vineyards,"Straw cereals (Wheat, Triticale, Barley)",Vineyards,217
+Natural grasslands and pastures,Natural grasslands and pastures,Natural grasslands and pastures,Industrial and commercial areas,216
+Hardwood forest,Hardwood forest,Hardwood forest,Industrial and commercial areas,215
+Natural grasslands and pastures,Natural grasslands and pastures,Natural grasslands and pastures,Woody moorlands,215
+Softwood forest,Softwood forest,Sunflower,Softwood forest,210
+Orchards and fruit growing,Orchards and fruit growing,Protein crops (Beans / Peas),Orchards and fruit growing,208
+Vineyards,Vineyards,Industrial and commercial areas,Softwood forest,207
+Vineyards,Vineyards,Woody moorlands,Industrial and commercial areas,205
+Corn,Corn,Corn,"Straw cereals (Wheat, Triticale, Barley)",204
+Hardwood forest,Hardwood forest,Soy,Hardwood forest,204
+Corn,Corn,Sunflower,Soy,203
+Dense built-up area,Dense built-up area,Vineyards,Industrial and commercial areas,203
+Soy,Soy,Sunflower,Corn,202
+Industrial and commercial areas,Industrial and commercial areas,Softwood forest,Woody moorlands,201
+Orchards and fruit growing,Orchards and fruit growing,Sunflower,Diffuse built-up area,200
+Vineyards,Vineyards,Sunflower,"Straw cereals (Wheat, Triticale, Barley)",200
+Natural grasslands and pastures,Natural grasslands and pastures,Woody moorlands,Industrial and commercial areas,199
+Water,Water,Diffuse built-up area,Industrial and commercial areas,198
+Hardwood forest,Hardwood forest,Hardwood forest,Diffuse built-up area,194
+Woody moorlands,Woody moorlands,Orchards and fruit growing,Softwood forest,192
+Woody moorlands,Woody moorlands,Sunflower,Industrial and commercial areas,191
+Roads,Roads,Industrial and commercial areas,Diffuse built-up area,186
+Softwood forest,Softwood forest,Softwood forest,Industrial and commercial areas,185
+Industrial and commercial areas,Industrial and commercial areas,Corn,Industrial and commercial areas,184
+Water,Water,Water,Orchards and fruit growing,183
+Hardwood forest,Hardwood forest,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",183
+Vineyards,Vineyards,Vineyards,Industrial and commercial areas,182
+Industrial and commercial areas,Industrial and commercial areas,Diffuse built-up area,Dense built-up area,181
+Orchards and fruit growing,Orchards and fruit growing,Orchards and fruit growing,Water,173
+Water,Water,Water,Woody moorlands,171
+Water,Water,Diffuse built-up area,Water,168
+Vineyards,Vineyards,Diffuse built-up area,Orchards and fruit growing,168
+Orchards and fruit growing,Orchards and fruit growing,Diffuse built-up area,Woody moorlands,167
+Orchards and fruit growing,Orchards and fruit growing,Woody moorlands,Industrial and commercial areas,159
+Woody moorlands,Woody moorlands,Sunflower,Orchards and fruit growing,159
+Orchards and fruit growing,Orchards and fruit growing,Woody moorlands,Softwood forest,157
+Corn,Corn,Corn,Sunflower,157
+Softwood forest,Softwood forest,Softwood forest,Diffuse built-up area,156
+Industrial and commercial areas,Industrial and commercial areas,Oilseeds (Rapeseed),"Straw cereals (Wheat, Triticale, Barley)",154
+Corn,Corn,Diffuse built-up area,Corn,153
+Industrial and commercial areas,Industrial and commercial areas,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",150
+Hardwood forest,Hardwood forest,Sunflower,Orchards and fruit growing,150
+Industrial and commercial areas,Industrial and commercial areas,Corn,"Straw cereals (Wheat, Triticale, Barley)",148
+Corn,Corn,Sunflower,Industrial and commercial areas,148
+Orchards and fruit growing,Orchards and fruit growing,Sunflower,Soy,146
+Industrial and commercial areas,Industrial and commercial areas,Diffuse built-up area,"Straw cereals (Wheat, Triticale, Barley)",146
+Hardwood forest,Hardwood forest,Water,Hardwood forest,144
+Hardwood forest,Hardwood forest,Oilseeds (Rapeseed),Hardwood forest,144
+Orchards and fruit growing,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",Corn,143
+Diffuse built-up area,Diffuse built-up area,Orchards and fruit growing,Diffuse built-up area,143
+Water,Water,Woody moorlands,Industrial and commercial areas,142
+Soy,Soy,Corn,Sunflower,142
+Diffuse built-up area,Diffuse built-up area,Orchards and fruit growing,Industrial and commercial areas,141
+Dense built-up area,Dense built-up area,Sunflower,"Straw cereals (Wheat, Triticale, Barley)",141
+Woody moorlands,Woody moorlands,Industrial and commercial areas,Orchards and fruit growing,140
+Industrial and commercial areas,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",Oilseeds (Rapeseed),140
+Dense built-up area,Dense built-up area,Roads,Industrial and commercial areas,139
+Orchards and fruit growing,Orchards and fruit growing,Industrial and commercial areas,Diffuse built-up area,136
+Vineyards,Vineyards,Oilseeds (Rapeseed),Vineyards,132
+Hardwood forest,Hardwood forest,Sunflower,Corn,132
+Woody moorlands,Woody moorlands,Orchards and fruit growing,Diffuse built-up area,131
+Orchards and fruit growing,Orchards and fruit growing,Sunflower,Oilseeds (Rapeseed),131
+Industrial and commercial areas,Industrial and commercial areas,Sunflower,Corn,131
+Industrial and commercial areas,Industrial and commercial areas,Woody moorlands,Diffuse built-up area,129
+Soy,Soy,Soy,Industrial and commercial areas,129
+Vineyards,Vineyards,Industrial and commercial areas,Sunflower,129
+Industrial and commercial areas,Industrial and commercial areas,Sunflower,Oilseeds (Rapeseed),128
+Hardwood forest,Hardwood forest,Softwood forest,Hardwood forest,124
+Vineyards,Vineyards,Sunflower,Hardwood forest,123
+Softwood forest,Softwood forest,Softwood forest,Orchards and fruit growing,123
+Hardwood forest,Hardwood forest,Hardwood forest,Corn,122
+Woody moorlands,Woody moorlands,Water,Orchards and fruit growing,121
+Vineyards,Vineyards,Vineyards,Corn,121
+Orchards and fruit growing,Orchards and fruit growing,Orchards and fruit growing,Softwood forest,120
+Roads,Roads,"Straw cereals (Wheat, Triticale, Barley)",Industrial and commercial areas,120
+Woody moorlands,Woody moorlands,Oilseeds (Rapeseed),"Straw cereals (Wheat, Triticale, Barley)",119
+Industrial and commercial areas,Industrial and commercial areas,Orchards and fruit growing,Oilseeds (Rapeseed),119
+Woody moorlands,Woody moorlands,"Straw cereals (Wheat, Triticale, Barley)",Orchards and fruit growing,119
+Vineyards,Vineyards,Industrial and commercial areas,Corn,118
+Soy,Soy,"Straw cereals (Wheat, Triticale, Barley)",Orchards and fruit growing,118
+Woody moorlands,Woody moorlands,Softwood forest,Orchards and fruit growing,118
+Corn,Corn,Oilseeds (Rapeseed),Orchards and fruit growing,115
+Hardwood forest,Hardwood forest,Diffuse built-up area,Corn,115
+Water,Water,Industrial and commercial areas,Woody moorlands,114
+Vineyards,Vineyards,Vineyards,Sunflower,113
+Natural grasslands and pastures,Natural grasslands and pastures,Sunflower,"Straw cereals (Wheat, Triticale, Barley)",113
+Orchards and fruit growing,Orchards and fruit growing,Industrial and commercial areas,Sunflower,111
+Roads,Roads,Sunflower,Industrial and commercial areas,110
+Woody moorlands,Woody moorlands,Orchards and fruit growing,Sunflower,110
+Water,Water,Sunflower,Industrial and commercial areas,110
+Orchards and fruit growing,Orchards and fruit growing,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",109
+Natural grasslands and pastures,Natural grasslands and pastures,Water,Softwood forest,109
+Diffuse built-up area,Diffuse built-up area,Vineyards,Diffuse built-up area,109
+Orchards and fruit growing,Orchards and fruit growing,Orchards and fruit growing,Soy,109
+Vineyards,Vineyards,Sunflower,Soy,108
+Woody moorlands,Woody moorlands,Orchards and fruit growing,Water,108
+Dense built-up area,Dense built-up area,Diffuse built-up area,Sunflower,108
+Corn,Corn,Protein crops (Beans / Peas),Corn,107
+Natural grasslands and pastures,Natural grasslands and pastures,Water,Natural grasslands and pastures,106
+Industrial and commercial areas,Industrial and commercial areas,Orchards and fruit growing,Woody moorlands,105
+Hardwood forest,Hardwood forest,Industrial and commercial areas,Woody moorlands,105
+Water,Water,Sunflower,Orchards and fruit growing,105
+Orchards and fruit growing,Orchards and fruit growing,Woody moorlands,Sunflower,103
+Natural grasslands and pastures,Natural grasslands and pastures,"Straw cereals (Wheat, Triticale, Barley)",Natural grasslands and pastures,103
+Dense built-up area,Dense built-up area,Orchards and fruit growing,Dense built-up area,103
+Vineyards,Vineyards,Vineyards,Soy,103
+Orchards and fruit growing,Orchards and fruit growing,Vineyards,Industrial and commercial areas,102
+Industrial and commercial areas,Industrial and commercial areas,Industrial and commercial areas,Oilseeds (Rapeseed),100
+Vineyards,Vineyards,Industrial and commercial areas,Soy,99
+Soy,Soy,Sunflower,"Straw cereals (Wheat, Triticale, Barley)",98
+Hardwood forest,Hardwood forest,Diffuse built-up area,Soy,98
+Hardwood forest,Hardwood forest,Orchards and fruit growing,Sunflower,98
+Dense built-up area,Dense built-up area,Industrial and commercial areas,Roads,97
+Orchards and fruit growing,Orchards and fruit growing,Natural grasslands and pastures,Orchards and fruit growing,96
+Orchards and fruit growing,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",Industrial and commercial areas,96
+Industrial and commercial areas,Industrial and commercial areas,Sunflower,Protein crops (Beans / Peas),96
+Vineyards,Vineyards,Water,Orchards and fruit growing,96
+Dense built-up area,Dense built-up area,"Straw cereals (Wheat, Triticale, Barley)",Sunflower,96
+Hardwood forest,Hardwood forest,"Straw cereals (Wheat, Triticale, Barley)",Sunflower,95
+Industrial and commercial areas,Industrial and commercial areas,Hardwood forest,Industrial and commercial areas,94
+Industrial and commercial areas,Industrial and commercial areas,Woody moorlands,Orchards and fruit growing,93
+Vineyards,Vineyards,Softwood forest,Orchards and fruit growing,93
+Woody moorlands,Woody moorlands,Water,Softwood forest,93
+Softwood forest,Softwood forest,Woody moorlands,Industrial and commercial areas,92
+Softwood forest,Softwood forest,Softwood forest,Water,91
+Natural grasslands and pastures,Natural grasslands and pastures,Softwood forest,Woody moorlands,90
+Softwood forest,Softwood forest,Woody moorlands,Water,90
+Industrial and commercial areas,Industrial and commercial areas,Industrial and commercial areas,Vineyards,90
+Water,Water,Softwood forest,Woody moorlands,89
+Industrial and commercial areas,Industrial and commercial areas,Soy,Industrial and commercial areas,89
+Hardwood forest,Hardwood forest,Vineyards,Industrial and commercial areas,89
+Orchards and fruit growing,Orchards and fruit growing,Oilseeds (Rapeseed),Industrial and commercial areas,89
+Water,Water,Woody moorlands,Softwood forest,89
+Dense built-up area,Dense built-up area,Orchards and fruit growing,Diffuse built-up area,88
+Vineyards,Vineyards,"Straw cereals (Wheat, Triticale, Barley)",Soy,87
+Roads,Roads,Industrial and commercial areas,Sunflower,87
+Corn,Corn,Diffuse built-up area,Industrial and commercial areas,87
+Sunflower,Sunflower,Protein crops (Beans / Peas),Sunflower,86
+Corn,Corn,Orchards and fruit growing,Corn,86
+Vineyards,Vineyards,Orchards and fruit growing,Sunflower,86
+Industrial and commercial areas,Industrial and commercial areas,Industrial and commercial areas,Corn,83
+Softwood forest,Softwood forest,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",83
+Woody moorlands,Woody moorlands,Oilseeds (Rapeseed),Industrial and commercial areas,82
+Woody moorlands,Woody moorlands,Sunflower,Water,82
+Vineyards,Vineyards,Diffuse built-up area,Oilseeds (Rapeseed),82
+Water,Water,Orchards and fruit growing,Sunflower,81
+Vineyards,Vineyards,Oilseeds (Rapeseed),Sunflower,80
+Natural grasslands and pastures,Natural grasslands and pastures,Woody moorlands,Softwood forest,80
+Water,Water,Vineyards,Water,79
+Industrial and commercial areas,Industrial and commercial areas,Softwood forest,Orchards and fruit growing,79
+Softwood forest,Softwood forest,Orchards and fruit growing,Industrial and commercial areas,79
+Soy,Soy,Roads,Hardwood forest,79
+Orchards and fruit growing,Orchards and fruit growing,Sunflower,Woody moorlands,78
+Softwood forest,Softwood forest,Softwood forest,"Straw cereals (Wheat, Triticale, Barley)",77
+Orchards and fruit growing,Orchards and fruit growing,Sunflower,Corn,76
+Roads,Roads,"Straw cereals (Wheat, Triticale, Barley)",Roads,76
+Diffuse built-up area,Diffuse built-up area,Sunflower,Industrial and commercial areas,74
+Industrial and commercial areas,Industrial and commercial areas,Oilseeds (Rapeseed),Sunflower,74
+Softwood forest,Softwood forest,Diffuse built-up area,Softwood forest,74
+Orchards and fruit growing,Orchards and fruit growing,Softwood forest,Industrial and commercial areas,74
+Orchards and fruit growing,Orchards and fruit growing,Corn,"Straw cereals (Wheat, Triticale, Barley)",74
+Vineyards,Vineyards,Vineyards,Orchards and fruit growing,74
+Natural grasslands and pastures,Natural grasslands and pastures,Diffuse built-up area,Natural grasslands and pastures,73
+Woody moorlands,Woody moorlands,Softwood forest,Water,73
+Corn,Corn,"Straw cereals (Wheat, Triticale, Barley)",Sunflower,73
+Corn,Corn,Soy,Sunflower,72
+Orchards and fruit growing,Orchards and fruit growing,Diffuse built-up area,Sunflower,72
+Roads,Roads,Softwood forest,Woody moorlands,71
+Water,Water,Orchards and fruit growing,Softwood forest,71
+Orchards and fruit growing,Orchards and fruit growing,Industrial and commercial areas,Oilseeds (Rapeseed),71
+Hardwood forest,Hardwood forest,Oilseeds (Rapeseed),Orchards and fruit growing,70
+Industrial and commercial areas,Industrial and commercial areas,Grasslands,Industrial and commercial areas,69
+Dense built-up area,Dense built-up area,Dense built-up area,Industrial and commercial areas,69
+Hardwood forest,Hardwood forest,Orchards and fruit growing,Vineyards,69
+Industrial and commercial areas,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",Diffuse built-up area,69
+Dense built-up area,Dense built-up area,Industrial and commercial areas,Sunflower,68
+Woody moorlands,Woody moorlands,Diffuse built-up area,Orchards and fruit growing,68
+Woody moorlands,Woody moorlands,"Straw cereals (Wheat, Triticale, Barley)",Industrial and commercial areas,68
+Sunflower,Sunflower,Hardwood forest,Sunflower,68
+Orchards and fruit growing,Orchards and fruit growing,Industrial and commercial areas,Softwood forest,67
+Industrial and commercial areas,Industrial and commercial areas,Vineyards,Diffuse built-up area,66
+Water,Water,"Straw cereals (Wheat, Triticale, Barley)",Soy,66
+Industrial and commercial areas,Industrial and commercial areas,Vineyards,Orchards and fruit growing,65
+Soy,Soy,Roads,Soy,64
+Vineyards,Vineyards,Vineyards,Oilseeds (Rapeseed),64
+Industrial and commercial areas,Industrial and commercial areas,Sunflower,Soy,64
+Vineyards,Vineyards,Sunflower,Orchards and fruit growing,64
+Vineyards,Vineyards,Orchards and fruit growing,Hardwood forest,64
+Industrial and commercial areas,Industrial and commercial areas,Orchards and fruit growing,Vineyards,63
+Orchards and fruit growing,Orchards and fruit growing,Woody moorlands,Water,63
+Diffuse built-up area,Diffuse built-up area,Vineyards,Industrial and commercial areas,63
+Industrial and commercial areas,Industrial and commercial areas,Softwood forest,Vineyards,63
+Water,Water,Diffuse built-up area,Orchards and fruit growing,63
+Water,Water,Industrial and commercial areas,Orchards and fruit growing,63
+Vineyards,Vineyards,Diffuse built-up area,Sunflower,63
+Dense built-up area,Dense built-up area,Industrial and commercial areas,Orchards and fruit growing,63
+Vineyards,Vineyards,Orchards and fruit growing,Softwood forest,63
+Orchards and fruit growing,Orchards and fruit growing,Sunflower,Hardwood forest,62
+Roads,Roads,Woody moorlands,Sunflower,62
+Roads,Roads,Industrial and commercial areas,Woody moorlands,61
+Softwood forest,Softwood forest,Sunflower,"Straw cereals (Wheat, Triticale, Barley)",61
+Water,Water,Diffuse built-up area,Woody moorlands,61
+Orchards and fruit growing,Orchards and fruit growing,Industrial and commercial areas,Corn,61
+Soy,Soy,Sunflower,Oilseeds (Rapeseed),60
+Corn,Corn,Orchards and fruit growing,Industrial and commercial areas,60
+Hardwood forest,Hardwood forest,Orchards and fruit growing,Oilseeds (Rapeseed),59
+Water,Water,Woody moorlands,Sunflower,59
+Hardwood forest,Hardwood forest,Diffuse built-up area,Woody moorlands,58
+Hardwood forest,Hardwood forest,Hardwood forest,Sunflower,58
+"Straw cereals (Wheat, Triticale, Barley)","Straw cereals (Wheat, Triticale, Barley)",Oilseeds (Rapeseed),"Straw cereals (Wheat, Triticale, Barley)",58
+Diffuse built-up area,Diffuse built-up area,Softwood forest,Industrial and commercial areas,58
+Industrial and commercial areas,Industrial and commercial areas,Water,Orchards and fruit growing,57
+Industrial and commercial areas,Industrial and commercial areas,Orchards and fruit growing,Hardwood forest,57
+Softwood forest,Softwood forest,Softwood forest,Sunflower,57
+Vineyards,Vineyards,Sunflower,Oilseeds (Rapeseed),57
+Natural grasslands and pastures,Natural grasslands and pastures,Corn,Natural grasslands and pastures,56
+Diffuse built-up area,Diffuse built-up area,Roads,Diffuse built-up area,56
+Water,Water,Water,Sunflower,56
+Water,Water,Sunflower,Diffuse built-up area,55
+Woody moorlands,Woody moorlands,Oilseeds (Rapeseed),Woody moorlands,55
+Orchards and fruit growing,Orchards and fruit growing,Orchards and fruit growing,Corn,55
+Hardwood forest,Hardwood forest,Sunflower,Vineyards,54
+Orchards and fruit growing,Orchards and fruit growing,Diffuse built-up area,"Straw cereals (Wheat, Triticale, Barley)",54
+Vineyards,Vineyards,"Straw cereals (Wheat, Triticale, Barley)",Sunflower,54
+Woody moorlands,Woody moorlands,Woody moorlands,Diffuse built-up area,54
+Water,Water,Sunflower,Woody moorlands,53
+Industrial and commercial areas,Industrial and commercial areas,Industrial and commercial areas,Hardwood forest,53
+Woody moorlands,Woody moorlands,Natural grasslands and pastures,Softwood forest,53
+Industrial and commercial areas,Industrial and commercial areas,Diffuse built-up area,Corn,53
+Soy,Soy,Soy,Hardwood forest,52
+Water,Water,Soy,Corn,52
+Roads,Roads,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",52
+Dense built-up area,Dense built-up area,Oilseeds (Rapeseed),"Straw cereals (Wheat, Triticale, Barley)",52
+Hardwood forest,Hardwood forest,Woody moorlands,Industrial and commercial areas,52
+Water,Water,Sunflower,"Straw cereals (Wheat, Triticale, Barley)",51
+Industrial and commercial areas,Industrial and commercial areas,Sunflower,Vineyards,50
+Orchards and fruit growing,Orchards and fruit growing,Oilseeds (Rapeseed),Sunflower,50
+Industrial and commercial areas,Industrial and commercial areas,Diffuse built-up area,Oilseeds (Rapeseed),49
+Vineyards,Vineyards,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",48
+Dense built-up area,Dense built-up area,"Straw cereals (Wheat, Triticale, Barley)",Diffuse built-up area,48
+Vineyards,Vineyards,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",48
+Woody moorlands,Woody moorlands,Water,Industrial and commercial areas,48
+Industrial and commercial areas,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",Soy,47
+Diffuse built-up area,Diffuse built-up area,Softwood forest,Diffuse built-up area,47
+Soy,Soy,Sunflower,Industrial and commercial areas,47
+Water,Water,Oilseeds (Rapeseed),"Straw cereals (Wheat, Triticale, Barley)",46
+Woody moorlands,Woody moorlands,Sunflower,Diffuse built-up area,46
+Woody moorlands,Woody moorlands,Natural grasslands and pastures,Industrial and commercial areas,46
+Industrial and commercial areas,Industrial and commercial areas,Woody moorlands,Softwood forest,46
+Water,Water,Woody moorlands,Orchards and fruit growing,45
+Vineyards,Vineyards,Vineyards,Softwood forest,45
+Hardwood forest,Hardwood forest,Orchards and fruit growing,Diffuse built-up area,44
+Dense built-up area,Dense built-up area,Woody moorlands,Industrial and commercial areas,44
+Vineyards,Vineyards,Industrial and commercial areas,Diffuse built-up area,44
+Orchards and fruit growing,Orchards and fruit growing,Softwood forest,Sunflower,43
+Vineyards,Vineyards,Softwood forest,Woody moorlands,43
+Hardwood forest,Hardwood forest,Protein crops (Beans / Peas),Sunflower,43
+Hardwood forest,Hardwood forest,Sunflower,Woody moorlands,43
+Diffuse built-up area,Diffuse built-up area,Woody moorlands,Diffuse built-up area,43
+Woody moorlands,Woody moorlands,Industrial and commercial areas,Sunflower,43
+Roads,Roads,Sunflower,"Straw cereals (Wheat, Triticale, Barley)",43
+Roads,Roads,Industrial and commercial areas,Orchards and fruit growing,42
+Woody moorlands,Woody moorlands,"Straw cereals (Wheat, Triticale, Barley)",Oilseeds (Rapeseed),42
+Industrial and commercial areas,Industrial and commercial areas,Soy,"Straw cereals (Wheat, Triticale, Barley)",42
+Softwood forest,Softwood forest,Sunflower,Orchards and fruit growing,42
+Industrial and commercial areas,Industrial and commercial areas,Vineyards,Sunflower,41
+Vineyards,Vineyards,Industrial and commercial areas,Oilseeds (Rapeseed),41
+Hardwood forest,Hardwood forest,Diffuse built-up area,Orchards and fruit growing,41
+Softwood forest,Softwood forest,Industrial and commercial areas,Diffuse built-up area,41
+Dense built-up area,Dense built-up area,"Straw cereals (Wheat, Triticale, Barley)",Corn,41
+Soy,Soy,Industrial and commercial areas,Sunflower,41
+Dense built-up area,Dense built-up area,"Straw cereals (Wheat, Triticale, Barley)",Industrial and commercial areas,41
+Orchards and fruit growing,Orchards and fruit growing,Oilseeds (Rapeseed),Corn,40
+Corn,Corn,"Straw cereals (Wheat, Triticale, Barley)",Orchards and fruit growing,40
+Natural grasslands and pastures,Natural grasslands and pastures,Diffuse built-up area,Industrial and commercial areas,40
+Water,Water,Orchards and fruit growing,Diffuse built-up area,40
+Softwood forest,Softwood forest,Softwood forest,Vineyards,40
+Natural grasslands and pastures,Natural grasslands and pastures,Natural grasslands and pastures,Corn,39
+Dense built-up area,Dense built-up area,Diffuse built-up area,Orchards and fruit growing,39
+Vineyards,Vineyards,Diffuse built-up area,Hardwood forest,39
+Water,Water,Softwood forest,Orchards and fruit growing,39
+Hardwood forest,Hardwood forest,Hardwood forest,Orchards and fruit growing,39
+Water,Water,Corn,Water,39
+Industrial and commercial areas,Industrial and commercial areas,Woody moorlands,Sunflower,39
+Dense built-up area,Dense built-up area,Oilseeds (Rapeseed),Industrial and commercial areas,39
+Industrial and commercial areas,Industrial and commercial areas,Industrial and commercial areas,Soy,39
+Dense built-up area,Dense built-up area,Softwood forest,Industrial and commercial areas,38
+Woody moorlands,Woody moorlands,Woody moorlands,Sunflower,38
+Industrial and commercial areas,Industrial and commercial areas,Industrial and commercial areas,Dense built-up area,38
+Woody moorlands,Woody moorlands,Oilseeds (Rapeseed),Orchards and fruit growing,38
+Industrial and commercial areas,Industrial and commercial areas,Diffuse built-up area,Hardwood forest,38
+Industrial and commercial areas,Industrial and commercial areas,Softwood forest,Sunflower,38
+Industrial and commercial areas,Industrial and commercial areas,Water,Woody moorlands,38
+Vineyards,Vineyards,Sunflower,Diffuse built-up area,37
+Soy,Soy,Woody moorlands,Soy,37
+Woody moorlands,Woody moorlands,Water,Sunflower,37
+Sunflower,Sunflower,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",37
+Softwood forest,Softwood forest,Woody moorlands,Orchards and fruit growing,36
+Woody moorlands,Woody moorlands,"Straw cereals (Wheat, Triticale, Barley)",Soy,36
+Softwood forest,Softwood forest,Sunflower,Hardwood forest,36
+Softwood forest,Softwood forest,Softwood forest,Corn,36
+Hardwood forest,Hardwood forest,"Straw cereals (Wheat, Triticale, Barley)",Orchards and fruit growing,35
+Industrial and commercial areas,Industrial and commercial areas,Orchards and fruit growing,Corn,35
+Orchards and fruit growing,Orchards and fruit growing,Water,Woody moorlands,35
+Water,Water,Industrial and commercial areas,Diffuse built-up area,35
+Orchards and fruit growing,Orchards and fruit growing,Softwood forest,Water,35
+Natural grasslands and pastures,Natural grasslands and pastures,Industrial and commercial areas,Woody moorlands,35
+Sunflower,Sunflower,Orchards and fruit growing,Oilseeds (Rapeseed),34
+Woody moorlands,Woody moorlands,Vineyards,Industrial and commercial areas,34
+Vineyards,Vineyards,Diffuse built-up area,"Straw cereals (Wheat, Triticale, Barley)",34
+Water,Water,"Straw cereals (Wheat, Triticale, Barley)",Corn,34
+Sunflower,Sunflower,Water,Sunflower,34
+Orchards and fruit growing,Orchards and fruit growing,Industrial and commercial areas,Hardwood forest,34
+Vineyards,Vineyards,Industrial and commercial areas,Hardwood forest,34
+Roads,Roads,Water,Roads,33
+Dense built-up area,Dense built-up area,Diffuse built-up area,"Straw cereals (Wheat, Triticale, Barley)",33
+Softwood forest,Softwood forest,Natural grasslands and pastures,Industrial and commercial areas,33
+Industrial and commercial areas,Industrial and commercial areas,Softwood forest,Diffuse built-up area,33
+Woody moorlands,Woody moorlands,Hardwood forest,Woody moorlands,33
+Industrial and commercial areas,Industrial and commercial areas,Corn,Diffuse built-up area,33
+Soy,Soy,Soy,Oilseeds (Rapeseed),33
+Dense built-up area,Dense built-up area,Sunflower,Orchards and fruit growing,32
+Vineyards,Vineyards,Hardwood forest,Orchards and fruit growing,32
+Orchards and fruit growing,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",Woody moorlands,32
+Industrial and commercial areas,Industrial and commercial areas,Industrial and commercial areas,Softwood forest,31
+Roads,Roads,Oilseeds (Rapeseed),Roads,31
+Woody moorlands,Woody moorlands,Roads,Industrial and commercial areas,31
+Industrial and commercial areas,Industrial and commercial areas,Orchards and fruit growing,Soy,31
+Vineyards,Vineyards,Industrial and commercial areas,Woody moorlands,31
+Hardwood forest,Hardwood forest,"Straw cereals (Wheat, Triticale, Barley)",Corn,30
+Diffuse built-up area,Diffuse built-up area,Diffuse built-up area,Sunflower,30
+Woody moorlands,Woody moorlands,Diffuse built-up area,Sunflower,29
+Orchards and fruit growing,Orchards and fruit growing,Orchards and fruit growing,Vineyards,29
+Orchards and fruit growing,Orchards and fruit growing,Orchards and fruit growing,Hardwood forest,29
+Industrial and commercial areas,Industrial and commercial areas,Diffuse built-up area,Soy,29
+Natural grasslands and pastures,Natural grasslands and pastures,Softwood forest,Industrial and commercial areas,29
+Hardwood forest,Hardwood forest,Protein crops (Beans / Peas),Industrial and commercial areas,29
+Industrial and commercial areas,Industrial and commercial areas,Sunflower,Woody moorlands,29
+Diffuse built-up area,Diffuse built-up area,Corn,Diffuse built-up area,29
+Roads,Roads,"Straw cereals (Wheat, Triticale, Barley)",Sunflower,28
+Dense built-up area,Dense built-up area,Roads,Dense built-up area,28
+Diffuse built-up area,Diffuse built-up area,"Straw cereals (Wheat, Triticale, Barley)",Diffuse built-up area,28
+Hardwood forest,Hardwood forest,Industrial and commercial areas,Orchards and fruit growing,28
+Industrial and commercial areas,Industrial and commercial areas,Soy,Sunflower,28
+Water,Water,Diffuse built-up area,Sunflower,28
+Orchards and fruit growing,Orchards and fruit growing,Soy,Industrial and commercial areas,28
+Corn,Corn,Oilseeds (Rapeseed),"Straw cereals (Wheat, Triticale, Barley)",28
+Roads,Roads,Orchards and fruit growing,Sunflower,27
+Woody moorlands,Woody moorlands,Industrial and commercial areas,Softwood forest,27
+Water,Water,"Straw cereals (Wheat, Triticale, Barley)",Industrial and commercial areas,27
+Woody moorlands,Woody moorlands,"Straw cereals (Wheat, Triticale, Barley)",Diffuse built-up area,27
+Roads,Roads,Roads,Diffuse built-up area,27
+Soy,Soy,Vineyards,Soy,26
+Softwood forest,Softwood forest,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",26
+Roads,Roads,Vineyards,Sunflower,26
+Orchards and fruit growing,Orchards and fruit growing,Hardwood forest,Orchards and fruit growing,26
+Orchards and fruit growing,Orchards and fruit growing,Water,Sunflower,26
+Softwood forest,Softwood forest,Industrial and commercial areas,Orchards and fruit growing,25
+Water,Water,Orchards and fruit growing,Hardwood forest,25
+Softwood forest,Softwood forest,Orchards and fruit growing,Water,25
+Dense built-up area,Dense built-up area,Vineyards,Diffuse built-up area,25
+Orchards and fruit growing,Orchards and fruit growing,Soy,Sunflower,25
+Industrial and commercial areas,Industrial and commercial areas,Woody moorlands,"Straw cereals (Wheat, Triticale, Barley)",25
+Orchards and fruit growing,Orchards and fruit growing,Vineyards,Woody moorlands,24
+Industrial and commercial areas,Industrial and commercial areas,Diffuse built-up area,Woody moorlands,24
+Orchards and fruit growing,Orchards and fruit growing,Softwood forest,Natural grasslands and pastures,24
+Orchards and fruit growing,Orchards and fruit growing,Industrial and commercial areas,Roads,24
+Industrial and commercial areas,Industrial and commercial areas,Oilseeds (Rapeseed),Diffuse built-up area,24
+Vineyards,Vineyards,Sunflower,Corn,24
+Vineyards,Vineyards,Orchards and fruit growing,Corn,24
+Hardwood forest,Hardwood forest,Oilseeds (Rapeseed),"Straw cereals (Wheat, Triticale, Barley)",24
+Vineyards,Vineyards,"Straw cereals (Wheat, Triticale, Barley)",Protein crops (Beans / Peas),24
+Hardwood forest,Hardwood forest,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",24
+Vineyards,Vineyards,Vineyards,Diffuse built-up area,24
+Corn,Corn,Diffuse built-up area,Sunflower,24
+Industrial and commercial areas,Industrial and commercial areas,Soy,Orchards and fruit growing,23
+Sunflower,Sunflower,Sunflower,Industrial and commercial areas,23
+Orchards and fruit growing,Orchards and fruit growing,Woody moorlands,"Straw cereals (Wheat, Triticale, Barley)",23
+Roads,Roads,Softwood forest,Vineyards,23
+Industrial and commercial areas,Industrial and commercial areas,Natural grasslands and pastures,Woody moorlands,23
+Industrial and commercial areas,Industrial and commercial areas,Hardwood forest,Orchards and fruit growing,23
+Vineyards,Vineyards,Roads,Vineyards,23
+Softwood forest,Softwood forest,Sunflower,Soy,23
+Roads,Roads,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",22
+Industrial and commercial areas,Industrial and commercial areas,Diffuse built-up area,Roads,22
+Corn,Corn,Sunflower,Oilseeds (Rapeseed),22
+Vineyards,Vineyards,"Straw cereals (Wheat, Triticale, Barley)",Corn,22
+Water,Water,Industrial and commercial areas,Sunflower,22
+Softwood forest,Softwood forest,Woody moorlands,Diffuse built-up area,22
+Hardwood forest,Hardwood forest,Sunflower,Water,22
+Woody moorlands,Woody moorlands,Roads,Woody moorlands,22
+Diffuse built-up area,Diffuse built-up area,Woody moorlands,Industrial and commercial areas,22
+Vineyards,Vineyards,Water,Woody moorlands,22
+Orchards and fruit growing,Orchards and fruit growing,Vineyards,Oilseeds (Rapeseed),22
+Softwood forest,Softwood forest,Orchards and fruit growing,Hardwood forest,21
+Softwood forest,Softwood forest,Industrial and commercial areas,Woody moorlands,21
+"Straw cereals (Wheat, Triticale, Barley)","Straw cereals (Wheat, Triticale, Barley)",Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",21
+Water,Water,Woody moorlands,Diffuse built-up area,21
+Industrial and commercial areas,Industrial and commercial areas,Natural grasslands and pastures,Softwood forest,21
+Roads,Roads,Natural grasslands and pastures,Industrial and commercial areas,21
+Woody moorlands,Woody moorlands,Sunflower,Softwood forest,21
+Softwood forest,Softwood forest,Diffuse built-up area,Industrial and commercial areas,21
+Orchards and fruit growing,Orchards and fruit growing,Industrial and commercial areas,Soy,21
+Industrial and commercial areas,Industrial and commercial areas,Woody moorlands,Water,20
+Hardwood forest,Hardwood forest,"Straw cereals (Wheat, Triticale, Barley)",Industrial and commercial areas,20
+Dense built-up area,Dense built-up area,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",20
+Woody moorlands,Woody moorlands,Water,Diffuse built-up area,20
+Water,Water,Natural grasslands and pastures,Water,20
+Industrial and commercial areas,Industrial and commercial areas,Water,Sunflower,20
+Soy,Soy,Diffuse built-up area,Sunflower,20
+Orchards and fruit growing,Orchards and fruit growing,Vineyards,"Straw cereals (Wheat, Triticale, Barley)",20
+Softwood forest,Softwood forest,Vineyards,Industrial and commercial areas,20
+Vineyards,Vineyards,Hardwood forest,Industrial and commercial areas,20
+Water,Water,Orchards and fruit growing,Soy,20
+"Straw cereals (Wheat, Triticale, Barley)","Straw cereals (Wheat, Triticale, Barley)",Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",20
+Orchards and fruit growing,Orchards and fruit growing,Natural grasslands and pastures,Softwood forest,20
+Softwood forest,Softwood forest,Diffuse built-up area,Sunflower,20
+Orchards and fruit growing,Orchards and fruit growing,Softwood forest,Diffuse built-up area,20
+Vineyards,Vineyards,"Straw cereals (Wheat, Triticale, Barley)",Industrial and commercial areas,20
+Softwood forest,Softwood forest,Water,Orchards and fruit growing,19
+Vineyards,Vineyards,Soy,Sunflower,19
+Soy,Soy,Sunflower,Diffuse built-up area,19
+Corn,Corn,Corn,Industrial and commercial areas,19
+Dense built-up area,Dense built-up area,Corn,Diffuse built-up area,19
+Softwood forest,Softwood forest,Sunflower,Industrial and commercial areas,19
+Corn,Corn,Corn,Oilseeds (Rapeseed),19
+Woody moorlands,Woody moorlands,Industrial and commercial areas,Vineyards,19
+Water,Water,"Straw cereals (Wheat, Triticale, Barley)",Oilseeds (Rapeseed),19
+Hardwood forest,Hardwood forest,Oilseeds (Rapeseed),Sunflower,19
+Softwood forest,Softwood forest,Water,Woody moorlands,19
+Softwood forest,Softwood forest,Orchards and fruit growing,Soy,19
+Orchards and fruit growing,Orchards and fruit growing,Softwood forest,"Straw cereals (Wheat, Triticale, Barley)",19
+Softwood forest,Softwood forest,Softwood forest,Soy,19
+Industrial and commercial areas,Industrial and commercial areas,Oilseeds (Rapeseed),Orchards and fruit growing,18
+Water,Water,Water,Soy,18
+Roads,Roads,Softwood forest,Sunflower,18
+Industrial and commercial areas,Industrial and commercial areas,Vineyards,Softwood forest,18
+Natural grasslands and pastures,Natural grasslands and pastures,Roads,Natural grasslands and pastures,18
+Roads,Roads,Woody moorlands,Vineyards,18
+Industrial and commercial areas,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",Orchards and fruit growing,18
+Vineyards,Vineyards,Corn,"Straw cereals (Wheat, Triticale, Barley)",18
+Roads,Roads,Sunflower,Corn,18
+Industrial and commercial areas,Industrial and commercial areas,Protein crops (Beans / Peas),Industrial and commercial areas,18
+Dense built-up area,Dense built-up area,Oilseeds (Rapeseed),Diffuse built-up area,18
+Sunflower,Sunflower,Orchards and fruit growing,Industrial and commercial areas,17
+Sunflower,Sunflower,Orchards and fruit growing,Soy,17
+Vineyards,Vineyards,Woody moorlands,Orchards and fruit growing,17
+Water,Water,Grasslands,Industrial and commercial areas,17
+Vineyards,Vineyards,Water,Industrial and commercial areas,17
+Diffuse built-up area,Diffuse built-up area,Industrial and commercial areas,Roads,17
+Dense built-up area,Dense built-up area,Natural grasslands and pastures,Industrial and commercial areas,17
+Hardwood forest,Hardwood forest,Industrial and commercial areas,Vineyards,17
+Softwood forest,Softwood forest,Vineyards,Orchards and fruit growing,17
+Industrial and commercial areas,Industrial and commercial areas,Roads,Diffuse built-up area,17
+Woody moorlands,Woody moorlands,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",17
+Woody moorlands,Woody moorlands,Softwood forest,Diffuse built-up area,17
+Water,Water,Softwood forest,Vineyards,17
+Natural grasslands and pastures,Natural grasslands and pastures,Diffuse built-up area,Woody moorlands,17
+Industrial and commercial areas,Industrial and commercial areas,Water,Vineyards,17
+Dense built-up area,Dense built-up area,Diffuse built-up area,Roads,16
+Woody moorlands,Woody moorlands,Sunflower,Oilseeds (Rapeseed),16
+Softwood forest,Softwood forest,Orchards and fruit growing,Vineyards,16
+Soy,Soy,Softwood forest,Soy,16
+Woody moorlands,Woody moorlands,Oilseeds (Rapeseed),Sunflower,16
+Vineyards,Vineyards,Woody moorlands,Sunflower,16
+Oilseeds (Rapeseed),Oilseeds (Rapeseed),Protein crops (Beans / Peas),Oilseeds (Rapeseed),16
+Vineyards,Vineyards,Orchards and fruit growing,Soy,16
+Hardwood forest,Hardwood forest,"Straw cereals (Wheat, Triticale, Barley)",Soy,16
+Vineyards,Vineyards,"Straw cereals (Wheat, Triticale, Barley)",Grasslands,16
+Orchards and fruit growing,Orchards and fruit growing,Oilseeds (Rapeseed),Diffuse built-up area,16
+Softwood forest,Softwood forest,Soy,Diffuse built-up area,16
+Roads,Roads,Vineyards,Orchards and fruit growing,16
+Orchards and fruit growing,Orchards and fruit growing,Woody moorlands,Diffuse built-up area,16
+Vineyards,Vineyards,Corn,Soy,16
+Water,Water,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",16
+Corn,Corn,Sunflower,"Straw cereals (Wheat, Triticale, Barley)",15
+Woody moorlands,Woody moorlands,Industrial and commercial areas,Natural grasslands and pastures,15
+Woody moorlands,Woody moorlands,Industrial and commercial areas,Roads,15
+Diffuse built-up area,Diffuse built-up area,Industrial and commercial areas,Sunflower,15
+Softwood forest,Softwood forest,Industrial and commercial areas,Vineyards,15
+Softwood forest,Softwood forest,Woody moorlands,Hardwood forest,15
+Woody moorlands,Woody moorlands,Vineyards,Orchards and fruit growing,15
+Orchards and fruit growing,Orchards and fruit growing,Diffuse built-up area,Oilseeds (Rapeseed),15
+Industrial and commercial areas,Industrial and commercial areas,Woody moorlands,Vineyards,15
+Woody moorlands,Woody moorlands,Softwood forest,Natural grasslands and pastures,15
+Sunflower,Sunflower,Sunflower,Corn,15
+Dense built-up area,Dense built-up area,Diffuse built-up area,Oilseeds (Rapeseed),14
+Softwood forest,Softwood forest,Industrial and commercial areas,Sunflower,14
+Industrial and commercial areas,Industrial and commercial areas,Orchards and fruit growing,Water,14
+Hardwood forest,Hardwood forest,Industrial and commercial areas,Oilseeds (Rapeseed),14
+Natural grasslands and pastures,Natural grasslands and pastures,Softwood forest,Vineyards,14
+Industrial and commercial areas,Industrial and commercial areas,Orchards and fruit growing,Softwood forest,14
+Water,Water,Corn,"Straw cereals (Wheat, Triticale, Barley)",14
+Natural grasslands and pastures,Natural grasslands and pastures,Water,Sunflower,14
+Hardwood forest,Hardwood forest,Soy,Corn,14
+Softwood forest,Softwood forest,Orchards and fruit growing,Sunflower,14
+Softwood forest,Softwood forest,Woody moorlands,Sunflower,14
+Natural grasslands and pastures,Natural grasslands and pastures,Industrial and commercial areas,Diffuse built-up area,14
+Vineyards,Vineyards,Woody moorlands,Softwood forest,14
+Sunflower,Sunflower,"Straw cereals (Wheat, Triticale, Barley)",Corn,14
+Soy,Soy,Corn,"Straw cereals (Wheat, Triticale, Barley)",14
+Roads,Roads,Woody moorlands,Diffuse built-up area,14
+Vineyards,Vineyards,Vineyards,Hardwood forest,14
+Roads,Roads,Water,Industrial and commercial areas,14
+Woody moorlands,Woody moorlands,"Straw cereals (Wheat, Triticale, Barley)",Corn,14
+Woody moorlands,Woody moorlands,Vineyards,Sunflower,14
+Water,Water,Orchards and fruit growing,Corn,14
+Water,Water,Water,Industrial and commercial areas,13
+Industrial and commercial areas,Industrial and commercial areas,Sunflower,Water,13
+Woody moorlands,Woody moorlands,Woody moorlands,Vineyards,13
+Softwood forest,Softwood forest,Woody moorlands,"Straw cereals (Wheat, Triticale, Barley)",13
+Natural grasslands and pastures,Natural grasslands and pastures,Orchards and fruit growing,Softwood forest,13
+Roads,Roads,Industrial and commercial areas,Vineyards,13
+Dense built-up area,Dense built-up area,Sunflower,Oilseeds (Rapeseed),13
+Vineyards,Vineyards,Orchards and fruit growing,Diffuse built-up area,13
+Hardwood forest,Hardwood forest,Roads,Hardwood forest,13
+Hardwood forest,Hardwood forest,Oilseeds (Rapeseed),Industrial and commercial areas,13
+Water,Water,Oilseeds (Rapeseed),Water,13
+Softwood forest,Softwood forest,Sunflower,Corn,13
+Woody moorlands,Woody moorlands,Woody moorlands,Natural grasslands and pastures,13
+Hardwood forest,Hardwood forest,Vineyards,Woody moorlands,13
+Orchards and fruit growing,Orchards and fruit growing,Soy,Vineyards,13
+Soy,Soy,Soy,Orchards and fruit growing,13
+Softwood forest,Softwood forest,Woody moorlands,Soy,13
+Roads,Roads,Woody moorlands,Softwood forest,13
+Vineyards,Vineyards,Softwood forest,Water,13
+Softwood forest,Softwood forest,Diffuse built-up area,"Straw cereals (Wheat, Triticale, Barley)",13
+Orchards and fruit growing,Orchards and fruit growing,Woody moorlands,Natural grasslands and pastures,13
+Water,Water,Sunflower,Softwood forest,13
+Sunflower,Sunflower,Vineyards,Sunflower,13
+Dense built-up area,Dense built-up area,"Straw cereals (Wheat, Triticale, Barley)",Oilseeds (Rapeseed),13
+Natural grasslands and pastures,Natural grasslands and pastures,Softwood forest,Water,12
+Sunflower,Sunflower,"Straw cereals (Wheat, Triticale, Barley)",Oilseeds (Rapeseed),12
+Woody moorlands,Woody moorlands,Softwood forest,Sunflower,12
+Dense built-up area,Dense built-up area,Orchards and fruit growing,Sunflower,12
+Hardwood forest,Hardwood forest,Water,Orchards and fruit growing,12
+Industrial and commercial areas,Industrial and commercial areas,Soy,Diffuse built-up area,12
+Diffuse built-up area,Diffuse built-up area,Diffuse built-up area,"Straw cereals (Wheat, Triticale, Barley)",12
+Sunflower,Sunflower,Hardwood forest,"Straw cereals (Wheat, Triticale, Barley)",12
+Natural grasslands and pastures,Natural grasslands and pastures,Industrial and commercial areas,Softwood forest,12
+Dense built-up area,Dense built-up area,Orchards and fruit growing,Oilseeds (Rapeseed),12
+Dense built-up area,Dense built-up area,Hardwood forest,Industrial and commercial areas,12
+Orchards and fruit growing,Orchards and fruit growing,Woody moorlands,Soy,12
+Industrial and commercial areas,Industrial and commercial areas,Industrial and commercial areas,Protein crops (Beans / Peas),12
+Softwood forest,Softwood forest,Softwood forest,Natural grasslands and pastures,12
+Soy,Soy,Vineyards,Hardwood forest,12
+Water,Water,Vineyards,Softwood forest,12
+Industrial and commercial areas,Industrial and commercial areas,Corn,Sunflower,12
+Soy,Soy,Sunflower,Hardwood forest,12
+Industrial and commercial areas,Industrial and commercial areas,Diffuse built-up area,Vineyards,12
+Hardwood forest,Hardwood forest,Water,Industrial and commercial areas,12
+Oilseeds (Rapeseed),Oilseeds (Rapeseed),Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",11
+Orchards and fruit growing,Orchards and fruit growing,Soy,"Straw cereals (Wheat, Triticale, Barley)",11
+Industrial and commercial areas,Industrial and commercial areas,Oilseeds (Rapeseed),Corn,11
+Soy,Soy,"Straw cereals (Wheat, Triticale, Barley)",Oilseeds (Rapeseed),11
+Natural grasslands and pastures,Natural grasslands and pastures,Diffuse built-up area,"Straw cereals (Wheat, Triticale, Barley)",11
+Orchards and fruit growing,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",Grasslands,11
+Softwood forest,Softwood forest,"Straw cereals (Wheat, Triticale, Barley)",Corn,11
+Water,Water,Softwood forest,Sunflower,11
+Diffuse built-up area,Diffuse built-up area,Oilseeds (Rapeseed),Diffuse built-up area,11
+Roads,Roads,Industrial and commercial areas,Corn,11
+Hardwood forest,Hardwood forest,Woody moorlands,Sunflower,11
+Softwood forest,Softwood forest,Softwood forest,Hardwood forest,11
+Hardwood forest,Hardwood forest,Orchards and fruit growing,Woody moorlands,11
+Roads,Roads,Soy,Industrial and commercial areas,11
+Orchards and fruit growing,Orchards and fruit growing,Grasslands,Sunflower,11
+Woody moorlands,Woody moorlands,Industrial and commercial areas,Oilseeds (Rapeseed),11
+Vineyards,Vineyards,Vineyards,"Straw cereals (Wheat, Triticale, Barley)",11
+Woody moorlands,Woody moorlands,Soy,Woody moorlands,11
+Industrial and commercial areas,Industrial and commercial areas,Softwood forest,Water,11
+Softwood forest,Softwood forest,Diffuse built-up area,Woody moorlands,11
+Roads,Roads,Orchards and fruit growing,Diffuse built-up area,11
+Softwood forest,Softwood forest,Orchards and fruit growing,Corn,11
+Woody moorlands,Woody moorlands,Woody moorlands,"Straw cereals (Wheat, Triticale, Barley)",10
+Corn,Corn,Diffuse built-up area,Soy,10
+Softwood forest,Softwood forest,Oilseeds (Rapeseed),"Straw cereals (Wheat, Triticale, Barley)",10
+Vineyards,Vineyards,Oilseeds (Rapeseed),"Straw cereals (Wheat, Triticale, Barley)",10
+Industrial and commercial areas,Industrial and commercial areas,Soy,Corn,10
+Softwood forest,Softwood forest,Orchards and fruit growing,Woody moorlands,10
+Dense built-up area,Dense built-up area,Woody moorlands,Diffuse built-up area,10
+Oilseeds (Rapeseed),Oilseeds (Rapeseed),Sunflower,Oilseeds (Rapeseed),10
+Water,Water,Orchards and fruit growing,Vineyards,10
+Orchards and fruit growing,Orchards and fruit growing,Natural grasslands and pastures,Industrial and commercial areas,10
+Water,Water,Natural grasslands and pastures,Softwood forest,10
+"Straw cereals (Wheat, Triticale, Barley)","Straw cereals (Wheat, Triticale, Barley)",Sunflower,"Straw cereals (Wheat, Triticale, Barley)",10
+Sunflower,Sunflower,Industrial and commercial areas,Orchards and fruit growing,10
+Roads,Roads,"Straw cereals (Wheat, Triticale, Barley)",Corn,10
+Orchards and fruit growing,Orchards and fruit growing,Vineyards,Softwood forest,10
+Roads,Roads,Orchards and fruit growing,Oilseeds (Rapeseed),10
+Diffuse built-up area,Diffuse built-up area,Roads,Industrial and commercial areas,10
+Dense built-up area,Dense built-up area,Sunflower,Dense built-up area,10
+Woody moorlands,Woody moorlands,Orchards and fruit growing,Oilseeds (Rapeseed),10
+Hardwood forest,Hardwood forest,Vineyards,Diffuse built-up area,10
+Roads,Roads,Corn,Roads,10
+Roads,Roads,Roads,Sunflower,9
+Natural grasslands and pastures,Natural grasslands and pastures,Water,Woody moorlands,9
+Orchards and fruit growing,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",Diffuse built-up area,9
+Hardwood forest,Hardwood forest,Corn,Sunflower,9
+Softwood forest,Softwood forest,Soy,Industrial and commercial areas,9
+Orchards and fruit growing,Orchards and fruit growing,Water,Industrial and commercial areas,9
+Softwood forest,Softwood forest,Sunflower,Diffuse built-up area,9
+Industrial and commercial areas,Industrial and commercial areas,Corn,Soy,9
+Softwood forest,Softwood forest,Sunflower,Water,9
+Industrial and commercial areas,Industrial and commercial areas,Sunflower,Hardwood forest,9
+Water,Water,Natural grasslands and pastures,Woody moorlands,9
+Industrial and commercial areas,Industrial and commercial areas,Hardwood forest,Diffuse built-up area,9
+Orchards and fruit growing,Orchards and fruit growing,Sunflower,Water,9
+Natural grasslands and pastures,Natural grasslands and pastures,Sunflower,Industrial and commercial areas,9
+Roads,Roads,Sunflower,Diffuse built-up area,9
+Corn,Corn,Vineyards,Corn,9
+Industrial and commercial areas,Industrial and commercial areas,Softwood forest,Natural grasslands and pastures,9
+Woody moorlands,Woody moorlands,Industrial and commercial areas,Water,9
+Orchards and fruit growing,Orchards and fruit growing,Diffuse built-up area,Soy,9
+"Straw cereals (Wheat, Triticale, Barley)","Straw cereals (Wheat, Triticale, Barley)",Corn,"Straw cereals (Wheat, Triticale, Barley)",9
+Vineyards,Vineyards,Softwood forest,Corn,9
+Corn,Corn,Soy,"Straw cereals (Wheat, Triticale, Barley)",9
+Orchards and fruit growing,Orchards and fruit growing,Grasslands,Orchards and fruit growing,9
+Woody moorlands,Woody moorlands,Soy,Orchards and fruit growing,9
+Roads,Roads,"Straw cereals (Wheat, Triticale, Barley)",Diffuse built-up area,9
+Hardwood forest,Hardwood forest,Orchards and fruit growing,Water,9
+Soy,Soy,Vineyards,Sunflower,8
+Sunflower,Sunflower,Industrial and commercial areas,Soy,8
+Industrial and commercial areas,Industrial and commercial areas,Soy,Vineyards,8
+Orchards and fruit growing,Orchards and fruit growing,Corn,Industrial and commercial areas,8
+Hardwood forest,Hardwood forest,Diffuse built-up area,Vineyards,8
+Water,Water,Softwood forest,Soy,8
+Natural grasslands and pastures,Natural grasslands and pastures,Woody moorlands,Water,8
+Sunflower,Sunflower,Water,Orchards and fruit growing,8
+Industrial and commercial areas,Industrial and commercial areas,Corn,Woody moorlands,8
+Industrial and commercial areas,Industrial and commercial areas,Vineyards,Woody moorlands,8
+Industrial and commercial areas,Industrial and commercial areas,Corn,Orchards and fruit growing,8
+Sunflower,Sunflower,Woody moorlands,Industrial and commercial areas,8
+Industrial and commercial areas,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",Protein crops (Beans / Peas),8
+Corn,Corn,Oilseeds (Rapeseed),Sunflower,8
+Industrial and commercial areas,Industrial and commercial areas,Woody moorlands,Roads,8
+Water,Water,Water,Vineyards,8
+Soy,Soy,Softwood forest,Sunflower,8
+Roads,Roads,Industrial and commercial areas,Softwood forest,8
+Natural grasslands and pastures,Natural grasslands and pastures,Roads,Diffuse built-up area,8
+Industrial and commercial areas,Industrial and commercial areas,Sunflower,Roads,8
+Dense built-up area,Dense built-up area,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",8
+Woody moorlands,Woody moorlands,Sunflower,Corn,8
+Industrial and commercial areas,Industrial and commercial areas,Industrial and commercial areas,Natural grasslands and pastures,8
+Softwood forest,Softwood forest,Woody moorlands,Vineyards,8
+Sunflower,Sunflower,Softwood forest,Sunflower,8
+Roads,Roads,"Straw cereals (Wheat, Triticale, Barley)",Oilseeds (Rapeseed),8
+Orchards and fruit growing,Orchards and fruit growing,Diffuse built-up area,Hardwood forest,8
+Soy,Soy,Oilseeds (Rapeseed),"Straw cereals (Wheat, Triticale, Barley)",8
+Sunflower,Sunflower,Diffuse built-up area,"Straw cereals (Wheat, Triticale, Barley)",8
+Orchards and fruit growing,Orchards and fruit growing,Softwood forest,Vineyards,8
+Water,Water,Soy,Softwood forest,8
+Water,Water,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",8
+Water,Water,Natural grasslands and pastures,Industrial and commercial areas,8
+Soy,Soy,Sunflower,Woody moorlands,7
+Sunflower,Sunflower,Sunflower,Diffuse built-up area,7
+Sunflower,Sunflower,Industrial and commercial areas,Oilseeds (Rapeseed),7
+Diffuse built-up area,Diffuse built-up area,Natural grasslands and pastures,Diffuse built-up area,7
+Sunflower,Sunflower,Diffuse built-up area,Industrial and commercial areas,7
+Diffuse built-up area,Diffuse built-up area,Natural grasslands and pastures,Industrial and commercial areas,7
+Sunflower,Sunflower,Diffuse built-up area,Orchards and fruit growing,7
+Hardwood forest,Hardwood forest,Diffuse built-up area,"Straw cereals (Wheat, Triticale, Barley)",7
+Softwood forest,Softwood forest,Water,Industrial and commercial areas,7
+Diffuse built-up area,Diffuse built-up area,Water,Diffuse built-up area,7
+Corn,Corn,Corn,Diffuse built-up area,7
+Dense built-up area,Dense built-up area,Industrial and commercial areas,Vineyards,7
+Orchards and fruit growing,Orchards and fruit growing,Orchards and fruit growing,Protein crops (Beans / Peas),7
+Water,Water,Industrial and commercial areas,Oilseeds (Rapeseed),7
+Hardwood forest,Hardwood forest,Vineyards,Sunflower,7
+Vineyards,Vineyards,Corn,Orchards and fruit growing,7
+Water,Water,Soy,Orchards and fruit growing,7
+Water,Water,Soy,Water,7
+Dense built-up area,Dense built-up area,Industrial and commercial areas,Oilseeds (Rapeseed),7
+Water,Water,Vineyards,Orchards and fruit growing,7
+Roads,Roads,Natural grasslands and pastures,Woody moorlands,7
+Industrial and commercial areas,Industrial and commercial areas,Natural grasslands and pastures,Diffuse built-up area,7
+Industrial and commercial areas,Industrial and commercial areas,Orchards and fruit growing,Roads,7
+Woody moorlands,Woody moorlands,Orchards and fruit growing,Soy,7
+Natural grasslands and pastures,Natural grasslands and pastures,Sunflower,Orchards and fruit growing,7
+Woody moorlands,Woody moorlands,Soy,Sunflower,7
+Industrial and commercial areas,Industrial and commercial areas,Vineyards,Soy,7
+Dense built-up area,Dense built-up area,Oilseeds (Rapeseed),Sunflower,7
+Roads,Roads,Corn,Soy,7
+Softwood forest,Softwood forest,Orchards and fruit growing,Diffuse built-up area,7
+Dense built-up area,Dense built-up area,"Straw cereals (Wheat, Triticale, Barley)",Soy,7
+Vineyards,Vineyards,Oilseeds (Rapeseed),Industrial and commercial areas,7
+Soy,Soy,Corn,Industrial and commercial areas,6
+Orchards and fruit growing,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",Hardwood forest,6
+Roads,Roads,Vineyards,Diffuse built-up area,6
+Water,Water,"Straw cereals (Wheat, Triticale, Barley)",Orchards and fruit growing,6
+Woody moorlands,Woody moorlands,Sunflower,Protein crops (Beans / Peas),6
+Corn,Corn,Industrial and commercial areas,Sunflower,6
+Roads,Roads,Oilseeds (Rapeseed),Industrial and commercial areas,6
+Woody moorlands,Woody moorlands,Orchards and fruit growing,Vineyards,6
+Orchards and fruit growing,Orchards and fruit growing,Orchards and fruit growing,Natural grasslands and pastures,6
+Natural grasslands and pastures,Natural grasslands and pastures,Softwood forest,Orchards and fruit growing,6
+Orchards and fruit growing,Orchards and fruit growing,Natural grasslands and pastures,Woody moorlands,6
+Orchards and fruit growing,Orchards and fruit growing,Industrial and commercial areas,Water,6
+Water,Water,Woody moorlands,Hardwood forest,6
+Natural grasslands and pastures,Natural grasslands and pastures,Water,Industrial and commercial areas,6
+Woody moorlands,Woody moorlands,Orchards and fruit growing,Corn,6
+Industrial and commercial areas,Industrial and commercial areas,Water,Softwood forest,6
+Vineyards,Vineyards,Vineyards,Protein crops (Beans / Peas),6
+Water,Water,Industrial and commercial areas,Softwood forest,6
+Sunflower,Sunflower,Roads,Sunflower,6
+Vineyards,Vineyards,Diffuse built-up area,Corn,6
+Roads,Roads,Industrial and commercial areas,Natural grasslands and pastures,6
+Industrial and commercial areas,Industrial and commercial areas,Vineyards,"Straw cereals (Wheat, Triticale, Barley)",6
+Vineyards,Vineyards,Vineyards,Woody moorlands,6
+Roads,Roads,Diffuse built-up area,Sunflower,6
+Sunflower,Sunflower,Orchards and fruit growing,Corn,6
+Dense built-up area,Dense built-up area,Natural grasslands and pastures,Dense built-up area,6
+Soy,Soy,Diffuse built-up area,Oilseeds (Rapeseed),6
+Water,Water,Oilseeds (Rapeseed),Industrial and commercial areas,6
+Orchards and fruit growing,Orchards and fruit growing,Water,Softwood forest,6
+Orchards and fruit growing,Orchards and fruit growing,Water,Diffuse built-up area,6
+Hardwood forest,Hardwood forest,Woody moorlands,Orchards and fruit growing,6
+Industrial and commercial areas,Industrial and commercial areas,Water,Diffuse built-up area,6
+Hardwood forest,Hardwood forest,Corn,Industrial and commercial areas,6
+Woody moorlands,Woody moorlands,Sunflower,Vineyards,5
+Diffuse built-up area,Diffuse built-up area,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",5
+Water,Water,Sunflower,Oilseeds (Rapeseed),5
+Corn,Corn,Sunflower,Hardwood forest,5
+Vineyards,Vineyards,Oilseeds (Rapeseed),Soy,5
+Dense built-up area,Dense built-up area,Corn,Industrial and commercial areas,5
+Sunflower,Sunflower,"Straw cereals (Wheat, Triticale, Barley)",Soy,5
+Vineyards,Vineyards,Orchards and fruit growing,Water,5
+Vineyards,Vineyards,Orchards and fruit growing,Woody moorlands,5
+Dense built-up area,Dense built-up area,Industrial and commercial areas,Hardwood forest,5
+Vineyards,Vineyards,Soy,Industrial and commercial areas,5
+Diffuse built-up area,Diffuse built-up area,Oilseeds (Rapeseed),Industrial and commercial areas,5
+Water,Water,Softwood forest,Industrial and commercial areas,5
+Dense built-up area,Dense built-up area,Natural grasslands and pastures,Woody moorlands,5
+Dense built-up area,Dense built-up area,Roads,Diffuse built-up area,5
+Vineyards,Vineyards,Woody moorlands,"Straw cereals (Wheat, Triticale, Barley)",5
+Vineyards,Vineyards,Corn,Industrial and commercial areas,5
+Industrial and commercial areas,Industrial and commercial areas,Sunflower,Softwood forest,5
+Orchards and fruit growing,Orchards and fruit growing,Diffuse built-up area,Corn,5
+Orchards and fruit growing,Orchards and fruit growing,Protein crops (Beans / Peas),"Straw cereals (Wheat, Triticale, Barley)",5
+Hardwood forest,Hardwood forest,Orchards and fruit growing,Protein crops (Beans / Peas),5
+Natural grasslands and pastures,Natural grasslands and pastures,"Straw cereals (Wheat, Triticale, Barley)",Diffuse built-up area,5
+Hardwood forest,Hardwood forest,Industrial and commercial areas,Corn,5
+Industrial and commercial areas,Industrial and commercial areas,Woody moorlands,Hardwood forest,5
+Roads,Roads,Oilseeds (Rapeseed),"Straw cereals (Wheat, Triticale, Barley)",5
+Hardwood forest,Hardwood forest,Orchards and fruit growing,Softwood forest,5
+Orchards and fruit growing,Orchards and fruit growing,Sunflower,Natural grasslands and pastures,5
+Orchards and fruit growing,Orchards and fruit growing,Hardwood forest,Woody moorlands,5
+Natural grasslands and pastures,Natural grasslands and pastures,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",5
+Softwood forest,Softwood forest,Natural grasslands and pastures,Diffuse built-up area,5
+Orchards and fruit growing,Orchards and fruit growing,Roads,Industrial and commercial areas,5
+Industrial and commercial areas,Industrial and commercial areas,Grasslands,Diffuse built-up area,5
+Soy,Soy,Industrial and commercial areas,Orchards and fruit growing,5
+Soy,Soy,Industrial and commercial areas,Hardwood forest,5
+Roads,Roads,Natural grasslands and pastures,Diffuse built-up area,5
+Soy,Soy,Hardwood forest,Soy,5
+Roads,Roads,Orchards and fruit growing,Vineyards,5
+Soy,Soy,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",5
+Hardwood forest,Hardwood forest,"Straw cereals (Wheat, Triticale, Barley)",Oilseeds (Rapeseed),5
+Softwood forest,Softwood forest,Sunflower,Woody moorlands,5
+Diffuse built-up area,Diffuse built-up area,Sunflower,"Straw cereals (Wheat, Triticale, Barley)",5
+Roads,Roads,Corn,Industrial and commercial areas,5
+Roads,Roads,Roads,Woody moorlands,5
+Industrial and commercial areas,Industrial and commercial areas,Vineyards,Roads,5
+Roads,Roads,Woody moorlands,Orchards and fruit growing,5
+Soy,Soy,Diffuse built-up area,"Straw cereals (Wheat, Triticale, Barley)",5
+Softwood forest,Softwood forest,Diffuse built-up area,Orchards and fruit growing,5
+Roads,Roads,Industrial and commercial areas,Hardwood forest,5
+Roads,Roads,Soy,Roads,4
+Orchards and fruit growing,Orchards and fruit growing,Sunflower,Grasslands,4
+Soy,Soy,Diffuse built-up area,Industrial and commercial areas,4
+Dense built-up area,Dense built-up area,Industrial and commercial areas,Soy,4
+Orchards and fruit growing,Orchards and fruit growing,Soy,Woody moorlands,4
+Woody moorlands,Woody moorlands,Industrial and commercial areas,Hardwood forest,4
+Natural grasslands and pastures,Natural grasslands and pastures,Softwood forest,Diffuse built-up area,4
+Vineyards,Vineyards,Water,Diffuse built-up area,4
+Softwood forest,Softwood forest,Natural grasslands and pastures,Soy,4
+Orchards and fruit growing,Orchards and fruit growing,Vineyards,Protein crops (Beans / Peas),4
+Hardwood forest,Hardwood forest,Softwood forest,Vineyards,4
+Roads,Roads,Softwood forest,Orchards and fruit growing,4
+Orchards and fruit growing,Orchards and fruit growing,Industrial and commercial areas,Vineyards,4
+Water,Water,Oilseeds (Rapeseed),Orchards and fruit growing,4
+Roads,Roads,Water,Sunflower,4
+Diffuse built-up area,Diffuse built-up area,Industrial and commercial areas,Oilseeds (Rapeseed),4
+Woody moorlands,Woody moorlands,Diffuse built-up area,Vineyards,4
+Vineyards,Vineyards,Water,Sunflower,4
+Vineyards,Vineyards,Diffuse built-up area,Softwood forest,4
+Natural grasslands and pastures,Natural grasslands and pastures,Industrial and commercial areas,Orchards and fruit growing,4
+Vineyards,Vineyards,Hardwood forest,Sunflower,4
+Orchards and fruit growing,Orchards and fruit growing,Diffuse built-up area,Vineyards,4
+Roads,Roads,Water,Orchards and fruit growing,4
+Hardwood forest,Hardwood forest,Industrial and commercial areas,Soy,4
+Softwood forest,Softwood forest,Natural grasslands and pastures,Woody moorlands,4
+Natural grasslands and pastures,Natural grasslands and pastures,Orchards and fruit growing,Industrial and commercial areas,4
+Roads,Roads,Water,Woody moorlands,4
+Woody moorlands,Woody moorlands,Diffuse built-up area,Water,4
+Water,Water,Woody moorlands,Soy,4
+Orchards and fruit growing,Orchards and fruit growing,Natural grasslands and pastures,Sunflower,4
+Soy,Soy,Vineyards,Roads,4
+Vineyards,Vineyards,Oilseeds (Rapeseed),Orchards and fruit growing,4
+Soy,Soy,Water,Soy,4
+Soy,Soy,Roads,Sunflower,4
+Water,Water,Vineyards,Woody moorlands,4
+Water,Water,Water,Diffuse built-up area,4
+Industrial and commercial areas,Industrial and commercial areas,Hardwood forest,Sunflower,4
+Softwood forest,Softwood forest,Grasslands,"Straw cereals (Wheat, Triticale, Barley)",4
+Corn,Corn,Diffuse built-up area,"Straw cereals (Wheat, Triticale, Barley)",4
+"Straw cereals (Wheat, Triticale, Barley)","Straw cereals (Wheat, Triticale, Barley)",Soy,"Straw cereals (Wheat, Triticale, Barley)",4
+Dense built-up area,Dense built-up area,Soy,Diffuse built-up area,4
+Dense built-up area,Dense built-up area,Diffuse built-up area,Vineyards,4
+"Straw cereals (Wheat, Triticale, Barley)","Straw cereals (Wheat, Triticale, Barley)","Straw cereals (Wheat, Triticale, Barley)",Oilseeds (Rapeseed),4
+Vineyards,Vineyards,Woody moorlands,Hardwood forest,4
+Soy,Soy,Industrial and commercial areas,Softwood forest,4
+Natural grasslands and pastures,Natural grasslands and pastures,Diffuse built-up area,Sunflower,4
+Hardwood forest,Hardwood forest,Protein crops (Beans / Peas),Corn,4
+Natural grasslands and pastures,Natural grasslands and pastures,Woody moorlands,Diffuse built-up area,4
+Diffuse built-up area,Diffuse built-up area,Diffuse built-up area,Dense built-up area,4
+Water,Water,Soy,Woody moorlands,4
+Dense built-up area,Dense built-up area,Industrial and commercial areas,Corn,4
+Industrial and commercial areas,Industrial and commercial areas,Protein crops (Beans / Peas),"Straw cereals (Wheat, Triticale, Barley)",4
+Soy,Soy,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",4
+Roads,Roads,Sunflower,Woody moorlands,4
+Corn,Corn,Orchards and fruit growing,Diffuse built-up area,4
+Oilseeds (Rapeseed),Oilseeds (Rapeseed),Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",4
+Roads,Roads,Sunflower,Vineyards,4
+Diffuse built-up area,Diffuse built-up area,Hardwood forest,Diffuse built-up area,3
+Woody moorlands,Woody moorlands,Protein crops (Beans / Peas),Woody moorlands,3
+Softwood forest,Softwood forest,Grasslands,Sunflower,3
+Roads,Roads,Roads,Orchards and fruit growing,3
+Orchards and fruit growing,Orchards and fruit growing,Corn,Woody moorlands,3
+Dense built-up area,Dense built-up area,Vineyards,Corn,3
+Vineyards,Vineyards,Industrial and commercial areas,Roads,3
+Vineyards,Vineyards,Protein crops (Beans / Peas),"Straw cereals (Wheat, Triticale, Barley)",3
+Softwood forest,Softwood forest,Industrial and commercial areas,Corn,3
+Vineyards,Vineyards,Diffuse built-up area,Soy,3
+Water,Water,Industrial and commercial areas,Hardwood forest,3
+Vineyards,Vineyards,Natural grasslands and pastures,Woody moorlands,3
+Water,Water,Diffuse built-up area,Oilseeds (Rapeseed),3
+Softwood forest,Softwood forest,Industrial and commercial areas,Soy,3
+Natural grasslands and pastures,Natural grasslands and pastures,Woody moorlands,Vineyards,3
+Dense built-up area,Dense built-up area,Vineyards,Dense built-up area,3
+Roads,Roads,Orchards and fruit growing,Softwood forest,3
+Roads,Roads,Softwood forest,Natural grasslands and pastures,3
+Dense built-up area,Dense built-up area,Sunflower,Vineyards,3
+Woody moorlands,Woody moorlands,Softwood forest,Vineyards,3
+Dense built-up area,Dense built-up area,Corn,Dense built-up area,3
+Softwood forest,Softwood forest,"Straw cereals (Wheat, Triticale, Barley)",Industrial and commercial areas,3
+Corn,Corn,Diffuse built-up area,Oilseeds (Rapeseed),3
+Industrial and commercial areas,Industrial and commercial areas,Orchards and fruit growing,Grasslands,3
+Sunflower,Sunflower,Oilseeds (Rapeseed),Industrial and commercial areas,3
+Dense built-up area,Dense built-up area,Corn,"Straw cereals (Wheat, Triticale, Barley)",3
+Soy,Soy,Industrial and commercial areas,Woody moorlands,3
+Soy,Soy,Oilseeds (Rapeseed),Orchards and fruit growing,3
+Woody moorlands,Woody moorlands,Vineyards,Softwood forest,3
+Roads,Roads,Sunflower,Soy,3
+Woody moorlands,Woody moorlands,Orchards and fruit growing,Natural grasslands and pastures,3
+Corn,Corn,Diffuse built-up area,Hardwood forest,3
+Industrial and commercial areas,Industrial and commercial areas,Diffuse built-up area,Softwood forest,3
+Water,Water,Sunflower,Vineyards,3
+Diffuse built-up area,Diffuse built-up area,Vineyards,Orchards and fruit growing,3
+Dense built-up area,Dense built-up area,Diffuse built-up area,Corn,3
+Soy,Soy,Sunflower,Roads,3
+Water,Water,Water,Hardwood forest,3
+Industrial and commercial areas,Industrial and commercial areas,Vineyards,Oilseeds (Rapeseed),3
+Soy,Soy,Soy,Vineyards,3
+Diffuse built-up area,Diffuse built-up area,"Straw cereals (Wheat, Triticale, Barley)",Industrial and commercial areas,3
+Woody moorlands,Woody moorlands,Grasslands,Woody moorlands,3
+Sunflower,Sunflower,Oilseeds (Rapeseed),"Straw cereals (Wheat, Triticale, Barley)",3
+Soy,Soy,Corn,Orchards and fruit growing,3
+Orchards and fruit growing,Orchards and fruit growing,Sunflower,Vineyards,3
+Hardwood forest,Hardwood forest,Softwood forest,Orchards and fruit growing,3
+Softwood forest,Softwood forest,Sunflower,Vineyards,3
+Woody moorlands,Woody moorlands,Diffuse built-up area,"Straw cereals (Wheat, Triticale, Barley)",3
+Hardwood forest,Hardwood forest,Water,Woody moorlands,3
+Hardwood forest,Hardwood forest,Woody moorlands,Diffuse built-up area,3
+Roads,Roads,Soy,"Straw cereals (Wheat, Triticale, Barley)",3
+Softwood forest,Softwood forest,Vineyards,Soy,3
+Water,Water,Orchards and fruit growing,Oilseeds (Rapeseed),3
+Corn,Corn,Sunflower,Diffuse built-up area,3
+Dense built-up area,Dense built-up area,Vineyards,Orchards and fruit growing,3
+Softwood forest,Softwood forest,Woody moorlands,Corn,3
+Vineyards,Vineyards,Woody moorlands,Corn,3
+Woody moorlands,Woody moorlands,Corn,Softwood forest,3
+Sunflower,Sunflower,Soy,Grasslands,3
+Hardwood forest,Hardwood forest,Hardwood forest,Soy,3
+Vineyards,Vineyards,"Straw cereals (Wheat, Triticale, Barley)",Oilseeds (Rapeseed),3
+Diffuse built-up area,Diffuse built-up area,Industrial and commercial areas,Vineyards,3
+Vineyards,Vineyards,"Straw cereals (Wheat, Triticale, Barley)",Orchards and fruit growing,3
+Industrial and commercial areas,Industrial and commercial areas,Protein crops (Beans / Peas),Orchards and fruit growing,2
+Roads,Roads,"Straw cereals (Wheat, Triticale, Barley)",Orchards and fruit growing,2
+Roads,Roads,Soy,Corn,2
+Roads,Roads,"Straw cereals (Wheat, Triticale, Barley)",Soy,2
+Hardwood forest,Hardwood forest,"Straw cereals (Wheat, Triticale, Barley)",Diffuse built-up area,2
+Soy,Soy,Orchards and fruit growing,Industrial and commercial areas,2
+Vineyards,Vineyards,Woody moorlands,Diffuse built-up area,2
+Woody moorlands,Woody moorlands,Diffuse built-up area,Oilseeds (Rapeseed),2
+Water,Water,Softwood forest,Diffuse built-up area,2
+Industrial and commercial areas,Industrial and commercial areas,Corn,Vineyards,2
+Water,Water,Woody moorlands,Vineyards,2
+Industrial and commercial areas,Industrial and commercial areas,Diffuse built-up area,Protein crops (Beans / Peas),2
+Orchards and fruit growing,Orchards and fruit growing,Soy,Corn,2
+Orchards and fruit growing,Orchards and fruit growing,Softwood forest,Hardwood forest,2
+Orchards and fruit growing,Orchards and fruit growing,Protein crops (Beans / Peas),Diffuse built-up area,2
+Water,Water,Sunflower,Corn,2
+Industrial and commercial areas,Industrial and commercial areas,Grasslands,"Straw cereals (Wheat, Triticale, Barley)",2
+Industrial and commercial areas,Industrial and commercial areas,Grasslands,Sunflower,2
+Water,Water,Sunflower,Soy,2
+Industrial and commercial areas,Industrial and commercial areas,Oilseeds (Rapeseed),Hardwood forest,2
+Dense built-up area,Dense built-up area,Diffuse built-up area,Soy,2
+Industrial and commercial areas,Industrial and commercial areas,Industrial and commercial areas,Water,2
+Orchards and fruit growing,Orchards and fruit growing,Natural grasslands and pastures,"Straw cereals (Wheat, Triticale, Barley)",2
+Woody moorlands,Woody moorlands,Corn,Industrial and commercial areas,2
+Orchards and fruit growing,Orchards and fruit growing,Vineyards,Diffuse built-up area,2
+Oilseeds (Rapeseed),Oilseeds (Rapeseed),Diffuse built-up area,Oilseeds (Rapeseed),2
+Woody moorlands,Woody moorlands,Diffuse built-up area,Softwood forest,2
+Roads,Roads,Orchards and fruit growing,Woody moorlands,2
+Water,Water,Corn,Softwood forest,2
+Hardwood forest,Hardwood forest,Vineyards,Corn,2
+Industrial and commercial areas,Industrial and commercial areas,Protein crops (Beans / Peas),Diffuse built-up area,2
+Water,Water,Grasslands,Oilseeds (Rapeseed),2
+Woody moorlands,Woody moorlands,Industrial and commercial areas,Protein crops (Beans / Peas),2
+Roads,Roads,Industrial and commercial areas,Oilseeds (Rapeseed),2
+Water,Water,Industrial and commercial areas,Roads,2
+Roads,Roads,Diffuse built-up area,"Straw cereals (Wheat, Triticale, Barley)",2
+Corn,Corn,Woody moorlands,Corn,2
+Roads,Roads,Dense built-up area,Roads,2
+Corn,Corn,Woody moorlands,Industrial and commercial areas,2
+Orchards and fruit growing,Orchards and fruit growing,Woody moorlands,Vineyards,2
+Vineyards,Vineyards,Sunflower,Woody moorlands,2
+Hardwood forest,Hardwood forest,Water,Softwood forest,2
+Natural grasslands and pastures,Natural grasslands and pastures,Woody moorlands,Orchards and fruit growing,2
+Softwood forest,Softwood forest,Diffuse built-up area,Corn,2
+Corn,Corn,"Straw cereals (Wheat, Triticale, Barley)",Industrial and commercial areas,2
+Natural grasslands and pastures,Natural grasslands and pastures,Orchards and fruit growing,Vineyards,2
+Corn,Corn,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",2
+Sunflower,Sunflower,Softwood forest,Woody moorlands,2
+Softwood forest,Softwood forest,Water,Sunflower,2
+Softwood forest,Softwood forest,Vineyards,Woody moorlands,2
+Sunflower,Sunflower,Sunflower,Grasslands,2
+Softwood forest,Softwood forest,Vineyards,Diffuse built-up area,2
+Diffuse built-up area,Diffuse built-up area,Industrial and commercial areas,Orchards and fruit growing,2
+Sunflower,Sunflower,Vineyards,Industrial and commercial areas,2
+Sunflower,Sunflower,Vineyards,Oilseeds (Rapeseed),2
+Dense built-up area,Dense built-up area,"Straw cereals (Wheat, Triticale, Barley)",Hardwood forest,2
+Woody moorlands,Woody moorlands,Softwood forest,"Straw cereals (Wheat, Triticale, Barley)",2
+Sunflower,Sunflower,Woody moorlands,Softwood forest,2
+Vineyards,Vineyards,Corn,Hardwood forest,2
+Industrial and commercial areas,Industrial and commercial areas,Softwood forest,"Straw cereals (Wheat, Triticale, Barley)",2
+Softwood forest,Softwood forest,"Straw cereals (Wheat, Triticale, Barley)",Softwood forest,2
+Softwood forest,Softwood forest,Soy,Sunflower,2
+Softwood forest,Softwood forest,Soy,Softwood forest,2
+Woody moorlands,Woody moorlands,Soy,Corn,2
+Diffuse built-up area,Diffuse built-up area,Grasslands,Diffuse built-up area,2
+Corn,Corn,Oilseeds (Rapeseed),Diffuse built-up area,2
+Corn,Corn,Industrial and commercial areas,Soy,2
+Sunflower,Sunflower,Orchards and fruit growing,Water,2
+Sunflower,Sunflower,Orchards and fruit growing,Vineyards,2
+Diffuse built-up area,Diffuse built-up area,Industrial and commercial areas,Woody moorlands,2
+Industrial and commercial areas,Industrial and commercial areas,Sunflower,Grasslands,2
+Diffuse built-up area,Diffuse built-up area,Sunflower,Vineyards,2
+Soy,Soy,Sunflower,Protein crops (Beans / Peas),2
+Industrial and commercial areas,Industrial and commercial areas,Vineyards,Water,2
+Woody moorlands,Woody moorlands,Woody moorlands,Roads,2
+Industrial and commercial areas,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",Hardwood forest,2
+Soy,Soy,Vineyards,Industrial and commercial areas,2
+Corn,Corn,Corn,Protein crops (Beans / Peas),2
+Soy,Soy,Softwood forest,Industrial and commercial areas,2
+"Straw cereals (Wheat, Triticale, Barley)","Straw cereals (Wheat, Triticale, Barley)","Straw cereals (Wheat, Triticale, Barley)",Industrial and commercial areas,2
+Industrial and commercial areas,Industrial and commercial areas,Woody moorlands,Natural grasslands and pastures,2
+Soy,Soy,Oilseeds (Rapeseed),Sunflower,2
+Sunflower,Sunflower,Diffuse built-up area,Soy,2
+Sunflower,Sunflower,Grasslands,Sunflower,2
+Corn,Corn,Industrial and commercial areas,Orchards and fruit growing,2
+Sunflower,Sunflower,Industrial and commercial areas,Woody moorlands,2
+Corn,Corn,Industrial and commercial areas,Softwood forest,2
+Soy,Soy,Diffuse built-up area,Corn,2
+Soy,Soy,Corn,Vineyards,2
+Corn,Corn,Oilseeds (Rapeseed),Industrial and commercial areas,2
+Dense built-up area,Dense built-up area,Diffuse built-up area,Hardwood forest,2
+Natural grasslands and pastures,Natural grasslands and pastures,Water,Vineyards,2
+Roads,Roads,Vineyards,Woody moorlands,2
+Softwood forest,Softwood forest,Diffuse built-up area,Soy,2
+Industrial and commercial areas,Industrial and commercial areas,Roads,"Straw cereals (Wheat, Triticale, Barley)",2
+Softwood forest,Softwood forest,Diffuse built-up area,Vineyards,2
+Industrial and commercial areas,Industrial and commercial areas,Roads,Sunflower,2
+Corn,Corn,Orchards and fruit growing,Soy,2
+Dense built-up area,Dense built-up area,Woody moorlands,Orchards and fruit growing,2
+Dense built-up area,Dense built-up area,Woody moorlands,Sunflower,2
+Vineyards,Vineyards,Softwood forest,Sunflower,2
+Softwood forest,Softwood forest,Industrial and commercial areas,Water,2
+Vineyards,Vineyards,Roads,Sunflower,2
+Dense built-up area,Dense built-up area,Sunflower,Soy,2
+Diffuse built-up area,Diffuse built-up area,Diffuse built-up area,Corn,2
+Corn,Corn,Soy,Softwood forest,2
+Vineyards,Vineyards,Roads,Industrial and commercial areas,2
+Hardwood forest,Hardwood forest,Soy,Sunflower,2
+Vineyards,Vineyards,Sunflower,Softwood forest,2
+Diffuse built-up area,Diffuse built-up area,Diffuse built-up area,Roads,2
+Natural grasslands and pastures,Natural grasslands and pastures,Vineyards,Industrial and commercial areas,2
+Softwood forest,Softwood forest,Natural grasslands and pastures,Sunflower,2
+Industrial and commercial areas,Industrial and commercial areas,Roads,Woody moorlands,2
+Roads,Roads,Sunflower,Orchards and fruit growing,2
+Roads,Roads,Sunflower,Softwood forest,2
+Dense built-up area,Dense built-up area,Sunflower,Corn,2
+Woody moorlands,Woody moorlands,Oilseeds (Rapeseed),Soy,1
+Natural grasslands and pastures,Natural grasslands and pastures,Diffuse built-up area,Orchards and fruit growing,1
+Corn,Corn,Hardwood forest,Corn,1
+Woody moorlands,Woody moorlands,Vineyards,Diffuse built-up area,1
+Natural grasslands and pastures,Natural grasslands and pastures,Diffuse built-up area,Soy,1
+Natural grasslands and pastures,Natural grasslands and pastures,Woody moorlands,Sunflower,1
+Water,Water,Woody moorlands,Roads,1
+Corn,Corn,Orchards and fruit growing,Sunflower,1
+Industrial and commercial areas,Industrial and commercial areas,Water,Hardwood forest,1
+Dense built-up area,Dense built-up area,Dense built-up area,"Straw cereals (Wheat, Triticale, Barley)",1
+Water,Water,Woody moorlands,Natural grasslands and pastures,1
+Industrial and commercial areas,Industrial and commercial areas,Soy,Oilseeds (Rapeseed),1
+Natural grasslands and pastures,Natural grasslands and pastures,Woody moorlands,"Straw cereals (Wheat, Triticale, Barley)",1
+Natural grasslands and pastures,Natural grasslands and pastures,Diffuse built-up area,Hardwood forest,1
+Dense built-up area,Dense built-up area,Dense built-up area,Roads,1
+Industrial and commercial areas,Industrial and commercial areas,Woody moorlands,Soy,1
+Industrial and commercial areas,Industrial and commercial areas,Oilseeds (Rapeseed),Protein crops (Beans / Peas),1
+Orchards and fruit growing,Orchards and fruit growing,Industrial and commercial areas,Protein crops (Beans / Peas),1
+Woody moorlands,Woody moorlands,Water,Soy,1
+Industrial and commercial areas,Industrial and commercial areas,Water,Roads,1
+Woody moorlands,Woody moorlands,Water,Vineyards,1
+Industrial and commercial areas,Industrial and commercial areas,Protein crops (Beans / Peas),Corn,1
+Woody moorlands,Woody moorlands,Protein crops (Beans / Peas),Industrial and commercial areas,1
+Woody moorlands,Woody moorlands,Sunflower,Soy,1
+Woody moorlands,Woody moorlands,Grasslands,Sunflower,1
+Corn,Corn,Sunflower,Vineyards,1
+Oilseeds (Rapeseed),Oilseeds (Rapeseed),Industrial and commercial areas,Sunflower,1
+Industrial and commercial areas,Industrial and commercial areas,Protein crops (Beans / Peas),Oilseeds (Rapeseed),1
+Natural grasslands and pastures,Natural grasslands and pastures,Orchards and fruit growing,Water,1
+Oilseeds (Rapeseed),Oilseeds (Rapeseed),"Straw cereals (Wheat, Triticale, Barley)",Diffuse built-up area,1
+Natural grasslands and pastures,Natural grasslands and pastures,Roads,Industrial and commercial areas,1
+Oilseeds (Rapeseed),Oilseeds (Rapeseed),"Straw cereals (Wheat, Triticale, Barley)",Sunflower,1
+Orchards and fruit growing,Orchards and fruit growing,Corn,Sunflower,1
+Woody moorlands,Woody moorlands,Industrial and commercial areas,Soy,1
+Industrial and commercial areas,Industrial and commercial areas,Softwood forest,Oilseeds (Rapeseed),1
+Natural grasslands and pastures,Natural grasslands and pastures,Sunflower,Softwood forest,1
+Oilseeds (Rapeseed),Oilseeds (Rapeseed),Vineyards,"Straw cereals (Wheat, Triticale, Barley)",1
+Corn,Corn,Oilseeds (Rapeseed),Soy,1
+Woody moorlands,Woody moorlands,Softwood forest,Soy,1
+Orchards and fruit growing,Orchards and fruit growing,Diffuse built-up area,Protein crops (Beans / Peas),1
+Natural grasslands and pastures,Natural grasslands and pastures,Vineyards,Softwood forest,1
+Woody moorlands,Woody moorlands,Natural grasslands and pastures,Orchards and fruit growing,1
+Corn,Corn,Natural grasslands and pastures,Corn,1
+Woody moorlands,Woody moorlands,"Straw cereals (Wheat, Triticale, Barley)",Softwood forest,1
+Corn,Corn,Woody moorlands,Vineyards,1
+Corn,Corn,Industrial and commercial areas,Vineyards,1
+Natural grasslands and pastures,Natural grasslands and pastures,Vineyards,Woody moorlands,1
+Woody moorlands,Woody moorlands,Roads,Diffuse built-up area,1
+Woody moorlands,Woody moorlands,"Straw cereals (Wheat, Triticale, Barley)",Water,1
+Woody moorlands,Woody moorlands,Diffuse built-up area,Natural grasslands and pastures,1
+Natural grasslands and pastures,Natural grasslands and pastures,Orchards and fruit growing,Diffuse built-up area,1
+Natural grasslands and pastures,Natural grasslands and pastures,Natural grasslands and pastures,Orchards and fruit growing,1
+Woody moorlands,Woody moorlands,Corn,Orchards and fruit growing,1
+Oilseeds (Rapeseed),Oilseeds (Rapeseed),Industrial and commercial areas,Oilseeds (Rapeseed),1
+Natural grasslands and pastures,Natural grasslands and pastures,Industrial and commercial areas,"Straw cereals (Wheat, Triticale, Barley)",1
+Industrial and commercial areas,Industrial and commercial areas,Soy,Hardwood forest,1
+Corn,Corn,Natural grasslands and pastures,Sunflower,1
+Soy,Soy,"Straw cereals (Wheat, Triticale, Barley)",Corn,1
+Orchards and fruit growing,Orchards and fruit growing,Oilseeds (Rapeseed),Grasslands,1
+Sunflower,Sunflower,Softwood forest,Industrial and commercial areas,1
+Sunflower,Sunflower,Soy,Orchards and fruit growing,1
+Hardwood forest,Hardwood forest,Hardwood forest,Vineyards,1
+Softwood forest,Softwood forest,Woody moorlands,Natural grasslands and pastures,1
+Sunflower,Sunflower,"Straw cereals (Wheat, Triticale, Barley)",Industrial and commercial areas,1
+Sunflower,Sunflower,Sunflower,Hardwood forest,1
+Softwood forest,Softwood forest,Vineyards,Oilseeds (Rapeseed),1
+Diffuse built-up area,Diffuse built-up area,Industrial and commercial areas,Softwood forest,1
+Sunflower,Sunflower,Sunflower,Orchards and fruit growing,1
+Sunflower,Sunflower,Vineyards,"Straw cereals (Wheat, Triticale, Barley)",1
+Softwood forest,Softwood forest,Vineyards,Corn,1
+Sunflower,Sunflower,Woody moorlands,Orchards and fruit growing,1
+Diffuse built-up area,Diffuse built-up area,Industrial and commercial areas,Dense built-up area,1
+Softwood forest,Softwood forest,"Straw cereals (Wheat, Triticale, Barley)",Sunflower,1
+Vineyards,Vineyards,Corn,Oilseeds (Rapeseed),1
+Diffuse built-up area,Diffuse built-up area,Hardwood forest,Industrial and commercial areas,1
+Hardwood forest,Hardwood forest,Oilseeds (Rapeseed),Corn,1
+Diffuse built-up area,Diffuse built-up area,Diffuse built-up area,Vineyards,1
+Hardwood forest,Hardwood forest,Orchards and fruit growing,Corn,1
+Softwood forest,Softwood forest,Orchards and fruit growing,Natural grasslands and pastures,1
+Vineyards,Vineyards,Diffuse built-up area,Woody moorlands,1
+Vineyards,Vineyards,Grasslands,Vineyards,1
+Vineyards,Vineyards,Hardwood forest,Soy,1
+Diffuse built-up area,Diffuse built-up area,Diffuse built-up area,Soy,1
+Hardwood forest,Hardwood forest,Orchards and fruit growing,Soy,1
+Diffuse built-up area,Diffuse built-up area,Diffuse built-up area,Orchards and fruit growing,1
+Diffuse built-up area,Diffuse built-up area,Diffuse built-up area,Oilseeds (Rapeseed),1
+Diffuse built-up area,Diffuse built-up area,Dense built-up area,Industrial and commercial areas,1
+Softwood forest,Softwood forest,Industrial and commercial areas,Hardwood forest,1
+Softwood forest,Softwood forest,Hardwood forest,Industrial and commercial areas,1
+Sunflower,Sunflower,Softwood forest,Orchards and fruit growing,1
+Sunflower,Sunflower,Softwood forest,Grasslands,1
+Softwood forest,Softwood forest,Grasslands,Corn,1
+Soy,Soy,Corn,Oilseeds (Rapeseed),1
+Diffuse built-up area,Diffuse built-up area,Sunflower,Soy,1
+Diffuse built-up area,Diffuse built-up area,Soy,Industrial and commercial areas,1
+Soy,Soy,Sunflower,Orchards and fruit growing,1
+Soy,Soy,Sunflower,Softwood forest,1
+Diffuse built-up area,Diffuse built-up area,Soy,Diffuse built-up area,1
+Diffuse built-up area,Diffuse built-up area,Softwood forest,Woody moorlands,1
+Soy,Soy,Soy,Diffuse built-up area,1
+Soy,Soy,Vineyards,Softwood forest,1
+Soy,Soy,Softwood forest,Orchards and fruit growing,1
+Soy,Soy,Roads,Industrial and commercial areas,1
+"Straw cereals (Wheat, Triticale, Barley)","Straw cereals (Wheat, Triticale, Barley)",Grasslands,Diffuse built-up area,1
+"Straw cereals (Wheat, Triticale, Barley)","Straw cereals (Wheat, Triticale, Barley)",Industrial and commercial areas,Diffuse built-up area,1
+"Straw cereals (Wheat, Triticale, Barley)","Straw cereals (Wheat, Triticale, Barley)",Industrial and commercial areas,Orchards and fruit growing,1
+Soy,Soy,Orchards and fruit growing,Woody moorlands,1
+Soy,Soy,Orchards and fruit growing,Roads,1
+"Straw cereals (Wheat, Triticale, Barley)","Straw cereals (Wheat, Triticale, Barley)","Straw cereals (Wheat, Triticale, Barley)",Orchards and fruit growing,1
+"Straw cereals (Wheat, Triticale, Barley)","Straw cereals (Wheat, Triticale, Barley)","Straw cereals (Wheat, Triticale, Barley)",Soy,1
+Soy,Soy,Orchards and fruit growing,Oilseeds (Rapeseed),1
+Sunflower,Sunflower,Corn,Soy,1
+Soy,Soy,Orchards and fruit growing,Corn,1
+Diffuse built-up area,Diffuse built-up area,Orchards and fruit growing,"Straw cereals (Wheat, Triticale, Barley)",1
+Sunflower,Sunflower,Industrial and commercial areas,Diffuse built-up area,1
+Sunflower,Sunflower,Industrial and commercial areas,Hardwood forest,1
+Soy,Soy,Industrial and commercial areas,Oilseeds (Rapeseed),1
+Soy,Soy,Industrial and commercial areas,Corn,1
+Sunflower,Sunflower,Natural grasslands and pastures,Industrial and commercial areas,1
+Sunflower,Sunflower,Oilseeds (Rapeseed),Orchards and fruit growing,1
+Hardwood forest,Hardwood forest,Grasslands,Industrial and commercial areas,1
+Sunflower,Sunflower,Protein crops (Beans / Peas),Soy,1
+Softwood forest,Softwood forest,Grasslands,Hardwood forest,1
+Dense built-up area,Dense built-up area,Water,Industrial and commercial areas,1
+Orchards and fruit growing,Orchards and fruit growing,Oilseeds (Rapeseed),Soy,1
+Roads,Roads,Grasslands,Industrial and commercial areas,1
+Roads,Roads,Diffuse built-up area,Soy,1
+Roads,Roads,Diffuse built-up area,Softwood forest,1
+Water,Water,Industrial and commercial areas,Vineyards,1
+Roads,Roads,Diffuse built-up area,Hardwood forest,1
+Water,Water,Natural grasslands and pastures,Orchards and fruit growing,1
+Water,Water,Natural grasslands and pastures,Soy,1
+Hardwood forest,Hardwood forest,Water,Sunflower,1
+Water,Water,Oilseeds (Rapeseed),Corn,1
+Hardwood forest,Hardwood forest,Water,Vineyards,1
+Orchards and fruit growing,Orchards and fruit growing,Vineyards,Water,1
+Orchards and fruit growing,Orchards and fruit growing,Vineyards,Sunflower,1
+Hardwood forest,Hardwood forest,Woody moorlands,Vineyards,1
+Orchards and fruit growing,Orchards and fruit growing,Sunflower,Softwood forest,1
+Orchards and fruit growing,Orchards and fruit growing,Sunflower,Protein crops (Beans / Peas),1
+Industrial and commercial areas,Industrial and commercial areas,Corn,Oilseeds (Rapeseed),1
+Dense built-up area,Dense built-up area,Industrial and commercial areas,Woody moorlands,1
+Water,Water,Roads,Industrial and commercial areas,1
+Water,Water,Softwood forest,Corn,1
+Industrial and commercial areas,Industrial and commercial areas,Diffuse built-up area,Natural grasslands and pastures,1
+Dense built-up area,Dense built-up area,Industrial and commercial areas,Protein crops (Beans / Peas),1
+Orchards and fruit growing,Orchards and fruit growing,Soy,Water,1
+Water,Water,Soy,"Straw cereals (Wheat, Triticale, Barley)",1
+Water,Water,"Straw cereals (Wheat, Triticale, Barley)",Hardwood forest,1
+Orchards and fruit growing,Orchards and fruit growing,Protein crops (Beans / Peas),Sunflower,1
+Industrial and commercial areas,Industrial and commercial areas,Grasslands,Oilseeds (Rapeseed),1
+Water,Water,"Straw cereals (Wheat, Triticale, Barley)",Woody moorlands,1
+Industrial and commercial areas,Industrial and commercial areas,Grasslands,Orchards and fruit growing,1
+Industrial and commercial areas,Industrial and commercial areas,Industrial and commercial areas,Grasslands,1
+Orchards and fruit growing,Orchards and fruit growing,Oilseeds (Rapeseed),Woody moorlands,1
+Water,Water,Industrial and commercial areas,Soy,1
+Water,Water,Industrial and commercial areas,Corn,1
+Softwood forest,Softwood forest,Diffuse built-up area,Water,1
+Water,Water,Hardwood forest,Industrial and commercial areas,1
+Roads,Roads,Woody moorlands,"Straw cereals (Wheat, Triticale, Barley)",1
+Vineyards,Vineyards,Softwood forest,Natural grasslands and pastures,1
+Roads,Roads,Woody moorlands,Soy,1
+Roads,Roads,Woody moorlands,Hardwood forest,1
+Vineyards,Vineyards,"Straw cereals (Wheat, Triticale, Barley)",Diffuse built-up area,1
+Hardwood forest,Hardwood forest,Softwood forest,Woody moorlands,1
+Dense built-up area,Dense built-up area,"Straw cereals (Wheat, Triticale, Barley)",Orchards and fruit growing,1
+Vineyards,Vineyards,Sunflower,Protein crops (Beans / Peas),1
+Roads,Roads,Sunflower,Hardwood forest,1
+Dense built-up area,Dense built-up area,"Straw cereals (Wheat, Triticale, Barley)",Dense built-up area,1
+Dense built-up area,Dense built-up area,Soy,Sunflower,1
+Roads,Roads,Soy,Woody moorlands,1
+Roads,Roads,Soy,Sunflower,1
+Dense built-up area,Dense built-up area,Softwood forest,Vineyards,1
+Dense built-up area,Dense built-up area,Softwood forest,Diffuse built-up area,1
+Vineyards,Vineyards,Water,Softwood forest,1
+Vineyards,Vineyards,Woody moorlands,Oilseeds (Rapeseed),1
+Roads,Roads,Roads,Corn,1
+Water,Water,Corn,Industrial and commercial areas,1
+Water,Water,Corn,Orchards and fruit growing,1
+Diffuse built-up area,Diffuse built-up area,Sunflower,Orchards and fruit growing,1
+Water,Water,Corn,Sunflower,1
+Hardwood forest,Hardwood forest,Sunflower,Protein crops (Beans / Peas),1
+Roads,Roads,Orchards and fruit growing,Hardwood forest,1
+Water,Water,Diffuse built-up area,Soy,1
+Water,Water,Diffuse built-up area,"Straw cereals (Wheat, Triticale, Barley)",1
+Dense built-up area,Dense built-up area,Orchards and fruit growing,Hardwood forest,1
+Corn,Corn,Corn,Hardwood forest,1
+Water,Water,Grasslands,Sunflower,1
+Hardwood forest,Hardwood forest,Sunflower,Oilseeds (Rapeseed),1

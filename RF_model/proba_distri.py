@@ -1,6 +1,6 @@
-model_file= '../RF_model/models/rf_model_2.pkl'
-ref_file = '../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz'
-in_img = '../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif'
+model_file= '../RF_model/models/rf_model_3.pkl'
+ref_file = '../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz'
+in_img = '../../../data/theiaL2A_zip_img/output/2019/2019_GapFilled_Image.tif'
 out_path = '../../../results/RF/simliarity_measure'
 
 import sys
@@ -47,7 +47,7 @@ originY = geotransform[3]
 spacingX = geotransform[1]
 spacingY = geotransform[5]
 r, c = image.RasterYSize, image.RasterXSize
-# r = 1000
+r = 1000
 out_raster_SRS = osr.SpatialReference()
 out_raster_SRS.ImportFromWkt(image.GetProjectionRef())
 
