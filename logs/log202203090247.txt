@@ -1,0 +1,9 @@
+read image: 0.007499217987060547 seconds
+height: 10980, width: 10980, crs: PROJCS["WGS 84 / UTM zone 31N",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",3],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","32631"]]
+load source: 7.1597394943237305 seconds
+load target: 6.971090793609619 seconds
+euclidean distance computed: 18.479461908340454 seconds
+(120560400,)
+[0.2888 0.2874 0.3396 0.3726 0.3594]
+(10980, 10980)
+raster writing completed: 24.48379635810852 seconds

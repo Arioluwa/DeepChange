@@ -1,4 +1,4 @@
-model_file= '../RF_model/models/rf_model_3.pkl'
+model_file= '../RF_model/models/rf_model_2.pkl'
 ref_file = '../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz'
 in_img = '../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif'
 out_path = '../../../results/RF/simliarity_measure'
