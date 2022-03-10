@@ -47,7 +47,7 @@ originY = geotransform[3]
 spacingX = geotransform[1]
 spacingY = geotransform[5]
 r, c = image.RasterYSize, image.RasterXSize
-r = 1000
+# r = 1000
 out_raster_SRS = osr.SpatialReference()
 out_raster_SRS.ImportFromWkt(image.GetProjectionRef())
 
