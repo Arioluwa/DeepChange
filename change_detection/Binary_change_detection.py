@@ -8,7 +8,7 @@ import numpy as np
 # mpl.use('Agg') # this need fixing: error: _tkinter.TclError: no display name and no $DISPLAY environment variable
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
-import argparse
+# import argparse
 
 starttime = time.time()
 def binary_change_detection(gt_source_path, gt_target_path, outdir_,  case, pred_source_path, pred_target_path):

@@ -39,8 +39,7 @@ def changeErrorCheck(
     def mask_and_extract(array, mask_array, mask_value):
         array = np.ma.masked_array(array, mask=True)
         array.mask[mask_array.data == mask_value] = False
-        array_value = np.ma.compressed(array)
-        # 
+        array_value = np.ma.compressed(array) #array_value = array.compressed()
         return array_value
 
     gt_source_ = mask_and_extract(gt_source_raster, change_mask, 2)

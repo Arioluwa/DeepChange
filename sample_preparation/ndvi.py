@@ -8,7 +8,7 @@ import time
 import argparse
 import os
 
-from pyparsing import alphas 
+# from pyparsing import alphas 
 
 parser = argparse.ArgumentParser(description="Plot NDVI")
 

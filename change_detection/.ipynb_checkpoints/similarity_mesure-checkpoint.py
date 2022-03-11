@@ -6,6 +6,12 @@ import time
 def similarity_check(source_, target_, outdir_, gt_source_, gt_target_):
     """
     Descr:
+    Input:
+        source_ & target_: probability distribution for source & target of each case  (RF model). It's a npy file (N, no of classes).
+        gt_source and gt_target: source and target rasterized reference dataset
+    
+    Descr: 
+    
     """
     model_name = os.path.basename(source_).split('.')[-2]
     model_name = model_name.split('_')[-2:]
