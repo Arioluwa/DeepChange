@@ -4,7 +4,11 @@ import numpy as np
 from itertools import product
 import argparse
 import os
-
+##############################
+#
+#
+#
+############################
 parse = argparse.ArgumentParser()
 parse.add_argument("-i", "--input", type=str, help="Input file", required=True)
 parse.add_argument("-o", "--output", type=str, help="Output file", required=True)

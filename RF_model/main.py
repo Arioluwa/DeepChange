@@ -219,10 +219,10 @@ if __name__ == "__main__":
     model = RFmodel(case=case_)
     # model.prepare_data()
     # check if case model file exits, skip training if it does
-    if not os.path.exists("models/rf_model_" + str(case_) + ".pkl"):
+    if not os.path.exists("models/rf_case_" + str(case_) + ".pkl"):
         model.train_model()
     else:
-        model.model = joblib.load("models/rf_model_" + str(case_) + ".pkl")
+        model.model = joblib.load("models/rf_case_" + str(case_) + ".pkl")
     
     model.test_model()
     # print time in minutes

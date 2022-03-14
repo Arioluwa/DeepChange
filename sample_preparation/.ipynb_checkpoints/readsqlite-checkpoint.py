@@ -9,8 +9,13 @@ import argparse
 import time
 
 # =================
-# Command line arguments
+# Data processing and preparation
+# From the sqlite file generate from the processing chain script, this script reads the sqlite file in chunks extracts the X (features vectors), y (label), block_id  (assigned random number for each block (splitted grid) 0-100, added to each sample polygon before running the processing chain), and the polygon_id.
+#
+# Input: Sqlite file
+# It output a npz file, for easy read into the models and later use
 # =================
+
 parser = argparse.ArgumentParser(description='Read SITS data')
 
 parser.add_argument('--sq', '--sqlitepath',type=str, help='path to sqlite file, .sqlite included', required=True)
@@ -36,10 +41,12 @@ def readSITSData(chunk):
     Read the data contained in name_file
         INPUT:
             - name_file: file where to read the data
-        OUTPUT:
+        OUTPUT: 
+        A npz file containing:
             - X: variable vectors for each example
             - polygon_ids: id polygon (use e.g. for validation set)
-            - Y: label for each example
+            - block_id: assigned random number for each block (splitted grid, 0-100 ) 
+            - Y: label for eac sample
     """
     y_data = chunk.iloc[:,2]
     y = np.asarray(y_data.values, dtype='uint8')
