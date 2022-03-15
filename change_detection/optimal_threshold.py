@@ -24,7 +24,19 @@ def optm_threshold(
     outdir):
     
     """
-    Descr: Compare the 
+    Desc: Change detection using similarity measure (Euclidean distance)
+          It test binary change/no-change on the several thresholds, based on the optimal threshold with the highest F1-score performance the a final confusion matrix is provided.
+    INPUT: 
+        similarity_map: a raster file
+        gt_source: rasterized ground truth source dataset
+        gt_target: rasterized ground truth target dataset
+        threshold: default = None, range btw the min and max value of the similarity_map
+    OUTPUT: Charts and DataFrame - 
+        precision-recall,
+        ROC curve,
+        Confusion matrix,
+        and dataframe of fscore for each threshold
+         
     """
     
     # read all images to array
@@ -66,14 +78,11 @@ def optm_threshold(
     for index, elem in enumerate(thresholds):
     
         fscore_[index] = f1_score(gt_binary_, np.where(similarity_ >= elem, 1, 0))
-        # precision_[index] = precision_score(gt_binary_, np.where(similarity_ >= elem, 1, 0))
-        # recall_[index] = recall_score(gt_binary_, np.where(similarity_ >= elem, 1, 0))
-        # # avg_pre[index] = average_precision_score(gt_binary_, np.where(similarity_ >= elem, 1, 0))
-        # cm = confusion_matrix(gt_binary_, np.where(similarity_ >= elem, 1, 0)) # confusion matrix
-        # # specificity_[index] = cm[1,1] / (cm[1,0] + cm[1,1])
-        # # sensitivity_[index] = cm[0,0] / (cm[0,0] + cm[0,1]) # the same a recall
-        # fpr.append(np.float16(cm[0,1]/(cm[0,1] + cm[1,1]))) # fp / (fp+tn)
-        # tpr.append(np.float16(cm[0,0]/(cm[0,0] + cm[1,0]))) # tp / (tp + fn)
+        precision_[index] = precision_score(gt_binary_, np.where(similarity_ >= elem, 1, 0))
+        recall_[index] = recall_score(gt_binary_, np.where(similarity_ >= elem, 1, 0))
+        cm = confusion_matrix(gt_binary_, np.where(similarity_ >= elem, 1, 0)) # confusion matrix
+        fpr.append(np.float16(cm[0,1]/(cm[0,1] + cm[1,1]))) # fp / (fp+tn)
+        tpr.append(np.float16(cm[0,0]/(cm[0,0] + cm[1,0]))) # tp / (tp + fn)
 
     print('metrics computation completed: %s seconds' % (time.time()-start_time))  
     model_name = os.path.basename(similarity_map).split('.')[-2]
@@ -81,27 +90,27 @@ def optm_threshold(
     model_name = '_'.join(model_name)
     # model_name
     
-    # get the optimal threshold based on fscore
+    ## get the optimal threshold based on fscore
     opt_threshold_idx = np.argmax(fscore_)
     opt_threshold = thresholds[opt_threshold_idx]
     
-    # # plot precision-recall curve
-    # plt.figure()
-    # plt.plot(recall_, precision_, label='Precision-Recall curve')
-    # plt.plot(recall_[opt_threshold_idx], precision_[opt_threshold_idx], 'o', markersize=5, color='r', label='Optimal threshold: {0:0.4f}'.format(opt_threshold))
-    # plt.xlabel('Recall')
-    # plt.ylabel('Precision')
-    # plt.legend()
-    # plt.title(model_name +'_Precision-Recall curve, AUC={0:0.2f},'.format(auc(recall_, precision_)))
-    # plt.savefig(os.path.join(outdir, model_name + '_precision-recall.png'))
+    # plot precision-recall curve
+    plt.figure()
+    plt.plot(recall_, precision_, label='Precision-Recall curve')
+    plt.plot(recall_[opt_threshold_idx], precision_[opt_threshold_idx], 'o', markersize=5, color='r', label='Optimal threshold: {0:0.4f}'.format(opt_threshold))
+    plt.xlabel('Recall')
+    plt.ylabel('Precision')
+    plt.legend()
+    plt.title(model_name +'_Precision-Recall curve, AUC={0:0.2f},'.format(auc(recall_, precision_)))
+    plt.savefig(os.path.join(outdir, model_name + '_precision-recall.png'))
     
-    # # plot ROC curve 
-    # plt.figure()
-    # plt.plot(fpr, tpr)
-    # plt.xlabel('False positive rate')
-    # plt.ylabel('True positive rate')
-    # plt.title(model_name + '_ROC curve')
-    # plt.savefig(os.path.join(outdir, model_name + '_roc_curve.png'))
+    # plot ROC curve 
+    plt.figure()
+    plt.plot(fpr, tpr)
+    plt.xlabel('False positive rate')
+    plt.ylabel('True positive rate')
+    plt.title(model_name + '_ROC curve')
+    plt.savefig(os.path.join(outdir, model_name + '_roc_curve.png'))
     
     # get the optimal threshold based on fscore
     df = pd.DataFrame({'threshold':thresholds, 'fscore':fscore_})
@@ -115,14 +124,15 @@ def optm_threshold(
     cm_sim_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
     cm_sim_plot.set_title("")
     # save the plot
-    plt.savefig(os.path.join('./charts','similarity_confusion_matrix_case_' + case +'.png'))
+    plt.savefig(os.path.join('./charts', 'similarity_confusion_matrix_'+ model_name +'.png'))
+    plt.close()
     
 
 if __name__ == '__main__':
     gt_source = '../../../data/rasterized_samples/2018_rasterizedImage.tif'
     gt_target = '../../../data/rasterized_samples/2019_rasterizedImage.tif'
 
-    for case in ['1']:#, '2', '3']:
+    for case in ['1', '2', '3']:
         similarity_map = '../../../results/RF/simliarity_measure/case_'+ case +'_ref_mask_similarity_measure.tif'
         outdir = '../../../results/RF/simliarity_measure/optimal_threshold'
         optm_threshold(similarity_map, gt_source, gt_target, None, outdir)
