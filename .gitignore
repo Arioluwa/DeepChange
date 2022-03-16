@@ -1,3 +1,5 @@
+*.tif
+*.pkl
 /.vscode
 /Data Acquisition/.ipynb_checkpoints
 /development

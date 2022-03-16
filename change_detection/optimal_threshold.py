@@ -5,14 +5,12 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+
 from sklearn.metrics import confusion_matrix
-# from sklearn.metrics import precision_recall_curve
 from sklearn.metrics import precision_score
-# from sklearn.metrics import average_precision_score
 from sklearn.metrics import recall_score
-from sklearn.metrics import f1_score 
 from sklearn.metrics import roc_curve
-# from sklearn.metrics import roc_auc_score
+from sklearn.metrics import f1_score 
 from sklearn.metrics import auc
 
 
@@ -40,7 +38,12 @@ def optm_threshold(
     """
     
     # read all images to array
-    similarity_array = rasterio.open(similarity_map).read(1)
+    # similarity_array = rasterio.open(similarity_map).read(1)
+    with rasterio.open(similarity_map) as src:
+        similarity_array = src.read(1)
+        profile = src.profile
+        profile['nodata'] = 0.0
+    
     gt_source_ = rasterio.open(gt_source).read(1)
     gt_target_ = rasterio.open(gt_target).read(1)
     
@@ -76,7 +79,6 @@ def optm_threshold(
     # compute metrics for each threshold, at the same time compute the binary on the similarity using the provided threshold
         # np.where(similarity_ >= elem, 1, 0) # where similarity measure (euclidean distance) is greater than threshold == 1 otherwise 0.
     for index, elem in enumerate(thresholds):
-    
         fscore_[index] = f1_score(gt_binary_, np.where(similarity_ >= elem, 1, 0))
         precision_[index] = precision_score(gt_binary_, np.where(similarity_ >= elem, 1, 0))
         recall_[index] = recall_score(gt_binary_, np.where(similarity_ >= elem, 1, 0))
@@ -101,18 +103,20 @@ def optm_threshold(
     plt.xlabel('Recall')
     plt.ylabel('Precision')
     plt.legend()
-    plt.title(model_name +'_Precision-Recall curve, AUC={0:0.2f},'.format(auc(recall_, precision_)))
+    plt.title( 'AUC={0:0.2f}'.format(auc(recall_, precision_)))#plt.title(model_name +'_Precision-Recall curve, AUC={0:0.2f},'.format(auc(recall_, precision_)))
     plt.savefig(os.path.join(outdir, model_name + '_precision-recall.png'))
+    plt.close()
     
     # plot ROC curve 
     plt.figure()
     plt.plot(fpr, tpr)
     plt.xlabel('False positive rate')
-    plt.ylabel('True positive rate')
-    plt.title(model_name + '_ROC curve')
+    plt.ylabel('True positi/ve rate')
+    # plt.title(model_name + '_ROC curve')
     plt.savefig(os.path.join(outdir, model_name + '_roc_curve.png'))
+    plt.close()
     
-    # get the optimal threshold based on fscore
+#     # get the optimal threshold based on fscore
     df = pd.DataFrame({'threshold':thresholds, 'fscore':fscore_})
     df.to_csv(os.path.join(outdir, model_name + '_fscore.csv'), index=False)
     
@@ -122,10 +126,54 @@ def optm_threshold(
     label = ['No change', 'Change']
     cm_sim_plot = sns.heatmap(cm_sim_per, annot=True, fmt ='.2%', cmap='Greens', xticklabels=label, yticklabels=label, cbar=False)
     cm_sim_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
-    cm_sim_plot.set_title("")
+    # cm_sim_plot.set_title("")
     # save the plot
     plt.savefig(os.path.join('./charts', 'similarity_confusion_matrix_'+ model_name +'.png'))
     plt.close()
+    
+    # similarity distribution
+    plt.figure(figsize=(8,5))
+    plt.hist(similarity_, bins=10, label='similarity distribution')
+    plt.axvline(x=thresholds[opt_threshold_idx], color='r', linestyle='--', label="optimal threshold: {0:0.3f}".format(thresholds[opt_threshold_idx]))
+    plt.yticks([])
+    plt.legend()
+    # save chart
+    plt.savefig(os.path.join('./charts', 'similarity_distribution_'+ model_name +'.png'))
+    plt.close()
+    
+    # similarity binary change
+    similarity_binary = np.where(similarity_ >= opt_threshold, 2, 1)
+    similarity_binary_change = np.empty_like(gt_binary) # shape: 10980, 10980
+    similarity_binary_change[~gt_binary_mask.mask] = similarity_binary.ravel()
+    
+    # write to raster
+    with rasterio.open(os.path.join(outdir, 'similarity_bin_change_'+ model_name + '.tif'), 'w', **profile) as dst:
+        dst.write(similarity_binary_change, 1)
+        dst.close()
+    
+
+    ## change map
+    # Note:
+    # 0 = nodata
+    # 1 = (0 == 1) ~ No change = No change
+    # 2 = (0 == 2) ~ No change = Change
+    # 3 = (1 == 1) ~ Change = No change
+    # 4 = (1 == 2) ~ Change = Change
+    
+    ## change array
+    change_array = np.empty_like(gt_binary_) # flatten shape
+    change_array[(gt_binary_ == 0) & (similarity_binary == 1)] = 1
+    change_array[(gt_binary_ == 0) & (similarity_binary == 2)] = 2
+    change_array[(gt_binary_ == 1) & (similarity_binary == 1)] = 3
+    change_array[(gt_binary_ == 1) & (similarity_binary == 2)] = 4
+    
+    change_map = np.empty_like(gt_binary) # shape: 10980, 10980
+    change_map[~gt_binary_mask.mask] = change_array.ravel()
+    
+    print(np.unique(change_map))
+    with rasterio.open(os.path.join(outdir, 'sim-change_map_' + model_name + '.tif'), 'w', **profile) as dst:
+        dst.write(change_map, 1)
+        dst.close()
     
 
 if __name__ == '__main__':

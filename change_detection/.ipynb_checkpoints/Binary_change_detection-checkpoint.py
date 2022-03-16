@@ -1,4 +1,3 @@
-### need fixing check line 7 & 8
 import os
 import time
 import rasterio
@@ -8,14 +7,11 @@ import numpy as np
 from sklearn.metrics import f1_score 
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
-# import argparse
 
 starttime = time.time()
 def binary_change_detection(gt_source_path, gt_target_path, outdir_,  case, pred_source_path, pred_target_path):
     
-    # paths to the reference data
-    # gt_source_path = '../development/2018_rasterizedImage.tif'
-    # gt_target_path = '../development/2019_rasterizedImage.tif'
+
 
     # read the reference data as a numpy array
     gt_source = rasterio.open(gt_source_path).read(1)
@@ -59,16 +55,16 @@ def binary_change_detection(gt_source_path, gt_target_path, outdir_,  case, pred
     
     
 #     # change matrix
-#     cm = confusion_matrix(gt_binary_values, pred_binary_values)
+    cm = confusion_matrix(gt_binary_values, pred_binary_values)
     
-#     cm_per = cm.astype('float') / np.sum(cm)
-#     # plot the change matrix
-#     label = ['No change', 'Change']
-#     cm_plot = sns.heatmap(cm_per, annot=True, fmt='.2%', cmap='Greens', xticklabels=label, yticklabels=label, cbar=False)
-#     cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
-    # cm_plot.set_title(title_)
+    cm_per = cm.astype('float') / np.sum(cm)
+    # plot the change matrix
+    label = ['No change', 'Change']
+    cm_plot = sns.heatmap(cm_per, annot=True, fmt='.2%', cmap='Greens', xticklabels=label, yticklabels=label, cbar=False)
+    cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
+    cm_plot.set_title(title_)
     # save the plot
-    # plt.savefig(os.path.join('./charts','change_matrix_percent_case' + case +'.png'))
+    plt.savefig(os.path.join('./charts','change_matrix_percent_case' + case +'.png'))
 
     ## change map
     # Note:
@@ -79,22 +75,23 @@ def binary_change_detection(gt_source_path, gt_target_path, outdir_,  case, pred
     # 4 = (2 == 2) ~ Change = Change
 
     ##change array - 
-    # change_array = np.empty_like(gt_binary_values) # as the same dimension as gt_binary_values
-    # change_array[(gt_binary_values == 1) & (pred_binary_values == 1)] = 1
-    # change_array[(gt_binary_values == 1) & (pred_binary_values == 2)] = 2
-    # change_array[(gt_binary_values == 2) & (pred_binary_values == 1)] = 3
-    # change_array[(gt_binary_values == 2) & (pred_binary_values == 2)] = 4
+    change_array = np.empty_like(gt_binary_values) # as the same dimension as gt_binary_values
+    change_array[(gt_binary_values == 1) & (pred_binary_values == 1)] = 1
+    change_array[(gt_binary_values == 1) & (pred_binary_values == 2)] = 2
+    change_array[(gt_binary_values == 2) & (pred_binary_values == 1)] = 3
+    change_array[(gt_binary_values == 2) & (pred_binary_values == 2)] = 4
 
-    ## change map
-    # change_map = np.empty_like(gt_binary)
-    # change_map[~gt_binary_mask.mask] = change_array.ravel() # returns 
+    # change map
+    change_map = np.empty_like(gt_binary)
+    change_map[~gt_binary_mask.mask] = change_array.ravel() # returns 
 
     ## write the change map
-    # with rasterio.open(os.path.join(outdir_, 'change_map_case'+ case +'.tif'), 'w', **profile) as dst:
-    #     dst.write(change_map, 1)
+    with rasterio.open(os.path.join(outdir_, 'change_map_case'+ case +'.tif'), 'w', **profile) as dst:
+        dst.write(change_map, 1)
     print("--- %s minutes ---" % ((time.time() - starttime) / 60))
     
-    # this is just to compute the fscore for pred_binary
+    # this is just to compute the fscore for pred_binary; this is needed to be compared with 
+    # fscore from threshold of similarity measure
     gt_binary_values[gt_binary_values ==1] = 0
     gt_binary_values[gt_binary_values ==2] = 1
     pred_binary_values[pred_binary_values ==1] = 0

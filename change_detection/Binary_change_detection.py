@@ -1,4 +1,3 @@
-### need fixing check line 7 & 8
 import os
 import time
 import rasterio
@@ -8,14 +7,11 @@ import numpy as np
 from sklearn.metrics import f1_score 
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
-# import argparse
 
 starttime = time.time()
 def binary_change_detection(gt_source_path, gt_target_path, outdir_,  case, pred_source_path, pred_target_path):
     
-    # paths to the reference data
-    # gt_source_path = '../development/2018_rasterizedImage.tif'
-    # gt_target_path = '../development/2019_rasterizedImage.tif'
+
 
     # read the reference data as a numpy array
     gt_source = rasterio.open(gt_source_path).read(1)
