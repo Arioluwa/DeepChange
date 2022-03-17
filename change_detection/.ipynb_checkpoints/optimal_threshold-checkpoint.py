@@ -112,7 +112,7 @@ def optm_threshold(
     plt.plot(fpr, tpr)
     plt.xlabel('False positive rate')
     plt.ylabel('True positi/ve rate')
-    # plt.title(model_name + '_ROC curve')
+    plt.title(model_name + '_ROC curve')
     plt.savefig(os.path.join(outdir, model_name + '_roc_curve.png'))
     plt.close()
     
@@ -128,14 +128,14 @@ def optm_threshold(
     cm_sim_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
     # cm_sim_plot.set_title("")
     # save the plot
-    plt.savefig(os.path.join('./charts', 'similarity_confusion_matrix_'+ model_name +'.png'))
-    plt.close()
+    # plt.savefig(os.path.join('./charts', 'similarity_confusion_matrix_'+ model_name +'.png'))
+    # plt.close()
     
-    # similarity distribution
+    # similarity histogram distribution
     plt.figure(figsize=(8,5))
-    plt.hist(similarity_, bins=10, label='similarity distribution')
+    plt.hist(similarity_, bins=10, label='similarity distribution', ec='white', log=True)
     plt.axvline(x=thresholds[opt_threshold_idx], color='r', linestyle='--', label="optimal threshold: {0:0.3f}".format(thresholds[opt_threshold_idx]))
-    plt.yticks([])
+    # plt.yticks([])
     plt.legend()
     # save chart
     plt.savefig(os.path.join('./charts', 'similarity_distribution_'+ model_name +'.png'))
@@ -146,7 +146,7 @@ def optm_threshold(
     similarity_binary_change = np.empty_like(gt_binary) # shape: 10980, 10980
     similarity_binary_change[~gt_binary_mask.mask] = similarity_binary.ravel()
     
-    # write to raster
+    ## write to raster
     with rasterio.open(os.path.join(outdir, 'similarity_bin_change_'+ model_name + '.tif'), 'w', **profile) as dst:
         dst.write(similarity_binary_change, 1)
         dst.close()
