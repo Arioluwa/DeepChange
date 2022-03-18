@@ -8,11 +8,13 @@ def load_npz(file_path):
     """
     Load data from a .npz file
     """
+    start_time = time.time()
     with np.load(file_path) as data:
         X = data["X"]
         y = data["y"]
         # polygon_ids = data["polygon_ids"]
         block_ids = data["block_id"]
+    print("load npz time: ", time.time() - start_time)
     return X, y, block_ids#, polygon_ids
 
 ######### Read Train, Validation, and Evaluation ids #########
