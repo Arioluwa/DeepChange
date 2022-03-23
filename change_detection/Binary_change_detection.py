@@ -62,7 +62,7 @@ def binary_change_detection(gt_source_path, gt_target_path, outdir_,  case, pred
     label = ['No change', 'Change']
     cm_plot = sns.heatmap(cm_per, annot=True, fmt='.2%', cmap='Greens', xticklabels=label, yticklabels=label, cbar=False)
     cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
-    cm_plot.set_title(title_)
+    # cm_plot.set_title(title_)
     # save the plot
     plt.savefig(os.path.join('./charts','change_matrix_percent_case' + case +'.png'))
 
@@ -104,9 +104,17 @@ def binary_change_detection(gt_source_path, gt_target_path, outdir_,  case, pred
 if __name__ == '__main__':
     gt_source_path = '../../../data/rasterized_samples/2018_rasterizedImage.tif'
     gt_target_path = '../../../data/rasterized_samples/2019_rasterizedImage.tif'
+    
 
     for case in ['1', '2', '3']:
-        pred_source_path = '../../../results/RF/2018_rf_model_'+ case +'_map.tif'
-        pred_target_path = '../../../results/RF/2019_rf_model_'+ case +'_map.tif'
+        pred_source_path = '../../../results/RF/2018_rf_case_'+ case +'_map.tif'
+        pred_target_path = '../../../results/RF/2019_rf_case_'+ case +'_map.tif'
         outdir_ = '../../../results/RF/binary_change_D'
         binary_change_detection(gt_source_path, gt_target_path, outdir_, case, pred_source_path, pred_target_path)
+        
+    # # case 4
+    # case = '4'
+    # pred_source_path = '../../../results/RF/2018_rf_case_2_map.tif'
+    # pred_target_path = '../../../results/RF/2019_rf_case_3_map.tif'
+    # outdir_ = '../../../results/RF/binary_change_D'
+    # binary_change_detection(gt_source_path, gt_target_path, outdir_, case, pred_source_path, pred_target_path)

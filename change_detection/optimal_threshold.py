@@ -17,6 +17,7 @@ from sklearn.metrics import auc
 
 def optm_threshold(
     similarity_map,
+    case,
     gt_source,
     gt_target, 
     threshold: bool,
@@ -61,9 +62,9 @@ def optm_threshold(
     similarity_mask = np.ma.masked_array(similarity_array, mask= True)
     similarity_mask.mask[gt_binary_mask.data != 0] = False # extract according to the non-zero from ground truth data
     similarity_ = similarity_mask.compressed()
-    model_name = os.path.basename(similarity_map).split('.')[-2]
-    model_name = model_name.split('_')[:2]
-    model_name = '_'.join(model_name)
+    # model_name = os.path.basename(similarity_map).split('.')[-2]
+    # model_name = model_name.split('_')[:2]
+    # model_name = '_'.join(model_name)
       # model_name
     
     if threshold == True:
@@ -104,7 +105,7 @@ def optm_threshold(
         plt.ylabel('Precision')
         plt.legend()
         plt.title( 'AUC={0:0.2f}'.format(auc(recall_, precision_)))#plt.title(model_name +'_Precision-Recall curve, AUC={0:0.2f},'.format(auc(recall_, precision_)))
-        plt.savefig(os.path.join(outdir, model_name + '_precision-recall.png'))
+        plt.savefig(os.path.join(outdir, 'case_' + case + '_precision-recall.png'))
         plt.close()
 
         # plot ROC curve 
@@ -112,13 +113,13 @@ def optm_threshold(
         plt.plot(fpr, tpr)
         plt.xlabel('False positive rate')
         plt.ylabel('True positi/ve rate')
-        plt.title(model_name + '_ROC curve')
-        plt.savefig(os.path.join(outdir, model_name + '_roc_curve.png'))
+        plt.title('case_' + case + '_ROC curve')
+        plt.savefig(os.path.join(outdir, 'case_' + case + '_roc_curve.png'))
         plt.close()
 
     #     # get the optimal threshold based on fscore
         df = pd.DataFrame({'threshold':thresholds, 'fscore':fscore_})
-        df.to_csv(os.path.join(outdir, model_name + '_fscore.csv'), index=False)
+        df.to_csv(os.path.join(outdir, 'case_' + case + '_fscore.csv'), index=False)
 
         #confusion
         cm_sim = confusion_matrix(gt_binary_, np.where(similarity_ >= opt_threshold, 1, 0))
@@ -129,7 +130,7 @@ def optm_threshold(
         cm_sim_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
         # cm_sim_plot.set_title("")
         # save the plot
-        plt.savefig(os.path.join('./charts', 'similarity_confusion_matrix_'+ model_name +'.png'))
+        plt.savefig(os.path.join('./charts', 'similarity_confusion_matrix_case_' + case +'.png'))
         plt.close()
 
         # similarity histogram distribution
@@ -139,7 +140,7 @@ def optm_threshold(
         # plt.yticks([])
         plt.legend()
         # save chart
-        plt.savefig(os.path.join('./charts', 'similarity_distribution_'+ model_name +'.png'))
+        plt.savefig(os.path.join('./charts', 'similarity_distribution_case_' + case +'.png'))
         plt.close()
 
         # similarity binary change
@@ -148,7 +149,7 @@ def optm_threshold(
         similarity_binary_change[~gt_binary_mask.mask] = similarity_binary.ravel()
 
         ## write to raster
-        with rasterio.open(os.path.join(outdir, 'similarity_bin_change_'+ model_name + '.tif'), 'w', **profile) as dst:
+        with rasterio.open(os.path.join(outdir, 'similarity_bin_change_case_' + case + '.tif'), 'w', **profile) as dst:
             dst.write(similarity_binary_change, 1)
             dst.close()
 
@@ -172,7 +173,7 @@ def optm_threshold(
         change_map[~gt_binary_mask.mask] = change_array.ravel()
 
         print(np.unique(change_map))
-        with rasterio.open(os.path.join(outdir, 'sim-change_map_' + model_name + '.tif'), 'w', **profile) as dst:
+        with rasterio.open(os.path.join(outdir, 'sim-change_map_case_' + case + '.tif'), 'w', **profile) as dst:
             dst.write(change_map, 1)
             dst.close()
     else:
@@ -211,7 +212,7 @@ def optm_threshold(
         cm_sim_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
         # cm_sim_plot.set_title("")
         # save the plot
-        plt.savefig(os.path.join('./charts', 'otsu_similarity_confusion_matrix_'+ model_name +'.png'))
+        plt.savefig(os.path.join('./charts', 'otsu_similarity_confusion_matrix_case_' + case +'.png'))
         plt.close()
         
         
@@ -220,7 +221,8 @@ if __name__ == '__main__':
     gt_source = '../../../data/rasterized_samples/2018_rasterizedImage.tif'
     gt_target = '../../../data/rasterized_samples/2019_rasterizedImage.tif'
 
-    for case in ['1', '2', '3']:
+    for case in ['4']:#['1', '2', '3', '4']:
         similarity_map = '../../../results/RF/simliarity_measure/case_'+ case +'_ref_mask_similarity_measure.tif'
         outdir = '../../../results/RF/simliarity_measure/optimal_threshold'
-        optm_threshold(similarity_map, gt_source, gt_target, False, outdir)
+        optm_threshold(similarity_map, case, gt_source, gt_target, False, outdir)
+        

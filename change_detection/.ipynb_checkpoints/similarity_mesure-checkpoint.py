@@ -3,7 +3,7 @@ import numpy as np
 import rasterio
 import time
 
-def similarity_check(source_, target_, outdir_, gt_source_, gt_target_):
+def similarity_check(source_, target_, outdir_, case, gt_source_, gt_target_):
     """
     Descr:
     Input:
@@ -13,9 +13,9 @@ def similarity_check(source_, target_, outdir_, gt_source_, gt_target_):
     Descr: 
     
     """
-    model_name = os.path.basename(source_).split('.')[-2]
-    model_name = model_name.split('_')[-2:]
-    model_name = '_'.join(model_name)
+    # model_name = os.path.basename(source_).split('.')[-2]
+    # model_name = model_name.split('_')[-2:]
+    # model_name = '_'.join(model_name)
 
 
     start_time = time.time()
@@ -54,17 +54,25 @@ def similarity_check(source_, target_, outdir_, gt_source_, gt_target_):
 
     start_time = time.time()
     # create a new raster
-    with rasterio.open(os.path.join(outdir_, model_name + '_ref_mask_similarity_measure.tif'), 'w', **profile) as dst:
+    with rasterio.open(os.path.join(outdir_, 'case_' + case + '_ref_mask_similarity_measure.tif'), 'w', **profile) as dst:
         dst.write(euc_dist, 1)
     print('raster writing completed: {} seconds'.format(time.time() - start_time))
 
 if __name__ == '__main__':
     gt_source_ = '../../../data/rasterized_samples/2018_rasterizedImage.tif'
     gt_target_ = '../../../data/rasterized_samples/2019_rasterizedImage.tif'
-
-    for case in ['3']:#['1', '2', '3']:
+    
+   
+    for case in ['1', '2', '3']:
         start_time = time.time()
         source_ = '../../../results/RF/simliarity_measure/2018_rf_model_' + case + '.npy'
         target_ = '../../../results/RF/simliarity_measure/2019_rf_model_' + case + '.npy'
         outdir_ = '../../../results/RF/simliarity_measure'
-        similarity_check(source_, target_, outdir_, gt_source_, gt_target_)
+        similarity_check(source_, target_, outdir_, case, gt_source_, gt_target_)
+        
+    # # case 4
+    # case = '4'
+    # source_ = '../../../results/RF/simliarity_measure/2018_rf_model_2.npy'
+    # target_ = '../../../results/RF/simliarity_measure/2019_rf_model_3.npy'
+    # outdir_ = '../../../results/RF/simliarity_measure'
+    # similarity_check(source_, target_, outdir_, case, gt_source_, gt_target_)
