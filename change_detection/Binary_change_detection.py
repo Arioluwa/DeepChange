@@ -64,7 +64,7 @@ def binary_change_detection(gt_source_path, gt_target_path, outdir_,  case, pred
     cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
     # cm_plot.set_title(title_)
     # save the plot
-    plt.savefig(os.path.join('./charts','change_matrix_percent_case' + case +'.png'))
+    # plt.savefig(os.path.join('./charts','change_matrix_percent_case' + case +'.png'))
 
     ## change map
     # Note:
@@ -86,9 +86,9 @@ def binary_change_detection(gt_source_path, gt_target_path, outdir_,  case, pred
     change_map[~gt_binary_mask.mask] = change_array.ravel() # returns 
 
     ## write the change map
-    with rasterio.open(os.path.join(outdir_, 'change_map_case'+ case +'.tif'), 'w', **profile) as dst:
-        dst.write(change_map, 1)
-    print("--- %s minutes ---" % ((time.time() - starttime) / 60))
+    # with rasterio.open(os.path.join(outdir_, 'change_map_case'+ case +'.tif'), 'w', **profile) as dst:
+    #     dst.write(change_map, 1)
+    # print("--- %s minutes ---" % ((time.time() - starttime) / 60))
     
     # this is just to compute the fscore for pred_binary; this is needed to be compared with 
     # fscore from threshold of similarity measure
@@ -98,7 +98,7 @@ def binary_change_detection(gt_source_path, gt_target_path, outdir_,  case, pred
     pred_binary_values[pred_binary_values ==2] = 1
     
     fscore = f1_score(gt_binary_values, pred_binary_values)
-    f = open(os.path.join('./charts/', 'case_' + case + '_fscore.txt'), 'w')
+    f = open(os.path.join('./charts/', 'delcase_' + case + '_fscore.txt'), 'w')
     f.write('F1 score: {}'.format(fscore))
     
 if __name__ == '__main__':
@@ -106,15 +106,15 @@ if __name__ == '__main__':
     gt_target_path = '../../../data/rasterized_samples/2019_rasterizedImage.tif'
     
 
-    for case in ['1', '2', '3']:
-        pred_source_path = '../../../results/RF/2018_rf_case_'+ case +'_map.tif'
-        pred_target_path = '../../../results/RF/2019_rf_case_'+ case +'_map.tif'
-        outdir_ = '../../../results/RF/binary_change_D'
-        binary_change_detection(gt_source_path, gt_target_path, outdir_, case, pred_source_path, pred_target_path)
+    # for case in ['1', '2', '3']:
+    #     pred_source_path = '../../../results/RF/2018_rf_case_'+ case +'_map.tif'
+    #     pred_target_path = '../../../results/RF/2019_rf_case_'+ case +'_map.tif'
+    #     outdir_ = '../../../results/RF/binary_change_D'
+    #     binary_change_detection(gt_source_path, gt_target_path, outdir_, case, pred_source_path, pred_target_path)
         
-    # # case 4
-    # case = '4'
-    # pred_source_path = '../../../results/RF/2018_rf_case_2_map.tif'
-    # pred_target_path = '../../../results/RF/2019_rf_case_3_map.tif'
-    # outdir_ = '../../../results/RF/binary_change_D'
-    # binary_change_detection(gt_source_path, gt_target_path, outdir_, case, pred_source_path, pred_target_path)
+    # case 4
+    case = '4'
+    pred_source_path = '../../../results/RF/2018_rf_case_2_map.tif'
+    pred_target_path = '../../../results/RF/2019_rf_case_3_map.tif'
+    outdir_ = '../../../results/RF/binary_change_D'
+    binary_change_detection(gt_source_path, gt_target_path, outdir_, case, pred_source_path, pred_target_path)
