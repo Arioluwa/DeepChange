@@ -6,9 +6,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 import time 
-import pandas as pd
 def changeErrorCheck(
     change_map,
+    case,
     gt_source,
     gt_target,
     pred_source,
@@ -58,7 +58,6 @@ def changeErrorCheck(
     df['pred_source'] = df['pred_source'].map(dict(zip(range(1, len(label) + 1), label)))
     df['pred_target'] = df['pred_target'].map(dict(zip(range(1, len(label) + 1), label)))
 
-
     # check the error
     err_df = df.groupby(['pred_source', 'pred_target']).size()
     errorstat_df = err_df.to_frame(name= 'count').reset_index()
@@ -67,13 +66,13 @@ def changeErrorCheck(
     errorstat_df['error'] = errorstat_df.apply(lambda x: str(x['pred_source']) + ' -> ' + str(x['pred_target']), axis=1)
     
     # output name and dir
-    output_name = os.path.basename(change_map).split('.')[-2]
-    output_name = output_name.split('_')[-2:]
-    output_name = '_'.join(output_name)
+    # output_name = os.path.basename(change_map).split('.')[-2]
+    # output_name = output_name.split('_')[-2:]
+    # output_name = '_'.join(output_name)
     
     # save the error table
-    df.to_csv(os.path.join(outdir, 'error_table' + output_name +'.csv'), index=False)
-    errorstat_df.to_csv(os.path.join(outdir, 'error_count_' + output_name +'.csv'), index=False)
+    df.to_csv(os.path.join(outdir, 'error_table_case_' + case +'.csv'), index=False)
+    errorstat_df.to_csv(os.path.join(outdir, 'error_count_case_' + case +'.csv'), index=False)
     
     plt.figure(figsize=(35,15))
     errorstat_df = errorstat_df.head(20)
@@ -89,12 +88,19 @@ if __name__ == '__main__':
     gt_source = '../../../data/rasterized_samples/2018_rasterizedImage.tif'
     gt_target = '../../../data/rasterized_samples/2019_rasterizedImage.tif'
 
-    for case in ['1', '2', '3']:
-        start_time = time.time()
-        change_map = '../../../results/RF/change_D/change_map_case_' + case + '.tif'
-        pred_source = '../../../results/RF/2018_rf_model_' + case + '_map.tif'
-        pred_target = '../../../results/RF/2019_rf_model_' + case + '_map.tif'
-        outdir = '../../../results/RF/change_D/errorstats/new'
-        # outdir = '../../../results/RF/change_D/errorstats'
-        changeErrorCheck(change_map, gt_source, gt_target, pred_source, pred_target, outdir)
-        print("Run time: {} minutes for case {}".format((time.time() - start_time)/60 , case))
+    # for case in ['1', '2', '3']:
+    #     start_time = time.time()
+    #     change_map = '../../../results/RF/binary_change_D/change_map_case_' + case + '.tif'
+    #     pred_source = '../../../results/RF/2018_rf_model_' + case + '_map.tif'
+    #     pred_target = '../../../results/RF/2019_rf_model_' + case + '_map.tif'
+    #     outdir = '../../../results/RF/binary_change_D/errorstats/new'
+    #     # outdir = '../../../results/RF/binary_change_D/errorstats'
+    #     changeErrorCheck(change_map, case, gt_source, gt_target, pred_source, pred_target, outdir)
+    #     print("Run time: {} minutes for case {}".format((time.time() - start_time)/60 , case))
+    case = '4'
+    change_map =  '../../../results/RF/binary_change_D/change_map_case_' + case + '.tif'
+    pred_source = '../../../results/RF/2018_rf_model_2_map.tif'
+    pred_target = '../../../results/RF/2019_rf_model_3_map.tif'
+    outdir = '../../../results/RF/binary_change_D/errorstats/new'
+    changeErrorCheck(change_map, case, gt_source, gt_target, pred_source, pred_target, outdir)
+    

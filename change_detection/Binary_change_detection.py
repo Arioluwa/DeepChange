@@ -107,9 +107,9 @@ if __name__ == '__main__':
     
 
     # for case in ['1', '2', '3']:
-    #     pred_source_path = '../../../results/RF/2018_rf_case_'+ case +'_map.tif'
-    #     pred_target_path = '../../../results/RF/2019_rf_case_'+ case +'_map.tif'
-    #     outdir_ = '../../../results/RF/binary_change_D'
+        pred_source_path = '../../../results/RF/2018_rf_case_'+ case +'_map.tif'
+        pred_target_path = '../../../results/RF/2019_rf_case_'+ case +'_map.tif'
+        outdir_ = '../../../results/RF/binary_change_D'
     #     binary_change_detection(gt_source_path, gt_target_path, outdir_, case, pred_source_path, pred_target_path)
         
     # case 4

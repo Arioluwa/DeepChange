@@ -6,7 +6,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 import time 
-import pandas as pd
 def changeErrorCheck(
     change_map,
     case,
