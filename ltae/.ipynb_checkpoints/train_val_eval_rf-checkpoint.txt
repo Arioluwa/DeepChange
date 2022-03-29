@@ -1,3 +1,0 @@
-Training: [0]
-Test: [10]
-

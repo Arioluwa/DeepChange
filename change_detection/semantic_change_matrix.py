@@ -65,7 +65,10 @@ def changeErrorCheck(
     # cm = pd.crosstab(df['gt_change'], df['pred_change'], rownames=['Ground Truth'], colnames=['Prediction'])
     cm = pd.crosstab(df['pred_change'], df['gt_change'], colnames=['Prediction'], rownames=['Ground Truth'])
     
-    cm.to_csv(os.path.join(outdir, "tssemantic_change_matrix_case_" + case + '.csv'))
+    # https://towardsdatascience.com/multi-class-metrics-made-simple-part-i-precision-and-recall-9250280bddc2
+    # https://towardsdatascience.com/multi-class-metrics-made-simple-part-ii-the-f1-score-ebe8b2c2ca1
+    
+    cm.to_csv(os.path.join(outdir, "semantic_change_matrix_case_" + case + '.csv'))
 
 if __name__ == '__main__':
     gt_source_path = '../../../data/rasterized_samples/2018_rasterizedImage.tif'

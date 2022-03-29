@@ -36,7 +36,6 @@ def optm_threshold(
         ROC curve,
         Confusion matrix,
         and dataframe of fscore for each threshold
-         
     """
     
     # read all images to array

@@ -17,13 +17,23 @@ def load_npz(file_path):
 
 ######### Read Train, Validation, and Evaluation ids #########
 
-# def read_ids(file_path):
-#     """
-#     Read ids from file
-#     """
-#     with open(file_path, "r") as f:
-#         lines = f.readlines()
-#         Train_ids = eval(lines[0].split(":")[1])
-#         test_ids = eval(lines[1].split(":")[1])
-#         Eval_ids = eval(lines[2].split(":")[1])
-#     return Train_ids, test_ids, Eval_ids
+def read_ids(seed_value):
+    """
+    Read ids from file
+    """
+    assert seed_value >= 0 and seed_value <= 10
+    
+    with open("./ids/train_val_eval_seed_" + str(seed_value)+".txt", "r") as f:
+        lines = f.readlines()
+        Train_ids = eval(lines[0].split(":")[1])
+        Val_ids = eval(lines[1].split(":")[1])
+        test_ids = eval(lines[2].split(":")[1])
+    return Train_ids, Val_ids, test_ids
+
+class standardize(object):
+    def __init__(self, mean, std):
+        self.mean = mean
+        self.std = std
+
+    def __call__(self, sample):
+        return (sample - self.mean) / self.std
