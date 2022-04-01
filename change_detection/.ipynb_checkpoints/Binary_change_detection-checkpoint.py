@@ -52,38 +52,43 @@ def binary_change_detection(gt_source_path, gt_target_path, outdir_,  case, pred
 
     gt_binary_values = np.ma.compressed(gt_binary_mask) #[1,2] unique values
     pred_binary_values = np.ma.compressed(pred_binary_mask) # [1,2] unique values
-    
-    
+
+    pred_binary_map = np.empty_like(gt_binary)
+    pred_binary_map[~gt_binary_mask.mask] = pred_binary_values.ravel()
+    # write the change map
+    with rasterio.open(os.path.join(outdir_, 'HP_binary_change_map'+ case +'.tif'), 'w', **profile) as dst:
+        dst.write(pred_binary_map, 1)
+    print("--- %s minutes ---" % ((time.time() - starttime) / 60))
 #     # change matrix
-    cm = confusion_matrix(gt_binary_values, pred_binary_values)
+#     cm = confusion_matrix(gt_binary_values, pred_binary_values)
     
-    cm_per = cm.astype('float') / np.sum(cm)
-    # plot the change matrix
-    label = ['No change', 'Change']
-    cm_plot = sns.heatmap(cm_per, annot=True, fmt='.2%', cmap='Greens', xticklabels=label, yticklabels=label, cbar=False)
-    cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
-    # cm_plot.set_title(title_)
-    # save the plot
-    # plt.savefig(os.path.join('./charts','change_matrix_percent_case' + case +'.png'))
+#     cm_per = cm.astype('float') / np.sum(cm)
+#     # plot the change matrix
+#     label = ['No change', 'Change']
+#     cm_plot = sns.heatmap(cm_per, annot=True, fmt='.2%', cmap='Greens', xticklabels=label, yticklabels=label, cbar=False)
+#     cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
+#     # cm_plot.set_title(title_)
+#     # save the plot
+#     # plt.savefig(os.path.join('./charts','change_matrix_percent_case' + case +'.png'))
 
-    ## change map
-    # Note:
-    # 0 = nodata
-    # 1 = (1 == 1) ~ No change = No change
-    # 2 = (1 == 2) ~ No change = Change
-    # 3 = (2 == 1) ~ Change = No change
-    # 4 = (2 == 2) ~ Change = Change
+#     ## change map
+#     # Note:
+#     # 0 = nodata
+#     # 1 = (1 == 1) ~ No change = No change
+#     # 2 = (1 == 2) ~ No change = Change
+#     # 3 = (2 == 1) ~ Change = No change
+#     # 4 = (2 == 2) ~ Change = Change
 
-    ##change array - 
-    change_array = np.empty_like(gt_binary_values) # as the same dimension as gt_binary_values
-    change_array[(gt_binary_values == 1) & (pred_binary_values == 1)] = 1
-    change_array[(gt_binary_values == 1) & (pred_binary_values == 2)] = 2
-    change_array[(gt_binary_values == 2) & (pred_binary_values == 1)] = 3
-    change_array[(gt_binary_values == 2) & (pred_binary_values == 2)] = 4
+#     ##change array - 
+#     change_array = np.empty_like(gt_binary_values) # as the same dimension as gt_binary_values
+#     change_array[(gt_binary_values == 1) & (pred_binary_values == 1)] = 1
+#     change_array[(gt_binary_values == 1) & (pred_binary_values == 2)] = 2
+#     change_array[(gt_binary_values == 2) & (pred_binary_values == 1)] = 3
+#     change_array[(gt_binary_values == 2) & (pred_binary_values == 2)] = 4
 
-    # change map
-    change_map = np.empty_like(gt_binary)
-    change_map[~gt_binary_mask.mask] = change_array.ravel() # returns 
+#     # change map
+#     change_map = np.empty_like(gt_binary)
+#     change_map[~gt_binary_mask.mask] = change_array.ravel() # returns 
 
     ## write the change map
     # with rasterio.open(os.path.join(outdir_, 'change_map_case'+ case +'.tif'), 'w', **profile) as dst:
@@ -92,14 +97,14 @@ def binary_change_detection(gt_source_path, gt_target_path, outdir_,  case, pred
     
     # this is just to compute the fscore for pred_binary; this is needed to be compared with 
     # fscore from threshold of similarity measure
-    gt_binary_values[gt_binary_values ==1] = 0
-    gt_binary_values[gt_binary_values ==2] = 1
-    pred_binary_values[pred_binary_values ==1] = 0
-    pred_binary_values[pred_binary_values ==2] = 1
+#     gt_binary_values[gt_binary_values ==1] = 0
+#     gt_binary_values[gt_binary_values ==2] = 1
+#     pred_binary_values[pred_binary_values ==1] = 0
+#     pred_binary_values[pred_binary_values ==2] = 1
     
-    fscore = f1_score(gt_binary_values, pred_binary_values)
-    f = open(os.path.join('./charts/', 'delcase_' + case + '_fscore.txt'), 'w')
-    f.write('F1 score: {}'.format(fscore))
+#     fscore = f1_score(gt_binary_values, pred_binary_values)
+#     f = open(os.path.join('./charts/', 'delcase_' + case + '_fscore.txt'), 'w')
+#     f.write('F1 score: {}'.format(fscore))
     
 if __name__ == '__main__':
     gt_source_path = '../../../data/rasterized_samples/2018_rasterizedImage.tif'
