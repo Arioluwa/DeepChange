@@ -3,7 +3,7 @@ import rasterio
 import numpy as np
 import matplotlib.pyplot as plt
 import time
-def check_fiability(hard_pred, soft_pred, source_certainty, target_certainty, outdir):
+def check_fiability(hard_pred, soft_pred, source_certainty, outdir):#, target_certainty, outdir):
     """
     
     """
@@ -19,7 +19,7 @@ def check_fiability(hard_pred, soft_pred, source_certainty, target_certainty, ou
         
     soft_ = rasterio.open(soft_pred).read(1).astype('int')
     source_certainty = rasterio.open(source_certainty).read(1)
-    target_certainty = rasterio.open(target_certainty).read(1)
+    # target_certainty = rasterio.open(target_certainty).read(1)
     
     mask = hard_ != 0
     
@@ -32,25 +32,26 @@ def check_fiability(hard_pred, soft_pred, source_certainty, target_certainty, ou
     hard_ = mask_and_extract(hard_, mask)
     soft_ = mask_and_extract(soft_, mask)
     source_certainty = mask_and_extract(source_certainty, mask)
-    target_certainty = mask_and_extract(target_certainty, mask)
+    # target_certainty = mask_and_extract(target_certainty, mask)
     
-    # agreement between soft and hard detection and they are correct
-    agree_ = np.zeros_like(hard_)
-    agree_[(hard_ == 1) & (soft_ == 1) | (hard_ == 4) & (soft_ == 4)] = 1 #both correct
-    agree_[(hard_ == 2) & (soft_ == 3) | (hard_ == 3) & (soft_ == 2)] = 2 # both incorrect -- This returns nothing because there is no intersecting pixel btw the two
-    agree_[(hard_ == 1) & (soft_ == 2) | (hard_ == 4) & (soft_ == 3)] = 3 # hard correct and soft not
-    agree_[(hard_ == 4) & (soft_ == 2) | (hard_ == 1) & (soft_ == 3)] = 3 # hard correct and soft not
-    agree_[(hard_ == 2) & (soft_ == 1) | (hard_ == 3) & (soft_ == 4)] = 4 # hard incorrect and soft is
-    agree_[(hard_ == 2) & (soft_ == 4) | (hard_ == 3) & (soft_ == 1)] = 4 # hard incorrect and soft is
+    # # agreement between soft and hard detection and they are correct
+    # agree_ = np.zeros_like(hard_)
+    # agree_[(hard_ == 1) & (soft_ == 1) | (hard_ == 4) & (soft_ == 4)] = 1 #both correct
+    # agree_[(hard_ == 2) & (soft_ == 3) | (hard_ == 3) & (soft_ == 2)] = 2 # both incorrect -- This returns nothing because there is no intersecting pixel btw the two
+    # agree_[(hard_ == 1) & (soft_ == 2) | (hard_ == 4) & (soft_ == 3)] = 3 # hard correct and soft not
+    # agree_[(hard_ == 4) & (soft_ == 2) | (hard_ == 1) & (soft_ == 3)] = 3 # hard correct and soft not
+    # agree_[(hard_ == 2) & (soft_ == 1) | (hard_ == 3) & (soft_ == 4)] = 4 # hard incorrect and soft is
+    # agree_[(hard_ == 2) & (soft_ == 4) | (hard_ == 3) & (soft_ == 1)] = 4 # hard incorrect and soft is
     
     # fiability measure histogram
     def _mask(cert, agree, value):
         cert = np.ma.masked_array(cert, mask=True)
         cert.mask[agree == value] = False
         return cert.compressed()
+    
     # plot fiability distribution
     def plot_hist(data, domain):
-        plt.hist(data, bins=10, label='Fiability distribution', ec='white', log=True)
+        plt.hist(data, bins=10, label='Certainty distribution', ec='white', log=True)
         plt.xlabel('certainty')
         plt.ylabel('pixels')
         plt.legend(loc="upper left")
@@ -58,27 +59,32 @@ def check_fiability(hard_pred, soft_pred, source_certainty, target_certainty, ou
         # plt.show()
         plt.close()
     
+    # for i in range(1, 5):
+    #     _source = _mask(source_certainty, hard_, i)
+    #     _target = _mask(source_certainty, soft_, i)
+    #     plot_hist(_source, 'source')
+    #     plot_hist(_target, 'target')
     for i in range(1, 5):
-        _source = _mask(source_certainty, hard_, i)
-        _target = _mask(target_certainty, soft_, i)
-        plot_hist(_source, 'source')
-        plot_hist(_target, 'target')
+        _h = _mask(source_certainty, hard_, i)
+        _s = _mask(source_certainty, soft_, i)
+        plot_hist(_h, 'hard')
+        plot_hist(_s, 'soft')
     
 if __name__ == '__main__':
     
-    # for i in ['1','2','3' ]:
-    #     start_time = time.time()
-    #     hard_pred = '../../../results/RF/binary_change_D/change_map_case_'+i+'.tif'  #4case
-    #     soft_pred = '../../../results/RF/simliarity_measure/optimal_threshold/sim-change_map_case_'+i+'.tif'
-    #     source_certainty = '../../../results/RF/simliarity_measure/certainty/2018_certainty_'+i+'.tif'
-    #     target_certainty = '../../../results/RF/simliarity_measure/certainty/2019_certainty_'+i+'.tif'
-    #     outdir = './charts'
-    #     check_fiability(hard_pred, soft_pred, source_certainty, target_certainty, outdir)
-    #     print("time taken: {}, is {}".format(i, time.time() - start_time))
+    for i in ['1','2','3' ]:
+        start_time = time.time()
+        # hard_pred = '../../../results/RF/binary_change_D/change_map_case_'+i+'.tif'  #4case
+        # soft_pred = '../../../results/RF/simliarity_measure/optimal_threshold/sim-change_map_case_'+i+'.tif'
+        # source_certainty = '../../../results/RF/simliarity_measure/certainty/2018_certainty_'+i+'.tif'
+        # # target_certainty = '../../../results/RF/simliarity_measure/certainty/2019_certainty_'+i+'.tif'
+        # outdir = './charts'
+        # check_fiability(hard_pred, soft_pred, source_certainty, outdir)#, target_certainty, outdir)
+        # print("time taken: {}, is {}".format(i, time.time() - start_time))
     for i in ['1','2','3']:
         hard_pred = '../../../results/RF/binary_change_D/change_map_case_4.tif'  #4case
         soft_pred = '../../../results/RF/simliarity_measure/optimal_threshold/sim-change_map_case_4.tif'
-        source_certainty = '../../../results/RF/simliarity_measure/certainty/2018_certainty_'+i+'.tif'
+        # source_certainty = '../../../results/RF/simliarity_measure/certainty/2018_certainty_'+i+'.tif'
         target_certainty = '../../../results/RF/simliarity_measure/certainty/2019_certainty_'+i+'.tif'
         outdir = './charts'
-        check_fiability(hard_pred, soft_pred, source_certainty, target_certainty, outdir)
+        check_fiability(hard_pred, soft_pred, target_certainty, outdir)#, target_certainty, outdir)
