@@ -69,7 +69,7 @@ class SITSData(data.Dataset):
         # transform
         if self.transform:
             self.X = self.transform(self.X)
-            self.X = self.X.transpose(0, 2, 1)
+            # self.X = self.X.transpose(0, 2, 1) #why?
         
         torch_x = torch.from_numpy(self.X)
         torch_y = torch.from_numpy(self.y)

@@ -1,10 +1,11 @@
 import torch
 import torch.utils.data as data
+from torchvision import transforms
 import torchnet as tnt
 import numpy as np
 from sklearn.metrics import confusion_matrix
 import os
-import join
+import json
 import pickle as pkl
 import argparse
 import pprint
@@ -94,13 +95,19 @@ def get_loader(train_dt, val_dt, test_dt, config):
                                        num_workers=config['num_workers'],
                                         shuffle=True,
                                        pin_memory=True)
-        test_loader = data.DataLoader(test_dt, batch_size=config['batch_size'],
+    test_loader = data.DataLoader(test_dt, batch_size=config['batch_size'],
                                        num_workers=config['num_workers'], 
                                         shuffle=True,
                                          pin_memory=True)
-        loader_seq.append((train_loader, validation_loader, test_loader))
-        return loader_seq
-        
+    loader_seq.append((train_loader, validation_loader, test_loader))
+    return loader_seq
+
+def recursive_todevice(x, device):
+    if isinstance(x, torch.Tensor):
+        return x.to(device)
+    else:
+        return [recursive_todevice(c, device) for c in x]
+    
 def prepare_output(config):
     os.makedirs(config['res_dir'], exist_ok=True)
     # for seed in range(1, config['seed'] + 1):
@@ -145,17 +152,20 @@ def main(config):
     val_dt = SITSData(config['npy'], config['seed'], partition='val', transform = transform)
     test_dt = SITSData(config['npy'], config['seed'], partition='test', transform = transform)
     
+    device = torch.device(config['device'])
+    
     loaders = get_loader(train_dt, val_dt, test_dt, config)
     for train_loader, val_loader, test_loader in loaders:
         print('Train {}, Val {}, Test {}'.format(len(train_loader), len(val_loader), len(test_loader)))
 
-        model_config = dict(input_dim=config['input_dim'], mlp1=config['mlp1'], pooling=config['pooling'],
-                            mlp2=config['mlp2'], n_head=config['n_head'], d_k=config['d_k'], mlp3=config['mlp3'],
-                            dropout=config['dropout'], T=config['T'], len_max_seq=config['lms'],
-                            # positions=dt.date_positions if config['positions'] == 'bespoke' else None,
-                            mlp4=config['mlp4'], d_model=config['d_model'])
-
-        config['N_params'] = model.param_ratio()
+        model_config = dict(in_channels=config['in_channels'], n_head=config['n_head'], d_k=config['d_k'],
+                            n_neurons=config['n_neurons'],
+                            dropout=config['dropout'], T=config['T'], len_max_seq=config['len_max_seq'],
+                            positions=dt.date_positions if config['positions'] == 'bespoke' else None,
+                            d_model=config['d_model'])
+        print(model_config)
+        model = LTAE(**model_config)
+        # config['N_params'] = model.param_ratio()
         with open(os.path.join(config['res_dir'], 'conf.json'), 'w') as file:
             file.write(json.dumps(config, indent=4))
 
@@ -163,7 +173,9 @@ def main(config):
         model.apply(weight_init)
         optimizer = torch.optim.Adam(model.parameters())
         criterion = FocalLoss(config['gamma'])
-
+        
+        model = model.double() #RuntimeError: expected scalar type Double but found Float 
+        
         best_mIoU = 0
         for epoch in range(1, config['epochs'] + 1):
             print('EPOCH {}/{}'.format(epoch, config['epochs']))
@@ -204,44 +216,40 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     # Set-up parameters
-    parser.add_argument('--dataset_folder', default='', type=str,
-                        help='Path to the folder where the results are saved.')
-    parser.add_argument('--npy', default='', help='Path to the npy file') # to be change
-    parser.add_argument('--res_dir', default='./results', help='Path to the folder where the results should be stored')
+    parser.add_argument('--dataset_folder', default='../../../results/ltae', type=str, help='Path to the folder where the results are saved.')
+    parser.add_argument('--npy', default='../../../data/theiaL2A_zip_img/output/2018/2018_SITS_subset_data.npz', help='Path to the npy file') # to be change
+    parser.add_argument('--res_dir', default='../../../results/ltae/results', help='Path to the folder where the results should be stored')
     parser.add_argument('--num_workers', default=8, type=int, help='Number of data loading workers')
-    parser.add_argument('--rdm_seed', default=1, type=int, help='Random seed')
-    parser.add_argument('--device', default='cuda', type=str,
-                        help='Name of device to use for tensor computations (cuda/cpu)')
-    parser.add_argument('--display_step', default=50, type=int,
-                        help='Interval in batches between display of training metrics')
-    parser.add_argument('--preload', dest='preload', action='store_true',
-                        help='If specified, the whole dataset is loaded to RAM at initialization')
+    parser.add_argument('--seed', default=1, type=int, help='Random seed')
+    parser.add_argument('--device', default='cuda', type=str, help='Name of device to use for tensor computations (cuda/cpu)')
+    parser.add_argument('--display_step', default=10, type=int, help='Interval in batches between display of training metrics')
+    parser.add_argument('--preload', dest='preload', action='store_true', help='If specified, the whole dataset is loaded to RAM at initialization')
     parser.set_defaults(preload=False)
     
     # Training parameters
-    parser.add_argument('--kfold', default=5, type=int, help='Number of folds for cross validation')
-    parser.add_argument('--epochs', default=100, type=int, help='Number of epochs per fold')
+    parser.add_argument('--epochs', default=1, type=int, help='Number of epochs per fold')
     parser.add_argument('--batch_size', default=128, type=int, help='Batch size')
     parser.add_argument('--lr', default=0.001, type=float, help='Learning rate')
     parser.add_argument('--gamma', default=1, type=float, help='Gamma parameter of the focal loss')
-    parser.add_argument('--npixel', default=64, type=int, help='Number of pixels to sample from the input images')
     
-    ## L-TAE
+    ## L-TAE 
+    # change in_channels to 128 to get first error in 
+    parser.add_argument('--in_channels', default=10, type=int, help='Number of channels of the input embeddings')
     parser.add_argument('--n_head', default=16, type=int, help='Number of attention heads')
     parser.add_argument('--d_k', default=8, type=int, help='Dimension of the key and query vectors')
-    parser.add_argument('--mlp3', default='[256,128]', type=str, help='Number of neurons in the layers of MLP3')
+    parser.add_argument('--n_neurons', default=[256,128], type=str, help='Number of neurons in the layers of n_neurons')
     parser.add_argument('--T', default=1000, type=int, help='Maximum period for the positional encoding')
-    parser.add_argument('--positions', default='bespoke', type=str,
+    parser.add_argument('--positions', default='None', type=str,
                         help='Positions to use for the positional encoding (bespoke / order)')
-    parser.add_argument('--lms', default=24, type=int,
+    parser.add_argument('--len_max_seq', default=24, type=int,
                         help='Maximum sequence length for positional encoding (only necessary if positions == order)')
     parser.add_argument('--dropout', default=0.2, type=float, help='Dropout probability')
     parser.add_argument('--d_model', default=256, type=int,
                         help="size of the embeddings (E), if input vectors are of a different size, a linear layer is used to project them to a d_model-dimensional space")
     
     ## Classifier
-    parser.add_argument('--num_classes', default=20, type=int, help='Number of classes')
-    parser.add_argument('--mlp4', default='[128, 64, 32, 20]', type=str, help='Number of neurons in the layers of MLP4')
+    parser.add_argument('--num_classes', default=19, type=int, help='Number of classes')
+    # parser.add_argument('--mlp4', default='[128, 64, 32, 20]', type=str, help='Number of neurons in the layers of MLP4')
     
     config = parser.parse_args()
     config = vars(config)

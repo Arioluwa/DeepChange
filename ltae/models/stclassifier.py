@@ -20,8 +20,8 @@ class PseLTae(nn.Module):
                  n_head=16, d_k=8, d_model=256, mlp3=[256, 128], dropout=0.2, T=1000, len_max_seq=24, positions=None,
                  mlp4=[128, 64, 32, 20], return_att=False):
         super(PseLTae, self).__init__()
-        # self.spatial_encoder = PixelSetEncoder(input_dim, mlp1=mlp1, pooling=pooling, mlp2=mlp2, with_extra=with_extra,
-        #                                        extra_size=extra_size)
+        self.spatial_encoder = PixelSetEncoder(input_dim, mlp1=mlp1, pooling=pooling, mlp2=mlp2, with_extra=with_extra,
+                                               extra_size=extra_size)
         self.temporal_encoder = LTAE(in_channels=mlp2[-1], n_head=n_head, d_k=d_k,
                                            d_model=d_model, n_neurons=mlp3, dropout=dropout,
                                            T=T, len_max_seq=len_max_seq, positions=positions, return_att=return_att
