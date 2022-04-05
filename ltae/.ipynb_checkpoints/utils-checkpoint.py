@@ -1,7 +1,7 @@
 import numpy as np
 
 
-_train_val_eval = "train_val_eval_rf.txt"
+# _train_val_eval = "train_val_eval_rf.txt"
 ######### Read and load sits npz file #########
 
 def load_npz(file_path):
