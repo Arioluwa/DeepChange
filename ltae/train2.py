@@ -12,7 +12,7 @@ import pprint
 
 from utils import *
 from dataset import SITSData
-from models.classifierst import dLtae
+# from models.classifierst import dLtae
 from models.ltae import LTAE
 from learning.focal_loss import FocalLoss
 from learning.weight_init import weight_init
@@ -165,7 +165,7 @@ def main(config):
                             positions=dt.date_positions if config['positions'] == 'bespoke' else None,
                             d_model=config['d_model'])
         # print(model_config)
-        model = dLtae(**model_config)
+        model = LTAE(**model_config)
         # config['N_params'] = model.param_ratio()
         with open(os.path.join(config['res_dir'], 'conf.json'), 'w') as file:
             file.write(json.dumps(config, indent=4))
@@ -176,6 +176,8 @@ def main(config):
         criterion = FocalLoss(config['gamma'])
         
         model = model.double() #RuntimeError: expected scalar type Double but found Float 
+        
+        trainlog = {}
         
         best_mIoU = 0
         for epoch in range(1, config['epochs'] + 1):
@@ -192,7 +194,7 @@ def main(config):
                                                                  val_metrics['val_IoU']))
 
             trainlog[epoch] = {**train_metrics, **val_metrics}
-            checkpoint(fold + 1, trainlog, config)
+            checkpoint(trainlog, config)
 
             if val_metrics['val_IoU'] >= best_mIoU:
                 best_mIoU = val_metrics['val_IoU']
@@ -222,7 +224,7 @@ if __name__ == '__main__':
     parser.add_argument('--res_dir', default='../../../results/ltae/results', help='Path to the folder where the results should be stored')
     parser.add_argument('--num_workers', default=8, type=int, help='Number of data loading workers')
     parser.add_argument('--seed', default=1, type=int, help='Random seed')
-    parser.add_argument('--device', default='cpu', type=str, help='Name of device to use for tensor computations (cuda/cpu)')
+    parser.add_argument('--device', default='cuda', type=str, help='Name of device to use for tensor computations (cuda/cpu)')
     parser.add_argument('--display_step', default=100, type=int, help='Interval in batches between display of training metrics')
     parser.add_argument('--preload', dest='preload', action='store_true', help='If specified, the whole dataset is loaded to RAM at initialization')
     parser.set_defaults(preload=False)

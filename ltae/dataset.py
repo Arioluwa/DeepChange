@@ -61,8 +61,8 @@ class SITSData(data.Dataset):
         self.X = self.X_[idx]
         self.y = self.y_[idx]
 
-        self.X = np.array(self.X).astype('float32')
-        self.y = np.array(self.y).astype('float32')
+        self.X = np.array(self.X, dtype = float)
+        self.y = np.array(self.y, dtype = int)
         
         self.X = self.X.reshape(int(self.X.shape[0]/n_channel), n_channel)
 
