@@ -160,10 +160,8 @@ def main(config):
         print('Train {}, Val {}, Test {}'.format(len(train_loader), len(val_loader), len(test_loader)))
 
         model_config = dict(in_channels=config['in_channels'], n_head=config['n_head'], d_k=config['d_k'],
-                            n_neurons=config['n_neurons'],
-                            dropout=config['dropout'], T=config['T'], len_max_seq=config['len_max_seq'],
-                            positions=dt.date_positions if config['positions'] == 'bespoke' else None,
-                            d_model=config['d_model'])
+                            n_neurons=config['n_neurons'], dropout=config['dropout'], d_model=config['d_model'], mlp= config['mlp4'], T=config['T'], len_max_seq=config['len_max_seq'],
+                            positions=dt.date_positions if config['positions'] == 'bespoke' else None)
         # print(model_config)
         model = dLtae(**model_config)
         # config['N_params'] = model.param_ratio()
@@ -176,6 +174,8 @@ def main(config):
         criterion = FocalLoss(config['gamma'])
         
         model = model.double() #RuntimeError: expected scalar type Double but found Float 
+        
+        trainlog = {}
         
         best_mIoU = 0
         for epoch in range(1, config['epochs'] + 1):
@@ -192,7 +192,7 @@ def main(config):
                                                                  val_metrics['val_IoU']))
 
             trainlog[epoch] = {**train_metrics, **val_metrics}
-            checkpoint(fold + 1, trainlog, config)
+            checkpoint(trainlog, config)
 
             if val_metrics['val_IoU'] >= best_mIoU:
                 best_mIoU = val_metrics['val_IoU']
@@ -208,7 +208,7 @@ def main(config):
 
             print('Loss {:.4f},  Acc {:.2f},  IoU {:.4f}'.format(test_metrics['test_loss'], test_metrics['test_accuracy'],
                                                                  test_metrics['test_IoU']))
-            save_results(config['seed'], test_metrics, conf_mat, config)
+            save_results(test_metrics, conf_mat, config)
 
     # overall_performance(config)
 
@@ -221,7 +221,7 @@ if __name__ == '__main__':
     parser.add_argument('--npy', default='../../../data/theiaL2A_zip_img/output/2018/2018_SITS_subset_data.npz', help='Path to the npy file') # to be change
     parser.add_argument('--res_dir', default='../../../results/ltae/results', help='Path to the folder where the results should be stored')
     parser.add_argument('--num_workers', default=8, type=int, help='Number of data loading workers')
-    parser.add_argument('--seed', default=1, type=int, help='Random seed')
+    parser.add_argument('--seed', default=2, type=int, help='Random seed')
     parser.add_argument('--device', default='cpu', type=str, help='Name of device to use for tensor computations (cuda/cpu)')
     parser.add_argument('--display_step', default=100, type=int, help='Interval in batches between display of training metrics')
     parser.add_argument('--preload', dest='preload', action='store_true', help='If specified, the whole dataset is loaded to RAM at initialization')
@@ -249,7 +249,7 @@ if __name__ == '__main__':
     
     ## Classifier
     parser.add_argument('--num_classes', default=19, type=int, help='Number of classes')
-    # parser.add_argument('--mlp4', default='[128, 64, 32, 20]', type=str, help='Number of neurons in the layers of MLP4')
+    parser.add_argument('--mlp4', default='[128, 64, 32, 19]', type=str, help='Number of neurons in the layers of MLP (Decoder)')
     
     config = parser.parse_args()
     config = vars(config)

@@ -210,7 +210,7 @@ def main(config):
 
             print('Loss {:.4f},  Acc {:.2f},  IoU {:.4f}'.format(test_metrics['test_loss'], test_metrics['test_accuracy'],
                                                                  test_metrics['test_IoU']))
-            save_results(config['seed'], test_metrics, conf_mat, config)
+            save_results(test_metrics, conf_mat, config)
 
     # overall_performance(config)
 
@@ -230,7 +230,7 @@ if __name__ == '__main__':
     parser.set_defaults(preload=False)
     
     # Training parameters
-    parser.add_argument('--epochs', default=1, type=int, help='Number of epochs per fold')
+    parser.add_argument('--epochs', default=2, type=int, help='Number of epochs per fold')
     parser.add_argument('--batch_size', default=128, type=int, help='Batch size')
     parser.add_argument('--lr', default=0.001, type=float, help='Learning rate')
     parser.add_argument('--gamma', default=1, type=float, help='Gamma parameter of the focal loss')
@@ -251,7 +251,7 @@ if __name__ == '__main__':
     
     ## Classifier
     parser.add_argument('--num_classes', default=19, type=int, help='Number of classes')
-    # parser.add_argument('--mlp4', default='[128, 64, 32, 20]', type=str, help='Number of neurons in the layers of MLP4')
+    # parser.add_argument('--mlp', default='[128, 64, 32, 20]', type=str, help='Number of neurons in the layers of MLP4')
     
     config = parser.parse_args()
     config = vars(config)
