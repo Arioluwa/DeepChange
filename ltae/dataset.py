@@ -39,7 +39,7 @@ class SITSData(data.Dataset):
             raise ValueError('Invalid partition: {}'.format(partition))
 
         X, y, block_ids = load_npz(self.sits)
-        
+        y = np.unique(y, return_inverse=True)[1] # reassigning label [1,23] to [0,18]
         # concatenate the data
         data_ = np.concatenate((X, y[:, None], block_ids[:, None]), axis=1)
 
