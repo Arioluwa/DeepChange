@@ -53,14 +53,14 @@ def check_fiability(hard_pred, soft_pred, source_certainty, target_certainty, ou
         plt.xlabel('certainty')
         plt.ylabel('pixels')
         plt.legend(loc="upper left")
-        plt.savefig(os.path.join(outdir, case_name+'_fiability_subcase_' +str(i)+'.png'), dpi=300)#, format='eps')
+        plt.savefig(os.path.join(outdir, case_name+'_fiability_subcase_' +str(i)+'.png'), dpi=3000)#, format='eps')
         # plt.show()
         plt.close()
     
     for i in range(1, 5):
-        _h = _mask(source_certainty, agree_, i)
-        _s = _mask(target_certainty, agree_, i)
-        plot_hist(_h, _s)
+        _s = _mask(source_certainty, agree_, i)
+        _t = _mask(target_certainty, agree_, i)
+        plot_hist(_s, _t)
     
 if __name__ == '__main__':
     
@@ -78,5 +78,5 @@ if __name__ == '__main__':
         soft_pred = '../../../results/RF/simliarity_measure/optimal_threshold/sim-change_map_case_4.tif'
         source_certainty = '../../../results/RF/simliarity_measure/certainty/2018_certainty_'+i+'.tif'
         target_certainty = '../../../results/RF/simliarity_measure/certainty/2019_certainty_'+i+'.tif'
-        outdir = './charts/checks'
+        outdir = './charts'
         check_fiability(hard_pred, soft_pred, target_certainty, target_certainty, outdir)
