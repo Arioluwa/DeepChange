@@ -7,16 +7,18 @@ from utils import load_npz, read_ids
 
 import os
 import time
+import datetime
 import random
 
 n_channel = 10
 
 class SITSData(data.Dataset):
-    def __init__(self, sits, seed, partition='train', transform=None):
+    def __init__(self, sits, seed, date_, partition='train', transform=None):
         """
         Args:
-            sits (path):
+            sits (path): .npy file
             seed (int: within 0-9):
+            date_ (path): gapfilled date paths
             partition:
             transform:
         return:
@@ -24,6 +26,7 @@ class SITSData(data.Dataset):
         self.sits = sits
         self.seed = seed
         self.transform = transform
+        self.date_ = date_
         
         # get partition ids using the read_id() func
         self.train_ids, self.val_ids, self.test_ids = read_ids(self.seed)
@@ -51,6 +54,8 @@ class SITSData(data.Dataset):
         self.X_ = data_[:, :-2]
         self.y_ = data_[:, -2]
         
+        self.date_positions = date_positions(date_)
+        
         del X
         del y
         del block_ids
@@ -76,3 +81,11 @@ class SITSData(data.Dataset):
         torch_x = torch.from_numpy(self.X)
         torch_y = torch.from_numpy(self.y)
         return torch_x, torch_y
+    
+def date_positions(gfdate_path):
+    with open(gfdate_path, "r") as f:
+        date_list = f.readlines()
+    date_list = [x.strip() for x in date_list]
+    date_list = [datetime.datetime.strptime(x, "%Y%m%d").timetuple().tm_yday for x in date_list]
+    date_ = [x for x in date_list]
+    return date_

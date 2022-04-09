@@ -17,7 +17,9 @@ from models.ltae import LTAE
 from learning.focal_loss import FocalLoss
 from learning.weight_init import weight_init
 from learning.metrics import mIou, confusion_matrix_analysis
+# import wandb
 
+# wandb.login()
 
 def train_epoch(model, optimizer, criterion, data_loader, device, config):
     acc_meter = tnt.meter.ClassErrorMeter(accuracy=True)
@@ -149,19 +151,20 @@ def main(config):
     
     transform = transforms.Compose([standardize(mean_, std_)])
     
-    train_dt = SITSData(config['npy'], config['seed'], partition='train', transform = transform)
-    val_dt = SITSData(config['npy'], config['seed'], partition='val', transform = transform)
-    test_dt = SITSData(config['npy'], config['seed'], partition='test', transform = transform)
+    train_dt = SITSData(config['npy'], config['seed'], config['dates'], partition='train', transform = transform)
+    val_dt = SITSData(config['npy'], config['seed'], config['dates'], partition='val', transform = transform)
+    test_dt = SITSData(config['npy'], config['seed'], config['dates'], partition='test', transform = transform)
     
     device = torch.device(config['device'])
     
     loaders = get_loader(train_dt, val_dt, test_dt, config)
     for train_loader, val_loader, test_loader in loaders:
         print('Train {}, Val {}, Test {}'.format(len(train_loader), len(val_loader), len(test_loader)))
+        # config['sets'] = 'Train {}, Val {}, Test {}'.format(len(train_loader), len(val_loader), len(test_loader))
 
         model_config = dict(in_channels=config['in_channels'], n_head=config['n_head'], d_k=config['d_k'],
                             n_neurons=config['n_neurons'], dropout=config['dropout'], d_model=config['d_model'], mlp= config['mlp4'], T=config['T'], len_max_seq=config['len_max_seq'],
-                            positions=dt.date_positions if config['positions'] == 'bespoke' else None)
+                            positions=train_dt.date_positions if config['positions'] == 'bespoke' else None)
         # print(model_config)
         model = dLtae(**model_config)
         config['N_params'] = model.param_ratio()
@@ -218,7 +221,8 @@ if __name__ == '__main__':
 
     # Set-up parameters
     parser.add_argument('--dataset_folder', default='../../../results/ltae', type=str, help='Path to the folder where the results are saved.')
-    parser.add_argument('--npy', default='../../../data/theiaL2A_zip_img/output/2018/2018_SITS_subset_data.npz', help='Path to the npy file') # to be change
+    parser.add_argument('--npy', default='../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz', help='Path to the npy file') # to be change
+    parser.add_argument('--dates', default='dates.txt', help='gapfilled date test path')
     parser.add_argument('--res_dir', default='../../../results/ltae/results', help='Path to the folder where the results should be stored')
     parser.add_argument('--num_workers', default=8, type=int, help='Number of data loading workers')
     parser.add_argument('--seed', default=3, type=int, help='Random seed')
@@ -228,7 +232,7 @@ if __name__ == '__main__':
     parser.set_defaults(preload=False)
 
     # Training parameters
-    parser.add_argument('--epochs', default=5, type=int, help='Number of epochs per fold')
+    parser.add_argument('--epochs', default=100, type=int, help='Number of epochs per fold')
     parser.add_argument('--batch_size', default=128, type=int, help='Batch size')
     parser.add_argument('--lr', default=0.001, type=float, help='Learning rate')
     parser.add_argument('--gamma', default=1, type=float, help='Gamma parameter of the focal loss')
