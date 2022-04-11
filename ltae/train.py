@@ -17,9 +17,9 @@ from models.ltae import LTAE
 from learning.focal_loss import FocalLoss
 from learning.weight_init import weight_init
 from learning.metrics import mIou, confusion_matrix_analysis
-# import wandb
+import wandb
 
-# wandb.login()
+
 
 def train_epoch(model, optimizer, criterion, data_loader, device, config):
     acc_meter = tnt.meter.ClassErrorMeter(accuracy=True)
@@ -53,7 +53,8 @@ def train_epoch(model, optimizer, criterion, data_loader, device, config):
     epoch_metrics = {'train_loss': loss_meter.value()[0],
                      'train_accuracy': acc_meter.value()[0],
                      'train_IoU': mIou(y_true, y_pred, n_classes=config['num_classes'])}
-
+    wandb.log({"train_loss": epoch_metrics['train_loss'], "train_accuracy": epoch_metrics['train_accuracy'], "train_IoU": epoch_metrics['train_IoU']})
+    
     return epoch_metrics
 
 def evaluation(model, criterion, loader, device, config, mode='val'):
@@ -142,10 +143,12 @@ def save_results(metrics, conf_mat, config):
     ####suggestion: KFold is the same as seed, read from the ids folder each id text
 
 def main(config):
-    np.random.seed(config['seed'])
-    torch.manual_seed(config['seed'])
+    # np.random.seed(config['seed'])
+    # torch.manual_seed(config['seed'])
     prepare_output(config)
+    wandb.login()
     
+    wandb.init(project="LTAE")
     mean_ = np.loadtxt(os.path.join(config['dataset_folder'], './mean_std/source_mean.txt'))
     std_ = np.loadtxt(os.path.join(config['dataset_folder'], './mean_std/source_std.txt'))
     
@@ -160,7 +163,6 @@ def main(config):
     loaders = get_loader(train_dt, val_dt, test_dt, config)
     for train_loader, val_loader, test_loader in loaders:
         print('Train {}, Val {}, Test {}'.format(len(train_loader), len(val_loader), len(test_loader)))
-        # config['sets'] = 'Train {}, Val {}, Test {}'.format(len(train_loader), len(val_loader), len(test_loader))
 
         model_config = dict(in_channels=config['in_channels'], n_head=config['n_head'], d_k=config['d_k'],
                             n_neurons=config['n_neurons'], dropout=config['dropout'], d_model=config['d_model'], mlp= config['mlp4'], T=config['T'], len_max_seq=config['len_max_seq'],
@@ -193,6 +195,7 @@ def main(config):
 
             print('Loss {:.4f},  Acc {:.2f},  IoU {:.4f}'.format(val_metrics['val_loss'], val_metrics['val_accuracy'],
                                                                  val_metrics['val_IoU']))
+            wandb.log({"val_loss": val_metrics['val_loss'], "val_acc": val_metrics['val_accuracy'], "val_IoU": val_metrics['val_IoU']})
 
             trainlog[epoch] = {**train_metrics, **val_metrics}
             checkpoint(trainlog, config)
@@ -211,6 +214,7 @@ def main(config):
 
             print('Loss {:.4f},  Acc {:.2f},  IoU {:.4f}'.format(test_metrics['test_loss'], test_metrics['test_accuracy'],
                                                                  test_metrics['test_IoU']))
+            wandb.log({"test_loss": test_metrics['test_loss'], "test_accuracy": test_metrics['test_accuracy'], "test_IoU": test_metrics['test_IoU']})
             save_results(test_metrics, conf_mat, config)
 
     # overall_performance(config)
@@ -221,10 +225,10 @@ if __name__ == '__main__':
 
     # Set-up parameters
     parser.add_argument('--dataset_folder', default='../../../results/ltae', type=str, help='Path to the folder where the results are saved.')
-    parser.add_argument('--npy', default='../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz', help='Path to the npy file') # to be change
+    parser.add_argument('--npy', default='../../../data/theiaL2A_zip_img/output/2018/2018_SITS_subset_data.npz', help='Path to the npy file') # to be change
     parser.add_argument('--dates', default='dates.txt', help='gapfilled date test path')
     parser.add_argument('--res_dir', default='../../../results/ltae/results', help='Path to the folder where the results should be stored')
-    parser.add_argument('--num_workers', default=8, type=int, help='Number of data loading workers')
+    parser.add_argument('--num_workers', default=10, type=int, help='Number of data loading workers')
     parser.add_argument('--seed', default=3, type=int, help='Random seed')
     parser.add_argument('--device', default='cuda', type=str, help='Name of device to use for tensor computations (cuda/cpu)')
     parser.add_argument('--display_step', default=100, type=int, help='Interval in batches between display of training metrics')
@@ -232,7 +236,7 @@ if __name__ == '__main__':
     parser.set_defaults(preload=False)
 
     # Training parameters
-    parser.add_argument('--epochs', default=100, type=int, help='Number of epochs per fold')
+    parser.add_argument('--epochs', default=10, type=int, help='Number of epochs per fold')
     parser.add_argument('--batch_size', default=128, type=int, help='Batch size')
     parser.add_argument('--lr', default=0.001, type=float, help='Learning rate')
     parser.add_argument('--gamma', default=1, type=float, help='Gamma parameter of the focal loss')
@@ -265,3 +269,4 @@ if __name__ == '__main__':
 
     pprint.pprint(config)
     main(config)
+    

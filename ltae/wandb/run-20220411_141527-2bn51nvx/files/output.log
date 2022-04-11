@@ -1,0 +1,14 @@
+
+Train 11916, Val 1583, Test 618
+Traceback (most recent call last):
+  File "train.py", line 271, in <module>
+    main(config)
+  File "train.py", line 171, in main
+    model = dLtae(**model_config)
+  File "/share/mastoc/projects/erasmus/deepchange/codebase/DeepChange/ltae/models/stclassifier.py", line 21, in __init__
+    T=T, len_max_seq=len_max_seq, positions=positions, return_att=return_att)
+  File "/share/mastoc/projects/erasmus/deepchange/codebase/DeepChange/ltae/models/ltae.py", line 57, in __init__
+    sin_tab = get_sinusoid_encoding_table(positions, self.d_model // n_head, T=T)
+  File "/share/mastoc/projects/erasmus/deepchange/codebase/DeepChange/ltae/models/ltae.py", line 185, in get_sinusoid_encoding_table
+    return torch.FloatTensor(sinusoid_table).cuda()
+RuntimeError: CUDA error: out of memory

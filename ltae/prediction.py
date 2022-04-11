@@ -23,7 +23,7 @@ except:
     from osgeo import gdal, osr
     from osgeo.gdalconst import *
     
-def evaluation(model, criterion, loader, device, config, mode='test'):
+def evaluation(model, criterion, loader, device, config, mode='test', proba=False):
     y_true = []
     y_pred = []
 
@@ -55,3 +55,5 @@ def evaluation(model, criterion, loader, device, config, mode='test'):
         return metrics, confusion_matrix(y_true, y_pred, labels=list(range(config['num_classes'])))
     
 # https://datascience.stackexchange.com/questions/54237/is-it-valid-to-shuffle-time-series-data-for-a-prediction-task
+
+# https://stackoverflow.com/questions/51041128/pytorch-predict-single-example
