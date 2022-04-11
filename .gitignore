@@ -1,3 +1,4 @@
+/wandb/
 *.tif
 *.pkl
 .ipynb_checkpoints
