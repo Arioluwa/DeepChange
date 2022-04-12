@@ -1,0 +1,427 @@
+{'T': 1000,
+ 'batch_size': 2048,
+ 'd_k': 8,
+ 'd_model': 256,
+ 'dataset_folder': '../../../results/ltae',
+ 'dates': 'dates.txt',
+ 'device': 'cuda',
+ 'display_step': 100,
+ 'dropout': 0.2,
+ 'epochs': 2,
+ 'gamma': 1,
+ 'in_channels': 10,
+ 'len_max_seq': 33,
+ 'lr': 0.001,
+ 'mlp4': [128, 64, 32, 19],
+ 'n_head': 16,
+ 'n_neurons': [256, 128],
+ 'npy': '../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz',
+ 'num_classes': 19,
+ 'num_workers': 10,
+ 'positions': 'None',
+ 'preload': False,
+ 'res_dir': '../../../results/ltae/trials',
+ 'seed': 0}
+
+Train 4146, Val 1388, Test 1348
+TOTAL TRAINABLE PARAMETERS : 97319
+RATIOS: Temporal  88.5% , Classifier  11.5%
+EPOCH 1/2
+Iteration 1 completed in 0.3502 second
+Iteration 2 completed in 0.1375 second
+Iteration 3 completed in 0.1373 second
+Iteration 4 completed in 0.1471 second
+Iteration 5 completed in 0.1360 second
+Iteration 6 completed in 0.1347 second
+Iteration 7 completed in 0.1337 second
+Iteration 8 completed in 0.1373 second
+Iteration 9 completed in 0.1306 second
+Iteration 10 completed in 0.1106 second
+Iteration 11 completed in 0.1373 second
+Iteration 12 completed in 0.1369 second
+Iteration 13 completed in 0.1352 second
+Iteration 14 completed in 0.1390 second
+Iteration 15 completed in 0.1498 second
+Iteration 16 completed in 0.1496 second
+Iteration 17 completed in 0.1444 second
+Iteration 18 completed in 0.1402 second
+Iteration 19 completed in 0.1560 second
+Iteration 20 completed in 0.1503 second
+Iteration 21 completed in 0.1617 second
+Iteration 22 completed in 0.1520 second
+Iteration 23 completed in 0.1530 second
+Iteration 24 completed in 0.1076 second
+Iteration 25 completed in 0.1160 second
+Iteration 26 completed in 0.1370 second
+Iteration 27 completed in 0.1410 second
+Iteration 28 completed in 0.1395 second
+Iteration 29 completed in 0.1356 second
+Iteration 30 completed in 0.1330 second
+Iteration 31 completed in 0.1309 second
+Iteration 32 completed in 0.1396 second
+Iteration 33 completed in 0.1329 second
+Iteration 34 completed in 0.1370 second
+Iteration 35 completed in 0.1418 second
+Iteration 36 completed in 0.1345 second
+Iteration 37 completed in 0.1384 second
+Iteration 38 completed in 0.1395 second
+Iteration 39 completed in 0.1419 second
+Iteration 40 completed in 0.0920 second
+Iteration 41 completed in 0.0920 second
+Iteration 42 completed in 0.0958 second
+Iteration 43 completed in 0.0925 second
+Iteration 44 completed in 0.1371 second
+Iteration 45 completed in 0.1370 second
+Iteration 46 completed in 0.1337 second
+Iteration 47 completed in 0.1352 second
+Iteration 48 completed in 0.1338 second
+Iteration 49 completed in 0.1348 second
+Iteration 50 completed in 0.1378 second
+Iteration 51 completed in 0.1349 second
+Iteration 52 completed in 0.1321 second
+Iteration 53 completed in 0.1358 second
+Iteration 54 completed in 0.1410 second
+Iteration 55 completed in 0.1395 second
+Iteration 56 completed in 0.1383 second
+Iteration 57 completed in 0.1398 second
+Iteration 58 completed in 0.1016 second
+Iteration 59 completed in 0.0760 second
+Iteration 60 completed in 0.0730 second
+Iteration 61 completed in 0.0771 second
+Iteration 62 completed in 0.0813 second
+Iteration 63 completed in 0.1368 second
+Iteration 64 completed in 0.1427 second
+Iteration 65 completed in 0.1343 second
+Iteration 66 completed in 0.1313 second
+Iteration 67 completed in 0.1372 second
+Iteration 68 completed in 0.1409 second
+Iteration 69 completed in 0.1356 second
+Iteration 70 completed in 0.1291 second
+Iteration 71 completed in 0.1340 second
+Iteration 72 completed in 0.1439 second
+Iteration 73 completed in 0.1374 second
+Iteration 74 completed in 0.1379 second
+Iteration 75 completed in 0.1388 second
+Iteration 76 completed in 0.1409 second
+Iteration 77 completed in 0.1275 second
+Iteration 78 completed in 0.1286 second
+Iteration 79 completed in 0.1298 second
+Iteration 80 completed in 0.1340 second
+Iteration 81 completed in 0.1393 second
+Iteration 82 completed in 0.1408 second
+Iteration 83 completed in 0.1330 second
+Iteration 84 completed in 0.1376 second
+Iteration 85 completed in 0.1473 second
+Iteration 86 completed in 0.1338 second
+Iteration 87 completed in 0.1429 second
+Iteration 88 completed in 0.1359 second
+Iteration 89 completed in 0.1501 second
+Iteration 90 completed in 0.1427 second
+Iteration 91 completed in 0.1371 second
+Iteration 92 completed in 0.0931 second
+Iteration 93 completed in 0.1174 second
+Iteration 94 completed in 0.1380 second
+Iteration 95 completed in 0.1459 second
+Iteration 96 completed in 0.1323 second
+Iteration 97 completed in 0.1307 second
+Iteration 98 completed in 0.1367 second
+Iteration 99 completed in 0.1410 second
+Step [100/4146], Loss: 1.1324, Acc : 65.25
+Iteration 100 completed in 0.1424 second
+Iteration 101 completed in 0.1334 second
+Iteration 102 completed in 0.1290 second
+Iteration 103 completed in 0.1319 second
+Iteration 104 completed in 0.1333 second
+Iteration 105 completed in 0.1407 second
+Iteration 106 completed in 0.1403 second
+Iteration 107 completed in 0.1172 second
+Iteration 108 completed in 0.1238 second
+Iteration 109 completed in 0.1469 second
+Iteration 110 completed in 0.1453 second
+Iteration 111 completed in 0.1459 second
+Iteration 112 completed in 0.1443 second
+Iteration 113 completed in 0.1521 second
+Iteration 114 completed in 0.1400 second
+Iteration 115 completed in 0.1349 second
+Iteration 116 completed in 0.1328 second
+Iteration 117 completed in 0.1329 second
+Iteration 118 completed in 0.1350 second
+Iteration 119 completed in 0.1399 second
+Iteration 120 completed in 0.1331 second
+Iteration 121 completed in 0.1377 second
+Iteration 122 completed in 0.1250 second
+Iteration 123 completed in 0.1379 second
+Iteration 124 completed in 0.1371 second
+Iteration 125 completed in 0.1307 second
+Iteration 126 completed in 0.1359 second
+Iteration 127 completed in 0.1393 second
+Iteration 128 completed in 0.1393 second
+Iteration 129 completed in 0.1390 second
+Iteration 130 completed in 0.1298 second
+Iteration 131 completed in 0.1299 second
+Iteration 132 completed in 0.1355 second
+Iteration 133 completed in 0.1394 second
+Iteration 134 completed in 0.1341 second
+Iteration 135 completed in 0.1372 second
+Iteration 136 completed in 0.1241 second
+Iteration 137 completed in 0.1309 second
+Iteration 138 completed in 0.1276 second
+Iteration 139 completed in 0.3928 second
+Iteration 140 completed in 0.1324 second
+Iteration 141 completed in 0.1430 second
+Iteration 142 completed in 0.1397 second
+Iteration 143 completed in 0.1371 second
+Iteration 144 completed in 0.1378 second
+Iteration 145 completed in 0.1414 second
+Iteration 146 completed in 0.1350 second
+Iteration 147 completed in 0.0884 second
+Iteration 148 completed in 0.1381 second
+Iteration 149 completed in 0.1374 second
+Iteration 150 completed in 0.1341 second
+Iteration 151 completed in 0.1393 second
+Iteration 152 completed in 0.1386 second
+Iteration 153 completed in 0.1305 second
+Iteration 154 completed in 0.1299 second
+Iteration 155 completed in 0.1402 second
+Iteration 156 completed in 0.1467 second
+Iteration 157 completed in 0.1480 second
+Iteration 158 completed in 0.1440 second
+Iteration 159 completed in 0.1490 second
+Iteration 160 completed in 0.1475 second
+Iteration 161 completed in 0.1393 second
+Iteration 162 completed in 0.1429 second
+Iteration 163 completed in 0.1399 second
+Iteration 164 completed in 0.1342 second
+Iteration 165 completed in 0.1393 second
+Iteration 166 completed in 0.1349 second
+Iteration 167 completed in 0.1353 second
+Iteration 168 completed in 0.1322 second
+Iteration 169 completed in 0.1327 second
+Iteration 170 completed in 0.1380 second
+Iteration 171 completed in 0.1339 second
+Iteration 172 completed in 0.1330 second
+Iteration 173 completed in 0.1302 second
+Iteration 174 completed in 0.1339 second
+Iteration 175 completed in 0.1352 second
+Iteration 176 completed in 0.1414 second
+Iteration 177 completed in 0.1336 second
+Iteration 178 completed in 0.1399 second
+Iteration 179 completed in 0.1362 second
+Iteration 180 completed in 0.1378 second
+Iteration 181 completed in 0.1305 second
+Iteration 182 completed in 0.1322 second
+Iteration 183 completed in 0.1413 second
+Iteration 184 completed in 0.1432 second
+Iteration 185 completed in 0.1379 second
+Iteration 186 completed in 0.1287 second
+Iteration 187 completed in 0.1359 second
+Iteration 188 completed in 0.1314 second
+Iteration 189 completed in 0.0787 second
+Iteration 190 completed in 0.1234 second
+Iteration 191 completed in 0.1375 second
+Iteration 192 completed in 0.1347 second
+Iteration 193 completed in 0.1338 second
+Iteration 194 completed in 0.1401 second
+Iteration 195 completed in 0.1311 second
+Iteration 196 completed in 0.1329 second
+Iteration 197 completed in 0.1057 second
+Iteration 198 completed in 0.1192 second
+Iteration 199 completed in 0.1310 second
+Step [200/4146], Loss: 0.7668, Acc : 75.85
+Iteration 200 completed in 0.1332 second
+Iteration 201 completed in 0.1329 second
+Iteration 202 completed in 0.1330 second
+Iteration 203 completed in 0.1319 second
+Iteration 204 completed in 0.0913 second
+Iteration 205 completed in 0.1358 second
+Iteration 206 completed in 0.1320 second
+Iteration 207 completed in 0.1336 second
+Iteration 208 completed in 0.1343 second
+Iteration 209 completed in 0.1327 second
+Iteration 210 completed in 0.1391 second
+Iteration 211 completed in 0.1315 second
+Iteration 212 completed in 0.1317 second
+Iteration 213 completed in 0.1337 second
+Iteration 214 completed in 0.1325 second
+Iteration 215 completed in 0.1357 second
+Iteration 216 completed in 0.1396 second
+Iteration 217 completed in 0.1389 second
+Iteration 218 completed in 0.1283 second
+Iteration 219 completed in 0.1241 second
+Iteration 220 completed in 0.1289 second
+Iteration 221 completed in 0.1325 second
+Iteration 222 completed in 0.1361 second
+Iteration 223 completed in 0.1308 second
+Iteration 224 completed in 0.1349 second
+Iteration 225 completed in 0.1313 second
+Iteration 226 completed in 0.1302 second
+Iteration 227 completed in 0.1378 second
+Iteration 228 completed in 0.1343 second
+Iteration 229 completed in 0.1357 second
+Iteration 230 completed in 0.1385 second
+Iteration 231 completed in 0.1345 second
+Iteration 232 completed in 0.1361 second
+Iteration 233 completed in 0.1129 second
+Iteration 234 completed in 0.1198 second
+Iteration 235 completed in 0.1321 second
+Iteration 236 completed in 0.1291 second
+Iteration 237 completed in 0.1299 second
+Iteration 238 completed in 0.1339 second
+Iteration 239 completed in 0.1342 second
+Iteration 240 completed in 0.1315 second
+Iteration 241 completed in 0.1291 second
+Iteration 242 completed in 0.1107 second
+Iteration 243 completed in 0.1114 second
+Iteration 244 completed in 0.1218 second
+Iteration 245 completed in 0.1187 second
+Iteration 246 completed in 0.1131 second
+Iteration 247 completed in 0.1229 second
+Iteration 248 completed in 0.0896 second
+Iteration 249 completed in 0.0844 second
+Iteration 250 completed in 0.0831 second
+Iteration 251 completed in 0.0706 second
+Iteration 252 completed in 0.1335 second
+Iteration 253 completed in 0.1186 second
+Iteration 254 completed in 0.1138 second
+Iteration 255 completed in 0.1223 second
+Iteration 256 completed in 0.1228 second
+Iteration 257 completed in 0.1233 second
+Iteration 258 completed in 0.1213 second
+Iteration 259 completed in 0.1291 second
+Iteration 260 completed in 0.1253 second
+Iteration 261 completed in 0.1130 second
+Iteration 262 completed in 0.1207 second
+Iteration 263 completed in 0.1192 second
+Iteration 264 completed in 0.1187 second
+Iteration 265 completed in 0.0947 second
+Iteration 266 completed in 0.1179 second
+Iteration 267 completed in 0.1229 second
+Iteration 268 completed in 0.1340 second
+Iteration 269 completed in 0.1375 second
+Iteration 270 completed in 0.1384 second
+Iteration 271 completed in 0.1362 second
+Iteration 272 completed in 0.1354 second
+Iteration 273 completed in 0.1383 second
+Iteration 274 completed in 0.1311 second
+Iteration 275 completed in 0.1198 second
+Iteration 276 completed in 0.1112 second
+Iteration 277 completed in 0.1218 second
+Iteration 278 completed in 0.1057 second
+Iteration 279 completed in 0.1113 second
+Iteration 280 completed in 0.1069 second
+Iteration 281 completed in 0.1121 second
+Iteration 282 completed in 0.1071 second
+Iteration 283 completed in 0.1018 second
+Iteration 284 completed in 0.1021 second
+Iteration 285 completed in 0.1055 second
+Iteration 286 completed in 0.1061 second
+Iteration 287 completed in 0.1348 second
+Iteration 288 completed in 0.1340 second
+Iteration 289 completed in 0.1360 second
+Iteration 290 completed in 0.1336 second
+Iteration 291 completed in 0.1185 second
+Iteration 292 completed in 0.1519 second
+Iteration 293 completed in 0.1351 second
+Iteration 294 completed in 0.1376 second
+Iteration 295 completed in 0.1385 second
+Iteration 296 completed in 0.1381 second
+Iteration 297 completed in 0.1386 second
+Iteration 298 completed in 0.1322 second
+Iteration 299 completed in 0.1330 second
+Step [300/4146], Loss: 0.6143, Acc : 80.04
+Iteration 300 completed in 0.1445 second
+Iteration 301 completed in 0.1390 second
+Iteration 302 completed in 0.1402 second
+Iteration 303 completed in 0.1400 second
+Iteration 304 completed in 0.1413 second
+Iteration 305 completed in 0.1415 second
+Iteration 306 completed in 0.1009 second
+Iteration 307 completed in 0.0965 second
+Iteration 308 completed in 0.1357 second
+Iteration 309 completed in 0.1308 second
+Iteration 310 completed in 0.1403 second
+Iteration 311 completed in 0.1375 second
+Iteration 312 completed in 0.1360 second
+Iteration 313 completed in 0.1303 second
+Iteration 314 completed in 0.1351 second
+Iteration 315 completed in 0.1428 second
+Iteration 316 completed in 0.1331 second
+Iteration 317 completed in 0.1383 second
+Iteration 318 completed in 0.1297 second
+Iteration 319 completed in 0.1327 second
+Iteration 320 completed in 0.3780 second
+Iteration 321 completed in 0.1442 second
+Iteration 322 completed in 0.1367 second
+Iteration 323 completed in 0.1082 second
+Iteration 324 completed in 0.1365 second
+Iteration 325 completed in 0.1313 second
+Iteration 326 completed in 0.1370 second
+Iteration 327 completed in 0.1403 second
+Iteration 328 completed in 0.1183 second
+Iteration 329 completed in 0.1316 second
+Iteration 330 completed in 0.1337 second
+Iteration 331 completed in 0.1341 second
+Iteration 332 completed in 0.1375 second
+Iteration 333 completed in 0.0904 second
+Iteration 334 completed in 0.1392 second
+Iteration 335 completed in 0.1426 second
+Iteration 336 completed in 0.1327 second
+Iteration 337 completed in 0.1336 second
+Iteration 338 completed in 0.1051 second
+Iteration 339 completed in 0.1208 second
+Iteration 340 completed in 0.1468 second
+Iteration 341 completed in 0.1342 second
+Iteration 342 completed in 0.1360 second
+Iteration 343 completed in 0.1458 second
+Iteration 344 completed in 0.1395 second
+Iteration 345 completed in 0.1158 second
+Iteration 346 completed in 0.1384 second
+Iteration 347 completed in 0.1388 second
+Iteration 348 completed in 0.1361 second
+Iteration 349 completed in 0.1333 second
+Iteration 350 completed in 0.1133 second
+Iteration 351 completed in 0.1496 second
+Iteration 352 completed in 0.1405 second
+Iteration 353 completed in 0.1321 second
+Iteration 354 completed in 0.1119 second
+Iteration 355 completed in 0.1010 second
+Iteration 356 completed in 0.1035 second
+Iteration 357 completed in 0.1121 second
+Iteration 358 completed in 0.1034 second
+Iteration 359 completed in 0.1012 second
+Iteration 360 completed in 0.1056 second
+Iteration 361 completed in 0.1085 second
+Iteration 362 completed in 0.1079 second
+Iteration 363 completed in 0.1076 second
+Iteration 364 completed in 0.1078 second
+Iteration 365 completed in 0.1054 second
+Iteration 366 completed in 0.1081 second
+{'T': 1000,
+ 'batch_size': 2048,
+ 'd_k': 8,
+ 'd_model': 256,
+ 'dataset_folder': '../../../results/ltae',
+ 'dates': 'dates.txt',
+ 'device': 'cuda',
+ 'display_step': 100,
+ 'dropout': 0.2,
+ 'epochs': 2,
+ 'gamma': 1,
+ 'in_channels': 10,
+ 'len_max_seq': 33,
+ 'lr': 0.001,
+ 'mlp4': [128, 64, 32, 19],
+ 'n_head': 16,
+ 'n_neurons': [256, 128],
+ 'npy': '../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz',
+ 'num_classes': 19,
+ 'num_workers': 10,
+ 'positions': 'None',
+ 'preload': False,
+ 'res_dir': '../../../results/ltae/trials',
+ 'seed': 0}
+
+Train 5266, Val 785, Test 831
+TOTAL TRAINABLE PARAMETERS : 97319
+RATIOS: Temporal  88.5% , Classifier  11.5%
+EPOCH 1/2

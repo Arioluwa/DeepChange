@@ -9,6 +9,7 @@ import json
 import pickle as pkl
 import argparse
 import pprint
+import time
 
 from utils import *
 from dataset import SITSData
@@ -20,7 +21,6 @@ from learning.metrics import mIou, confusion_matrix_analysis
 import wandb
 
 
-
 def train_epoch(model, optimizer, criterion, data_loader, device, config):
     acc_meter = tnt.meter.ClassErrorMeter(accuracy=True)
     loss_meter = tnt.meter.AverageValueMeter()
@@ -28,11 +28,12 @@ def train_epoch(model, optimizer, criterion, data_loader, device, config):
     y_pred = []
 
     for i, (x, y) in enumerate(data_loader):
-
+        start_time = time.time()
         y_true.extend(list(map(int, y)))
 
         x = recursive_todevice(x, device)
         y = y.to(device)
+        # print(x.is_cuda)
 
         optimizer.zero_grad()
         out = model(x)
@@ -49,6 +50,7 @@ def train_epoch(model, optimizer, criterion, data_loader, device, config):
         if (i + 1) % config['display_step'] == 0:
             print('Step [{}/{}], Loss: {:.4f}, Acc : {:.2f}'.format(i + 1, len(data_loader), loss_meter.value()[0],
                                                                     acc_meter.value()[0]))
+        print("Iteration {} completed in {:.4f} second".format(i + 1, time.time() - start_time))
 
     epoch_metrics = {'train_loss': loss_meter.value()[0],
                      'train_accuracy': acc_meter.value()[0],
@@ -65,6 +67,7 @@ def evaluation(model, criterion, loader, device, config, mode='val'):
     loss_meter = tnt.meter.AverageValueMeter()
 
     for (x, y) in loader:
+        start_time = time.time()
         y_true.extend(list(map(int, y)))
         x = recursive_todevice(x, device)
         y = y.to(device)
@@ -78,7 +81,8 @@ def evaluation(model, criterion, loader, device, config, mode='val'):
 
         y_p = prediction.argmax(dim=1).cpu().numpy()
         y_pred.extend(list(y_p))
-
+        
+        print("evaluation iteration completed in {:.4f} seconds".format(time.time() - start_time))
     metrics = {'{}_accuracy'.format(mode): acc_meter.value()[0],
                '{}_loss'.format(mode): loss_meter.value()[0],
                '{}_IoU'.format(mode): mIou(y_true, y_pred, config['num_classes'])}
@@ -187,14 +191,19 @@ def main(config):
             print('EPOCH {}/{}'.format(epoch, config['epochs']))
 
             model.train()
+            
+            start_time = time.time()
             train_metrics = train_epoch(model, optimizer, criterion, train_loader, device=device, config=config)
-
+            print("Training time for {} is {}".format(epoch, (time.time() - start_time)/60))
+            
             print('Validation . . . ')
+            start_time = time.time()
             model.eval()
             val_metrics = evaluation(model, criterion, val_loader, device=device, config=config, mode='val')
 
             print('Loss {:.4f},  Acc {:.2f},  IoU {:.4f}'.format(val_metrics['val_loss'], val_metrics['val_accuracy'],
                                                                  val_metrics['val_IoU']))
+            print("Validation time for {} is {}".format(epoch, (time.time() - start_time)/60))
             wandb.log({"val_loss": val_metrics['val_loss'], "val_acc": val_metrics['val_accuracy'], "val_IoU": val_metrics['val_IoU']})
 
             trainlog[epoch] = {**train_metrics, **val_metrics}
@@ -208,12 +217,14 @@ def main(config):
             print('Testing best epoch . . .')
             model.load_state_dict(
                 torch.load(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'model.pth.tar'))['state_dict'])
+            start_time = time.time()
             model.eval()
 
             test_metrics, conf_mat = evaluation(model, criterion, test_loader, device=device, mode='test', config=config)
 
             print('Loss {:.4f},  Acc {:.2f},  IoU {:.4f}'.format(test_metrics['test_loss'], test_metrics['test_accuracy'],
                                                                  test_metrics['test_IoU']))
+            print("Test time for {} is {}".format(epoch, (time.time() - start_time)/60))
             wandb.log({"test_loss": test_metrics['test_loss'], "test_accuracy": test_metrics['test_accuracy'], "test_IoU": test_metrics['test_IoU']})
             save_results(test_metrics, conf_mat, config)
 
@@ -227,7 +238,7 @@ if __name__ == '__main__':
     parser.add_argument('--dataset_folder', default='../../../results/ltae', type=str, help='Path to the folder where the results are saved.')
     parser.add_argument('--npy', default='../../../data/theiaL2A_zip_img/output/2018/2018_SITS_subset_data.npz', help='Path to the npy file') # to be change
     parser.add_argument('--dates', default='dates.txt', help='gapfilled date test path')
-    parser.add_argument('--res_dir', default='../../../results/ltae/results', help='Path to the folder where the results should be stored')
+    parser.add_argument('--res_dir', default='../../../results/ltae/trials', help='Path to the folder where the results should be stored')
     parser.add_argument('--num_workers', default=10, type=int, help='Number of data loading workers')
     parser.add_argument('--seed', default=3, type=int, help='Random seed')
     parser.add_argument('--device', default='cuda', type=str, help='Name of device to use for tensor computations (cuda/cpu)')
@@ -236,7 +247,7 @@ if __name__ == '__main__':
     parser.set_defaults(preload=False)
 
     # Training parameters
-    parser.add_argument('--epochs', default=10, type=int, help='Number of epochs per fold')
+    parser.add_argument('--epochs', default=2, type=int, help='Number of epochs per fold')
     parser.add_argument('--batch_size', default=128, type=int, help='Batch size')
     parser.add_argument('--lr', default=0.001, type=float, help='Learning rate')
     parser.add_argument('--gamma', default=1, type=float, help='Gamma parameter of the focal loss')
@@ -254,7 +265,7 @@ if __name__ == '__main__':
     parser.add_argument('--dropout', default=0.2, type=float, help='Dropout probability')
     parser.add_argument('--d_model', default=256, type=int,
                         help="size of the embeddings (E), if input vectors are of a different size, a linear layer is used to project them to a d_model-dimensional space")
-    
+
     ## Classifier
     parser.add_argument('--num_classes', default=19, type=int, help='Number of classes')
     parser.add_argument('--mlp4', default='[128, 64, 32, 19]', type=str, help='Number of neurons in the layers of MLP (Decoder)')

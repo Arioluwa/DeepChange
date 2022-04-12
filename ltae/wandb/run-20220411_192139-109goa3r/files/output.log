@@ -1,0 +1,11 @@
+
+Train 86203, Val 11380, Test 12509
+Traceback (most recent call last):
+  File "train.py", line 272, in <module>
+    main(config)
+  File "train.py", line 190, in main
+    start_time = time.time()
+NameError: name 'time' is not defined
+TOTAL TRAINABLE PARAMETERS : 97319
+RATIOS: Temporal  88.5% , Classifier  11.5%
+EPOCH 1/2

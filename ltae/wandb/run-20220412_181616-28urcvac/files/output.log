@@ -1,0 +1,3 @@
+Train 5266, Val 785, Test 831
+TOTAL TRAINABLE PARAMETERS : 97319
+RATIOS: Temporal  88.5% , Classifier  11.5%

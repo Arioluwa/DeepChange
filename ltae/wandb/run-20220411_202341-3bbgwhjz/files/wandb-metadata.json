@@ -1,0 +1,33 @@
+{
+    "os": "Linux-5.10.0-13-amd64-x86_64-with-debian-11.3",
+    "python": "3.7.1",
+    "heartbeatAt": "2022-04-11T18:23:45.966615",
+    "startedAt": "2022-04-11T18:23:41.000662",
+    "docker": null,
+    "gpu": "Tesla V100-PCIE-16GB",
+    "gpu_count": 1,
+    "cpu_count": 48,
+    "cuda": null,
+    "args": [
+        "--dates",
+        "dates.txt",
+        "--positions",
+        "bespoke",
+        "--seed",
+        "1",
+        "--epochs",
+        "2"
+    ],
+    "state": "running",
+    "program": "train.py",
+    "codePath": "ltae/train.py",
+    "git": {
+        "remote": "git@github.com:adebowaledaniel/DeepChange.git",
+        "commit": "5d9f348e903a58d5e42635afc39531ec94006048"
+    },
+    "email": "dansy37@gmail.com",
+    "root": "/share/mastoc/projects/erasmus/deepchange/codebase/DeepChange",
+    "host": "volta1",
+    "username": "e2008987",
+    "executable": "/share/etud/e2008987/.conda/envs/python_env/bin/python"
+}
