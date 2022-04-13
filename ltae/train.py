@@ -226,6 +226,7 @@ def main(config):
                                                                  test_metrics['test_IoU']))
             print("Test time for {} is {}".format(epoch, (time.time() - start_time)/60))
             wandb.log({"test_loss": test_metrics['test_loss'], "test_accuracy": test_metrics['test_accuracy'], "test_IoU": test_metrics['test_IoU']})
+            
             save_results(test_metrics, conf_mat, config)
 
     # overall_performance(config)
