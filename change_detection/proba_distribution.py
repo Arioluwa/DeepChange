@@ -84,7 +84,7 @@ for x in range(len(x_vec)-1):
 		X_test = X_test.transpose((1,2,0))
 		sX = X_test.shape[0]
 		sY = X_test.shape[1]
-		X_test = X_test.reshape(X_test.shape[0]*X_test.shape[1],X_test.shape[2])
+		X_test = X_test.reshape(X_test.shape[0]*X_test.shape[1],X_test.shape[2]) # rxc, 330
 		print("Reading image in loop: ", time.time()-start_time_ri)
 
 		start_time = time.time()

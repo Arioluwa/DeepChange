@@ -22,8 +22,8 @@ try:
 except:
     from osgeo import gdal, osr
     from osgeo.gdalconst import *
-    
-def evaluation(model, criterion, loader, device, config, mode='test', proba=False):
+
+def evaluation(model, criterion, loader, device, config):
     y_true = []
     y_pred = []
 
@@ -49,11 +49,6 @@ def evaluation(model, criterion, loader, device, config, mode='test', proba=Fals
                '{}_loss'.format(mode): loss_meter.value()[0],
                '{}_IoU'.format(mode): mIou(y_true, y_pred, config['num_classes'])}
 
-    if mode == 'val':
-        return metrics
-    elif mode == 'test':
-        return metrics, confusion_matrix(y_true, y_pred, labels=list(range(config['num_classes'])))
     
-# https://datascience.stackexchange.com/questions/54237/is-it-valid-to-shuffle-time-series-data-for-a-prediction-task
-
-# https://stackoverflow.com/questions/51041128/pytorch-predict-single-example
+    return metrics, confusion_matrix(y_true, y_pred, labels=list(range(config['num_classes'])))
+    
