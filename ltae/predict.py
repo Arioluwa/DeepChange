@@ -45,6 +45,41 @@ else:
 	# parser.add_option("-b", "--nchannels", dest="nchannels", action="store", type="int", help="The number of channels in the image")
 	(options, args) = parser.parse_args()
 
+def class_mapping(y_label):
+	"""
+	"""
+	unique_class = np.unique(y_label)
+	nclass = len(unique_class)
+	max_ylabel = np.unique(y_label)[-1]+1 #-- +1 to take into account the case where y=0
+	
+	class_map = [0]*max_ylabel
+	revert_class_map = unique_class.tolist()
+	#-- Insert in class_map values from 1 to c, with c the number of classes
+	n = nclass
+	while n>0:
+		insert_val = revert_class_map[n-1]
+		class_map[insert_val] = n
+		n = n-1	
+	return class_map, revert_class_map
+
+#-----------------------------------------------------------------------
+def read_class_map(file):
+	
+	with open(file, 'r') as f:
+		reader = csv.reader(f, delimiter=',')
+		class_map = next(reader)
+		revert_class_map = next(reader)
+	class_map = [int(k) for k in class_map]
+	revert_class_map = [int(k) for k in revert_class_map]
+	return class_map, revert_class_map
+
+
+def save_class_map(file, class_map, revert_class_map):
+	
+	with open(file, 'w') as f:
+		writer = csv.writer(f, delimiter=',')
+		writer.writerow(class_map)
+		writer.writerow(revert_class_map)
 def load_npz(file_path):
     """
     Load data from a .npz file
@@ -130,7 +165,12 @@ else:
     model = dLtae(in_channels = config['in_channels'], n_head = config['n_head'], d_k= config['d_k'], n_neurons=config['n_neurons'], dropout=config['dropout'], d_model= config['d_model'],
                  mlp = config['mlp4'], T =config['T'], len_max_seq = config['len_max_seq'], 
               positions=None, return_att=False)
+    
+    device = torch.device(config['device'])
+    model = model.to(device)
+    model = model.double()
     model.load_state_dict(stat_dict)
+    
     model.eval()
 
 
@@ -185,7 +225,7 @@ out_map_band = out_map_raster.GetRasterBand(1)
 
 
 size_areaX = 10980
-size_areaY = 200
+size_areaY = 150
 x_vec = list(range(int(c/size_areaX)))
 x_vec = [x*size_areaX for x in x_vec]
 y_vec = list(range(int(r/size_areaY)))
@@ -220,10 +260,10 @@ for x in range(len(x_vec)-1):
         
 		if m == 2:
 			X_test = reshape_data(X_test, nchannels)
-			X_test = standardize_data(X_test, mean, std)
+			X_test = torch.from_numpy(standardize_data(X_test, mean, std))
             
 			with torch.no_grad():
-				prediction = model(x)
+				prediction = model(X_test)
             
 			soft_pred = torch.nn.Softmax(prediction)
 			hard_pred = prediction.argmax(dim=1).cpu().numpy()
