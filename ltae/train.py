@@ -48,10 +48,10 @@ def train_epoch(model, optimizer, criterion, data_loader, device, config):
         loss_meter.add(loss.item())
 
         if (i + 1) % config['display_step'] == 0:
-            print('Step [{}/{}], Loss: {:.4f}, Acc : {:.2f}'.format(i + 1, len(data_loader), loss_meter.value()[0],
-                                                                    acc_meter.value()[0]))
+            print('Step [{}/{}], Loss: {:.4f}, Acc : {:.2f}'.format(i + 1, len(data_loader), loss_meter.value()[0], acc_meter.value()[0]))
+        
         print("Iteration {} completed in {:.4f} second".format(i + 1, time.time() - start_time))
-
+        if i +1 == int(len(data_loader)/2):  break
     epoch_metrics = {'train_loss': loss_meter.value()[0],
                      'train_accuracy': acc_meter.value()[0],
                      'train_IoU': mIou(y_true, y_pred, n_classes=config['num_classes'])}
@@ -174,9 +174,9 @@ def main(config):
         # print(model_config)
         model = dLtae(**model_config)
         config['N_params'] = model.param_ratio()
-        with open(os.path.join(config['res_dir'], 'conf.json'), 'w') as file:
+        with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'conf.json'), 'w') as file:
             file.write(json.dumps(config, indent=4))
-
+        # break
         model = model.to(device)
         model.apply(weight_init)
         optimizer = torch.optim.Adam(model.parameters())
