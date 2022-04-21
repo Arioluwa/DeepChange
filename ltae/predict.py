@@ -100,6 +100,11 @@ def reshape_data(X, n_channel):
 def standardize_data(X, mean, std):
     return (X - mean) / std
 
+def recursive_todevice(x, device):
+    if isinstance(x, torch.Tensor):
+        return x.to(device)
+    else:
+        return [recursive_todevice(c, device) for c in x]
 # def read_mean_std()
 
 # rewrite a function
@@ -225,7 +230,7 @@ out_map_band = out_map_raster.GetRasterBand(1)
 
 
 size_areaX = 10980
-size_areaY = 150
+size_areaY = 1
 x_vec = list(range(int(c/size_areaX)))
 x_vec = [x*size_areaX for x in x_vec]
 y_vec = list(range(int(r/size_areaY)))
@@ -253,21 +258,51 @@ for x in range(len(x_vec)-1):
 		print("Reading: ", time.time()-start_time)
 
         #-- reshape the cube in a column vector
+		print("transposing....")
 		X_test = X_test.transpose((1,2,0))
+		print("Done....")
 		sX = X_test.shape[0]
+		print("sX....",sX)
 		sY = X_test.shape[1]
+		print("sY....", sY)
+		print("Reshaping....")
 		X_test = X_test.reshape(X_test.shape[0]*X_test.shape[1],X_test.shape[2])
+		print("Done....")
+		print(X_test.shape)
         
 		if m == 2:
+			print("device..")
+			device = torch.device('cuda')
+			print("done..")
+			print(m)
+			print("reshape data....")
 			X_test = reshape_data(X_test, nchannels)
-			X_test = torch.from_numpy(standardize_data(X_test, mean, std))
-            
+			print("Shape of X_test:",X_test.shape)
+			print("Done....")
+			print("standardizing...")
+			X_test = standardize_data(X_test, mean, std)
+			print("Shape after std..:", X_test.shape)
+			print("Done....")
+			print("numpy2tensor....")
+			X_test = torch.from_numpy(X_test)
+			X_test = recursive_todevice(X_test, device)
+			print("dtype:",X_test.dtype)
+			print("Done....")
+			print("no_grad....")
+			# torch.cuda.empty_cache()
 			with torch.no_grad():
+				print("Done....")
+				print("predicting....")
 				prediction = model(X_test)
-            
+
+				print("Done....")
+			print("soft max....")
 			soft_pred = torch.nn.Softmax(prediction)
+			print("Done....")
+			print("hard....")
 			hard_pred = prediction.argmax(dim=1).cpu().numpy()
 			hard_pred = [dict_[k] for k in hard_pred]
+			# torch.cuda.empty_cache()
              
 		else:
 			soft_pred = model.predict_proba(X_test)

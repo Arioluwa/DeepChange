@@ -52,7 +52,7 @@ def train_epoch(model, optimizer, criterion, data_loader, device, config):
         
         print("Iteration {} completed in {:.4f} second".format(i + 1, time.time() - start_time))
         # if i +1 == int(len(data_loader)/config['factor']):  break
-        if i +1 >= 1300:  break
+        if i +1 >= config['factor']:  break
     epoch_metrics = {'train_loss': loss_meter.value()[0],
                      'train_accuracy': acc_meter.value()[0],
                      'train_IoU': mIou(y_true, y_pred, n_classes=config['num_classes'])}
@@ -175,6 +175,10 @@ def main(config):
         # print(model_config)
         model = dLtae(**model_config)
         config['N_params'] = model.param_ratio()
+        config['Train_loader_size'] = len(train_loader)
+        config['Val_loader_size'] = len(val_loader)
+        config['Test_loader_size'] = len(test_loader)
+        # config['factor'] = config['factor']
         wandb.init(config = config)
         
         with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'conf.json'), 'w') as file:
@@ -193,7 +197,7 @@ def main(config):
         st_ = time.time()
         for epoch in range(1, config['epochs'] + 1):
             print('EPOCH {}/{}'.format(epoch, config['epochs']))
-
+            st__ = time.time()
             model.train()
             
             start_time = time.time()
@@ -233,7 +237,8 @@ def main(config):
             wandb.log({"epoch": epoch})
             
             save_results(test_metrics, conf_mat, config)
-        print("total time taken for all {} epochs: {:.3f}.".format(config['epochs'], (time.time() - st_)/60))
+            print("total time taken for {} epoch: {:.3f} mins.".format(epoch, (time.time() - st__)/60))
+        print("total time taken for all {} epochs: {:.3f} mins.".format(config['epochs'], (time.time() - st_)/60))
 
     # overall_performance(config)
 
@@ -250,7 +255,7 @@ if __name__ == '__main__':
     parser.add_argument('--seed', default=3, type=int, help='Random seed')
     parser.add_argument('--device', default='cuda', type=str, help='Name of device to use for tensor computations (cuda/cpu)')
     parser.add_argument('--display_step', default=100, type=int, help='Interval in batches between display of training metrics')
-    # parser.add_argument('--factor', default=3, type=int, help='Number of factor to divide the train_loader dataset to stop iteration.')
+    parser.add_argument('--factor', default=1300, type=int, help='The number of training data loader to stop thhe training iteration.')
     parser.add_argument('--preload', dest='preload', action='store_true', help='If specified, the whole dataset is loaded to RAM at initialization')
     parser.set_defaults(preload=False)
     
