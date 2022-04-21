@@ -176,7 +176,7 @@ else:
     model = model.double()
     model.load_state_dict(stat_dict)
     
-    model.eval()
+    model.eval() # disable your dropout and batchnorm layers putting the model in evaluation mode.
 
 
 flag_del = False #-- deleting the training data
@@ -230,7 +230,7 @@ out_map_band = out_map_raster.GetRasterBand(1)
 
 
 size_areaX = 10980
-size_areaY = 1
+size_areaY = 2
 x_vec = list(range(int(c/size_areaX)))
 x_vec = [x*size_areaX for x in x_vec]
 y_vec = list(range(int(r/size_areaY)))
@@ -289,20 +289,21 @@ for x in range(len(x_vec)-1):
 			print("dtype:",X_test.dtype)
 			print("Done....")
 			print("no_grad....")
-			# torch.cuda.empty_cache()
-			with torch.no_grad():
+			with torch.no_grad(): # disable the autograd engine (which you probably don't want during inference)
 				print("Done....")
 				print("predicting....")
 				prediction = model(X_test)
 
 				print("Done....")
 			print("soft max....")
-			soft_pred = torch.nn.Softmax(prediction)
+			# soft_pred = torch.nn.Softmax(prediction)
 			print("Done....")
 			print("hard....")
 			hard_pred = prediction.argmax(dim=1).cpu().numpy()
 			hard_pred = [dict_[k] for k in hard_pred]
-			# torch.cuda.empty_cache()
+			del prediction
+			del X_test
+			torch.cuda.empty_cache()
              
 		else:
 			soft_pred = model.predict_proba(X_test)
@@ -310,17 +311,18 @@ for x in range(len(x_vec)-1):
 			hard_pred = [revert_class_map[k] for k in hard_pred]
             
 		hard_pred = np.array(hard_pred, dtype=np.uint8)    
-		soft_prediction.append(soft_pred)  
+		# soft_prediction.append(soft_pred)  
 		pred_array = hard_pred.reshape(sX,sY)
             
 		out_map_band.WriteArray(pred_array, xoff=xoff, yoff=yoff)
 		out_map_band.FlushCache()
 
-probability_distribution = np.concatenate(soft_prediction)
+# probability_distribution = np.concatenate(soft_prediction)
 
-np.save(os.path.join(out_path, image_name + '_' + str_model[m-1] + '.npy'), probability_distribution)
+# np.save(os.path.join(out_path, image_name + '_' + str_model[m-1] + '.npy'), probability_distribution)
 
 
 
     
 
+#https://stackoverflow.com/questions/55322434/how-to-clear-cuda-memory-in-pytorchs

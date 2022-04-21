@@ -11,5 +11,5 @@ setcuda 11.0
 conda activate python37
 
 ### OPTIONAL, copy data project data ###
-python predict.py -m ../../../results/ltae/trials/Seed_0/model.pth.tar -t ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz -i ../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif -o ../../../results/ltae -f 2 -c '../../../results/ltae/trials/conf.json'
+python predict.py -m ../../../results/ltae/trials/Seed_0/model.pth.tar -t ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz -i ../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif -o ../../../results/ltae/results -f 2 -c '../../../results/ltae/trials/conf.json'
 # python train.py --npy ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --epoch 100 --seed 2 --num_workers 4 --batch_size 2048
