@@ -8,9 +8,8 @@
 
 
 setcuda 11.0
-conda activate python_env
+conda activate python37
 
 ### OPTIONAL, copy data project data ###
-#cp -r /share/projects/erasmus/cloudN/
 
-python train.py --npy ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --seed 5 --num_workers 4 --epochs 2
+python train.py --npy ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --epoch 100 --seed 2 --num_workers 4 --batch_size 2048

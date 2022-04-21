@@ -51,7 +51,8 @@ def train_epoch(model, optimizer, criterion, data_loader, device, config):
             print('Step [{}/{}], Loss: {:.4f}, Acc : {:.2f}'.format(i + 1, len(data_loader), loss_meter.value()[0], acc_meter.value()[0]))
         
         print("Iteration {} completed in {:.4f} second".format(i + 1, time.time() - start_time))
-        if i +1 == int(len(data_loader)/config['factor']):  break
+        # if i +1 == int(len(data_loader)/config['factor']):  break
+        if i +1 >= 1300:  break
     epoch_metrics = {'train_loss': loss_meter.value()[0],
                      'train_accuracy': acc_meter.value()[0],
                      'train_IoU': mIou(y_true, y_pred, n_classes=config['num_classes'])}
@@ -165,7 +166,8 @@ def main(config):
     
     loaders = get_loader(train_dt, val_dt, test_dt, config)
     for train_loader, val_loader, test_loader in loaders:
-        print('Train {}, Val {}, Test {}, stop itr at {} '.format(len(train_loader), len(val_loader), len(test_loader), int(len(train_loader)/config['factor'])))
+        # print('Train {}, Val {}, Test {}, stop itr at {} '.format(len(train_loader), len(val_loader), len(test_loader), int(len(train_loader)/config['factor'])))
+        print('Train {}, Val {}, Test {}'.format(len(train_loader), len(val_loader), len(test_loader)))#, int(len(train_loader)/config['factor'])))
 
         model_config = dict(in_channels=config['in_channels'], n_head=config['n_head'], d_k=config['d_k'],
                             n_neurons=config['n_neurons'], dropout=config['dropout'], d_model=config['d_model'], mlp= config['mlp4'], T=config['T'], len_max_seq=config['len_max_seq'],
@@ -228,6 +230,7 @@ def main(config):
                                                                  test_metrics['test_IoU']))
             print("Test time for {} is {}".format(epoch, (time.time() - start_time)/60))
             wandb.log({"test_loss": test_metrics['test_loss'], "test_accuracy": test_metrics['test_accuracy'], "test_IoU": test_metrics['test_IoU']})
+            wandb.log({"epoch": epoch})
             
             save_results(test_metrics, conf_mat, config)
         print("total time taken for all {} epochs: {:.3f}.".format(config['epochs'], (time.time() - st_)/60))
@@ -247,7 +250,7 @@ if __name__ == '__main__':
     parser.add_argument('--seed', default=3, type=int, help='Random seed')
     parser.add_argument('--device', default='cuda', type=str, help='Name of device to use for tensor computations (cuda/cpu)')
     parser.add_argument('--display_step', default=100, type=int, help='Interval in batches between display of training metrics')
-    parser.add_argument('--factor', default=3, type=int, help='Number of factor to divide the train_loader dataset to stop iteration.')
+    # parser.add_argument('--factor', default=3, type=int, help='Number of factor to divide the train_loader dataset to stop iteration.')
     parser.add_argument('--preload', dest='preload', action='store_true', help='If specified, the whole dataset is loaded to RAM at initialization')
     parser.set_defaults(preload=False)
     
