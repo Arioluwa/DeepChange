@@ -42,6 +42,7 @@ else:
 	parser.add_option("-i", "--input", dest="in_img", action="store", type="string", help="The image to classify.")
 	parser.add_option("-o", "--output", dest="output", action="store", type="string", help="The directory of model and statistics.")
 	parser.add_option("-c", "--config", dest="config", action="store", type="string", help="Json config file path")
+	parser.add_option("-d", "--device", dest="device", action="store", type="string", help="Json config file path")
 	# parser.add_option("-b", "--nchannels", dest="nchannels", action="store", type="int", help="The number of channels in the image")
 	(options, args) = parser.parse_args()
 
@@ -153,6 +154,8 @@ config = json.load(open(config))
 m = options.flag
 image_name = in_img.split('/')
 image_name = image_name[-1].split('_')[0]
+device = options.device
+print("device=", device)
 
 out_map = out_path + '/' + image_name + '_' + str_model[m-1] + '_map' + '.tif'
 print("out_map: ", out_map)
@@ -171,12 +174,12 @@ else:
                  mlp = config['mlp4'], T =config['T'], len_max_seq = config['len_max_seq'], 
               positions=None, return_att=False)
     
-    device = torch.device(config['device'])
+    print("device=", device)
     model = model.to(device)
     model = model.double()
     model.load_state_dict(stat_dict)
     
-    model.eval() # disable your dropout and batchnorm layers putting the model in evaluation mode.
+    model.eval() # disable your dropout and layer norm putting the model in evaluation mode.
 
 
 flag_del = False #-- deleting the training data
@@ -230,7 +233,7 @@ out_map_band = out_map_raster.GetRasterBand(1)
 
 
 size_areaX = 10980
-size_areaY = 2
+size_areaY = 50
 x_vec = list(range(int(c/size_areaX)))
 x_vec = [x*size_areaX for x in x_vec]
 y_vec = list(range(int(r/size_areaY)))
@@ -258,52 +261,34 @@ for x in range(len(x_vec)-1):
 		print("Reading: ", time.time()-start_time)
 
         #-- reshape the cube in a column vector
-		print("transposing....")
 		X_test = X_test.transpose((1,2,0))
-		print("Done....")
 		sX = X_test.shape[0]
-		print("sX....",sX)
 		sY = X_test.shape[1]
-		print("sY....", sY)
-		print("Reshaping....")
 		X_test = X_test.reshape(X_test.shape[0]*X_test.shape[1],X_test.shape[2])
-		print("Done....")
-		print(X_test.shape)
+		X_test = X_test.astype("int16")
         
 		if m == 2:
-			print("device..")
-			device = torch.device('cuda')
-			print("done..")
-			print(m)
-			print("reshape data....")
+			# device = torch.device(device)
 			X_test = reshape_data(X_test, nchannels)
-			print("Shape of X_test:",X_test.shape)
-			print("Done....")
-			print("standardizing...")
 			X_test = standardize_data(X_test, mean, std)
-			print("Shape after std..:", X_test.shape)
-			print("Done....")
-			print("numpy2tensor....")
 			X_test = torch.from_numpy(X_test)
-			X_test = recursive_todevice(X_test, device)
-			print("dtype:",X_test.dtype)
-			print("Done....")
-			print("no_grad....")
+			# X_test = recursive_todevice(X_test, device)
+			start_time = time.time()
 			with torch.no_grad(): # disable the autograd engine (which you probably don't want during inference)
-				print("Done....")
-				print("predicting....")
 				prediction = model(X_test)
-
-				print("Done....")
-			print("soft max....")
-			# soft_pred = torch.nn.Softmax(prediction)
-			print("Done....")
-			print("hard....")
+			print("Prediction completed: ", time.time()-start_time)
+			# print("soft max....")
+			start_time = time.time()
+			soft_pred = torch.nn.Softmax(prediction)
+			print("Soft max: ", time.time()-start_time)
+			start_time = time.time()
 			hard_pred = prediction.argmax(dim=1).cpu().numpy()
+			print("Hard pred: ", time.time()-start_time)
+			start_time = time.time()
 			hard_pred = [dict_[k] for k in hard_pred]
+			print("mapping: ", time.time()-start_time)
 			del prediction
 			del X_test
-			torch.cuda.empty_cache()
              
 		else:
 			soft_pred = model.predict_proba(X_test)
@@ -311,18 +296,18 @@ for x in range(len(x_vec)-1):
 			hard_pred = [revert_class_map[k] for k in hard_pred]
             
 		hard_pred = np.array(hard_pred, dtype=np.uint8)    
-		# soft_prediction.append(soft_pred)  
 		pred_array = hard_pred.reshape(sX,sY)
-            
+        
+		start_time = time.time()
 		out_map_band.WriteArray(pred_array, xoff=xoff, yoff=yoff)
 		out_map_band.FlushCache()
+		print("write map: ", time.time()-start_time)
+        
+		start_time = time.time()
+		soft_prediction.append(soft_pred)
+		print("Writing array: ", time.time()-start_time)
+        
 
-# probability_distribution = np.concatenate(soft_prediction)
+probability_distribution = np.concatenate(soft_prediction)
 
-# np.save(os.path.join(out_path, image_name + '_' + str_model[m-1] + '.npy'), probability_distribution)
-
-
-
-    
-
-#https://stackoverflow.com/questions/55322434/how-to-clear-cuda-memory-in-pytorchs
+np.save(os.path.join(out_path, image_name + '_' + str_model[m-1] + '.npy'), probability_distribution)

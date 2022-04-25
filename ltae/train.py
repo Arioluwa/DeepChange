@@ -163,8 +163,9 @@ def main(config):
     test_dt = SITSData(config['npy'], config['seed'], config['dates'], partition='test', transform = transform)
     
     device = torch.device(config['device'])
-    
+    # sys.exit()
     loaders = get_loader(train_dt, val_dt, test_dt, config)
+    # break
     for train_loader, val_loader, test_loader in loaders:
         # print('Train {}, Val {}, Test {}, stop itr at {} '.format(len(train_loader), len(val_loader), len(test_loader), int(len(train_loader)/config['factor'])))
         print('Train {}, Val {}, Test {}'.format(len(train_loader), len(val_loader), len(test_loader)))#, int(len(train_loader)/config['factor'])))
@@ -178,7 +179,7 @@ def main(config):
         config['Train_loader_size'] = len(train_loader)
         config['Val_loader_size'] = len(val_loader)
         config['Test_loader_size'] = len(test_loader)
-        # config['factor'] = config['factor']
+        config['factor'] = config['factor']
         wandb.init(config = config)
         
         with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'conf.json'), 'w') as file:
@@ -219,12 +220,13 @@ def main(config):
 
             if val_metrics['val_IoU'] >= best_mIoU:
                 best_mIoU = val_metrics['val_IoU']
-                torch.save({'epoch': epoch, 'state_dict': model.state_dict(),
-                            'optimizer': optimizer.state_dict()},
+                torch.save({'epoch': epoch, 'state_dict': model.state_dict(), 'optimizer': optimizer.state_dict()},
                            os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'model.pth.tar'))
+            torch.save({'epoch': epoch, 'state_dict': model.state_dict(), 'optimizer': optimizer.state_dict()},
+                           os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'check_point_model.pt'))
             print('Testing best epoch . . .')
             model.load_state_dict(
-                torch.load(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'model.pth.tar'))['state_dict'])
+                torch.load(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'check_point_model.pt'))['state_dict'])
             start_time = time.time()
             model.eval()
 
@@ -256,7 +258,7 @@ if __name__ == '__main__':
     parser.add_argument('--device', default='cuda', type=str, help='Name of device to use for tensor computations (cuda/cpu)')
     parser.add_argument('--display_step', default=100, type=int, help='Interval in batches between display of training metrics')
     parser.add_argument('--factor', default=1300, type=int, help='The number of training data loader to stop thhe training iteration.')
-    parser.add_argument('--preload', dest='preload', action='store_true', help='If specified, the whole dataset is loaded to RAM at initialization')
+    # parser.add_argument('--preload', dest='preload', action='store_true', help='If specified, the whole dataset is loaded to RAM at initialization')
     parser.set_defaults(preload=False)
     
 
