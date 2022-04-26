@@ -273,20 +273,12 @@ for x in range(len(x_vec)-1):
 			X_test = standardize_data(X_test, mean, std)
 			X_test = torch.from_numpy(X_test)
 			# X_test = recursive_todevice(X_test, device)
-			start_time = time.time()
 			with torch.no_grad(): # disable the autograd engine (which you probably don't want during inference)
 				prediction = model(X_test)
-			print("Prediction completed: ", time.time()-start_time)
 			# print("soft max....")
-			start_time = time.time()
 			soft_pred = torch.nn.Softmax(prediction)
-			print("Soft max: ", time.time()-start_time)
-			start_time = time.time()
 			hard_pred = prediction.argmax(dim=1).cpu().numpy()
-			print("Hard pred: ", time.time()-start_time)
-			start_time = time.time()
 			hard_pred = [dict_[k] for k in hard_pred]
-			print("mapping: ", time.time()-start_time)
 			del prediction
 			del X_test
              
