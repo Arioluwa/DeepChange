@@ -21,7 +21,7 @@ from learning.metrics import mIou, confusion_matrix_analysis
 import wandb
 
 
-def train_epoch(model, optimizer, criterion, data_loader, device, config):
+def train_epoch(model, optimizer, scheduler, criterion, data_loader, device, config):
     acc_meter = tnt.meter.ClassErrorMeter(accuracy=True)
     loss_meter = tnt.meter.AverageValueMeter()
     y_true = []
@@ -39,7 +39,12 @@ def train_epoch(model, optimizer, criterion, data_loader, device, config):
         out = model(x)
         loss = criterion(out, y.long())
         loss.backward()
-        optimizer.step()
+        if config['_scheduler']:
+            optimizer.step()
+            scheduler.step()
+        else:
+            optimizer.step()
+            
 
         pred = out.detach()
         y_p = pred.argmax(dim=1).cpu().numpy()
@@ -52,7 +57,7 @@ def train_epoch(model, optimizer, criterion, data_loader, device, config):
         
         print("Iteration {} completed in {:.4f} second".format(i + 1, time.time() - start_time))
         # if i +1 == int(len(data_loader)/config['factor']):  break
-        if i +1 >= config['factor']:  break
+        # if i +1 >= config['factor']:  break
     epoch_metrics = {'train_loss': loss_meter.value()[0],
                      'train_accuracy': acc_meter.value()[0],
                      'train_IoU': mIou(y_true, y_pred, n_classes=config['num_classes'])}
@@ -124,13 +129,13 @@ def prepare_output(config):
     os.makedirs(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed'])), exist_ok=True)
 
 def checkpoint(log, config):
-    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'trainlog.json'), 'w') as outfile:
+    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_trainlog.json'.format(config['seed'], config['batch_size'])), 'w') as outfile:
         json.dump(log, outfile, indent=4)
 
 def save_results(metrics, conf_mat, config):
-    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'test_metrics.json'), 'w') as outfile:
+    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_test_metrics.json'.format(config['seed'], config['batch_size'])), 'w') as outfile:
         json.dump(metrics, outfile, indent=4)
-    pkl.dump(conf_mat, open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'conf_mat.pkl'), 'wb'))
+    pkl.dump(conf_mat, open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_conf_mat.pkl'.format(config['seed'], config['batch_size'])), 'wb'))
     
 # def overall_performance(config):
 #     cm = np.zeros((config['num_classes'], config['num_classes']))
@@ -179,7 +184,8 @@ def main(config):
         config['Train_loader_size'] = len(train_loader)
         config['Val_loader_size'] = len(val_loader)
         config['Test_loader_size'] = len(test_loader)
-        config['factor'] = config['factor']
+        # config['factor'] = config['factor']
+        config['_scheduler'] = config['_scheduler']
         wandb.init(config = config)
         
         with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'conf.json'), 'w') as file:
@@ -187,7 +193,14 @@ def main(config):
         # break
         model = model.to(device)
         model.apply(weight_init)
-        optimizer = torch.optim.Adam(model.parameters())
+        steps_per_epoch = len(train_loader)
+        
+        if config["_schedule"]:
+            optimizer =  torch.optim.Adam(model.parameters(), lr=config["lr"])
+            scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=config.epochs * steps_per_epoch, eta_min=0)
+        else:
+            optimizer = torch.optim.Adam(model.parameters())
+            
         criterion = FocalLoss(config['gamma'])
         
         model = model.double() #RuntimeError: expected scalar type Double but found Float 
@@ -202,7 +215,7 @@ def main(config):
             model.train()
             
             start_time = time.time()
-            train_metrics = train_epoch(model, optimizer, criterion, train_loader, device=device, config=config)
+            train_metrics = train_epoch(model, optimizer, scheduler, criterion, train_loader, device=device, config=config)
             print("Training time for {} is {}".format(epoch, (time.time() - start_time)/60))
             
             print('Validation . . . ')
@@ -258,6 +271,7 @@ if __name__ == '__main__':
     parser.add_argument('--device', default='cuda', type=str, help='Name of device to use for tensor computations (cuda/cpu)')
     parser.add_argument('--display_step', default=100, type=int, help='Interval in batches between display of training metrics')
     parser.add_argument('--factor', default=1300, type=int, help='The number of training data loader to stop thhe training iteration.')
+    parser.add_argument('--_scheduler', default=True, type=bool, help='Enable scheduler')
     # parser.add_argument('--preload', dest='preload', action='store_true', help='If specified, the whole dataset is loaded to RAM at initialization')
     parser.set_defaults(preload=False)
     

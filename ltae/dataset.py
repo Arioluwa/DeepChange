@@ -69,7 +69,7 @@ class SITSData(data.Dataset):
         self.y = self.y_[idx]
 
         self.X = np.array(self.X, dtype = "float16")
-        self.y = np.array(self.y, dtype = "int8")
+        self.y = np.array(self.y, dtype = int)
         self.X = self.X.reshape(int(self.X.shape[0]/n_channel), n_channel)
 
         # transform
