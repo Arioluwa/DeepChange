@@ -39,7 +39,7 @@ def train_epoch(model, optimizer, scheduler, criterion, data_loader, device, con
         out = model(x)
         loss = criterion(out, y.long())
         loss.backward()
-        if config['_scheduler']:
+        if config['scheduler_']:
             optimizer.step()
             scheduler.step()
         else:
@@ -129,13 +129,13 @@ def prepare_output(config):
     os.makedirs(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed'])), exist_ok=True)
 
 def checkpoint(log, config):
-    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_trainlog.json'.format(config['seed'], config['batch_size'])), 'w') as outfile:
+    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_epochs_{}_factor_{}_trainlog.json'.format(config['seed'], config['batch_size'], config['epochs'], config['factor'])), 'w') as outfile:
         json.dump(log, outfile, indent=4)
 
 def save_results(metrics, conf_mat, config):
-    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_test_metrics.json'.format(config['seed'], config['batch_size'])), 'w') as outfile:
+    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_epochs_{}_factor_{}_test_metrics.json'.format(config['seed'], config['batch_size'], config['epochs'], config['factor'])), 'w') as outfile:
         json.dump(metrics, outfile, indent=4)
-    pkl.dump(conf_mat, open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_conf_mat.pkl'.format(config['seed'], config['batch_size'])), 'wb'))
+    pkl.dump(conf_mat, open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_epochs_{}_factor_{}_conf_mat.pkl'.format(config['seed'], config['batch_size'], config['epochs'], config['factor'])), 'wb'))
     
 # def overall_performance(config):
 #     cm = np.zeros((config['num_classes'], config['num_classes']))
@@ -160,7 +160,7 @@ def main(config):
     
     mean_ = np.loadtxt(os.path.join(config['dataset_folder'], './mean_std/source_mean.txt'))
     std_ = np.loadtxt(os.path.join(config['dataset_folder'], './mean_std/source_std.txt'))
-    
+    # print(config['scheduler_'])
     transform = transforms.Compose([standardize(mean_, std_)])
     
     train_dt = SITSData(config['npy'], config['seed'], config['dates'], partition='train', transform = transform)
@@ -185,7 +185,7 @@ def main(config):
         config['Val_loader_size'] = len(val_loader)
         config['Test_loader_size'] = len(test_loader)
         # config['factor'] = config['factor']
-        config['_scheduler'] = config['_scheduler']
+        config['scheduler_'] = config['scheduler_']
         wandb.init(config = config)
         
         with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'conf.json'), 'w') as file:
@@ -195,9 +195,9 @@ def main(config):
         model.apply(weight_init)
         steps_per_epoch = len(train_loader)
         
-        if config["_schedule"]:
+        if config['scheduler_']:
             optimizer =  torch.optim.Adam(model.parameters(), lr=config["lr"])
-            scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=config.epochs * steps_per_epoch, eta_min=0)
+            scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=config['epochs'] * steps_per_epoch, eta_min=0)
         else:
             optimizer = torch.optim.Adam(model.parameters())
             
@@ -271,7 +271,7 @@ if __name__ == '__main__':
     parser.add_argument('--device', default='cuda', type=str, help='Name of device to use for tensor computations (cuda/cpu)')
     parser.add_argument('--display_step', default=100, type=int, help='Interval in batches between display of training metrics')
     parser.add_argument('--factor', default=1300, type=int, help='The number of training data loader to stop thhe training iteration.')
-    parser.add_argument('--_scheduler', default=True, type=bool, help='Enable scheduler')
+    parser.add_argument('--scheduler_', default=True, type=bool, help='Enable scheduler')
     # parser.add_argument('--preload', dest='preload', action='store_true', help='If specified, the whole dataset is loaded to RAM at initialization')
     parser.set_defaults(preload=False)
     
