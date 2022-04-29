@@ -129,13 +129,13 @@ def prepare_output(config):
     os.makedirs(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed'])), exist_ok=True)
 
 def checkpoint(log, config):
-    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_epochs_{}_factor_{}_trainlog.json'.format(config['seed'], config['batch_size'], config['epochs'], config['factor'])), 'w') as outfile:
+    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_weight_{}_batchsize_{}_epochs_{}_factor_{}_trainlog.json'.format(config['seed'], config['weight_decay'], config['batch_size'], config['epochs'], config['factor'])), 'w') as outfile:
         json.dump(log, outfile, indent=4)
 
 def save_results(metrics, conf_mat, config):
-    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_epochs_{}_factor_{}_test_metrics.json'.format(config['seed'], config['batch_size'], config['epochs'], config['factor'])), 'w') as outfile:
+    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_weight_{}_batchsize_{}_epochs_{}_factor_{}_test_metrics.json'.format(config['seed'], config['weight_decay'], config['batch_size'], config['epochs'], config['factor'])), 'w') as outfile:
         json.dump(metrics, outfile, indent=4)
-    pkl.dump(conf_mat, open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_epochs_{}_factor_{}_conf_mat.pkl'.format(config['seed'], config['batch_size'], config['epochs'], config['factor'])), 'wb'))
+    pkl.dump(conf_mat, open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_weight_{}_batchsize_{}_epochs_{}_factor_{}_conf_mat.pkl'.format(config['seed'], config['weight_decay'], config['batch_size'], config['epochs'], config['factor'])), 'wb'))
     
 # def overall_performance(config):
 #     cm = np.zeros((config['num_classes'], config['num_classes']))
@@ -196,10 +196,10 @@ def main(config):
         steps_per_epoch = len(train_loader)
         
         if config['scheduler_']:
-            optimizer =  torch.optim.Adam(model.parameters(), lr=config["lr"])
-            scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=config['epochs'] * steps_per_epoch, eta_min=0)
+            optimizer = torch.optim.Adam(model.parameters(), lr=config["lr"], weight_decay=config['weight_decay'])
+            scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=config['epochs'] * steps_per_epoch, eta_min=0) #T_max (int) – Maximum number of iterations.. eta_min (float) – Minimum learning rate. Default: 0.
         else:
-            optimizer = torch.optim.Adam(model.parameters())
+            optimizer = torch.optim.Adam(model.parameters(), lr=config["lr"], weight_decay=cpnfig['weight_decay'])
             
         criterion = FocalLoss(config['gamma'])
         
@@ -281,6 +281,7 @@ if __name__ == '__main__':
     parser.add_argument('--batch_size', default=128, type=int, help='Batch size')
     parser.add_argument('--lr', default=0.001, type=float, help='Learning rate')
     parser.add_argument('--gamma', default=1, type=float, help='Gamma parameter of the focal loss')
+    parser.add_argument('--weight_decay', default=1e-4, type=float, help='Weight decay rate')
 
     ## L-TAE 
     parser.add_argument('--in_channels', default=10, type=int, help='Number of channels of the input embeddings')
