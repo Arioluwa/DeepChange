@@ -7,20 +7,29 @@ import numpy as np
 from sklearn.metrics import f1_score 
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
-
+import argparse
+import pprint
 starttime = time.time()
-def binary_change_detection(gt_source_path, gt_target_path, outdir_,  case, pred_source_path, pred_target_path):
-    
 
 
+# def binary_change_detection(gt_source_path, gt_target_path, outdir_,  case, pred_source_path, pred_target_path):
+def main(args):
+    """
+    Objective:
+            To evaluate the binary change detection(BCD) produced by the multitemporal classification model
+            The BCD is compared with the ground truth dataset; 
+    Input:
+        Ground truth raster(source and target)
+        Classification Map (source and target)
+    """
     # read the reference data as a numpy array
-    gt_source = rasterio.open(gt_source_path).read(1)
-    gt_target = rasterio.open(gt_target_path).read(1)
+    gt_source = rasterio.open(args.gt_source).read(1)
+    gt_target = rasterio.open(args.gt_target).read(1)
 
     # read the predicted map as a numpy array
-    pred_source = rasterio.open(pred_source_path).read(1)
+    pred_source = rasterio.open(args.pred_source).read(1)
     # a profile is need to write the final change map
-    with rasterio.open(pred_target_path) as src:
+    with rasterio.open(args.pred_target) as src:
         pred_target = src.read(1)
         profile = src.profile
         profile['nodata'] = 0.0
@@ -30,13 +39,17 @@ def binary_change_detection(gt_source_path, gt_target_path, outdir_,  case, pred
     # 1 = no change
     # 2 = change
 
-    # first mask nodata values from both gt dataset
+    # first mask nodata values from both gt dataset 
     gt_mask_nodata = (gt_source != 0) & (gt_target != 0)
 
-    # change binary map between the gt dataset based on the nodata mask
+    # Binary change map between the gt dataset based on the nodata mask
+    # i.e. if gt_source == gt_target =1
+    #           #else 2
     gt_binary = np.where(gt_mask_nodata, np.where(gt_source == gt_target, 1, 2), 0) # [0,1,2] unique values
 
-    #predicted binary map
+    # Binary change mp for on the classification map.
+    # if pred_source == pred_target = 1
+            #else 2
     pred_binary = np.where(pred_source == pred_target, 1, 2)
 
     # Change matrix
@@ -56,30 +69,39 @@ def binary_change_detection(gt_source_path, gt_target_path, outdir_,  case, pred
     pred_binary_map = np.empty_like(gt_binary)
     pred_binary_map[~gt_binary_mask.mask] = pred_binary_values.ravel()
     # write the change map
-    with rasterio.open(os.path.join(outdir_, 'HP_binary_change_map'+ case +'.tif'), 'w', **profile) as dst:
-        dst.write(pred_binary_map, 1)
-    print("--- %s minutes ---" % ((time.time() - starttime) / 60))
+    # with rasterio.open(os.path.join(outdir_, 'HP_binary_change_map'+ args.case +'.tif'), 'w', **profile) as dst:
+    #     dst.write(pred_binary_map, 1)
+    # print("--- %s minutes ---" % ((time.time() - starttime) / 60))
 #     # change matrix
-#     cm = confusion_matrix(gt_binary_values, pred_binary_values)
+    cm = confusion_matrix(gt_binary_values, pred_binary_values)
+    label = ['No change', 'Change']
+    # plot the change matrix with percent or not 
     
-#     cm_per = cm.astype('float') / np.sum(cm)
-#     # plot the change matrix
-#     label = ['No change', 'Change']
-#     cm_plot = sns.heatmap(cm_per, annot=True, fmt='.2%', cmap='Greens', xticklabels=label, yticklabels=label, cbar=False)
-#     cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
-#     # cm_plot.set_title(title_)
-#     # save the plot
-#     # plt.savefig(os.path.join('./charts','change_matrix_percent_case' + case +'.png'))
+    if args.percent:
+        cm = cm.astype('float') / np.sum(cm)
+        cm_plot = sns.heatmap(cm, annot=True, fmt='.2%', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
+        cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
+        # save the plot
+        plt.savefig(os.path.join('./charts','bcd_change_matrix_percent_case_' + args.case +'.png'), dpi = 500)
+    else:
+        cm_plot = sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
+        cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
 
-#     ## change map
-#     # Note:
-#     # 0 = nodata
-#     # 1 = (1 == 1) ~ No change = No change
-#     # 2 = (1 == 2) ~ No change = Change
-#     # 3 = (2 == 1) ~ Change = No change
-#     # 4 = (2 == 2) ~ Change = Change
+        for t in cm_plot.texts:
+            t.set_text('{:,d}'.format(int(t.get_text())))
+        # save the plot
+        plt.savefig(os.path.join('./charts','bcd_change_matrix_case_' + args.case +'.png'), dpi = 500)
+    plt.close()
 
-#     ##change array - 
+    ## change map
+    # Note:
+    # 0 = nodata
+    # 1 = (1 == 1) ~ No change = No change
+    # 2 = (1 == 2) ~ No change = Change
+    # 3 = (2 == 1) ~ Change = No change
+    # 4 = (2 == 2) ~ Change = Change
+
+    ##change array - 
 #     change_array = np.empty_like(gt_binary_values) # as the same dimension as gt_binary_values
 #     change_array[(gt_binary_values == 1) & (pred_binary_values == 1)] = 1
 #     change_array[(gt_binary_values == 1) & (pred_binary_values == 2)] = 2
@@ -90,36 +112,51 @@ def binary_change_detection(gt_source_path, gt_target_path, outdir_,  case, pred
 #     change_map = np.empty_like(gt_binary)
 #     change_map[~gt_binary_mask.mask] = change_array.ravel() # returns 
 
-    ## write the change map
-    # with rasterio.open(os.path.join(outdir_, 'change_map_case'+ case +'.tif'), 'w', **profile) as dst:
-    #     dst.write(change_map, 1)
-    # print("--- %s minutes ---" % ((time.time() - starttime) / 60))
+#     # write the change map
+#     with rasterio.open(os.path.join(outdir_, 'change_map_case'+ args.case +'.tif'), 'w', **profile) as dst:
+#         dst.write(change_map, 1)
+#     print("--- %s minutes ---" % ((time.time() - starttime) / 60))
     
-    # this is just to compute the fscore for pred_binary; this is needed to be compared with 
-    # fscore from threshold of similarity measure
+#     ## this is just to compute the fscore for pred_binary; this is needed to be compared with 
+#     ## fscore from threshold of similarity measure
 #     gt_binary_values[gt_binary_values ==1] = 0
 #     gt_binary_values[gt_binary_values ==2] = 1
 #     pred_binary_values[pred_binary_values ==1] = 0
 #     pred_binary_values[pred_binary_values ==2] = 1
     
-#     fscore = f1_score(gt_binary_values, pred_binary_values)
-#     f = open(os.path.join('./charts/', 'delcase_' + case + '_fscore.txt'), 'w')
-#     f.write('F1 score: {}'.format(fscore))
+    # fscore = f1_score(gt_binary_values, pred_binary_values)
+    # f = open(os.path.join('./charts/', 'delcase_' + args.case + '_fscore.txt'), 'w')
+    # f.write('F1 score: {}'.format(fscore))
     
 if __name__ == '__main__':
+    
+    parser = argparse.ArgumentParser()
+    
+    parser.add_argument('--outdir', '-o', default='../../../results/RF/binary_change_D', type=str, help='Path to save the BCD tif files.')
+    parser.add_argument('--case', '-c', default=2, type=str, help='Cases 1 to 4')
+    parser.add_argument('--gt_source', '-gs', default='../../../data/rasterized_samples/2018_rasterizedImage.tif', type=str, help='Source ground truth path')
+    parser.add_argument('--gt_target', '-gp', default='../../../data/rasterized_samples/2019_rasterizedImage.tif', type=str, help='Target ground truth path')
+    parser.add_argument('--pred_source', '-ps', default='../../../results/RF/2018_rf_case_2_map.tif', type=str, help='Source classification map')
+    parser.add_argument('--pred_target', '-pt', default='../../../results/RF/2019_rf_case_3_map.tif', type=str, help='Target  classification map')
+    parser.add_argument('--percent', '-p', default=False, type=bool, help='Cal percent fo')
+    
+    args = parser.parse_args()
+    # args = vars(args) # if needed as a dict... call as args['case']
+    pprint.pprint(vars(args))
+    # main(args)
+    
     gt_source_path = '../../../data/rasterized_samples/2018_rasterizedImage.tif'
     gt_target_path = '../../../data/rasterized_samples/2019_rasterizedImage.tif'
-    
-
-    # for case in ['1', '2', '3']:
-    #     pred_source_path = '../../../results/RF/2018_rf_case_'+ case +'_map.tif'
-    #     pred_target_path = '../../../results/RF/2019_rf_case_'+ case +'_map.tif'
-    #     outdir_ = '../../../results/RF/binary_change_D'
-    #     binary_change_detection(gt_source_path, gt_target_path, outdir_, case, pred_source_path, pred_target_path)
-        
+    for case in range(1, 4):
+        args.case = str(case)
+        args.pred_source = '../../../results/RF/2018_rf_case_{}_map.tif'.format(case)
+        args.pred_target = '../../../results/RF/2019_rf_case_{}_map.tif'.format(case)
+        main(args)
+        print('Case {} done'.format(case))
     # case 4
-    case = '4'
-    pred_source_path = '../../../results/RF/2018_rf_case_2_map.tif'
-    pred_target_path = '../../../results/RF/2019_rf_case_3_map.tif'
-    outdir_ = '../../../results/RF/binary_change_D'
-    binary_change_detection(gt_source_path, gt_target_path, outdir_, case, pred_source_path, pred_target_path)
+    args.case = "4"
+    # args.percent = True
+    args.pred_source = '../../../results/RF/2018_rf_case_2_map.tif'
+    args.pred_target = '../../../results/RF/2019_rf_case_3_map.tif'
+    main(args)
+    print('Case {} done'.format(args.case))

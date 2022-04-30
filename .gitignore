@@ -1,6 +1,6 @@
 *.out
 logs/
-wandb/
+ltae/wandb/
 *.tif
 *.pkl
 .ipynb_checkpoints
