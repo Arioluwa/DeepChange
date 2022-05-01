@@ -196,7 +196,8 @@ def main(config):
         steps_per_epoch = len(train_loader)
         
         if config['scheduler_']:
-            optimizer = torch.optim.Adam(model.parameters(), lr=config["lr"], weight_decay=config['weight_decay'])
+            # optimizer = torch.optim.Adam(model.parameters(), lr=config["lr"], weight_decay=config['weight_decay'])
+            optimizer = torch.optim.Adam(model.parameters(), lr=config["lr"])
             scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=config['epochs'] * steps_per_epoch, eta_min=0) #T_max (int) – Maximum number of iterations.. eta_min (float) – Minimum learning rate. Default: 0.
         else:
             optimizer = torch.optim.Adam(model.parameters())
@@ -281,7 +282,7 @@ if __name__ == '__main__':
     parser.add_argument('--batch_size', default=128, type=int, help='Batch size')
     parser.add_argument('--lr', default=0.001, type=float, help='Learning rate')
     parser.add_argument('--gamma', default=1, type=float, help='Gamma parameter of the focal loss')
-    parser.add_argument('--weight_decay', default=1e-4, type=float, help='Weight decay rate')
+    # parser.add_argument('--weight_decay', default=0, type=float, help='Weight decay rate')
 
     ## L-TAE 
     parser.add_argument('--in_channels', default=10, type=int, help='Number of channels of the input embeddings')
