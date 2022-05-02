@@ -38,7 +38,7 @@ else:
 	parser = OptionParser(usage=usage)
 	parser.add_option("-f", "--flag", dest="flag", action="store", type="int", help="the Model type: 1 for RF, 2 for LTAE.", default="2")
 	parser.add_option("-m", "--model", dest="model", action="store", type="string", help="The model algorithm.")
-	parser.add_option("-t", "--ref", dest="ref_file", action="store", type="string", help="The reference data.")
+	parser.add_option("-r", "--ref", dest="ref_file", action="store", type="string", help="The reference data.")
 	parser.add_option("-i", "--input", dest="in_img", action="store", type="string", help="The image to classify.")
 	parser.add_option("-o", "--output", dest="output", action="store", type="string", help="The directory of model and statistics.")
 	parser.add_option("-c", "--config", dest="config", action="store", type="string", help="Json config file path")
@@ -276,17 +276,22 @@ for x in range(len(x_vec)-1):
 			with torch.no_grad(): # disable the autograd engine (which you probably don't want during inference)
 				prediction = model(X_test)
 			# print("soft max....")
-			soft_pred = torch.nn.Softmax(prediction)
+			soft_pred = torch.nn.functional.softmax(prediction, dim=-1)
+			# print(soft_pred[1,:])
+			# print(soft_pred.dtype)
+			# print(soft_pred.shape)
+			soft_pred = soft_pred.cpu().numpy().astype("float16")
 			hard_pred = prediction.argmax(dim=1).cpu().numpy()
 			hard_pred = [dict_[k] for k in hard_pred]
 			del prediction
 			del X_test
-             
+			# print(soft_pred.dtype)
+			# print(soft_pred.shape)
 		else:
 			soft_pred = model.predict_proba(X_test)
 			hard_pred = p_img.argmax(axis=1)
 			hard_pred = [revert_class_map[k] for k in hard_pred]
-            
+		# break            
 		hard_pred = np.array(hard_pred, dtype=np.uint8)    
 		pred_array = hard_pred.reshape(sX,sY)
         
