@@ -38,7 +38,7 @@ else:
 	parser = OptionParser(usage=usage)
 	parser.add_option("-f", "--flag", dest="flag", action="store", type="int", help="the Model type: 1 for RF, 2 for LTAE.", default="2")
 	parser.add_option("-m", "--model", dest="model", action="store", type="string", help="The model algorithm.")
-	parser.add_option("-t", "--ref", dest="ref_file", action="store", type="string", help="The reference data.")
+	parser.add_option("-r", "--ref", dest="ref_file", action="store", type="string", help="The reference data.")
 	parser.add_option("-i", "--input", dest="in_img", action="store", type="string", help="The image to classify.")
 	parser.add_option("-o", "--output", dest="output", action="store", type="string", help="The directory of model and statistics.")
 	parser.add_option("-c", "--config", dest="config", action="store", type="string", help="Json config file path")
