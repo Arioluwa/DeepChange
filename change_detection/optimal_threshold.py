@@ -182,8 +182,9 @@ def main(args):
         
         # save otsu f1score
         fscore = f1_score(gt_binary_, otsu_binary)
-        f = open(os.path.join('otsu_case_' + args.case + '_fscore.txt'), 'w')
+        f = open(os.path.join(outdir, 'otsu_case_' + args.case + '_fscore.txt'), 'w')
         f.write('F1 score: {}'.format(fscore))
+        f.write('Otsu threshold: {}'.format(opt_threshold))
 
         #confusion matrix
         cm_sim = confusion_matrix(gt_binary_, otsu_binary)
@@ -228,7 +229,7 @@ def main(args):
             change_map[~gt_binary_mask.mask] = change_array.ravel()
 
             print(np.unique(change_map))
-            with rasterio.open(os.path.join(outdir, 'otsu_sim-change_map_case_' + case + '.tif'), 'w', **profile) as dst:
+            with rasterio.open(os.path.join(outdir, 'otsu_sim-change_map_case_' + args.case + '.tif'), 'w', **profile) as dst:
                 dst.write(change_map, 1)
                 dst.close()
 
@@ -264,6 +265,17 @@ if __name__ == '__main__':
     #     args.case = str(case)
     #     args.similarity = '../../../results/RF/simliarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
     #     main(args)
+    
+    # case 4
+    # args.case = "4"
+    # args.similarity = '../../../results/RF/simliarity_measure/case_4_ref_mask_similarity_measure.tif'
+    # main(args)
+    
+    #LTAE
+    for case in range(2, 5):
+        args.case = str(case)
+        args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
+        main(args)
     
     # case 4
     # args.case = "4"
