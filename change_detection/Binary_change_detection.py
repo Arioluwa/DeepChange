@@ -79,7 +79,7 @@ def main(args):
     cm = confusion_matrix(gt_binary_values, pred_binary_values)
     label = ['No change', 'Change']
     # plot the change matrix with percent or not 
-    
+    # print(cm[0,1])
     if args.percent:
         cm = cm.astype('float') / np.sum(cm)
         cm_plot = sns.heatmap(cm, annot=True, fmt='.2%', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
@@ -92,10 +92,23 @@ def main(args):
 
         for t in cm_plot.texts:
             t.set_text('{:,d}'.format(int(t.get_text())))
+        # print(cm_plot)
         # save the plot
         plt.savefig(os.path.join(outdir, './charts','bcd_change_matrix_case_' + args.case +'.png'), dpi = 500)
-    plt.close()
-
+        plt.close()
+        # Quality assurance
+        f_score = f1_score(gt_binary_values, pred_binary_values)
+        def quality_check():
+            with open(os.path.join(outdir, './charts', 'QA_stats' + args.case + '.txt'), 'w') as f:
+                f.write("Error matrix \n")
+                f.write(str(cm))
+                # f.write(classif_r)
+                f.write("\n Total error: {}".format((cm[0,1] + cm[1,0])))
+                f.write("\n OA: {}".format(((cm[0,0] + cm[1,1])/(cm[0,0] +cm[0,1]+cm[1,0]+cm[1,1]))))
+                f.write("\n fscore: {}".format(f_score))
+                f.close()
+        quality_check()
+    
     ## change map
     # Note:
     # 0 = nodata
@@ -105,19 +118,19 @@ def main(args):
     # 4 = (2 == 2) ~ Change = Change
 
     #change array - 
-    change_array = np.empty_like(gt_binary_values) # as the same dimension as gt_binary_values
-    change_array[(gt_binary_values == 1) & (pred_binary_values == 1)] = 1
-    change_array[(gt_binary_values == 1) & (pred_binary_values == 2)] = 2
-    change_array[(gt_binary_values == 2) & (pred_binary_values == 1)] = 3
-    change_array[(gt_binary_values == 2) & (pred_binary_values == 2)] = 4
+#     change_array = np.empty_like(gt_binary_values) # as the same dimension as gt_binary_values
+#     change_array[(gt_binary_values == 1) & (pred_binary_values == 1)] = 1
+#     change_array[(gt_binary_values == 1) & (pred_binary_values == 2)] = 2
+#     change_array[(gt_binary_values == 2) & (pred_binary_values == 1)] = 3
+#     change_array[(gt_binary_values == 2) & (pred_binary_values == 2)] = 4
 
-    # change map
-    change_map = np.empty_like(gt_binary)
-    change_map[~gt_binary_mask.mask] = change_array.ravel() # returns 
+#     # change map
+#     change_map = np.empty_like(gt_binary)
+#     change_map[~gt_binary_mask.mask] = change_array.ravel() # returns 
 
     # write the change map
-    with rasterio.open(os.path.join(outdir, 'change_map_case'+ args.case +'.tif'), 'w', **profile) as dst:
-        dst.write(change_map, 1)
+    # with rasterio.open(os.path.join(outdir, 'change_map_case'+ args.case +'.tif'), 'w', **profile) as dst:
+    #     dst.write(change_map, 1)
     print("--- %s minutes ---" % ((time.time() - starttime) / 60))
     
 #     ## this is just to compute the fscore for pred_binary; this is needed to be compared with 
@@ -173,7 +186,7 @@ if __name__ == '__main__':
     # # case 4
     args.case = "4"
     # args.percent = True
-    args.pred_source = '../../../results/RF/2018_rf_case_2_map.tif'
-    args.pred_target = '../../../results/RF/2019_rf_case_3_map.tif'
+    args.pred_source = '../../../results/ltae/classificationmap/Seed_0/2018_LTAE_map_case_2.tif'
+    args.pred_target = '../../../results/ltae/classificationmap/Seed_0/2019_LTAE_map_case_3.tif'
     main(args)
     print('Case {} done'.format(args.case))

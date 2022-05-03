@@ -119,14 +119,16 @@ def main(args):
     #     # get the optimal threshold based on fscore
         df = pd.DataFrame({'threshold':thresholds, 'fscore':fscore_})
         df.to_csv(os.path.join(outdir, 'case_' + args.case + '_fscore.csv'), index=False)
-
+        pred_binary_v = np.where(similarity_ >= opt_threshold, 1, 0)
         #confusion
-        cm_sim = confusion_matrix(gt_binary_, np.where(similarity_ >= opt_threshold, 1, 0))
-        cm_sim_per = cm_sim.astype('float') / np.sum(cm_sim)
+        cm_sim = confusion_matrix(gt_binary_, pred_binary_v)
+        # cm_sim_per = cm_sim.astype('float') / np.sum(cm_sim)
 
         label = ['No change', 'Change']
-        cm_sim_plot = sns.heatmap(cm_sim_per, annot=True, fmt ='.2%', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
+        cm_sim_plot = sns.heatmap(cm_sim, annot=True, fmt ='d', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
         cm_sim_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
+        for t in cm_sim_plot.texts:
+            t.set_text('{:,d}'.format(int(t.get_text())))
         # cm_sim_plot.set_title("")
         # save the plot
         plt.savefig(os.path.join(outdir,'./charts', 'similarity_confusion_matrix_case_' + args.case +'.png'), dpi=500)
@@ -141,6 +143,9 @@ def main(args):
         # save chart
         plt.savefig(os.path.join(outdir,'./charts', 'similarity_distribution_case_' + args.case +'.png'), dpi = 500)
         plt.close()
+        # Quality assurance
+        f_score = f1_score(gt_binary_, pred_binary_v)
+        quality_check(args, cm_sim, f_score)
         
         if args.map:
             # similarity binary change
@@ -198,6 +203,10 @@ def main(args):
         plt.savefig(os.path.join(outdir, './charts', 'otsu_similarity_confusion_matrix_case_' + args.case +'.png'), dpi =500)
         plt.close()
         
+        # Quality assurance
+        f_score = f1_score(gt_binary_, otsu_binary)
+        quality_check(args, cm_sim, f_score)
+        
         if args.map:
             # similarity binary change
             similarity_binary = np.where(similarity_ >= opt_threshold, 2, 1)
@@ -237,6 +246,21 @@ def prepare_output(args):
         os.makedirs(args.outdir, exist_ok=True)
         os.makedirs(os.path.join(args.outdir, './charts'), exist_ok=True)
 
+
+def quality_check(args, cm, f_score):
+    if args.otsu:
+        title = 'otsu_QA_stats'
+    else:
+        title = 'QA_stats'
+    with open(os.path.join(args.outdir, './charts', title + args.case + '.txt'), 'w') as f:
+                f.write("Error matrix \n")
+                f.write(str(cm))
+                # f.write(classif_r)
+                f.write("\n Total error: {}".format((cm[0,1] + cm[1,0])))
+                f.write("\n OA: {}".format(((cm[0,0] + cm[1,1])/(cm[0,0] +cm[0,1]+cm[1,0]+cm[1,1]))))
+                f.write("\n fscore: {}".format(f_score))
+                f.close()
+
 if __name__ == '__main__':
     
 #     gt_source = '../../../data/rasterized_samples/2018_rasterizedImage.tif'
@@ -261,24 +285,25 @@ if __name__ == '__main__':
     
     args = parser.parse_args()
     # execute 
-    # for case in range(1, 4):
-    #     args.case = str(case)
-    #     args.similarity = '../../../results/RF/simliarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
-    #     main(args)
-    
-    # case 4
-    # args.case = "4"
-    # args.similarity = '../../../results/RF/simliarity_measure/case_4_ref_mask_similarity_measure.tif'
-    # main(args)
-    
-    #LTAE
-    for case in range(2, 5):
+    for case in range(1, 4):
         args.case = str(case)
-        args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
+        args.similarity = '../../../results/RF/simliarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
         main(args)
     
-    # case 4
-    # args.case = "4"
-    # args.similarity = '../../../results/RF/simliarity_measure/case_4_ref_mask_similarity_measure.tif'
-    # main(args)
+    case 4
+    args.case = "4"
+    args.similarity = '../../../results/RF/simliarity_measure/case_4_ref_mask_similarity_measure.tif'
+    main(args)
+    
+    #LTAE
+#     for case in range(2, 5):
+#         args.case = str(case)
+#         args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
+#         main(args)
+#         # break
+    
+#     # case 4
+#     args.case = "4"
+#     args.similarity = '../../../results/RF/simliarity_measure/case_4_ref_mask_similarity_measure.tif'
+#     main(args)
     

@@ -7,6 +7,7 @@ import numpy as np
 from sklearn.metrics import f1_score 
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
 import argparse
 import pprint
 starttime = time.time()
@@ -79,23 +80,36 @@ def main(args):
     cm = confusion_matrix(gt_binary_values, pred_binary_values)
     label = ['No change', 'Change']
     # plot the change matrix with percent or not 
-    
+    # print(cm[0,1])
     if args.percent:
         cm = cm.astype('float') / np.sum(cm)
         cm_plot = sns.heatmap(cm, annot=True, fmt='.2%', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
         cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
         # save the plot
-        plt.savefig(os.path.join('./charts','bcd_change_matrix_percent_case_' + args.case +'.png'), dpi = 500)
+        plt.savefig(os.path.join(outdir,'./charts','bcd_change_matrix_percent_case_' + args.case +'.png'), dpi = 500)
     else:
         cm_plot = sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
         cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
 
         for t in cm_plot.texts:
             t.set_text('{:,d}'.format(int(t.get_text())))
+        # print(cm_plot)
         # save the plot
-        plt.savefig(os.path.join('./charts','bcd_change_matrix_case_' + args.case +'.png'), dpi = 500)
-    plt.close()
-
+        plt.savefig(os.path.join(outdir, './charts','bcd_change_matrix_case_' + args.case +'.png'), dpi = 500)
+        plt.close()
+        classif_r = classification_report(gt_binary_values, pred_binary_values, target_names=label)
+        f_score = f1_score(gt_binary_values, pred_binary_values)
+        def quality_check():
+            with open(os.path.join(outdir, './charts', 'QA_stats' + args.case + '.txt'), 'w') as f:
+                f.write("Error matrix \n")
+                f.write(str(cm))
+                # f.write(classif_r)
+                f.write("\n Total error: {}".format((cm[0,1] + cm[1,0])))
+                f.write("\n OA: {}".format(((cm[0,0] + cm[1,1])/(cm[0,0] +cm[0,1]+cm[1,0]+cm[1,1]))))
+                f.write("\n fscore: {}".format(f_score))
+                f.close()
+        quality_check()
+    
     ## change map
     # Note:
     # 0 = nodata
@@ -104,7 +118,7 @@ def main(args):
     # 3 = (2 == 1) ~ Change = No change
     # 4 = (2 == 2) ~ Change = Change
 
-    ##change array - 
+    #change array - 
 #     change_array = np.empty_like(gt_binary_values) # as the same dimension as gt_binary_values
 #     change_array[(gt_binary_values == 1) & (pred_binary_values == 1)] = 1
 #     change_array[(gt_binary_values == 1) & (pred_binary_values == 2)] = 2
@@ -115,10 +129,10 @@ def main(args):
 #     change_map = np.empty_like(gt_binary)
 #     change_map[~gt_binary_mask.mask] = change_array.ravel() # returns 
 
-#     # write the change map
-#     with rasterio.open(os.path.join(outdir, 'change_map_case'+ args.case +'.tif'), 'w', **profile) as dst:
-#         dst.write(change_map, 1)
-#     print("--- %s minutes ---" % ((time.time() - starttime) / 60))
+    # write the change map
+    # with rasterio.open(os.path.join(outdir, 'change_map_case'+ args.case +'.tif'), 'w', **profile) as dst:
+    #     dst.write(change_map, 1)
+    print("--- %s minutes ---" % ((time.time() - starttime) / 60))
     
 #     ## this is just to compute the fscore for pred_binary; this is needed to be compared with 
 #     ## fscore from threshold of similarity measure
@@ -132,7 +146,7 @@ def main(args):
     # f.write('F1 score: {}'.format(fscore))
 def prepare_output(args):
         os.makedirs(args.outdir, exist_ok=True)
-        # os.makedirs(os.path.join(args.outdir, './charts'), exist_ok=True)
+        os.makedirs(os.path.join(args.outdir, './charts'), exist_ok=True)
 if __name__ == '__main__':
     
     parser = argparse.ArgumentParser()
@@ -149,16 +163,31 @@ if __name__ == '__main__':
     # args = vars(args) # if needed as a dict... call as args['case']
     
     # execute 
-    for case in range(1, 4):
+    # for case in range(1, 4):
+    #     args.case = str(case)
+    #     args.pred_source = '../../../results/RF/2018_rf_case_{}_map.tif'.format(case)
+    #     args.pred_target = '../../../results/RF/2019_rf_case_{}_map.tif'.format(case)
+    #     main(args)
+    #     print('Case {} done'.format(case))
+    # # case 4
+    # args.case = "4"
+    # # args.percent = True
+    # args.pred_source = '../../../results/RF/2018_rf_case_2_map.tif'
+    # args.pred_target = '../../../results/RF/2019_rf_case_3_map.tif'
+    # main(args)
+    # print('Case {} done'.format(args.case))
+    
+    #ltae
+    for case in range(2,4):
         args.case = str(case)
-        args.pred_source = '../../../results/RF/2018_rf_case_{}_map.tif'.format(case)
-        args.pred_target = '../../../results/RF/2019_rf_case_{}_map.tif'.format(case)
+        args.pred_source = '../../../results/ltae/classificationmap/Seed_0/2018_LTAE_map_case_{}.tif'.format(case)
+        args.pred_target = '../../../results/ltae/classificationmap/Seed_0/2019_LTAE_map_case_{}.tif'.format(case)
         main(args)
         print('Case {} done'.format(case))
-    # case 4
+    # # case 4
     args.case = "4"
     # args.percent = True
-    args.pred_source = '../../../results/RF/2018_rf_case_2_map.tif'
-    args.pred_target = '../../../results/RF/2019_rf_case_3_map.tif'
+    args.pred_source = '../../../results/ltae/classificationmap/Seed_0/2018_LTAE_map_case_2.tif'
+    args.pred_target = '../../../results/ltae/classificationmap/Seed_0/2019_LTAE_map_case_3.tif'
     main(args)
     print('Case {} done'.format(args.case))

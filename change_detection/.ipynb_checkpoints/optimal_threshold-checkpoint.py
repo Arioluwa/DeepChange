@@ -119,15 +119,18 @@ def main(args):
     #     # get the optimal threshold based on fscore
         df = pd.DataFrame({'threshold':thresholds, 'fscore':fscore_})
         df.to_csv(os.path.join(outdir, 'case_' + args.case + '_fscore.csv'), index=False)
-
+        pred_binary_v = np.where(similarity_ >= opt_threshold, 1, 0)
         #confusion
-        cm_sim = confusion_matrix(gt_binary_, np.where(similarity_ >= opt_threshold, 1, 0))
-        cm_sim_per = cm_sim.astype('float') / np.sum(cm_sim)
+        cm_sim = confusion_matrix(gt_binary_, pred_binary_v)
+        # cm_sim_per = cm_sim.astype('float') / np.sum(cm_sim)
 
         label = ['No change', 'Change']
-        cm_sim_plot = sns.heatmap(cm_sim_per, annot=True, fmt ='.2%', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
+        cm_sim_plot = sns.heatmap(cm_sim, annot=True, fmt ='d', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
         cm_sim_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
+        for t in cm_sim_plot.texts:
+            t.set_text('{:,d}'.format(int(t.get_text())))
         # cm_sim_plot.set_title("")
+        print(cm_sim_plot)
         # save the plot
         plt.savefig(os.path.join(outdir,'./charts', 'similarity_confusion_matrix_case_' + args.case +'.png'), dpi=500)
         plt.close()
@@ -141,6 +144,10 @@ def main(args):
         # save chart
         plt.savefig(os.path.join(outdir,'./charts', 'similarity_distribution_case_' + args.case +'.png'), dpi = 500)
         plt.close()
+        # Quality assurance
+        f_score = f1_score(gt_binary_, pred_binary_v)
+        
+        quality_check(args, cm_sim, f_score)
         
         if args.map:
             # similarity binary change
@@ -182,8 +189,9 @@ def main(args):
         
         # save otsu f1score
         fscore = f1_score(gt_binary_, otsu_binary)
-        f = open(os.path.join('otsu_case_' + args.case + '_fscore.txt'), 'w')
+        f = open(os.path.join(outdir, 'otsu_case_' + args.case + '_fscore.txt'), 'w')
         f.write('F1 score: {}'.format(fscore))
+        f.write('Otsu threshold: {}'.format(opt_threshold))
 
         #confusion matrix
         cm_sim = confusion_matrix(gt_binary_, otsu_binary)
@@ -196,6 +204,9 @@ def main(args):
         # save the plot
         plt.savefig(os.path.join(outdir, './charts', 'otsu_similarity_confusion_matrix_case_' + args.case +'.png'), dpi =500)
         plt.close()
+        f_score = f1_score(gt_binary_, otsu_binary)
+        
+        quality_check(args, cm_sim, f_score)
         
         if args.map:
             # similarity binary change
@@ -228,13 +239,28 @@ def main(args):
             change_map[~gt_binary_mask.mask] = change_array.ravel()
 
             print(np.unique(change_map))
-            with rasterio.open(os.path.join(outdir, 'otsu_sim-change_map_case_' + case + '.tif'), 'w', **profile) as dst:
+            with rasterio.open(os.path.join(outdir, 'otsu_sim-change_map_case_' + args.case + '.tif'), 'w', **profile) as dst:
                 dst.write(change_map, 1)
                 dst.close()
 
 def prepare_output(args):
         os.makedirs(args.outdir, exist_ok=True)
         os.makedirs(os.path.join(args.outdir, './charts'), exist_ok=True)
+
+
+def quality_check(args, cm, f_score):
+    if args.otsu:
+        title = 'otsu_QA_stats'
+    else:
+        title = 'QA_stats'
+    with open(os.path.join(args.outdir, './charts', title + args.case + '.txt'), 'w') as f:
+                f.write("Error matrix \n")
+                f.write(str(cm))
+                # f.write(classif_r)
+                f.write("\n Total error: {}".format((cm[0,1] + cm[1,0])))
+                f.write("\n OA: {}".format(((cm[0,0] + cm[1,1])/(cm[0,0] +cm[0,1]+cm[1,0]+cm[1,1]))))
+                f.write("\n fscore: {}".format(f_score))
+                f.close()
 
 if __name__ == '__main__':
     
@@ -269,4 +295,16 @@ if __name__ == '__main__':
     # args.case = "4"
     # args.similarity = '../../../results/RF/simliarity_measure/case_4_ref_mask_similarity_measure.tif'
     # main(args)
+    
+    #LTAE
+    # for case in range(2, 5):
+    #     args.case = str(case)
+    #     args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
+    #     main(args)
+    #     break
+    
+    # case 4
+    args.case = "4"
+    args.similarity = '../../../results/RF/simliarity_measure/case_4_ref_mask_similarity_measure.tif'
+    main(args)
     
