@@ -109,6 +109,7 @@ def recursive_todevice(x, device):
 # def read_mean_std()
 
 # rewrite a function
+
 mean = np.loadtxt('../ltae/mean_std/source_mean.txt')
 std = np.loadtxt('../ltae/mean_std/source_std.txt')
 

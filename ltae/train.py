@@ -157,7 +157,6 @@ def main(config):
     # torch.manual_seed(config['seed'])
     prepare_output(config)
     wandb.login()
-    
     mean_ = np.loadtxt(os.path.join(config['dataset_folder'], './mean_std/source_mean.txt'))
     std_ = np.loadtxt(os.path.join(config['dataset_folder'], './mean_std/source_std.txt'))
     # print(config['scheduler_'])
@@ -172,7 +171,6 @@ def main(config):
     loaders = get_loader(train_dt, val_dt, test_dt, config)
     # break
     for train_loader, val_loader, test_loader in loaders:
-        # print('Train {}, Val {}, Test {}, stop itr at {} '.format(len(train_loader), len(val_loader), len(test_loader), int(len(train_loader)/config['factor'])))
         print('Train {}, Val {}, Test {}'.format(len(train_loader), len(val_loader), len(test_loader)))#, int(len(train_loader)/config['factor'])))
 
         model_config = dict(in_channels=config['in_channels'], n_head=config['n_head'], d_k=config['d_k'],
