@@ -163,31 +163,31 @@ if __name__ == '__main__':
     # args = vars(args) # if needed as a dict... call as args['case']
     
     # execute for RF
-    for case in range(1, 4):
-        args.case = str(case)
-        args.pred_source = '../../../results/RF/2018_rf_case_{}_map.tif'.format(case)
-        args.pred_target = '../../../results/RF/2019_rf_case_{}_map.tif'.format(case)
-        main(args)
-        print('Case {} done'.format(case))
-    # case 4
-    args.case = "4"
-    # args.percent = True
-    args.pred_source = '../../../results/RF/2018_rf_case_2_map.tif'
-    args.pred_target = '../../../results/RF/2019_rf_case_3_map.tif'
-    main(args)
-    print('Case {} done'.format(args.case))
-    
-    #ltae
-    # for case in range(2,4):
+    # for case in range(1, 4):
     #     args.case = str(case)
-    #     args.pred_source = '../../../results/ltae/classificationmap/Seed_0/2018_LTAE_map_case_{}.tif'.format(case)
-    #     args.pred_target = '../../../results/ltae/classificationmap/Seed_0/2019_LTAE_map_case_{}.tif'.format(case)
+    #     args.pred_source = '../../../results/RF/2018_rf_case_{}_map.tif'.format(case)
+    #     args.pred_target = '../../../results/RF/2019_rf_case_{}_map.tif'.format(case)
     #     main(args)
     #     print('Case {} done'.format(case))
-    # # # case 4
+    # # case 4
     # args.case = "4"
     # # args.percent = True
-    # args.pred_source = '../../../results/ltae/classificationmap/Seed_0/2018_LTAE_map_case_2.tif'
-    # args.pred_target = '../../../results/ltae/classificationmap/Seed_0/2019_LTAE_map_case_3.tif'
+    # args.pred_source = '../../../results/RF/2018_rf_case_2_map.tif'
+    # args.pred_target = '../../../results/RF/2019_rf_case_3_map.tif'
     # main(args)
     # print('Case {} done'.format(args.case))
+    
+    #ltae
+    for case in range(2,4):
+        args.case = str(case)
+        args.pred_source = '../../../results/ltae/classificationmap/Seed_0/2018_LTAE_map_case_{}.tif'.format(case)
+        args.pred_target = '../../../results/ltae/classificationmap/Seed_0/2019_LTAE_map_case_{}.tif'.format(case)
+        main(args)
+        print('Case {} done'.format(case))
+    # # case 4
+    args.case = "4"
+    # args.percent = True
+    args.pred_source = '../../../results/ltae/classificationmap/Seed_0/2018_LTAE_map_case_2.tif'
+    args.pred_target = '../../../results/ltae/classificationmap/Seed_0/2019_LTAE_map_case_3.tif'
+    main(args)
+    print('Case {} done'.format(args.case))

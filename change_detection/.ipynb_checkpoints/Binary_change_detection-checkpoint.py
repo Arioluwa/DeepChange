@@ -7,7 +7,6 @@ import numpy as np
 from sklearn.metrics import f1_score 
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
-from sklearn.metrics import classification_report
 import argparse
 import pprint
 starttime = time.time()
@@ -73,6 +72,7 @@ def main(args):
     pred_binary_map = np.empty_like(gt_binary)
     pred_binary_map[~gt_binary_mask.mask] = pred_binary_values.ravel()
     # write the change map
+    # HP Hard prediction
     # with rasterio.open(os.path.join(outdir_, 'HP_binary_change_map'+ args.case +'.tif'), 'w', **profile) as dst:
     #     dst.write(pred_binary_map, 1)
     # print("--- %s minutes ---" % ((time.time() - starttime) / 60))
@@ -97,7 +97,7 @@ def main(args):
         # save the plot
         plt.savefig(os.path.join(outdir, './charts','bcd_change_matrix_case_' + args.case +'.png'), dpi = 500)
         plt.close()
-        classif_r = classification_report(gt_binary_values, pred_binary_values, target_names=label)
+        # Quality assurance
         f_score = f1_score(gt_binary_values, pred_binary_values)
         def quality_check():
             with open(os.path.join(outdir, './charts', 'QA_stats' + args.case + '.txt'), 'w') as f:
@@ -162,7 +162,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     # args = vars(args) # if needed as a dict... call as args['case']
     
-    # execute 
+    # execute for RF
     # for case in range(1, 4):
     #     args.case = str(case)
     #     args.pred_source = '../../../results/RF/2018_rf_case_{}_map.tif'.format(case)

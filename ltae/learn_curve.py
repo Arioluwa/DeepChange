@@ -66,23 +66,23 @@ def plot_curve(data, title):
     # plt.savefig(os.path.join('./charts', title + '.png'),dpi=1500, transparent=False)
     plt.show()
     
-files = ["../../../results/ltae/results/Seed_0/trainlog.json", 
-         "../../../results/ltae/results/2018/Seed_0/seed_0_batch_128_epoch_10_lr_0.01_trainlog.json", 
-         "../../../results/ltae/results/2018/Seed_0/seed_0_batch_128_epoch_10_lr_0.001_sch_trainlog.json", 
-         "../../../results/ltae/results/2018/Seed_0/seed_0_batchsize_128_epochs_35_factor_84253_trainlog.json",
-         "../../../results/ltae/trials/Seed_0/trainlog.json",
-        "../../../results/ltae/results/2018/Seed_0/seed_0_batchsize_2048_epochs_100_fator_1300_trainlog.json",
-         "../../../results/ltae/results/2018/Seed_0/seed_0_batchsize_2048_epochs_100_factor_1000_trainlog.json",
-         "../../../results/ltae/results/2018/Seed_0/seed_0_batchsize_2048_epochs_30_factor_5266_sch_trainlog.json",
-         "../../../results/ltae/results/2018/Seed_0/seed_0_batchsize_2048_epochs_30_factor_5266_pos_trainlog.json",
-         "../../../results/ltae/results/2018/Seed_0/seed_0_weight_0.0001_batchsize_2048_epochs_30_factor_5266_trainlog.json"
-        ]
-category = ["Category-A", "Category-B", "Category-C", 
-            "Category-D",
-            "Category-E", "Category-F", "Category-G", "Category-H", "Category-H1", "Category-H2" ]
-len(files)
-for i in range(len(files)):
-    plot_curve(files[i], category[i])
+# files = ["../../../results/ltae/results/Seed_0/trainlog.json", 
+#          "../../../results/ltae/results/2018/Seed_0/seed_0_batch_128_epoch_10_lr_0.01_trainlog.json", 
+#          "../../../results/ltae/results/2018/Seed_0/seed_0_batch_128_epoch_10_lr_0.001_sch_trainlog.json", 
+#          "../../../results/ltae/results/2018/Seed_0/seed_0_batchsize_128_epochs_35_factor_84253_trainlog.json",
+#          "../../../results/ltae/trials/Seed_0/trainlog.json",
+#         "../../../results/ltae/results/2018/Seed_0/seed_0_batchsize_2048_epochs_100_fator_1300_trainlog.json",
+#          "../../../results/ltae/results/2018/Seed_0/seed_0_batchsize_2048_epochs_100_factor_1000_trainlog.json",
+#          "../../../results/ltae/results/2018/Seed_0/seed_0_batchsize_2048_epochs_30_factor_5266_sch_trainlog.json",
+#          "../../../results/ltae/results/2018/Seed_0/seed_0_batchsize_2048_epochs_30_factor_5266_pos_trainlog.json",
+#          "../../../results/ltae/results/2018/Seed_0/seed_0_weight_0.0001_batchsize_2048_epochs_30_factor_5266_trainlog.json"
+#         ]
+# category = ["Category-A", "Category-B", "Category-C", 
+#             "Category-D",
+#             "Category-E", "Category-F", "Category-G", "Category-H", "Category-H1", "Category-H2" ]
+# len(files)
+# for i in range(len(files)):
+#     plot_curve(files[i], category[i])
 
 # file_ = "../../../results/ltae/results/2018/Seed_0/seed_0_batchsize_2048_epochs_15_factor_5266_trainlog.json"
 # plot_curve(file_, "")

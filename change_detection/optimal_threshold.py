@@ -193,12 +193,14 @@ def main(args):
 
         #confusion matrix
         cm_sim = confusion_matrix(gt_binary_, otsu_binary)
-        cm_sim_per = cm_sim.astype('float') / np.sum(cm_sim)
+        # cm_sim_per = cm_sim.astype('float') / np.sum(cm_sim)
 
         label = ['No change', 'Change']
-        cm_sim_plot = sns.heatmap(cm_sim_per, annot=True, fmt ='.2%', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
+        cm_sim_plot = sns.heatmap(cm_sim, annot=True, fmt ='d', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
         cm_sim_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
         # cm_sim_plot.set_title("")
+        for t in cm_sim_plot.texts:
+            t.set_text('{:,d}'.format(int(t.get_text())))
         # save the plot
         plt.savefig(os.path.join(outdir, './charts', 'otsu_similarity_confusion_matrix_case_' + args.case +'.png'), dpi =500)
         plt.close()
@@ -285,25 +287,25 @@ if __name__ == '__main__':
     
     args = parser.parse_args()
     # execute 
-    for case in range(1, 4):
-        args.case = str(case)
-        args.similarity = '../../../results/RF/simliarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
-        main(args)
-    
-    ### case 4
-    args.case = "4"
-    args.similarity = '../../../results/RF/simliarity_measure/case_4_ref_mask_similarity_measure.tif'
-    main(args)
-    
-    #LTAE
-#     for case in range(2, 4):
+#     for case in range(1, 4):
 #         args.case = str(case)
-#         args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
+#         args.similarity = '../../../results/RF/simliarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
 #         main(args)
-#         # break
     
-#     # case 4
+#     ### case 4
 #     args.case = "4"
 #     args.similarity = '../../../results/RF/simliarity_measure/case_4_ref_mask_similarity_measure.tif'
 #     main(args)
+    
+    # LTAE
+    for case in range(2, 4):
+        args.case = str(case)
+        args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
+        main(args)
+        # break
+    
+    # case 4
+    args.case = "4"
+    args.similarity = '../../../results/RF/simliarity_measure/case_4_ref_mask_similarity_measure.tif'
+    main(args)
     

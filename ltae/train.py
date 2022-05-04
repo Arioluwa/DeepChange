@@ -157,8 +157,8 @@ def main(config):
     # torch.manual_seed(config['seed'])
     prepare_output(config)
     wandb.login()
-    mean_ = np.loadtxt(os.path.join(config['dataset_folder'], './mean_std/source_mean.txt'))
-    std_ = np.loadtxt(os.path.join(config['dataset_folder'], './mean_std/source_std.txt'))
+    mean_ = np.loadtxt(os.path.join(config['dataset_folder'], './mean_std/target_mean.txt')) #change for 2018 and 2019
+    std_ = np.loadtxt(os.path.join(config['dataset_folder'], './mean_std/target_std.txt'))
     # print(config['scheduler_'])
     transform = transforms.Compose([standardize(mean_, std_)])
     
@@ -238,7 +238,7 @@ def main(config):
                            os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'check_point_model.pt'))
             print('Testing best epoch . . .')
             model.load_state_dict(
-                torch.load(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'check_point_model.pt'))['state_dict'])
+                torch.load(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'model.pth.tar'))['state_dict'])
             start_time = time.time()
             model.eval()
 

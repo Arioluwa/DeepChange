@@ -38,6 +38,7 @@ else:
 	parser.add_option("-t", "--ref", dest="ref_file", action="store", type="string", help="The reference data.")
 	parser.add_option("-i", "--input", dest="in_img", action="store", type="string", help="The image to classify.")
 	parser.add_option("-o", "--output", dest="output", action="store", type="string", help="The directory of model and statistics.")
+    parser.add_option("-c", "--case", dest="case", action="store", type="string", help="Json config file path")
 	# parser.add_option("-b", "--nchannels", dest="nchannels", action="store", type="int", help="The number of channels in the image")
 	(options, args) = parser.parse_args()
 
@@ -147,8 +148,11 @@ model_file = options.model
 in_img = options.in_img # -i 54HWE_img.tif
 ref_file = options.ref_file #-t 54HWE_train.sqlite
 
+# model_name = model_file.split('/')[-1]
+# model_name = model_name.split('.')[0]
 model_name = model_file.split('/')[-1]
 model_name = model_name.split('.')[0]
+model_name = model_name.split('_')[-1]
 
 image_name = in_img.split('/')
 image_name = image_name[-1].split('_')[0]
