@@ -130,7 +130,6 @@ def main(args):
         for t in cm_sim_plot.texts:
             t.set_text('{:,d}'.format(int(t.get_text())))
         # cm_sim_plot.set_title("")
-        print(cm_sim_plot)
         # save the plot
         plt.savefig(os.path.join(outdir,'./charts', 'similarity_confusion_matrix_case_' + args.case +'.png'), dpi=500)
         plt.close()
@@ -146,7 +145,6 @@ def main(args):
         plt.close()
         # Quality assurance
         f_score = f1_score(gt_binary_, pred_binary_v)
-        
         quality_check(args, cm_sim, f_score)
         
         if args.map:
@@ -204,8 +202,9 @@ def main(args):
         # save the plot
         plt.savefig(os.path.join(outdir, './charts', 'otsu_similarity_confusion_matrix_case_' + args.case +'.png'), dpi =500)
         plt.close()
-        f_score = f1_score(gt_binary_, otsu_binary)
         
+        # Quality assurance
+        f_score = f1_score(gt_binary_, otsu_binary)
         quality_check(args, cm_sim, f_score)
         
         if args.map:
@@ -286,25 +285,25 @@ if __name__ == '__main__':
     
     args = parser.parse_args()
     # execute 
-    # for case in range(1, 4):
-    #     args.case = str(case)
-    #     args.similarity = '../../../results/RF/simliarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
-    #     main(args)
+    for case in range(1, 4):
+        args.case = str(case)
+        args.similarity = '../../../results/RF/simliarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
+        main(args)
     
-    # case 4
-    # args.case = "4"
-    # args.similarity = '../../../results/RF/simliarity_measure/case_4_ref_mask_similarity_measure.tif'
-    # main(args)
-    
-    #LTAE
-    # for case in range(2, 5):
-    #     args.case = str(case)
-    #     args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
-    #     main(args)
-    #     break
-    
-    # case 4
+    ### case 4
     args.case = "4"
     args.similarity = '../../../results/RF/simliarity_measure/case_4_ref_mask_similarity_measure.tif'
     main(args)
+    
+    #LTAE
+#     for case in range(2, 4):
+#         args.case = str(case)
+#         args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
+#         main(args)
+#         # break
+    
+#     # case 4
+#     args.case = "4"
+#     args.similarity = '../../../results/RF/simliarity_measure/case_4_ref_mask_similarity_measure.tif'
+#     main(args)
     

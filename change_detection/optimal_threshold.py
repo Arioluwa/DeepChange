@@ -290,13 +290,13 @@ if __name__ == '__main__':
         args.similarity = '../../../results/RF/simliarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
         main(args)
     
-    case 4
+    ### case 4
     args.case = "4"
     args.similarity = '../../../results/RF/simliarity_measure/case_4_ref_mask_similarity_measure.tif'
     main(args)
     
     #LTAE
-#     for case in range(2, 5):
+#     for case in range(2, 4):
 #         args.case = str(case)
 #         args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
 #         main(args)

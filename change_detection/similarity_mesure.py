@@ -70,24 +70,24 @@ if __name__ == '__main__':
     #     outdir_ = '../../../results/RF/simliarity_measure'
     #     similarity_check(source_, target_, outdir_, case, gt_source_, gt_target_)
         
-    # # case 4
-    # case = '4'
-    # source_ = '../../../results/RF/simliarity_measure/2018_rf_model_2.npy'
-    # target_ = '../../../results/RF/simliarity_measure/2019_rf_model_3.npy'
-    # outdir_ = '../../../results/RF/simliarity_measure'
-    # similarity_check(source_, target_, outdir_, case, gt_source_, gt_target_)
-    
-    #LTAE
-    for case in ['2', '3']:
-        start_time = time.time()
-        source_ = '../../../results/ltae/classificationmap/Seed_0/2018_LTAE_case_{}.npy'.format(case)
-        target_ = '../../../results/ltae/classificationmap/Seed_0/2019_LTAE_case_{}.npy'.format(case)
-        outdir_ = '../../../results/ltae/Change_detection/similarity_measure'
-        similarity_check(source_, target_, outdir_, case, gt_source_, gt_target_)
-        
     # case 4
     case = '4'
-    source_ = '../../../results/ltae/classificationmap/Seed_0/2018_LTAE_case_2.npy'
-    target_ = '../../../results/ltae/classificationmap/Seed_0/2019_LTAE_case_3.npy'
-    outdir_ = '../../../results/ltae/Change_detection/similarity_measure'
+    source_ = '../../../results/RF/simliarity_measure/2018_rf_model_2.npy'
+    target_ = '../../../results/RF/simliarity_measure/2019_rf_model_3.npy'
+    outdir_ = '../../../results/RF/simliarity_measure'
     similarity_check(source_, target_, outdir_, case, gt_source_, gt_target_)
+    
+    #LTAE
+#     for case in ['2', '3']:
+#         start_time = time.time()
+#         source_ = '../../../results/ltae/classificationmap/Seed_0/2018_LTAE_case_{}.npy'.format(case)
+#         target_ = '../../../results/ltae/classificationmap/Seed_0/2019_LTAE_case_{}.npy'.format(case)
+#         outdir_ = '../../../results/ltae/Change_detection/similarity_measure'
+#         similarity_check(source_, target_, outdir_, case, gt_source_, gt_target_)
+        
+#     # case 4
+#     case = '4'
+#     source_ = '../../../results/ltae/classificationmap/Seed_0/2018_LTAE_case_2.npy'
+#     target_ = '../../../results/ltae/classificationmap/Seed_0/2019_LTAE_case_3.npy'
+#     outdir_ = '../../../results/ltae/Change_detection/similarity_measure'
+#     similarity_check(source_, target_, outdir_, case, gt_source_, gt_target_)
