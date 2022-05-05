@@ -41,7 +41,8 @@ else:
 	parser.add_option("-r", "--ref", dest="ref_file", action="store", type="string", help="The reference data.")
 	parser.add_option("-i", "--input", dest="in_img", action="store", type="string", help="The image to classify.")
 	parser.add_option("-o", "--output", dest="output", action="store", type="string", help="The directory of model and statistics.")
-	parser.add_option("-c", "--config", dest="config", action="store", type="string", help="Json config file path")
+	parser.add_option("-c", "--case", dest="case", action="store", type="string", help="Json config file path")
+	parser.add_option("-g", "--config", dest="config", action="store", type="string", help="Json config file path")
 	parser.add_option("-d", "--device", dest="device", action="store", type="string", help="Json config file path")
 	# parser.add_option("-b", "--nchannels", dest="nchannels", action="store", type="int", help="The number of channels in the image")
 	(options, args) = parser.parse_args()
@@ -145,31 +146,42 @@ out_path = options.output
 model_file = options.model
 in_img = options.in_img
 ref_file = options.ref_file
-str_model =['RF', 'LTAE']
+str_model =['rf', 'LTAE']
 m = options.flag
-str_model_m = str_model[m-1]
+case = options.case
 config = options.config
 
+if case ==2:
+    mean = np.loadtxt('../ltae/mean_std/source_mean.txt')
+    std = np.loadtxt('../ltae/mean_std/source_std.txt')
+elif case == 3:
+    mean = np.loadtxt('../ltae/mean_std/target_mean.txt')
+    std = np.loadtxt('../ltae/mean_std/target_std.txt')
+else:
+    mean = np.loadtxt('../ltae/mean_std/source_mean.txt')
+    std = np.loadtxt('../ltae/mean_std/source_std.txt')
 
-config = json.load(open(config))
 m = options.flag
 image_name = in_img.split('/')
 image_name = image_name[-1].split('_')[0]
 device = options.device
 print("device=", device)
 
-out_map = out_path + '/' + image_name + '_' + str_model[m-1] + '_map' + '.tif'
+out_map = out_path + '/' + image_name + '_' + str_model[m-1] + "_case_" + str(case)+ '_map' + '.tif'
+out_npy = out_path + "/" + image_name + '_' +str_model[m-1]+ "_case_"+str(case)+'.npy'
 print("out_map: ", out_map)
+print("out_npy: ", out_npy)
 if os.path.exists(out_map):
 	print("out_map ",out_map,"already exists => exit")
 	sys.exit("\n*** not overwriting out_map ***\n")
 
-out_confmap = out_path + '/' + image_name + '_' + str_model[m-1] + '_proba' + '.tif'
+# out_confmap = out_path + '/' + image_name + '_' + str_model[m-1] + '_proba' + '.tif'
 
 
 if m==1:
     model = joblib.load(model_file)
 else:
+    config = json.load(open(config))
     stat_dict = torch.load(model_file)['state_dict']
     model = dLtae(in_channels = config['in_channels'], n_head = config['n_head'], d_k= config['d_k'], n_neurons=config['n_neurons'], dropout=config['dropout'], d_model= config['d_model'],
                  mlp = config['mlp4'], T =config['T'], len_max_seq = config['len_max_seq'], 
@@ -266,10 +278,10 @@ for x in range(len(x_vec)-1):
 		sX = X_test.shape[0]
 		sY = X_test.shape[1]
 		X_test = X_test.reshape(X_test.shape[0]*X_test.shape[1],X_test.shape[2])
-		X_test = X_test.astype("int16")
+		# X_test = X_test.astype("int16")
         
 		if m == 2:
-			# device = torch.device(device)
+			X_test = X_test.astype("int16")
 			X_test = reshape_data(X_test, nchannels)
 			X_test = standardize_data(X_test, mean, std)
 			X_test = torch.from_numpy(X_test)
@@ -278,34 +290,34 @@ for x in range(len(x_vec)-1):
 				prediction = model(X_test)
 			# print("soft max....")
 			soft_pred = torch.nn.functional.softmax(prediction, dim=-1)
-			# print(soft_pred[1,:])
-			# print(soft_pred.dtype)
-			# print(soft_pred.shape)
+
 			soft_pred = soft_pred.cpu().numpy().astype("float16")
 			hard_pred = prediction.argmax(dim=1).cpu().numpy()
 			hard_pred = [dict_[k] for k in hard_pred]
 			del prediction
 			del X_test
-			# print(soft_pred.dtype)
-			# print(soft_pred.shape)
+
 		else:
 			soft_pred = model.predict_proba(X_test)
-			hard_pred = p_img.argmax(axis=1)
+			hard_pred = soft_pred.argmax(axis=1)
 			hard_pred = [revert_class_map[k] for k in hard_pred]
 		# break            
 		hard_pred = np.array(hard_pred, dtype=np.uint8)    
 		pred_array = hard_pred.reshape(sX,sY)
-        
+
 		start_time = time.time()
 		out_map_band.WriteArray(pred_array, xoff=xoff, yoff=yoff)
 		out_map_band.FlushCache()
 		print("write map: ", time.time()-start_time)
-        
+
 		start_time = time.time()
 		soft_prediction.append(soft_pred)
 		print("Writing array: ", time.time()-start_time)
+		del soft_pred
+		del pred_array
+		del hard_pred
         
 
 probability_distribution = np.concatenate(soft_prediction)
 
-np.save(os.path.join(out_path, image_name + '_' + str_model[m-1] + '.npy'), probability_distribution)
+np.save(out_npy, probability_distribution)
