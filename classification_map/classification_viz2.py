@@ -1,14 +1,11 @@
 import sys
 import os
 import joblib
-import json
 import time
 import csv
 import optparse
-import torch
+
 import numpy as np
-from models.stclassifier import dLtae
-# from models.ltae import LTAE
 
 import gdal, osr
 from gdalconst import *
@@ -36,14 +33,14 @@ if len(sys.argv) == 1:
 else:
 	usage = " usage: %prog [options] "
 	parser = OptionParser(usage=usage)
-	parser.add_option("-f", "--flag", dest="flag", action="store", type="int", help="the Model type: 1 for RF, 2 for LTAE.", default="2")
+	# parser.add_option("-f", "--flag", dest="flag", action="store", type="int", help="the Model type: 1 for CNN, 2 for RF, 3 for RNN.", default="2")
 	parser.add_option("-m", "--model", dest="model", action="store", type="string", help="The model algorithm.")
-	parser.add_option("-r", "--ref", dest="ref_file", action="store", type="string", help="The reference data.")
+	parser.add_option("-t", "--ref", dest="ref_file", action="store", type="string", help="The reference data.")
 	parser.add_option("-i", "--input", dest="in_img", action="store", type="string", help="The image to classify.")
 	parser.add_option("-o", "--output", dest="output", action="store", type="string", help="The directory of model and statistics.")
-	parser.add_option("-c", "--config", dest="config", action="store", type="string", help="Json config file path")
 	# parser.add_option("-b", "--nchannels", dest="nchannels", action="store", type="int", help="The number of channels in the image")
 	(options, args) = parser.parse_args()
+
 
 def load_npz(file_path):
     """
@@ -62,77 +59,113 @@ def reshape_data(X, n_channel):
     X = X.reshape(X.shape[0], int(X.shape[1]/n_channel), n_channel)
     return X
 
-def standardize_data(X, mean, std):
-    return (X - mean) / std
+#-----------------------------------------------------------------------
+def reshape_data(X, nchannels):
+	"""
+		Reshaping (feature format (3 bands): d1.b1 d1.b2 d1.b3 d2.b1 d2.b2 d2.b3 ...)
+		INPUT:
+			-X: original feature vector ()
+			-feature_strategy: used features (options: SB, NDVI, SB3feat)
+			-nchannels: number of channels
+		OUTPUT:
+			-new_X: data in the good format for Keras models
+	"""
+	
+	return X.reshape(X.shape[0],int(X.shape[1]/nchannels),nchannels) # x: row, y: time, z: band
 
-# def read_mean_std()
+#-----------------------------------------------------------------------
+def read_minMaxVal(file):
+	
+	with open(file, 'r') as f:
+		reader = csv.reader(f, delimiter=',')
+		min_per = next(reader)
+		max_per = next(reader)
+	min_per = [float(k) for k in min_per]
+	min_per = np.array(min_per)
+	max_per = [float(k) for k in max_per]
+	max_per = np.array(max_per)
+	return min_per, max_per
 
-# rewrite a function
-mean = np.loadtxt('../ltae/mean_std/source_mean.txt')
-std = np.loadtxt('../ltae/mean_std/source_std.txt')
+#-----------------------------------------------------------------------
+def save_minMaxVal(file, min_per, max_per):
+	
+	with open(file, 'w') as f:
+		writer = csv.writer(f, delimiter=',')
+		writer.writerow(min_per)
+		writer.writerow(max_per)
+
+#-----------------------------------------------------------------------
+def computingMinMax(X, per=2):
+	min_per = np.percentile(X, per, axis=(0,1))
+	max_per = np.percentile(X, 100-per, axis=(0,1))
+	return min_per, max_per
+
+#-----------------------------------------------------------------------
+def normalizingData(X, min_per, max_per):
+	return (X-min_per)/(max_per-min_per)
+
+def class_mapping(y_label):
+	"""
+	"""
+	unique_class = np.unique(y_label)
+	nclass = len(unique_class)
+	max_ylabel = np.unique(y_label)[-1]+1 #-- +1 to take into account the case where y=0
+	
+	class_map = [0]*max_ylabel
+	revert_class_map = unique_class.tolist()
+	#-- Insert in class_map values from 1 to c, with c the number of classes
+	n = nclass
+	while n>0:
+		insert_val = revert_class_map[n-1]
+		class_map[insert_val] = n
+		n = n-1	
+	return class_map, revert_class_map
+
+#-----------------------------------------------------------------------
+def read_class_map(file):
+	
+	with open(file, 'r') as f:
+		reader = csv.reader(f, delimiter=',')
+		class_map = next(reader)
+		revert_class_map = next(reader)
+	class_map = [int(k) for k in class_map]
+	revert_class_map = [int(k) for k in revert_class_map]
+	return class_map, revert_class_map
+
+
+def save_class_map(file, class_map, revert_class_map):
+	
+	with open(file, 'w') as f:
+		writer = csv.writer(f, delimiter=',')
+		writer.writerow(class_map)
+		writer.writerow(revert_class_map)
 
 nchannels = 10
 
-dict_ = {0:1, 
-        1:2, 
-        2:3, 
-        3:4, 
-        4:5, 
-        5:6, 
-        6:7,
-        7:8,
-        8:9,
-        9:10,
-        10:12,
-        11:13,
-        12:14,
-        13:15,
-        14:16,
-        15:17,
-        16:18,
-        17:19,
-        18:23}
-
-# out_path = options.output
-# model_file = options.model
-# in_img = options.in_img # -i 54HWE_img.tif
-# ref_file = options.ref_file #-t 54HWE_train.sqlite
-
-
 out_path = options.output
 model_file = options.model
-in_img = options.in_img
-ref_file = options.ref_file
-str_model =['RF', 'LTAE']
-m = options.flag
-str_model_m = str_model[m-1]
-config = options.config
+in_img = options.in_img # -i 54HWE_img.tif
+ref_file = options.ref_file #-t 54HWE_train.sqlite
 
+model_name = model_file.split('/')[-1]
+model_name = model_name.split('.')[0]
+case_ = model_name.split('_')[-1]
+model_name = model_name.split('_')[0]
 
-config = json.load(open(config))
-m = options.flag
 image_name = in_img.split('/')
 image_name = image_name[-1].split('_')[0]
 
-out_map = out_path + '/' + image_name + '_' + str_model[m-1] + '_map' + '.tif'
+out_map = out_path + '/' + image_name + '_' + model_name + '_case_{}_map.tif'.format(case_)
+
 print("out_map: ", out_map)
 if os.path.exists(out_map):
 	print("out_map ",out_map,"already exists => exit")
 	sys.exit("\n*** not overwriting out_map ***\n")
 
-out_confmap = out_path + '/' + image_name + '_' + str_model[m-1] + '_proba' + '.tif'
+out_confmap = out_path + '/' + image_name + '_' + model_name + '_proba' + '.tif'
 
 
-if m==1:
-    model = joblib.load(model_file)
-else:
-    stat_dict = torch.load(model_file)['state_dict']
-    model = dLtae(in_channels = config['in_channels'], n_head = config['n_head'], d_k= config['d_k'], n_neurons=config['n_neurons'], dropout=config['dropout'], d_model= config['d_model'],
-                 mlp = config['mlp4'], T =config['T'], len_max_seq = config['len_max_seq'], 
-              positions=None, return_att=False)
-    model.load_state_dict(stat_dict)
-    model.eval()
-
+model = joblib.load(model_file)
 
 flag_del = False #-- deleting the training data
 class_map_file = '.'.join(ref_file.split('.')[0:-1])
@@ -184,6 +217,12 @@ out_map_band = out_map_raster.GetRasterBand(1)
 # out_confmap_band = out_confmap_raster.GetRasterBand(1)
 
 
+#convert gps corners into image (x,y)
+# def gps_2_image_xy(x,y):
+# 	return (x-originX)/spacingX,(y-originY)/spacingY
+# def gps_2_image_p(point):
+# 	return gps_2_image_xy(point[0],point[1])
+
 size_areaX = 10980
 size_areaY = 200
 x_vec = list(range(int(c/size_areaX)))
@@ -193,7 +232,6 @@ y_vec = [y*size_areaY for y in y_vec]
 x_vec.append(c)
 y_vec.append(r)
 
-soft_prediction = []
 for x in range(len(x_vec)-1):
 	for y in range(len(y_vec)-1):
 	
@@ -207,7 +245,6 @@ for x in range(len(x_vec)-1):
 		yoff = xy_top_left[1]
 		xsize = xy_bottom_right[0]-xy_top_left[0]
 		ysize = xy_bottom_right[1]-xy_top_left[1]
-        
 		start_time = time.time()
 		X_test = image.ReadAsArray(xoff=xoff, yoff=yoff, xsize=xsize, ysize=ysize) #, gdal.GDT_Float32
 		print("Reading: ", time.time()-start_time)
@@ -217,35 +254,24 @@ for x in range(len(x_vec)-1):
 		sX = X_test.shape[0]
 		sY = X_test.shape[1]
 		X_test = X_test.reshape(X_test.shape[0]*X_test.shape[1],X_test.shape[2])
-        
-		if m == 2:
-			X_test = reshape_data(X_test, nchannels)
-			X_test = standardize_data(X_test, mean, std)
-            
-			with torch.no_grad():
-				prediction = model(x)
-            
-			soft_pred = torch.nn.Softmax(prediction)
-			hard_pred = prediction.argmax(dim=1).cpu().numpy()
-			hard_pred = [dict_[k] for k in hard_pred]
-             
-		else:
-			soft_pred = model.predict_proba(X_test)
-			hard_pred = p_img.argmax(axis=1)
-			hard_pred = [revert_class_map[k] for k in hard_pred]
-            
-		hard_pred = np.array(hard_pred, dtype=np.uint8)    
-		soft_prediction.append(soft_pred)  
-		pred_array = hard_pred.reshape(sX,sY)
-            
+
+		start_time = time.time()
+		p_img = model.predict_proba(X_test)
+		print("Prediction: ", time.time()-start_time)
+
+		y_test = p_img.argmax(axis=1)
+		y_prob = p_img.max(axis=1)
+
+		y_test = [revert_class_map[k] for k in y_test]
+		y_test = np.array(y_test, dtype=np.uint8)
+		pred_array = y_test.reshape(sX,sY)
+		
+		start_time = time.time()
 		out_map_band.WriteArray(pred_array, xoff=xoff, yoff=yoff)
+		print("Writing array: ", time.time()-start_time)
+
+		start_time = time.time()
 		out_map_band.FlushCache()
-
-probability_distribution = np.concatenate(soft_prediction)
-
-np.save(os.path.join(out_path, image_name + '_' + str_model[m-1] + '.npy'), probability_distribution)
-
-
+		print("Writing disk: ", time.time()-start_time)
 
     
-

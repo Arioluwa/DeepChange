@@ -237,7 +237,7 @@ if __name__ == "__main__":
     # case 3: train on target only
     # compute time in minutes
     start_time = time.time()
-    case_ = 2
+    case_ = 1
     seed_value = 0
     model = RFmodel(case=case_, seed_value=seed_value)
     model.prepare_data()

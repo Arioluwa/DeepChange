@@ -147,6 +147,7 @@ out_path = options.output
 model_file = options.model
 in_img = options.in_img # -i 54HWE_img.tif
 ref_file = options.ref_file #-t 54HWE_train.sqlite
+case = options.case
 
 # model_name = model_file.split('/')[-1]
 # model_name = model_name.split('.')[0]
@@ -157,7 +158,7 @@ model_name = model_name.split('_')[-1]
 image_name = in_img.split('/')
 image_name = image_name[-1].split('_')[0]
 
-out_map = out_path + '/' + image_name + '_' + model_name + '_map' + '.tif'
+out_map = out_path + '/' + image_name + '_' + model_name +'_case_'+case+ '_map' + '.tif'
 print("out_map: ", out_map)
 if os.path.exists(out_map):
 	print("out_map ",out_map,"already exists => exit")
@@ -266,7 +267,7 @@ for x in range(len(x_vec)-1):
 		y_test = [revert_class_map[k] for k in y_test]
 		y_test = np.array(y_test, dtype=np.uint8)
 		pred_array = y_test.reshape(sX,sY)
-		
+
 		start_time = time.time()
 		out_map_band.WriteArray(pred_array, xoff=xoff, yoff=yoff)
 		print("Writing array: ", time.time()-start_time)

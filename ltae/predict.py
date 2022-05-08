@@ -316,6 +316,7 @@ for x in range(len(x_vec)-1):
 		del soft_pred
 		del pred_array
 		del hard_pred
+		del X_test
         
 
 probability_distribution = np.concatenate(soft_prediction)
