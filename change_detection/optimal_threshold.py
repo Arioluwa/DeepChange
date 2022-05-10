@@ -196,14 +196,24 @@ def main(args):
         # cm_sim_per = cm_sim.astype('float') / np.sum(cm_sim)
 
         label = ['No change', 'Change']
-        cm_sim_plot = sns.heatmap(cm_sim, annot=True, fmt ='d', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
-        cm_sim_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
-        # cm_sim_plot.set_title("")
-        for t in cm_sim_plot.texts:
-            t.set_text('{:,d}'.format(int(t.get_text())))
-        # save the plot
-        plt.savefig(os.path.join(outdir, './charts', 'otsu_similarity_confusion_matrix_case_' + args.case +'.png'), dpi =500)
-        plt.close()
+        
+        if args.percent:
+            cm = cm_sim.astype('float') / np.sum(cm_sim)
+            cm_plot = sns.heatmap(cm, annot=True, fmt='.2%', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
+            cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
+            # save the plot
+            plt.savefig(os.path.join(outdir,'./charts','bcd_change_matrix_percent_case_' + args.case +'.png'), dpi = 500)
+            plt.close()
+        
+        else:
+            cm_sim_plot = sns.heatmap(cm_sim, annot=True, fmt ='d', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
+            cm_sim_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
+            # cm_sim_plot.set_title("")
+            for t in cm_sim_plot.texts:
+                t.set_text('{:,d}'.format(int(t.get_text())))
+            # save the plot
+            plt.savefig(os.path.join(outdir, './charts', 'otsu_similarity_confusion_matrix_case_' + args.case +'.png'), dpi =500)
+            plt.close()
         
         # Quality assurance
         f_score = f1_score(gt_binary_, otsu_binary)
@@ -282,6 +292,7 @@ if __name__ == '__main__':
     parser.add_argument('--similarity', '-s', default='../../../results/RF/simliarity_measure/case_2_ref_mask_similarity_measure.tif', type=str, help='similarity map')
     parser.add_argument('--otsu', '-ot', default=False, type=bool, help='Compute optimal threshold using otsu-threshold')
     parser.add_argument('--map', '-m', default=False, type=bool, help='generate maps')
+    parser.add_argument('--percent', '-p', default=False, type=bool, help='Cal percent in the confusion matrix')
     
     
     
@@ -290,16 +301,19 @@ if __name__ == '__main__':
 #     for case in range(1, 4):
 #         args.case = str(case)
 #         args.similarity = '../../../results/RF/simliarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
+#         args.outdir = "../../../results/RF/simliarity_measure/optimal_threshold"
 #         main(args)
     
-    ## case 4
-    # args.case = "4"
-    # args.similarity = '../../../results/RF/simliarity_measure/case_4_ref_mask_similarity_measure.tif'
-    # main(args)
+#     # case 4
+#     args.case = "4"
+#     args.outdir = "../../../results/RF/simliarity_measure/optimal_threshold"
+#     args.similarity = '../../../results/RF/simliarity_measure/case_4_ref_mask_similarity_measure.tif'
+#     main(args)
     
     # ##LTAE
     for case in range(2, 4):
         args.case = str(case)
+        args.outdir = "../../../results/ltae/Change_detection/similarity_measure"
         args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
         main(args)
         # break
@@ -307,5 +321,6 @@ if __name__ == '__main__':
     ### case 4
     args.case = "4"
     args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_4_ref_mask_similarity_measure.tif'
+    args.outdir = "../../../results/ltae/Change_detection/similarity_measure"
     main(args)
     

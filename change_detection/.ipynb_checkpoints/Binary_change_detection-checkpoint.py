@@ -87,6 +87,7 @@ def main(args):
         cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
         # save the plot
         plt.savefig(os.path.join(outdir,'./charts','bcd_change_matrix_percent_case_' + args.case +'.png'), dpi = 500)
+        plt.close()
     else:
         cm_plot = sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
         cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
@@ -182,6 +183,7 @@ if __name__ == '__main__':
         args.case = str(case)
         args.pred_source = '../../../results/ltae/classificationmap/Seed_0/2018_LTAE_map_case_{}.tif'.format(case)
         args.pred_target = '../../../results/ltae/classificationmap/Seed_0/2019_LTAE_map_case_{}.tif'.format(case)
+        args.outdir = "../../../results/ltae/Change_detection/bcd"
         main(args)
         print('Case {} done'.format(case))
     # # case 4
@@ -189,5 +191,6 @@ if __name__ == '__main__':
     # args.percent = True
     args.pred_source = '../../../results/ltae/classificationmap/Seed_0/2018_LTAE_map_case_2.tif'
     args.pred_target = '../../../results/ltae/classificationmap/Seed_0/2019_LTAE_map_case_3.tif'
+    args.outdir = "../../../results/ltae/Change_detection/bcd"
     main(args)
     print('Case {} done'.format(args.case))
