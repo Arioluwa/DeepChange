@@ -33,13 +33,14 @@ python sample_preparation/readsqlit.py --sq ../../data/theiaL2A_zip_img/output/2
 python sample_preparation/readsqlit.py --sq ../../data/theiaL2A_zip_img/output/2019/2019_sample_extract.sqlite --chk 5000 --o ../../data/theiaL2A_zip_img/output/2019/  >> logs/log202201272250.txt
 
 # ndvi chart
-python ndvi.py -f ../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz -g ../data_processing/gapfilled19_dates.txt -o .
+# python ndvi.py -f ../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz -g ../data_processing/gapfilled19_dates.txt -o .
+python ndvi2.py -f1 ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz -f2 ../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz -g ../data_processing/gapfilled19_dates.txt -o .
 
 # RF model
 
 python main.py -f ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz -t train_val_eval.txt
 
-python ndvi2.py -f1 ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz -f2 ../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz -g ../data_processing/gapfilled19_dates.txt -o .
+
 
 #map viz
 python classification_viz.py -m ../RF_model/models/rf_model_4.pkl -t ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz -i ../../../data/theiaL2A_zip_img/output/2018/2018_Image.tif -o .
@@ -51,3 +52,30 @@ OTB-7.4.0-Linux64/bin/otbcli_MultivariateAlterationDetector -in1 ../results/RF/2
 
 # change detection confusion matrix
 OTB-7.4.0-Linux64/bin/otbcli_ComputeConfusionMatrix -in ../results/RF/2018_rf_model_1_map.tif -out ../results/RF/change_D/rf_model_1_cm.csv -format confusionmatrix -ref raster -ref.raster.in ../results/RF/2019_rf_model_1_map.tif -ram 2000
+
+# similarity measure
+similarity_measure.py -s '../../../results/RF/simliarity_measure/2018_rf_model_2.npy' -t '../../../results/RF/simliarity_measure/2019_rf_model_2.npy' - i '../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif' -o '../../../results/RF/simliarity_measure/'
+python similarity_mesure.py -s '../../../results/RF/simliarity_measure/2018_rf_model_2.npy' -t '../../../results/RF/simliarity_measure/2019_rf_model_2.npy' -i '../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif' -o '../../../results/RF/simliarity_measure' -gs '../../../data/rasterized_samples/2018_rasterizedImage.tif' -gt '../../../data/rasterized_samples/2019_rasterizedImage.tif'
+
+# LTAE train 
+python train.py --dates dates.txt --positions bespoke --seed 4 
+python train.py --dates dates.txt --positions bespoke --seed 4 
+
+# predict
+# python predict.py -m ../../../results/ltae/trials/Seed_0/model.pth.tar -r ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz -i ../../../data/theiaL2A_zip_img/output/2018/2018_GapFilld_Image.tif -o ../../../results/ltae -f 2 -c '../../../results/ltae/trials/conf.json'
+# predict RF
+python predict.py -m ../RF_model/models/rf_seed_0_case_1.pkl -r ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz -i ../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif -o ../../../results/RF/classificationmap -f 1 -c 1
+
+
+# train
+python train.py --npy ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --epoch 10 --seed 0 --res_dir ../../../results/ltae/results/2018 --num_workers 10 --batch_size 128 --lr 0.01 --positions bespoke --_scheduler True
+
+C#ategory H2
+python train.py --npy ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --epoch 30 --seed 0 --res_dir ../../../results/ltae/results/2018 --num_workers 10 --batch_size 2048 --factor 5266 --positions Bespoke --scheduler_ True >>../logs/log20220429.txt
+
+python train.py --npy ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --epoch 15 --seed 0 --res_dir ../../../results/ltae/results/2018 --num_workers 10 --batch_size 2048 --factor 5266 --positions Bespoke --scheduler_ True >>../logs/log202205012326.txt
+
+# optimal threshold 
+python optimal_threshold.py -o ../../../results/ltae/Change_detection/similarity_measure 
+python optimal_threshold.py -o ../../../results/ltae/Change_detection/similarity_measure -ot True
+
