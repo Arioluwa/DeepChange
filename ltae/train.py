@@ -10,6 +10,7 @@ import pickle as pkl
 import argparse
 import pprint
 import time
+import sys
 
 from utils import *
 from dataset import SITSData
@@ -214,6 +215,8 @@ def main(config):
             model.train()
             
             start_time = time.time()
+            print(torch.get_num_threads())
+            sys.exit()
             train_metrics = train_epoch(model, optimizer, scheduler, criterion, train_loader, device=device, config=config)
             print("Training time for {} is {}".format(epoch, (time.time() - start_time)/60))
             
