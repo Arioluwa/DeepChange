@@ -1,11 +1,14 @@
+from matplotlib.pyplot import close
 import torch
 import torch.utils.data as data
 from torchvision import transforms
 import torchnet as tnt
 import numpy as np
 from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
 import os
 import json
+import glob
 import pickle as pkl
 import argparse
 import pprint
@@ -97,7 +100,7 @@ def evaluation(model, criterion, loader, device, config, mode='val'):
     if mode == 'val':
         return metrics
     elif mode == 'test':
-        return metrics, confusion_matrix(y_true, y_pred, labels=list(range(config['num_classes'])))
+        return metrics, confusion_matrix(y_true, y_pred, labels=list(range(config['num_classes']))), classification_report(y_true, y_pred, target_names=label, digits=4)
 
 def get_loader(train_dt, val_dt, test_dt, config):
     
@@ -125,19 +128,20 @@ def recursive_todevice(x, device):
     
 def prepare_output(config):
     os.makedirs(config['res_dir'], exist_ok=True)
-    # for seed in range(1, config['seed'] + 1):
-        # os.makedirs(os.path.join(config['res_dir'], 'Seed_{}'.format(seed)), exist_ok=True)
     os.makedirs(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed'])), exist_ok=True)
 
 def checkpoint(log, config):
     with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_epochs_{}_factor_{}_trainlog.json'.format(config['seed'], config['batch_size'], config['epochs'], config['factor'])), 'w') as outfile:
         json.dump(log, outfile, indent=4)
 
-def save_results(metrics, conf_mat, config):
-    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_epochs_{}_factor_{}_test_metrics.json'.format(config['seed'], config['batch_size'], config['epochs'], config['factor'])), 'w') as outfile:
+def save_results(metrics, conf_mat, report, config):
+    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_epochs_{}_test_metrics.json'.format(config['seed'], config['batch_size'], config['epochs'])), 'w') as outfile:
         json.dump(metrics, outfile, indent=4)
-    pkl.dump(conf_mat, open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_epochs_{}_factor_{}_conf_mat.pkl'.format(config['seed'], config['batch_size'], config['epochs'], config['factor'])), 'wb'))
-    
+    pkl.dump(conf_mat, open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_epochs_{}_conf_mat.pkl'.format(config['seed'], config['batch_size'], config['epochs'])), 'wb'))
+
+    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']),'seed_{}_batchsize_{}_epochs_{}_report.txt'.format(config['seed'], config['batch_size'], config['epochs'])), 'w') as f:
+        f.write(report)
+        f.close
 # def overall_performance(config):
 #     cm = np.zeros((config['num_classes'], config['num_classes']))
 #     # for seed in range(1, config['seed'] + 1):
@@ -152,38 +156,40 @@ def save_results(metrics, conf_mat, config):
 #     with open(os.path.join(config['res_dir'], 'overall.json'), 'w') as file:
 #         file.write(json.dumps(perf, indent=4))
     ####suggestion: KFold is the same as seed, read from the ids folder each id text
-
+# def test_
 def main(config):
     # np.random.seed(config['seed'])
     # torch.manual_seed(config['seed'])
     prepare_output(config)
     wandb.login()
-    mean_ = np.loadtxt(os.path.join(config['dataset_folder'], './mean_std/target_mean.txt')) #change for 2018 and 2019
-    std_ = np.loadtxt(os.path.join(config['dataset_folder'], './mean_std/target_std.txt'))
-    # print(config['scheduler_'])
+    mean_ = np.loadtxt(glob.glob(config['dataset_folder'] + '/mean*.txt')[0])
+    std_ = np.loadtxt(glob.glob(config['dataset_folder'] + '/std*.txt')[0])
     transform = transforms.Compose([standardize(mean_, std_)])
     
-    train_dt = SITSData(config['npy'], config['seed'], config['dates'], partition='train', transform = transform)
-    val_dt = SITSData(config['npy'], config['seed'], config['dates'], partition='val', transform = transform)
-    test_dt = SITSData(config['npy'], config['seed'], config['dates'], partition='test', transform = transform)
+    sits_data = glob.glob(config['dataset_folder'] + '/.npz')[0]
+    doy = glob.glob(config['dataset_folder'] + '/gapfilled*.txt')[0]
+    
+    train_dt = SITSData(sits_data, config['seed'], doy, partition='train', transform = transform)
+    val_dt = SITSData(sits_data, config['seed'], doy, partition='train', transform = transform)
+    test_dt = SITSData(sits_data, config['seed'], doy, partition='train', transform = transform)
     
     device = torch.device(config['device'])
-    # sys.exit()
+    
     loaders = get_loader(train_dt, val_dt, test_dt, config)
-    # break
+    
     for train_loader, val_loader, test_loader in loaders:
         print('Train {}, Val {}, Test {}'.format(len(train_loader), len(val_loader), len(test_loader)))#, int(len(train_loader)/config['factor'])))
 
         model_config = dict(in_channels=config['in_channels'], n_head=config['n_head'], d_k=config['d_k'],
                             n_neurons=config['n_neurons'], dropout=config['dropout'], d_model=config['d_model'], mlp= config['mlp4'], T=config['T'], len_max_seq=config['len_max_seq'],
                             positions=train_dt.date_positions if config['positions'] == 'bespoke' else None)
-        # print(model_config)
+        
         model = dLtae(**model_config)
         config['N_params'] = model.param_ratio()
         config['Train_loader_size'] = len(train_loader)
         config['Val_loader_size'] = len(val_loader)
         config['Test_loader_size'] = len(test_loader)
-        # config['factor'] = config['factor']
+        
         config['scheduler_'] = config['scheduler_']
         wandb.init(config = config)
         
@@ -237,15 +243,14 @@ def main(config):
                 best_mIoU = val_metrics['val_IoU']
                 torch.save({'epoch': epoch, 'state_dict': model.state_dict(), 'optimizer': optimizer.state_dict()},
                            os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'model.pth.tar'))
-            torch.save({'epoch': epoch, 'state_dict': model.state_dict(), 'optimizer': optimizer.state_dict()},
-                           os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'check_point_model.pt'))
+
             print('Testing best epoch . . .')
             model.load_state_dict(
                 torch.load(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'model.pth.tar'))['state_dict'])
             start_time = time.time()
             model.eval()
 
-            test_metrics, conf_mat = evaluation(model, criterion, test_loader, device=device, mode='test', config=config)
+            test_metrics, conf_mat, report_ = evaluation(model, criterion, test_loader, device=device, mode='test', config=config)
 
             print('Loss {:.4f},  Acc {:.2f},  IoU {:.4f}'.format(test_metrics['test_loss'], test_metrics['test_accuracy'],
                                                                  test_metrics['test_IoU']))
@@ -264,9 +269,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     # Set-up parameters
-    parser.add_argument('--dataset_folder', default='../../../results/ltae', type=str, help='Path to the folder where the results are saved.')
-    parser.add_argument('--npy', default='../../../data/theiaL2A_zip_img/output/2018/2018_SITS_subset_data.npz', help='Path to the npy file') # to be change
-    parser.add_argument('--dates', default='dates.txt', help='gapfilled date test path')
+    parser.add_argument('--dataset_folder', default='../../../data/theiaL2A_zip_img/output/2019', type=str, help='Path to the data folder.') #move npy and date into a folder
     parser.add_argument('--res_dir', default='../../../results/ltae/trials', help='Path to the folder where the results should be stored')
     parser.add_argument('--num_workers', default=10, type=int, help='Number of data loading workers')
     parser.add_argument('--seed', default=3, type=int, help='Random seed')
