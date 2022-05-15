@@ -149,14 +149,13 @@ if options.tlist != None:
 preview = options.preview.lower() == "true"
 if options.output_dir == None:
     _l2a_processed_saving_path = os.path.join(
-        os.path.split(os.path.split(tile_folder_path)[0])[0], "theaiL2A_processed_img"
-    )
+        os.path.split(os.path.split(tile_folder_path)[0])[0], "theaiL2A_processed_img")
 else:
     # _l2a_processed_saving_path = os.path.join(options.output_dir, "pepsL2A_processed_img")
     _l2a_processed_saving_path = options.output_dir
 
-ram_processing = 15000
-ram_preview = 15000
+ram_processing = 10000
+ram_preview = 10000
 
 if tile_folder_path:
     tile = os.path.basename(tile_folder_path)

@@ -131,15 +131,15 @@ def prepare_output(config):
     os.makedirs(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed'])), exist_ok=True)
 
 def checkpoint(log, config):
-    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_epochs_{}_factor_{}_trainlog.json'.format(config['seed'], config['batch_size'], config['epochs'], config['factor'])), 'w') as outfile:
+    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_trainlog.json'.format(config['seed'])), 'w') as outfile:
         json.dump(log, outfile, indent=4)
 
 def save_results(metrics, conf_mat, report, config):
-    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_epochs_{}_test_metrics.json'.format(config['seed'], config['batch_size'], config['epochs'])), 'w') as outfile:
+    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_test_metrics.json'.format(config['seed'])), 'w') as outfile:
         json.dump(metrics, outfile, indent=4)
-    pkl.dump(conf_mat, open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_batchsize_{}_epochs_{}_conf_mat.pkl'.format(config['seed'], config['batch_size'], config['epochs'])), 'wb'))
+    pkl.dump(conf_mat, open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_conf_mat.pkl'.format(config['seed'])), 'wb'))
 
-    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']),'seed_{}_batchsize_{}_epochs_{}_report.txt'.format(config['seed'], config['batch_size'], config['epochs'])), 'w') as f:
+    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']),'seed_{}_report.txt'.format(config['seed'])), 'w') as f:
         f.write(report)
         f.close
 # def overall_performance(config):
@@ -156,26 +156,30 @@ def save_results(metrics, conf_mat, report, config):
 #     with open(os.path.join(config['res_dir'], 'overall.json'), 'w') as file:
 #         file.write(json.dumps(perf, indent=4))
     ####suggestion: KFold is the same as seed, read from the ids folder each id text
-# def test_
+
 def main(config):
     # np.random.seed(config['seed'])
     # torch.manual_seed(config['seed'])
     prepare_output(config)
     wandb.login()
-    mean_ = np.loadtxt(glob.glob(config['dataset_folder'] + '/mean*.txt')[0])
-    std_ = np.loadtxt(glob.glob(config['dataset_folder'] + '/std*.txt')[0])
+    mean_ = np.loadtxt(glob.glob(config['dataset_folder'] + '/*mean.txt')[0])
+    std_ = np.loadtxt(glob.glob(config['dataset_folder'] + '/*std.txt')[0])
     transform = transforms.Compose([standardize(mean_, std_)])
     
-    sits_data = glob.glob(config['dataset_folder'] + '/.npz')[0]
+    sits_data = glob.glob(config['dataset_folder'] + '/*.npz')[0]
     doy = glob.glob(config['dataset_folder'] + '/gapfilled*.txt')[0]
     
     train_dt = SITSData(sits_data, config['seed'], doy, partition='train', transform = transform)
+    print("train dataset completed")
     val_dt = SITSData(sits_data, config['seed'], doy, partition='train', transform = transform)
+    print("val dataset completed")
     test_dt = SITSData(sits_data, config['seed'], doy, partition='train', transform = transform)
+    print("test dataset completed")
     
     device = torch.device(config['device'])
     
     loaders = get_loader(train_dt, val_dt, test_dt, config)
+    print("Loader gotten completed")
     
     for train_loader, val_loader, test_loader in loaders:
         print('Train {}, Val {}, Test {}'.format(len(train_loader), len(val_loader), len(test_loader)))#, int(len(train_loader)/config['factor'])))
@@ -221,8 +225,8 @@ def main(config):
             model.train()
             
             start_time = time.time()
-            print(torch.get_num_threads())
-            sys.exit()
+            # print(torch.get_num_threads())
+            # sys.exit()
             train_metrics = train_epoch(model, optimizer, scheduler, criterion, train_loader, device=device, config=config)
             print("Training time for {} is {}".format(epoch, (time.time() - start_time)/60))
             
@@ -243,23 +247,24 @@ def main(config):
                 best_mIoU = val_metrics['val_IoU']
                 torch.save({'epoch': epoch, 'state_dict': model.state_dict(), 'optimizer': optimizer.state_dict()},
                            os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'model.pth.tar'))
-
-            print('Testing best epoch . . .')
-            model.load_state_dict(
-                torch.load(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'model.pth.tar'))['state_dict'])
-            start_time = time.time()
-            model.eval()
-
-            test_metrics, conf_mat, report_ = evaluation(model, criterion, test_loader, device=device, mode='test', config=config)
-
-            print('Loss {:.4f},  Acc {:.2f},  IoU {:.4f}'.format(test_metrics['test_loss'], test_metrics['test_accuracy'],
-                                                                 test_metrics['test_IoU']))
-            print("Test time for {} is {}".format(epoch, (time.time() - start_time)/60))
-            wandb.log({"test_loss": test_metrics['test_loss'], "test_accuracy": test_metrics['test_accuracy'], "test_IoU": test_metrics['test_IoU']})
-            wandb.log({"epoch": epoch})
-            
-            save_results(test_metrics, conf_mat, config)
             print("total time taken for {} epoch: {:.3f} mins.".format(epoch, (time.time() - st__)/60))
+
+        print('Testing best epoch . . .') #test on the best model only and that should be once.
+        model.load_state_dict(
+                torch.load(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'model.pth.tar'))['state_dict'])
+        start_time = time.time()
+        model.eval()
+
+        test_metrics, conf_mat, report_ = evaluation(model, criterion, test_loader, device=device, mode='test', config=config)
+
+        print('Loss {:.4f},  Acc {:.2f},  IoU {:.4f}'.format(test_metrics['test_loss'], test_metrics['test_accuracy'],
+                                                                 test_metrics['test_IoU']))
+        print("Test time for {} is {}".format(epoch, (time.time() - start_time)/60))
+        wandb.log({"test_loss": test_metrics['test_loss'], "test_accuracy": test_metrics['test_accuracy'], "test_IoU": test_metrics['test_IoU']})
+        wandb.log({"epoch": epoch})
+        
+        save_results(test_metrics, conf_mat, config)
+        
         print("total time taken for all {} epochs: {:.3f} mins.".format(config['epochs'], (time.time() - st_)/60))
 
     # overall_performance(config)
@@ -272,11 +277,10 @@ if __name__ == '__main__':
     parser.add_argument('--dataset_folder', default='../../../data/theiaL2A_zip_img/output/2019', type=str, help='Path to the data folder.') #move npy and date into a folder
     parser.add_argument('--res_dir', default='../../../results/ltae/trials', help='Path to the folder where the results should be stored')
     parser.add_argument('--num_workers', default=10, type=int, help='Number of data loading workers')
-    parser.add_argument('--seed', default=3, type=int, help='Random seed')
+    parser.add_argument('--seed', default=0, type=int, help='Random seed')
     parser.add_argument('--device', default='cuda', type=str, help='Name of device to use for tensor computations (cuda/cpu)')
     parser.add_argument('--display_step', default=100, type=int, help='Interval in batches between display of training metrics')
-    parser.add_argument('--factor', default=1300, type=int, help='The number of training data loader to stop thhe training iteration.')
-    parser.add_argument('--scheduler_', default=True, type=bool, help='Enable scheduler')
+    parser.add_argument('--scheduler_', default=False, type=bool, help='Enable scheduler')
     # parser.add_argument('--preload', dest='preload', action='store_true', help='If specified, the whole dataset is loaded to RAM at initialization')
     parser.set_defaults(preload=False)
     
@@ -296,7 +300,7 @@ if __name__ == '__main__':
     parser.add_argument('--T', default=1000, type=int, help='Maximum period for the positional encoding')
     parser.add_argument('--positions', default='None', type=str,
                         help='Positions to use for the positional encoding (bespoke / order)')
-    parser.add_argument('--len_max_seq', default=33, type=int,
+    parser.add_argument('--len_max_seq', default=53, type=int,
                         help='Maximum sequence length for positional encoding (only necessary if positions == order)')
     parser.add_argument('--dropout', default=0.2, type=float, help='Dropout probability')
     parser.add_argument('--d_model', default=256, type=int,
@@ -316,4 +320,4 @@ if __name__ == '__main__':
 
     pprint.pprint(config)
     main(config)
-    
+    # python train.py --dataset_folder ../../../data/theiaL2A_zip_img/output/2018 --res_dir ../../../results/ltae/model/2018 --epochs 1

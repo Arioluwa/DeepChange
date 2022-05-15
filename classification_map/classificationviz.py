@@ -59,7 +59,7 @@ def load_npz(file):
 def reshape_data(X, n_channel):
     """
     """
-    X = X.resphape(X.shape[0], int(X.shape[1]/n_channel), n_channel)
+    X = X.reshape(X.shape[0], int(X.shape[1]/n_channel), n_channel)
     return X
 
 def standardize_data(X, mean, std):
@@ -72,7 +72,8 @@ def recursive_todevice(x, device):
         return [recursive_todevice(c, device) for c in x]
 
 ######Read mean and std from the path as in the new train, using the basename from the path
-
+mean = np.loadtxt('../ltae/mean_std/source_mean.txt')
+std = np.loadtxt('../ltae/mean_std/source_std.txt')
 ##add n_channel as an argument
 
 dict_ = {0:1, 
@@ -127,9 +128,9 @@ def main(args):
 
 
     # select model 
-    if m==1:
+    if m==1: # RF
         model = joblib.load(model_file)
-    else:
+    else: # LTAE
         config = json.load(open(config))
         stat_dict = torch.load(model_file)['state_dict']
         model = dLtae(in_channels = config['in_channels'], n_head = config['n_head'], d_k= config['d_k'], n_neurons=config['n_neurons'], dropout=config['dropout'], d_model= config['d_model'],
@@ -187,7 +188,7 @@ def main(args):
     out_map_raster.SetGeoTransform([originX, spacingX, 0, originY, 0, spacingY])
     out_map_raster.SetProjection(out_raster_SRS.ExportToWkt())
     out_map_band = out_map_raster.GetRasterBand(1)
-    
+
 
     size_areaX = 10980
     size_areaY = 50
@@ -214,7 +215,7 @@ def main(args):
             ysize = xy_bottom_right[1] - xy_top_left[1]
 
             X_test = image.ReadAsArray(xoff=xoff, yoff=yoff, xsize=xsize, ysize=ysize) #, gdal.GDT_Float32
-            
+
             X_test = X_test.transpose((1,2,0))
             sX = X_test.shape[0]
             sY = X_test.shape[1]
@@ -224,7 +225,7 @@ def main(args):
                 # LTAE
                 X_test = X_test.astype(np.int16)
                 X_test = reshape_data(X_test, n_channel)
-                # X_test = standardize_data(X_test, mean, std) # confirm if this is needed
+                X_test = standardize_data(X_test, mean, std) # confirm if this is needed
                 X_test = torch.from_numpy(X_test)
 
                 with torch.no_grad(): # disable the autograd engine (which you probably don't want during inference)
@@ -277,12 +278,11 @@ if __name__ == '__main__':
     parser.add_argument('--case', dest='case', type=str, help='case name')
     parser.add_argument('--config', dest='config', type=str, help='Json config file')
     parser.add_argument('--with_softmax', dest='with_softmax', type=bool, default=True, help='flag for softmax')
-    parser.add_argument('--n_channel', dest='n_channel', type=int, default=53, help='number of channels')
+    parser.add_argument('--n_channel', dest='n_channel', type=int, default=10, help='number of channels')
     parser.add_argument('--device', dest='device', type=str, default='cpu', help='device')
 
     args = parser.parse_args()
 
     main(args)
     # python classification.py --model ../RF_model/models/rf_seed_0_case_1.pkl --ref_file ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --in_img ../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif --output ../../../results/RF/classificationmap --flag 1 --case 1 --with_softmax True
-    
-    # results/RF/classificationmap
+    # python classification.py --model ../RF_model/models/rf_seed_0_case_3.pkl --ref_file ../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz --in_img ../../../data/theiaL2A_zip_img/output/2019/2019_GapFilled_Image.tif --output ../../../results/RF/classificationmap --flag 1 --case 3

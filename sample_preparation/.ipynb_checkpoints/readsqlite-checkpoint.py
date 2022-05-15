@@ -52,7 +52,7 @@ def readSITSData(chunk):
     y = np.asarray(y_data.values, dtype='uint8')
 
     polygonID_data = chunk.iloc[:,3]
-    polygon_ids = np.asarray(polygonID_data.values, dtype='uint16')
+    polygon_ids = np.asarray(polygonID_data.values, dtype='uint8')
 
     block_id_data = chunk.iloc[:,4]
     block_ids = np.asarray(block_id_data.values, dtype='uint8')
@@ -80,6 +80,7 @@ for chunk in pd.read_sql_query("select * from output;", conn,  chunksize=chunk_s
     y.append(y_data)
     block_ids.append(block_ids_data)
     polygon_ids.append(polygon_ids_data)
+    # break
 print("read and append %s seconds ---" % (time.time() - start_time))
 # convert lists to numpy arrays
 start_time = time.time()

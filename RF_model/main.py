@@ -21,14 +21,14 @@ class RFmodel:
         case: int,
         seed_value: int,
         source_sits=_2018_SITS_data,
-        target_sits=_2019_SITS_data,
+        # target_sits=_2019_SITS_data,
         # train_val_eval=_train_val_eval,
     ):
         super().__init__()
         self.case = case
         self.seed_value = seed_value
         self.source_sits = source_sits
-        self.target_sits = target_sits
+        # self.target_sits = target_sits
         # self.train_val_eval = train_val_eval
 
     # useful functions
@@ -42,7 +42,6 @@ class RFmodel:
             X is the data, Y is the label
         """
         train_ids, val_ids, test_ids = read_ids(self.seed_value)
-        # test_ids = test_ids + val_ids
 
         if set_name == "train":
             ids = train_ids
@@ -72,36 +71,35 @@ class RFmodel:
         print("Preparing data.........")
 
         X_s, Y_s, block_ids_s = load_npz(self.source_sits)
-        X_t, Y_t, block_ids_t = load_npz(self.target_sits)
+        # X_t, Y_t, block_ids_t = load_npz(self.target_sits)
         print("Loading npz files done.........")
 
         # self.train_ids, self.test_ids = read_ids(self.train_val_eval)
 
-        self.total_set_s = np.concatenate(
-            (X_s, Y_s[:, None], block_ids_s[:, None]), axis=1
-        )
+        self.total_set_s = np.concatenate((X_s, Y_s[:, None], block_ids_s[:, None]), axis=1)
+        
         del X_s
         del Y_s
         del block_ids_s
-        self.total_set_t = np.concatenate(
-            (X_t, Y_t[:, None], block_ids_t[:, None]), axis=1
-        )
-        del X_t
-        del Y_t
-        del block_ids_t
+        # self.total_set_t = np.concatenate(
+        #     (X_t, Y_t[:, None], block_ids_t[:, None]), axis=1
+        # )
+        # del X_t
+        # del Y_t
+        # del block_ids_t
         print("Concatenating data done.........")
         
         # Training set for target and source
         self.Xtrain_s, self.Ytrain_s = self.load_set("train", self.total_set_s)
-        self.Xtrain_t, self.Ytrain_t = self.load_set("train", self.total_set_t)
+        # self.Xtrain_t, self.Ytrain_t = self.load_set("train", self.total_set_t)
         
         print("Loading train set done.........")
 
         # Test set for target and source
         self.Xtest_s, self.Ytest_s = self.load_set("test", self.total_set_s)
-        self.Xtest_t, self.Ytest_t = self.load_set("test", self.total_set_t)
+        # self.Xtest_t, self.Ytest_t = self.load_set("test", self.total_set_t)
         del self.total_set_s
-        del self.total_set_t
+        # del self.total_set_t
         print("Loading test set done.........")
 
         if self.case == 1:
@@ -114,18 +112,18 @@ class RFmodel:
             self.Xtrain = self.Xtrain_s
             self.Ytrain = self.Ytrain_s
             
-        elif self.case == 3:
-            # Xtrain is the training set for target only
-            self.Xtrain = self.Xtrain_t
-            self.Ytrain = self.Ytrain_t
+        # elif self.case == 3:
+        #     # Xtrain is the training set for target only
+        #     self.Xtrain = self.Xtrain_t
+        #     self.Ytrain = self.Ytrain_t
 
-        else:
-            raise ValueError("Please choose a case between 1 and 3")
+        # else:
+        #     raise ValueError("Please choose a case between 1 and 3")
         
         del self.Xtrain_s
-        del self.Xtrain_t
+        # del self.Xtrain_t
         del self.Ytrain_s
-        del self.Ytrain_t
+        # del self.Ytrain_t
         
         self.Xtrain, self.Ytrain = shuffle(self.Xtrain, self.Ytrain)
         print("Preparing data completed.........")
@@ -170,14 +168,14 @@ class RFmodel:
         # print("Testing model.........")
         # start_time = time.time()
         self.Xtest_s, self.Ytest_s = shuffle(self.Xtest_s, self.Ytest_s)
-        self.Xtest_t, self.Ytest_t = shuffle(self.Xtest_t, self.Ytest_t)
+        # self.Xtest_t, self.Ytest_t = shuffle(self.Xtest_t, self.Ytest_t)
         
         self.predictions_s = self.model.predict(self.Xtest_s)
-        self.predictions_t = self.model.predict(self.Xtest_t)
+        # self.predictions_t = self.model.predict(self.Xtest_t)
         del self.Xtest_s
-        del self.Xtest_t
+        # del self.Xtest_t
         self.report_s = classification_report(self.Ytest_s, self.predictions_s, target_names=label, digits=4)
-        self.report_t = classification_report(self.Ytest_t, self.predictions_t, target_names=label, digits=4)
+        # self.report_t = classification_report(self.Ytest_t, self.predictions_t, target_names=label, digits=4)
         # print("Source report: \n", self.report_s)
         # print("Target report: \n", self.report_t)
        # print balance score
@@ -185,7 +183,7 @@ class RFmodel:
         # print("target balance accuracy score:", balanced_accuracy_score(self.Ytest_t,self.predictions_t))
         # print("Writing report to txt file.........")
         self.confusion_s = confusion_matrix(self.Ytest_s, self.predictions_s)
-        self.confusion_t = confusion_matrix(self.Ytest_t, self.predictions_t)
+        # self.confusion_t = confusion_matrix(self.Ytest_t, self.predictions_t)
         # UA_s = self.confusion_s.diagonal() / self.confusion_s.sum(axis=1)
         # UA_t = self.confusion_t.diagonal() / self.confusion_t.sum(axis=1)
         # PA_s = self.confusion_s.diagonal() / self.confusion_s.sum(axis=0)
@@ -209,9 +207,18 @@ class RFmodel:
                 f.write("Source report: \n")
                 f.write(self.report_s)
                 f.write("\n")
-                f.write("Target report: \n")
-                f.write(self.report_t)
+                # f.write("Target report: \n")
+                # f.write(self.report_t)
+                # f.write("\n")
+                f.close()
+        with open("reports/rf_report_case_" + str(self.case)+ "_seed_" + str(self.seed_value) + ".txt", "w") as f:
+                f.write("Source report: \n")
+                f.write(self.report_s)
                 f.write("\n")
+                # f.write("Target report: \n")
+                # f.write(self.report_t)
+                # f.write("\n")
+                f.close()
                 # f.write("OOB score: " + str(self.model.oob_score_ + "\n"))
                 # f.write("Number of samples training in each class: \n")
                 # f.write(str(n_sample_training))
