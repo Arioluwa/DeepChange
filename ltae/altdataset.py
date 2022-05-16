@@ -24,19 +24,15 @@ class SITSData(data.Dataset):
         return:
         """
         self.sits = sits
-        # self.Ysits = Ysits
         self.transform = transform
         self.date_ = date_
         
-        self.sits = np.load(self.sits)
-        # self.y_ = np.load(self.Ysits)
-        X_ = data_[:, :-2]
-        y_ = data_[:, -2]
+        with np.load(self.sits) as f:
+            self.X_ = f['X']
+            self.y_ = f['y']
         
         self.date_positions = date_positions(date_)
         
-        del block_ids
-        del data_
         
     def __len__(self):
         return len(self.y_)
@@ -47,8 +43,8 @@ class SITSData(data.Dataset):
         self.X = self.X_[idx]
         self.y = self.y_[idx]
         
-        del self.X_
-        del self.y_
+        # del self.X_
+        # del self.y_
 
         self.X = np.array(self.X, dtype = "float16")
         self.y = np.array(self.y, dtype = int)

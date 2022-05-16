@@ -16,7 +16,7 @@ import time
 import sys
 
 from utils import *
-from dataset import SITSData
+from altdataset import SITSData
 from models.stclassifier import dLtae
 from models.ltae import LTAE
 from learning.focal_loss import FocalLoss
@@ -166,14 +166,14 @@ def main(config):
     std_ = np.loadtxt(glob.glob(config['dataset_folder'] + '/*std.txt')[0])
     transform = transforms.Compose([standardize(mean_, std_)])
     
-    sits_data = glob.glob(os.path.join(config['dataset_folder'],  + '/*.npz')[0]
+    sits_data = glob.glob(os.path.join(config['dataset_folder'], 'Seed_{}'.format(config['seed'])  + '/*.npz'))
     doy = glob.glob(config['dataset_folder'] + '/gapfilled*.txt')[0]
     
-    train_dt = SITSData(sits_data, config['seed'], doy, partition='train', transform = transform)
+    train_dt = SITSData(sits_data[2], doy, transform = transform)
     print("train dataset completed")
-    val_dt = SITSData(sits_data, config['seed'], doy, partition='train', transform = transform)
+    val_dt = SITSData(sits_data[1], doy,  transform = transform)
     print("val dataset completed")
-    test_dt = SITSData(sits_data, config['seed'], doy, partition='train', transform = transform)
+    test_dt = SITSData(sits_data[0], doy,  transform = transform)
     print("test dataset completed")
     
     device = torch.device(config['device'])

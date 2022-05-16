@@ -1,7 +1,6 @@
 import numpy as np
 
 
-# _train_val_eval = "train_val_eval_rf.txt"
 ######### Read and load sits npz file #########
 
 def load_npz(file_path):
@@ -12,8 +11,8 @@ def load_npz(file_path):
         X = data["X"]
         y = data["y"]
         # polygon_ids = data["polygon_ids"]
-        block_ids = data["block_id"]
-    return X, y, block_ids#, polygon_ids
+        # block_ids = data["block_id"]
+    return X, y, #block_ids#, polygon_ids
 
 ######### Read Train, Validation, and Evaluation ids #########
 
