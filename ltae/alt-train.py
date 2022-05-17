@@ -25,7 +25,7 @@ from learning.metrics import mIou, confusion_matrix_analysis
 import wandb
 
 
-def train_epoch(model, optimizer, scheduler, criterion, data_loader, device, config):
+def train_epoch(model, optimizer, criterion, data_loader, device, config):
     acc_meter = tnt.meter.ClassErrorMeter(accuracy=True)
     loss_meter = tnt.meter.AverageValueMeter()
     y_true = []
@@ -43,11 +43,11 @@ def train_epoch(model, optimizer, scheduler, criterion, data_loader, device, con
         out = model(x)
         loss = criterion(out, y.long())
         loss.backward()
-        if config['scheduler_']:
-            optimizer.step()
-            scheduler.step()
-        else:
-            optimizer.step()
+        # if config['scheduler_']:
+        #     optimizer.step()
+        #     scheduler.step()
+        # else:
+        optimizer.step()
             
 
         pred = out.detach()
@@ -75,7 +75,7 @@ def evaluation(model, criterion, loader, device, config, mode='val'):
 
     acc_meter = tnt.meter.ClassErrorMeter(accuracy=True)
     loss_meter = tnt.meter.AverageValueMeter()
-
+    label = ["Dense built-up area", "Diffuse built-up area", "Industrial and commercial areas", "Roads", "Oilseeds (Rapeseed)", "Straw cereals (Wheat, Triticale, Barley)", "Protein crops (Beans / Peas)", "Soy", "Sunflower", "Corn",  "Tubers/roots", "Grasslands", "Orchards and fruit growing", "Vineyards", "Hardwood forest", "Softwood forest", "Natural grasslands and pastures", "Woody moorlands", "Water"]
     for (x, y) in loader:
         start_time = time.time()
         y_true.extend(list(map(int, y)))
@@ -96,7 +96,7 @@ def evaluation(model, criterion, loader, device, config, mode='val'):
     metrics = {'{}_accuracy'.format(mode): acc_meter.value()[0],
                '{}_loss'.format(mode): loss_meter.value()[0],
                '{}_IoU'.format(mode): mIou(y_true, y_pred, config['num_classes'])}
-
+    
     if mode == 'val':
         return metrics
     elif mode == 'test':
@@ -194,7 +194,7 @@ def main(config):
         config['Val_loader_size'] = len(val_loader)
         config['Test_loader_size'] = len(test_loader)
         
-        config['scheduler_'] = config['scheduler_']
+        # config['scheduler_'] = config['scheduler_']
         wandb.init(config = config)
         
         with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'conf.json'), 'w') as file:
@@ -204,12 +204,12 @@ def main(config):
         model.apply(weight_init)
         steps_per_epoch = len(train_loader)
         
-        if config['scheduler_']:
+        # if config['scheduler_']:
             # optimizer = torch.optim.Adam(model.parameters(), lr=config["lr"], weight_decay=config['weight_decay'])
-            optimizer = torch.optim.Adam(model.parameters(), lr=config["lr"])
-            scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=config['epochs'] * steps_per_epoch, eta_min=0) #T_max (int) – Maximum number of iterations.. eta_min (float) – Minimum learning rate. Default: 0.
-        else:
-            optimizer = torch.optim.Adam(model.parameters())
+            # optimizer = torch.optim.Adam(model.parameters(), lr=config["lr"])
+            # scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=config['epochs'] * steps_per_epoch, eta_min=0) #T_max (int) – Maximum number of iterations.. eta_min (float) – Minimum learning rate. Default: 0.
+        # else:
+        optimizer = torch.optim.Adam(model.parameters())
             
         criterion = FocalLoss(config['gamma'])
         
@@ -227,7 +227,7 @@ def main(config):
             start_time = time.time()
             # print(torch.get_num_threads())
             # sys.exit()
-            train_metrics = train_epoch(model, optimizer, scheduler, criterion, train_loader, device=device, config=config)
+            train_metrics = train_epoch(model, optimizer, criterion, train_loader, device=device, config=config)
             print("Training time for {} is {}".format(epoch, (time.time() - start_time)/60))
             
             print('Validation . . . ')
@@ -239,6 +239,7 @@ def main(config):
                                                                  val_metrics['val_IoU']))
             print("Validation time for {} is {}".format(epoch, (time.time() - start_time)/60))
             wandb.log({"val_loss": val_metrics['val_loss'], "val_acc": val_metrics['val_accuracy'], "val_IoU": val_metrics['val_IoU']})
+            wandb.log({"epoch": epoch})
 
             trainlog[epoch] = {**train_metrics, **val_metrics}
             checkpoint(trainlog, config)
@@ -261,7 +262,7 @@ def main(config):
                                                                  test_metrics['test_IoU']))
         print("Test time for {} is {}".format(epoch, (time.time() - start_time)/60))
         wandb.log({"test_loss": test_metrics['test_loss'], "test_accuracy": test_metrics['test_accuracy'], "test_IoU": test_metrics['test_IoU']})
-        wandb.log({"epoch": epoch})
+        
         
         save_results(test_metrics, conf_mat, config)
         
@@ -280,14 +281,14 @@ if __name__ == '__main__':
     parser.add_argument('--seed', default=0, type=int, help='Random seed')
     parser.add_argument('--device', default='cuda', type=str, help='Name of device to use for tensor computations (cuda/cpu)')
     parser.add_argument('--display_step', default=100, type=int, help='Interval in batches between display of training metrics')
-    parser.add_argument('--scheduler_', default=False, type=bool, help='Enable scheduler')
+    # parser.add_argument('--scheduler_', default=False, type=bool, help='Enable scheduler')
     # parser.add_argument('--preload', dest='preload', action='store_true', help='If specified, the whole dataset is loaded to RAM at initialization')
     parser.set_defaults(preload=False)
     
 
     # Training parameters
     parser.add_argument('--epochs', default=2, type=int, help='Number of epochs per fold')
-    parser.add_argument('--batch_size', default=128, type=int, help='Batch size')
+    parser.add_argument('--batch_size', default=2048, type=int, help='Batch size')
     parser.add_argument('--lr', default=0.001, type=float, help='Learning rate')
     parser.add_argument('--gamma', default=1, type=float, help='Gamma parameter of the focal loss')
     # parser.add_argument('--weight_decay', default=0, type=float, help='Weight decay rate')

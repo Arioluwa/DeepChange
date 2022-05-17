@@ -49,7 +49,8 @@ def separate_data(sits, seed, outdir):
     print("3 done....")    
 
 if __name__ == '__main__':
-    sits = "../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz"
-    seed =0
-    outdir = "../../../data/theiaL2A_zip_img/output/2019/Seed_0"
-    separate_data(sits, seed, outdir)
+    sits = "../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz"
+    
+    for seed in [1,2,3,4]:
+        outdir = "../../../data/theiaL2A_zip_img/output/2018/Seed_{}".format(seed)
+        separate_data(sits, seed, outdir)

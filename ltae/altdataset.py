@@ -38,7 +38,7 @@ class SITSData(data.Dataset):
         return len(self.y_)
 
     def __getitem__(self, idx):
-        print("getitem begins...")
+        # print("getitem begins...")
         
         self.X = self.X_[idx]
         self.y = self.y_[idx]

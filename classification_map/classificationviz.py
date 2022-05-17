@@ -34,7 +34,7 @@ def class_mapping(y_label):
         n = n-1	
     return class_map, revert_class_map
 
-#----------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
 def read_class_map(file):
     with open(file, 'r') as f:
         reader = csv.reader(f, delimiter=',')
@@ -191,7 +191,7 @@ def main(args):
 
 
     size_areaX = 10980
-    size_areaY = 50
+    size_areaY = 10
     x_vec = list(range(int(c/size_areaX)))
     x_vec = [x*size_areaX for x in x_vec]
     y_vec = list(range(int(r/size_areaY)))
@@ -240,8 +240,9 @@ def main(args):
                 
                 hard_pred = pred.argmax(dim=-1).cpu().numpy()
                 hard_pred = [dict_[k] for k in hard_pred]
+                hard_pred = np.array(hard_pred, dtype=np.uint8)
                 del pred
-                del X_test
+                # del X_test
                 
             else:
                 # RF
@@ -277,7 +278,7 @@ if __name__ == '__main__':
     parser.add_argument('--output', dest='output', type=str, help='output classification map')
     parser.add_argument('--case', dest='case', type=str, help='case name')
     parser.add_argument('--config', dest='config', type=str, help='Json config file')
-    parser.add_argument('--with_softmax', dest='with_softmax', type=bool, default=True, help='flag for softmax')
+    parser.add_argument('--with_softmax', dest='with_softmax', type=bool, default=False, help='flag for softmax')
     parser.add_argument('--n_channel', dest='n_channel', type=int, default=10, help='number of channels')
     parser.add_argument('--device', dest='device', type=str, default='cpu', help='device')
 
@@ -286,3 +287,7 @@ if __name__ == '__main__':
     main(args)
     # python classification.py --model ../RF_model/models/rf_seed_0_case_1.pkl --ref_file ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --in_img ../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif --output ../../../results/RF/classificationmap --flag 1 --case 1 --with_softmax True
     # python classification.py --model ../RF_model/models/rf_seed_0_case_3.pkl --ref_file ../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz --in_img ../../../data/theiaL2A_zip_img/output/2019/2019_GapFilled_Image.tif --output ../../../results/RF/classificationmap --flag 1 --case 3
+    
+#     python classificationviz.py --model ../../../results/RF/model/2019/Seed_0/rf_case_2.pkl --ref_file ../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz --in_img ../../../data/theiaL2A_zip_img/output/2019/2019_GapFilled_Image.tif --output ../../../results/RF/classificationmap --flag 1 --case 4
+
+# python classificationviz.py --model ../../../results/ltae/model/2018/Seed_0/model.pth.tar --ref_file ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --in_img ../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif --output ../../../results/RF/classificationmap --flag 2 --case 1 --config ../../../results/ltae/model/2018/Seed_0/conf.json --with_softmax True

@@ -122,16 +122,16 @@ class RFmodel:
         
         confusion_ = confusion_matrix(self.ytest, prediction)
         
-        with open(os.path.join(self.outdir, "Seed_{}".format(self.seed), "reports/rf_report_case_" + str(self.case)+ ".txt", "w")) as f:
+        with open(os.path.join(self.outdir, "Seed_{}".format(self.seed), "reports/rf_report_case_{}.txt".format(self.case)), "w") as f:
                 f.write("Report: \n")
                 f.write(report)
-                f.write("\n")
+                # f.write("\n")
                 f.close()
         
-        with open(os.path.join(self.outdir, "Seed_{}".format(self.seed),"reports/confusion" + str(self.case)+  ".txt", "w")) as f:
+        with open(os.path.join(self.outdir, "Seed_{}".format(self.seed),"reports/confusion_{}.txt".format(self.case)), "w") as f:
                 f.write("Confusion: \n")
-                f.write(confusion_)
-                f.write("\n")
+                f.write(str(confusion_))
+                # f.write("\n")
                 f.close()
                 
 if __name__ == '__main__':
