@@ -161,6 +161,7 @@ if __name__ == '__main__':
     parser.add_argument('--percent', '-p', default=False, type=bool, help='Cal percent in the confusion matrix')
     
     args = parser.parse_args()
+    main(args)
     # args = vars(args) # if needed as a dict... call as args['case']
     
     # execute for RF
@@ -179,18 +180,18 @@ if __name__ == '__main__':
     # print('Case {} done'.format(args.case))
     
     #ltae
-    for case in range(2,4):
-        args.case = str(case)
-        args.pred_source = '../../../results/ltae/classificationmap/Seed_0/2018_LTAE_map_case_{}.tif'.format(case)
-        args.pred_target = '../../../results/ltae/classificationmap/Seed_0/2019_LTAE_map_case_{}.tif'.format(case)
-        args.outdir = "../../../results/ltae/Change_detection/bcd"
-        main(args)
-        print('Case {} done'.format(case))
-    # # case 4
-    args.case = "4"
-    # args.percent = True
-    args.pred_source = '../../../results/ltae/classificationmap/Seed_0/2018_LTAE_map_case_2.tif'
-    args.pred_target = '../../../results/ltae/classificationmap/Seed_0/2019_LTAE_map_case_3.tif'
-    args.outdir = "../../../results/ltae/Change_detection/bcd"
-    main(args)
-    print('Case {} done'.format(args.case))
+    # for case in range(2,4):
+    #     args.case = str(case)
+    #     args.pred_source = '../../../results/ltae/classificationmap/Seed_0/2018_LTAE_map_case_{}.tif'.format(case)
+    #     args.pred_target = '../../../results/ltae/classificationmap/Seed_0/2019_LTAE_map_case_{}.tif'.format(case)
+    #     args.outdir = "../../../results/ltae/Change_detection/bcd"
+    #     main(args)
+    #     print('Case {} done'.format(case))
+    # # # case 4
+    # args.case = "4"
+    # # args.percent = True
+    # args.pred_source = '../../../results/ltae/classificationmap/Seed_0/2018_LTAE_map_case_2.tif'
+    # args.pred_target = '../../../results/ltae/classificationmap/Seed_0/2019_LTAE_map_case_3.tif'
+    # args.outdir = "../../../results/ltae/Change_detection/bcd"
+    # main(args)
+    # print('Case {} done'.format(args.case))

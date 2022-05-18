@@ -238,11 +238,10 @@ def main(args):
                     soft_pred = pred
                     soft_pred = soft_pred.cpu().numpy().astype("float16")
                 
-                hard_pred = pred.argmax(dim=-1).cpu().numpy()
-                hard_pred = [dict_[k] for k in hard_pred]
-                hard_pred = np.array(hard_pred, dtype=np.uint8)
-                del pred
-                # del X_test
+                # hard_pred = pred.argmax(dim=-1).cpu().numpy()
+                # hard_pred = [dict_[k] for k in hard_pred]
+                # hard_pred = np.array(hard_pred, dtype=np.uint8)
+                # del pred
                 
             else:
                 # RF
@@ -251,17 +250,18 @@ def main(args):
 
                 hard_pred = [revert_class_map[k] for k in hard_pred]
                 hard_pred = np.array(hard_pred, dtype=np.uint8)
+                soft_pred = soft_pred.astype("float16")
             
             # generate the output classification map
-            pred_array = hard_pred.reshape(sX, sY)
-            out_map_band.WriteArray(pred_array, xoff=xoff, yoff=yoff)
-            out_map_band.FlushCache()
+            # pred_array = hard_pred.reshape(sX, sY)
+            # out_map_band.WriteArray(pred_array, xoff=xoff, yoff=yoff)
+            # out_map_band.FlushCache()
 
             # append soft prediction and save
             soft_prediction.append(soft_pred)
             del soft_pred
-            del hard_pred
-            del pred_array
+            # del hard_pred
+            # del pred_array
             del X_test
 
     proba_distribtion = np.concatenate(soft_prediction)
