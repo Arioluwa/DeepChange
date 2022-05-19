@@ -38,12 +38,18 @@ def main(args):
     
     outdir = args.outdir
     
+    source_ = np.load(args.source_prob)
+    target_ = np.load(args.target_prob)
+    
+    print('computation start...')
+    similarity_array = np.linalg.norm(source_ - target_, axis=1)
+    print('computation done...')
     # read all images to array
     # similarity_array = rasterio.open(similarity_map).read(1)
-    with rasterio.open(args.similarity) as src:
-        similarity_array = src.read(1)
-        profile = src.profile
-        profile['nodata'] = 0.0
+    # with rasterio.open(args.similarity) as src:
+    #     similarity_array = src.read(1)
+    #     profile = src.profile
+    #     profile['nodata'] = 0.0
     
     gt_source_ = rasterio.open(args.gt_source).read(1)
     gt_target_ = rasterio.open(args.gt_target).read(1)
