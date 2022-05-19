@@ -299,6 +299,8 @@ if __name__ == '__main__':
     parser.add_argument('--otsu', '-ot', default=False, type=bool, help='Compute optimal threshold using otsu-threshold')
     parser.add_argument('--map', '-m', default=False, type=bool, help='generate maps')
     parser.add_argument('--percent', '-p', default=False, type=bool, help='Cal percent in the confusion matrix')
+    parser.add_argument('--source_prob', '-s', type=str, help='class probability distribution')
+    parser.add_argument('--target_prob', '-t', type=str, help='class probability distribution')
     
     
     
@@ -317,16 +319,16 @@ if __name__ == '__main__':
 #     main(args)
     
     # ##LTAE
-    for case in range(2, 4):
-        args.case = str(case)
-        args.outdir = "../../../results/ltae/Change_detection/similarity_measure"
-        args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
-        main(args)
-        # break
+#     for case in range(2, 4):
+#         args.case = str(case)
+#         args.outdir = "../../../results/ltae/Change_detection/similarity_measure"
+#         args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
+#         main(args)
+#         # break
     
-    ### case 4
-    args.case = "4"
-    args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_4_ref_mask_similarity_measure.tif'
-    args.outdir = "../../../results/ltae/Change_detection/similarity_measure"
+#     ### case 4
+#     args.case = "4"
+#     args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_4_ref_mask_similarity_measure.tif'
+#     args.outdir = "../../../results/ltae/Change_detection/similarity_measure"
     main(args)
     
