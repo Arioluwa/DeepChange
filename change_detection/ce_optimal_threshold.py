@@ -52,10 +52,16 @@ def main(args):
     start_time = time.time()
     print("computing dissimilarity")
     if args.deepl:
-        similarity_array = cross_entropy_log_softmax(source_,target_)
+        # for i in range(len(source_)):
+        print('computation start...')
+        similarity_array = np.array([cross_entropy_log_softmax(source_[i],target_[i]) for i in range(len(source_))])
     else:
-        similarity_array = cross_entropy(source_, target_) # dissimilarity
-    print('Dissimilarit computation completed: %s seconds' % ((time.time()-start_time)/60)) 
+        source_ = np.clip(source_, args.epsilion, 1. - args.espilion)
+        target_ = np.clip(target_, args.epsilion, 1. - args.espilion)
+
+        print('computation start...')
+        similarity_array = np.array([cross_entropy(source_, target_) for i in range(len(source_))])
+    print('Dissimilarity computation completed: %s seconds' % ((time.time()-start_time)/60)) 
     print(similarity_array.shape)
     
     gt_source_ = rasterio.open(args.gt_source).read(1).flatten().astype('int')
@@ -290,19 +296,18 @@ def cross_entropy_log_softmax(p, q):
     """
         Dissimilarity measure
     """
-    p_ = torch.nn.functional.log_softmax(torch.from_numpy(p), dim=1)
-    q_ = torch.nn.functional.log_softmax(torch.from_numpy(q), dim=1)
-    # q = q + 1e-15 # to handle the zeros
-    h = [-(xlogy(p_[i],q_[i])).sum() for i in range(len(p))]
-    return np.array(h)
+    p_ = torch.nn.functional.softmax(torch.from_numpy(p).float(), dim=-1)
+    q_ = torch.nn.functional.log_softmax(torch.from_numpy(q).float(), dim=-1)
+    return -((p_ * q_)).sum()
+    
 
 def cross_entropy(p, q):
     """
-        Dissimilarity measure
+        p & q are vectors from the probability distribution matrix
     """
-    q = q + 1e-15 # to handle the zeros
-    h = [-(xlogy(p[i],q[i])).sum() for i in range(len(p))]
-    return np.array(h)
+    return -(xlogy(p,q)).sum()
+
+
 if __name__ == '__main__':
     
 #     gt_source = '../../../data/rasterized_samples/2018_rasterizedImage.tif'
@@ -325,6 +330,7 @@ if __name__ == '__main__':
     parser.add_argument('--map', '-m', default=False, type=bool, help='generate maps')
     parser.add_argument('--percent', '-p', default=False, type=bool, help='Cal percent in the confusion matrix')
     parser.add_argument('--deepl', '-d', default=False, type=bool, help='Cal percent in the confusion matrix')
+    parser.add_argument('--epsilion', '-e', default=1e-12, type=float, help='Cal percent in the confusion matrix')
     
     
     
