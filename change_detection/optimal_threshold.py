@@ -187,9 +187,21 @@ def main(args):
             with rasterio.open(os.path.join(outdir, 'sim-change_map_case_' + args.case + '.tif'), 'w', **profile) as dst:
                 dst.write(change_map, 1)
                 dst.close()
-    else:
+    
+    else: #otsu thresholding
         opt_threshold = threshold_otsu(similarity_)
         otsu_binary = similarity_ > opt_threshold
+        
+        # similarity histogram distribution
+        plt.figure(figsize=(8,5))
+        plt.hist(similarity_, bins=10, label='similarity distribution', ec='white', log=True)
+        plt.axvline(x=opt_threshold, color='r', linestyle='--', label="otsu threshold: {0:0.3f}".format(thresholds[opt_threshold_idx]))
+        # plt.yticks([])
+        plt.legend()
+        # save chart
+        plt.savefig(os.path.join(outdir,'./charts', 'otsu_similarity_distribution_case_' + args.case +'.png'), dpi = 500)
+        plt.close()
+        
         
         # save otsu f1score
         fscore = f1_score(gt_binary_, otsu_binary)
@@ -203,6 +215,7 @@ def main(args):
 
         label = ['No change', 'Change']
         
+        # percentage
         if args.percent:
             cm = cm_sim.astype('float') / np.sum(cm_sim)
             cm_plot = sns.heatmap(cm, annot=True, fmt='.2%', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
@@ -295,7 +308,7 @@ if __name__ == '__main__':
     parser.add_argument('--case', '-c', default=2, type=str, help='Cases 1 to 4')
     parser.add_argument('--gt_source', '-gs', default='../../../data/rasterized_samples/2018_rasterizedImage.tif', type=str, help='Source ground truth path')
     parser.add_argument('--gt_target', '-gp', default='../../../data/rasterized_samples/2019_rasterizedImage.tif', type=str, help='Target ground truth path')
-    parser.add_argument('--similarity', '-s', default='../../../results/RF/simliarity_measure/case_2_ref_mask_similarity_measure.tif', type=str, help='similarity map')
+    # parser.add_argument('--similarity', '-s', default='../../../results/RF/simliarity_measure/case_2_ref_mask_similarity_measure.tif', type=str, help='similarity map')
     parser.add_argument('--otsu', '-ot', default=False, type=bool, help='Compute optimal threshold using otsu-threshold')
     parser.add_argument('--map', '-m', default=False, type=bool, help='generate maps')
     parser.add_argument('--percent', '-p', default=False, type=bool, help='Cal percent in the confusion matrix')
