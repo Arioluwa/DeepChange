@@ -52,18 +52,22 @@ def main(args):
     start_time = time.time()
     print("computing dissimilarity")
     if args.deepl:
-        # for i in range(len(source_)):
+        # convert to tensor
+        source_ = torch.nn.functional.softmax(torch.from_numpy(source_).float(), dim=-1)
+        target_ = torch.nn.functional.log_softmax(torch.from_numpy(target_).float(), dim=-1)
         print('computation start...')
-        similarity_array = np.array([cross_entropy_log_softmax(source_[i],target_[i]) for i in range(len(source_))])
+        similarity_array = np.array([cross_entropy_dl(source_[i],target_[i]) for i in range(len(source_))])
+        print('computation done...')
     else:
         source_ = np.clip(source_, args.epsilion, 1. - args.espilion)
         target_ = np.clip(target_, args.epsilion, 1. - args.espilion)
 
-        print('computation start...')
         similarity_array = np.array([cross_entropy(source_, target_) for i in range(len(source_))])
+        print('computation done...')
     print('Dissimilarity computation completed: %s seconds' % ((time.time()-start_time)/60)) 
-    print(similarity_array.shape)
+    # print(similarity_array.shape)
     
+    # Groud truth data
     gt_source_ = rasterio.open(args.gt_source).read(1).flatten().astype('int')
     gt_target_ = rasterio.open(args.gt_target).read(1).flatten().astype('int')
     
@@ -109,7 +113,6 @@ def main(args):
             tpr.append(np.float16(cm[0,0]/(cm[0,0] + cm[1,0]))) # tp / (tp + fn)
 
         print('metrics computation completed: %s seconds' % (time.time()-start_time))  
-
 
         ## get the optimal threshold based on fscore
         opt_threshold_idx = np.argmax(fscore_)
@@ -204,6 +207,16 @@ def main(args):
         opt_threshold = threshold_otsu(similarity_)
         otsu_binary = similarity_ > opt_threshold
         
+        # similarity histogram distribution
+        plt.figure(figsize=(8,5))
+        plt.hist(similarity_, bins=10, label='similarity distribution', ec='white', log=True)
+        plt.axvline(x=opt_threshold, color='r', linestyle='--', label="otsu threshold: {0:0.3f}".format(opt_threshold))
+        # plt.yticks([])
+        plt.legend()
+        # save chart
+        plt.savefig(os.path.join(outdir,'./charts', 'otsu_similarity_distribution_case_' + args.case +'.png'), dpi = 500)
+        plt.close()
+        
         # save otsu f1score
         fscore = f1_score(gt_binary_, otsu_binary)
         f = open(os.path.join(outdir, 'otsu_case_' + args.case + '_fscore.txt'), 'w')
@@ -292,31 +305,22 @@ def quality_check(args, cm, f_score):
                 f.write("\n fscore: {}".format(f_score))
                 f.close()
                 
-def cross_entropy_log_softmax(p, q):
+def cross_entropy_dl(p, q):
     """
-        Dissimilarity measure
+        cross entropy from the output of deep learning probability distribution
     """
-    p_ = torch.nn.functional.softmax(torch.from_numpy(p).float(), dim=-1)
-    q_ = torch.nn.functional.log_softmax(torch.from_numpy(q).float(), dim=-1)
-    return -((p_ * q_)).sum()
-    
+    return -(torch.matmul(p, q)).sum()
+  
 
 def cross_entropy(p, q):
     """
-        p & q are vectors from the probability distribution matrix
+        p & q are vectors from RF probability distribution matrix
     """
     return -(xlogy(p,q)).sum()
 
 
 if __name__ == '__main__':
     
-#     gt_source = '../../../data/rasterized_samples/2018_rasterizedImage.tif'
-#     gt_target = '../../../data/rasterized_samples/2019_rasterizedImage.tif'
-
-#     for case in ['4']:#['1', '2', '3', '4']:
-#         similarity_map = '../../../results/RF/simliarity_measure/case_'+ case +'_ref_mask_similarity_measure.tif'
-#         outdir = '../../../results/RF/simliarity_measure/optimal_threshold'
-#         optm_threshold(similarity_map, case, gt_source, gt_target, False, outdir)
         
     parser = argparse.ArgumentParser()
     
