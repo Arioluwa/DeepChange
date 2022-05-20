@@ -141,7 +141,7 @@ def save_results(metrics, conf_mat, report, config):
 
     with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']),'seed_{}_report.txt'.format(config['seed'])), 'w') as f:
         f.write(report)
-        f.close
+        f.close()
 # def overall_performance(config):
 #     cm = np.zeros((config['num_classes'], config['num_classes']))
 #     # for seed in range(1, config['seed'] + 1):
@@ -258,13 +258,12 @@ def main(config):
 
         test_metrics, conf_mat, report_ = evaluation(model, criterion, test_loader, device=device, mode='test', config=config)
 
-        print('Loss {:.4f},  Acc {:.2f},  IoU {:.4f}'.format(test_metrics['test_loss'], test_metrics['test_accuracy'],
-                                                                 test_metrics['test_IoU']))
+        print('Loss {:.4f},  Acc {:.2f},  IoU {:.4f}'.format(test_metrics['test_loss'], test_metrics['test_accuracy'], test_metrics['test_IoU']))
         print("Test time for {} is {}".format(epoch, (time.time() - start_time)/60))
         wandb.log({"test_loss": test_metrics['test_loss'], "test_accuracy": test_metrics['test_accuracy'], "test_IoU": test_metrics['test_IoU']})
         
         
-        save_results(test_metrics, conf_mat, config)
+        save_results(test_metrics, conf_mat, report_, config)
         
         print("total time taken for all {} epochs: {:.3f} mins.".format(config['epochs'], (time.time() - st_)/60))
 

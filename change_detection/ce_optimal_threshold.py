@@ -59,10 +59,10 @@ def main(args):
         similarity_array = np.array([cross_entropy_dl(source_[i],target_[i]) for i in range(len(source_))])
         print('computation done...')
     else:
-        source_ = np.clip(source_, args.epsilion, 1. - args.espilion)
-        target_ = np.clip(target_, args.epsilion, 1. - args.espilion)
-
-        similarity_array = np.array([cross_entropy(source_, target_) for i in range(len(source_))])
+        source_ = np.clip(source_, args.epsilion, 1. - args.epsilion)
+        target_ = np.clip(target_, args.epsilion, 1. - args.epsilion)
+        
+        similarity_array = np.array([cross_entropy(source_[i], target_[i]) for i in range(len(source_))])
         print('computation done...')
     print('Dissimilarity computation completed: %s seconds' % ((time.time()-start_time)/60)) 
     # print(similarity_array.shape)
@@ -334,7 +334,7 @@ if __name__ == '__main__':
     parser.add_argument('--map', '-m', default=False, type=bool, help='generate maps')
     parser.add_argument('--percent', '-p', default=False, type=bool, help='Cal percent in the confusion matrix')
     parser.add_argument('--deepl', '-d', default=False, type=bool, help='Cal percent in the confusion matrix')
-    parser.add_argument('--epsilion', '-e', default=1e-12, type=float, help='Cal percent in the confusion matrix')
+    parser.add_argument('--epsilion', '-e', default=1e-12, type=float, help='')
     
     
     
