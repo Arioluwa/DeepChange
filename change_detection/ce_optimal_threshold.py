@@ -64,11 +64,15 @@ def main(args):
         
         similarity_array = np.array([cross_entropy(source_[i], target_[i]) for i in range(len(source_))])
         print('computation done...')
-    print('Dissimilarity computation completed: %s seconds' % ((time.time()-start_time)/60)) 
+    print('Dissimilarity computation completed: %s mins' % ((time.time()-start_time)/60)) 
     # print(similarity_array.shape)
     
     # Groud truth data
-    gt_source_ = rasterio.open(args.gt_source).read(1).flatten().astype('int')
+    with rasterio.open(args.gt_source) as src:
+        gt_source_ = src.read(1).flatten().astype('int')
+        width, height = src.shape
+        profile = src.profile
+    # gt_source_ = rasterio.open(args.gt_source).read(1).flatten().astype('int')
     gt_target_ = rasterio.open(args.gt_target).read(1).flatten().astype('int')
     
     # get gt mask (where there are value) and binary (change/no-chnage)
@@ -84,12 +88,13 @@ def main(args):
     similarity_mask = np.ma.masked_array(similarity_array, mask= True)
     similarity_mask.mask[gt_binary_mask.data != 0] = False # extract according to the non-zero from ground truth data
     similarity_ = similarity_mask.compressed()
+    gt_binary_mask = gt_binary_mask.reshape(width, height)
     # model_name = os.path.basename(similarity_map).split('.')[-2]
     # model_name = model_name.split('_')[:2]
     # model_name = '_'.join(model_name)
       # model_name
     
-    if not args.otsu:
+    if args.optimal:
         thresholds = np.linspace(similarity_.min(), similarity_.max(), 10)
 
         # initiate metrics
@@ -138,7 +143,7 @@ def main(args):
         plt.savefig(os.path.join(outdir,'./charts', 'case_' + args.case + '_roc_curve.png'), dpi=500)
         plt.close()
 
-    #     # get the optimal threshold based on fscore
+        # get the optimal threshold based on fscore
         df = pd.DataFrame({'threshold':thresholds, 'fscore':fscore_})
         df.to_csv(os.path.join(outdir, 'case_' + args.case + '_fscore.csv'), index=False)
         pred_binary_v = np.where(similarity_ >= opt_threshold, 1, 0)
@@ -147,36 +152,45 @@ def main(args):
         # cm_sim_per = cm_sim.astype('float') / np.sum(cm_sim)
 
         label = ['No change', 'Change']
+        
         cm_sim_plot = sns.heatmap(cm_sim, annot=True, fmt ='d', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
         cm_sim_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
         for t in cm_sim_plot.texts:
             t.set_text('{:,d}'.format(int(t.get_text())))
         # cm_sim_plot.set_title("")
         # save the plot
-        plt.savefig(os.path.join(outdir,'./charts', 'similarity_confusion_matrix_case_' + args.case +'.png'), dpi=500)
+        plt.savefig(os.path.join(outdir,'./charts', 'similarity_error_matrix_case_' + args.case +'.png'), dpi=500)
+        plt.close()
+        
+        #percentage
+        cm = cm_sim.astype('float') / np.sum(cm_sim)
+        cm_plot = sns.heatmap(cm, annot=True, fmt='.2%', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
+        cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
+            # save the plot
+        plt.savefig(os.path.join(outdir,'./charts','similarity_error_matrix_percent_case_' + args.case +'.png'), dpi = 500)
         plt.close()
 
         # similarity histogram distribution
         plt.figure(figsize=(8,5))
         plt.hist(similarity_, bins=10, label='similarity distribution', ec='white', log=True)
         plt.axvline(x=thresholds[opt_threshold_idx], color='r', linestyle='--', label="optimal threshold: {0:0.3f}".format(thresholds[opt_threshold_idx]))
-        # plt.yticks([])
+
         plt.legend()
         # save chart
         plt.savefig(os.path.join(outdir,'./charts', 'similarity_distribution_case_' + args.case +'.png'), dpi = 500)
         plt.close()
         # Quality assurance
         f_score = f1_score(gt_binary_, pred_binary_v)
-        quality_check(args, cm_sim, f_score)
+        quality_check(args, cm_sim, f_score, method_='opt')
         
         if args.map:
             # similarity binary change
             similarity_binary = np.where(similarity_ >= opt_threshold, 2, 1)
-            similarity_binary_change = np.empty_like(gt_binary) # shape: 10980, 10980
+            similarity_binary_change = np.empty(shape=(width, height)) # shape: 10980, 10980
             similarity_binary_change[~gt_binary_mask.mask] = similarity_binary.ravel()
 
             ## write to raster
-            with rasterio.open(os.path.join(outdir, 'similarity_bin_change_case_' + args.case + '.tif'), 'w', **profile) as dst:
+            with rasterio.open(os.path.join(outdir, 'similarity_binary_change_case_' + args.case + '.tif'), 'w', **profile) as dst:
                 dst.write(similarity_binary_change, 1)
                 dst.close()
 
@@ -196,21 +210,21 @@ def main(args):
             change_array[(gt_binary_ == 1) & (similarity_binary == 1)] = 3
             change_array[(gt_binary_ == 1) & (similarity_binary == 2)] = 4
 
-            change_map = np.empty_like(gt_binary) # shape: 10980, 10980
+            change_map = np.empty(shape=(width, height)) # shape: 10980, 10980
             change_map[~gt_binary_mask.mask] = change_array.ravel()
 
-            print(np.unique(change_map))
-            with rasterio.open(os.path.join(outdir, 'sim-change_map_case_' + args.case + '.tif'), 'w', **profile) as dst:
+            # print(np.unique(change_map))
+            with rasterio.open(os.path.join(outdir, 'similiarity-change_map_case_' + args.case + '.tif'), 'w', **profile) as dst:
                 dst.write(change_map, 1)
                 dst.close()
-    else:
-        opt_threshold = threshold_otsu(similarity_)
-        otsu_binary = similarity_ > opt_threshold
+    if args.otsu:
+        otsu_threshold = threshold_otsu(similarity_)
+        otsu_binary = similarity_ > otsu_threshold
         
         # similarity histogram distribution
         plt.figure(figsize=(8,5))
         plt.hist(similarity_, bins=10, label='similarity distribution', ec='white', log=True)
-        plt.axvline(x=opt_threshold, color='r', linestyle='--', label="otsu threshold: {0:0.3f}".format(opt_threshold))
+        plt.axvline(x=otsu_threshold, color='r', linestyle='--', label="otsu threshold: {0:0.3f}".format(otsu_threshold))
         # plt.yticks([])
         plt.legend()
         # save chart
@@ -221,44 +235,43 @@ def main(args):
         fscore = f1_score(gt_binary_, otsu_binary)
         f = open(os.path.join(outdir, 'otsu_case_' + args.case + '_fscore.txt'), 'w')
         f.write('F1 score: {}'.format(fscore))
-        f.write('Otsu threshold: {}'.format(opt_threshold))
+        f.write('Otsu threshold: {}'.format(otsu_threshold))
 
         #confusion matrix
         cm_sim = confusion_matrix(gt_binary_, otsu_binary)
-        # cm_sim_per = cm_sim.astype('float') / np.sum(cm_sim)
 
         label = ['No change', 'Change']
         
-        if args.percent:
-            cm = cm_sim.astype('float') / np.sum(cm_sim)
-            cm_plot = sns.heatmap(cm, annot=True, fmt='.2%', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
-            cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
+        # Error matrix in Percentage
+        cm = cm_sim.astype('float') / np.sum(cm_sim)
+        cm_plot = sns.heatmap(cm, annot=True, fmt='.2%', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
+        cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
             # save the plot
-            plt.savefig(os.path.join(outdir,'./charts','bcd_change_matrix_percent_case_' + args.case +'.png'), dpi = 500)
-            plt.close()
+        plt.savefig(os.path.join(outdir,'./charts','otsu_bcd_change_matrix_percent_case_' + args.case +'.png'), dpi = 500)
+        plt.close()
         
-        else:
-            cm_sim_plot = sns.heatmap(cm_sim, annot=True, fmt ='d', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
-            cm_sim_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
+        # Error matrix in Figures
+        cm_sim_plot = sns.heatmap(cm_sim, annot=True, fmt ='d', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
+        cm_sim_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
             # cm_sim_plot.set_title("")
-            for t in cm_sim_plot.texts:
-                t.set_text('{:,d}'.format(int(t.get_text())))
+        for t in cm_sim_plot.texts:
+            t.set_text('{:,d}'.format(int(t.get_text())))
             # save the plot
-            plt.savefig(os.path.join(outdir, './charts', 'otsu_similarity_confusion_matrix_case_' + args.case +'.png'), dpi =500)
-            plt.close()
+        plt.savefig(os.path.join(outdir, './charts', 'otsu_similarity_confusion_matrix_case_' + args.case +'.png'), dpi =500)
+        plt.close()
         
         # Quality assurance
         f_score = f1_score(gt_binary_, otsu_binary)
-        quality_check(args, cm_sim, f_score)
+        quality_check(args, cm_sim, f_score, method_='otsu')
         
         if args.map:
             # similarity binary change
             similarity_binary = np.where(similarity_ >= opt_threshold, 2, 1)
-            similarity_binary_change = np.empty_like(gt_binary) # shape: 10980, 10980
+            similarity_binary_change = np.empty(shape=(width, height)) # shape: 10980, 10980
             similarity_binary_change[~gt_binary_mask.mask] = similarity_binary.ravel()
 
             ## write to raster
-            with rasterio.open(os.path.join(outdir, 'otsu_similarity_bin_change_case_' + args.case + '.tif'), 'w', **profile) as dst:
+            with rasterio.open(os.path.join(outdir, 'otsu_similarity_binary_change_case_' + args.case + '.tif'), 'w', **profile) as dst:
                 dst.write(similarity_binary_change, 1)
                 dst.close()
 
@@ -278,10 +291,10 @@ def main(args):
             change_array[(gt_binary_ == 1) & (similarity_binary == 1)] = 3
             change_array[(gt_binary_ == 1) & (similarity_binary == 2)] = 4
 
-            change_map = np.empty_like(gt_binary) # shape: 10980, 10980
+            change_map = np.empty(shape=(width, height)) # shape: 10980, 10980
             change_map[~gt_binary_mask.mask] = change_array.ravel()
 
-            print(np.unique(change_map))
+            # print(np.unique(change_map))
             with rasterio.open(os.path.join(outdir, 'otsu_sim-change_map_case_' + args.case + '.tif'), 'w', **profile) as dst:
                 dst.write(change_map, 1)
                 dst.close()
@@ -291,8 +304,11 @@ def prepare_output(args):
         os.makedirs(os.path.join(args.outdir, './charts'), exist_ok=True)
 
 
-def quality_check(args, cm, f_score):
-    if args.otsu:
+def quality_check(args, cm, f_score, method_):
+    """
+    method_: thresh approach used; otsu or optimal threshing
+    """
+    if method_=='otsu':
         title = 'otsu_QA_stats'
     else:
         title = 'QA_stats'
@@ -304,7 +320,7 @@ def quality_check(args, cm, f_score):
                 f.write("\n OA: {}".format(((cm[0,0] + cm[1,1])/(cm[0,0] +cm[0,1]+cm[1,0]+cm[1,1]))))
                 f.write("\n fscore: {}".format(f_score))
                 f.close()
-                
+    
 def cross_entropy_dl(p, q):
     """
         cross entropy from the output of deep learning probability distribution
@@ -332,9 +348,12 @@ if __name__ == '__main__':
     parser.add_argument('--target_prob', '-t', type=str, help='class probability distribution')
     parser.add_argument('--otsu', '-ot', default=False, type=bool, help='Compute optimal threshold using otsu-threshold')
     parser.add_argument('--map', '-m', default=False, type=bool, help='generate maps')
-    parser.add_argument('--percent', '-p', default=False, type=bool, help='Cal percent in the confusion matrix')
+    # parser.add_argument('--percent', '-p', default=False, type=bool, help='Cal percent in the confusion matrix')
     parser.add_argument('--deepl', '-d', default=False, type=bool, help='Cal percent in the confusion matrix')
-    parser.add_argument('--epsilion', '-e', default=1e-12, type=float, help='')
+    parser.add_argument('--epsilion', '-e', default=1e-7, type=float, help='')
+    parser.add_argument('--optimal', '-opt', default=True, type=bool, help='')
+    # parser.add_argument('--decimal', '-dec', default=True, type=bool, help='')
+    
     
     
     

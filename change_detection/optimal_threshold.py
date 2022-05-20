@@ -51,8 +51,8 @@ def main(args):
     #     profile = src.profile
     #     profile['nodata'] = 0.0
     
-    gt_source_ = rasterio.open(args.gt_source).read(1)
-    gt_target_ = rasterio.open(args.gt_target).read(1)
+    gt_source_ = rasterio.open(args.gt_source).read(1).flatten().astype('int')
+    gt_target_ = rasterio.open(args.gt_target).read(1).flatten().astype('int')
     
     # get gt mask (where there are value) and binary (change/no-chnage)
     gt_mask = (gt_source_ != 0) & (gt_target_ != 0)
@@ -195,7 +195,7 @@ def main(args):
         # similarity histogram distribution
         plt.figure(figsize=(8,5))
         plt.hist(similarity_, bins=10, label='similarity distribution', ec='white', log=True)
-        plt.axvline(x=opt_threshold, color='r', linestyle='--', label="otsu threshold: {0:0.3f}".format(thresholds[opt_threshold_idx]))
+        plt.axvline(x=opt_threshold, color='r', linestyle='--', label="otsu threshold: {0:0.3f}".format(opt_threshold))
         # plt.yticks([])
         plt.legend()
         # save chart
@@ -301,7 +301,7 @@ if __name__ == '__main__':
 #         similarity_map = '../../../results/RF/simliarity_measure/case_'+ case +'_ref_mask_similarity_measure.tif'
 #         outdir = '../../../results/RF/simliarity_measure/optimal_threshold'
 #         optm_threshold(similarity_map, case, gt_source, gt_target, False, outdir)
-        
+
     parser = argparse.ArgumentParser()
     
     parser.add_argument('--outdir', '-o', default='../../../results/RF/simliarity_measure/optimal_threshold', type=str, help='Path to save files.')
@@ -344,4 +344,10 @@ if __name__ == '__main__':
 #     args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_4_ref_mask_similarity_measure.tif'
 #     args.outdir = "../../../results/ltae/Change_detection/similarity_measure"
     main(args)
-    
+#RF
+# python optimal_threshold.py -s ../../../results/RF/classificationmap/2018_rf_case_1.npy -t ../../../results/RF/classificationmap/2019_rf_case_2.npy -o ../../../results/RF/simliarity_measure/optimal_threshold-ED -c 4
+
+# python optimal_threshold.py -s ../../../results/ltae/classificationmap/2018_LTAE_case_12.npy -t ../../../results/ltae/classificationmap/2019_LTAE_case_11.npy -o ../../../results/ltae/Change_detection/similarity_measure-ED -c 4
+
+#LTAE
+#python optimal_threshold.py -s ../../../results/ltae/classificationmap/2018_LTAE_case_12.npy -t ../../../results/ltae/classificationmap/2019_LTAE_case_11.npy -o ../../../results/ltae/Change_detection/similarity_measure-ED -c 4
