@@ -316,7 +316,7 @@ if __name__ == '__main__':
     parser.add_argument('--d_k', default=8, type=int, help='Dimension of the key and query vectors')
     parser.add_argument('--n_neurons', default=[256,128], type=str, help='Number of neurons in the layers of n_neurons')
     parser.add_argument('--T', default=1000, type=int, help='Maximum period for the positional encoding')
-    parser.add_argument('--positions', default='None', type=str,
+    parser.add_argument('--positions', default='bespoke', type=str,
                         help='Positions to use for the positional encoding (bespoke / order)')
     parser.add_argument('--len_max_seq', default=53, type=int,
                         help='Maximum sequence length for positional encoding (only necessary if positions == order)')
