@@ -6,8 +6,10 @@ import time
 import csv
 import argparse
 import pprint
+import time
+import datetime
 
-from yaml import load
+# from yaml import load
 from models.stclassifier import dLtae
 import torch
 import numpy as np
@@ -96,6 +98,13 @@ dict_ = {0:1,
         17:19,
         18:23}
 
+def date_positions(gfdate_path):
+    with open(gfdate_path, "r") as f:
+        date_list = f.readlines()
+    date_list = [x.strip() for x in date_list]
+    date_list = [datetime.datetime.strptime(x, "%Y%m%d").timetuple().tm_yday for x in date_list]
+    date_ = [x for x in date_list]
+    return date_
 
 def main(args):
     
@@ -110,8 +119,8 @@ def main(args):
     n_channel = args.n_channel
     case = args.case
     config = args.config
-
-
+    date_ = args.date_
+    
     image_name = in_img.split('/')
     image_name = image_name[-1].split('_')[0]
     device = args.device
@@ -125,9 +134,9 @@ def main(args):
 
     print("out_map: ", out_map)
     print("out_npy: ", out_soft_pred)
-    # if os.path.exists(out_map):
-    #     print("out_map ",out_map,"already exists => exit")
-    #     sys.exit("\n*** not overwriting out_map ***\n")
+    if os.path.exists(out_map):
+        print("out_map ",out_map,"already exists => exit")
+        sys.exit("\n*** not overwriting out_map ***\n")
 
 
     # select model 
@@ -138,7 +147,7 @@ def main(args):
         stat_dict = torch.load(model_file)['state_dict']
         model = dLtae(in_channels = config['in_channels'], n_head = config['n_head'], d_k= config['d_k'], n_neurons=config['n_neurons'], dropout=config['dropout'], d_model= config['d_model'],
                     mlp = config['mlp4'], T =config['T'], len_max_seq = config['len_max_seq'], 
-                positions=None, return_att=False)
+                positions=date_positions(date_), return_att=False)
         
         print("device=", device)
         model = model.to(device)
@@ -255,7 +264,7 @@ def main(args):
                 hard_pred = np.array(hard_pred, dtype=np.uint8)
                 soft_pred = soft_pred.astype("float16")
             
-            # generate the output classification map
+            ### generate the output classification map
             pred_array = hard_pred.reshape(sX, sY)
             out_map_band.WriteArray(pred_array, xoff=xoff, yoff=yoff)
             out_map_band.FlushCache()
@@ -284,6 +293,7 @@ if __name__ == '__main__':
     parser.add_argument('--with_softmax', dest='with_softmax', type=bool, default=False, help='flag for softmax')
     parser.add_argument('--n_channel', dest='n_channel', type=int, default=10, help='number of channels')
     parser.add_argument('--device', dest='device', type=str, default='cpu', help='device')
+    parser.add_argument('--date_', dest='date_', type=str, help='Gapfilled dates')
 
     args = parser.parse_args()
 
@@ -294,3 +304,5 @@ if __name__ == '__main__':
 #     python classificationviz.py --model ../../../results/RF/model/2019/Seed_0/rf_case_2.pkl --ref_file ../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz --in_img ../../../data/theiaL2A_zip_img/output/2019/2019_GapFilled_Image.tif --output ../../../results/RF/classificationmap --flag 1 --case 4
 
 # python classificationviz.py --model ../../../results/ltae/model/2018/Seed_0/model.pth.tar --ref_file ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --in_img ../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif --output ../../../results/RF/classificationmap --flag 2 --case 1 --config ../../../results/ltae/model/2018/Seed_0/conf.json --with_softmax True
+
+# python classificationviz2.py --model ../../../results/ltae/model/2019/Seed_0/model.pth.tar --ref_file ../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz --in_img ../../../data/theiaL2A_zip_img/output/2019/2019_GapFilled_Image.tif --output ../../../results/ltae/classificationmap --flag 2 --case 2 --config ../../../results/ltae/model/2019/Seed_0/conf.json >> ../logs/log202205202055.txt; python classificationviz2.py --model ../../../results/ltae/model/2019/Seed_0/model.pth.tar --ref_file ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --in_img ../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif --output ../../../results/ltae/classificationmap --flag 2 --case 2 --config ../../../results/ltae/model/2019/Seed_0/conf.json >> ../logs/log202205202056.txt
