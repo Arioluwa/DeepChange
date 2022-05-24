@@ -44,14 +44,13 @@ def main(args):
     print('computation start...')
     similarity_array = np.linalg.norm(source_ - target_, axis=1)
     print('computation done...')
-    # read all images to array
-    # similarity_array = rasterio.open(similarity_map).read(1)
-    # with rasterio.open(args.similarity) as src:
-    #     similarity_array = src.read(1)
-    #     profile = src.profile
-    #     profile['nodata'] = 0.0
     
-    gt_source_ = rasterio.open(args.gt_source).read(1).flatten().astype('int')
+    # gt_source_ = rasterio.open(args.gt_source).read(1).flatten().astype('int')
+    with rasterio.open(args.gt_source) as src:
+        gt_source_ = src.read(1).flatten().astype('int')
+        width, height = src.shape
+        profile = src.profile
+        
     gt_target_ = rasterio.open(args.gt_target).read(1).flatten().astype('int')
     
     # get gt mask (where there are value) and binary (change/no-chnage)
@@ -67,6 +66,7 @@ def main(args):
     similarity_mask = np.ma.masked_array(similarity_array, mask= True)
     similarity_mask.mask[gt_binary_mask.data != 0] = False # extract according to the non-zero from ground truth data
     similarity_ = similarity_mask.compressed()
+    gt_binary_mask = gt_binary_mask.reshape(width, height)
     # model_name = os.path.basename(similarity_map).split('.')[-2]
     # model_name = model_name.split('_')[:2]
     # model_name = '_'.join(model_name)
@@ -156,7 +156,7 @@ def main(args):
         if args.map:
             # similarity binary change
             similarity_binary = np.where(similarity_ >= opt_threshold, 2, 1)
-            similarity_binary_change = np.empty_like(gt_binary) # shape: 10980, 10980
+            similarity_binary_change = np.empty(shape=(width, height)) # shape: 10980, 10980
             similarity_binary_change[~gt_binary_mask.mask] = similarity_binary.ravel()
 
             ## write to raster
@@ -224,7 +224,7 @@ def main(args):
             plt.savefig(os.path.join(outdir,'./charts','bcd_change_matrix_percent_case_' + args.case +'.png'), dpi = 500)
             plt.close()
         
-        else:
+
             cm_sim_plot = sns.heatmap(cm_sim, annot=True, fmt ='d', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
             cm_sim_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
             # cm_sim_plot.set_title("")
@@ -241,7 +241,7 @@ def main(args):
         if args.map:
             # similarity binary change
             similarity_binary = np.where(similarity_ >= opt_threshold, 2, 1)
-            similarity_binary_change = np.empty_like(gt_binary) # shape: 10980, 10980
+            similarity_binary_change = np.empty(shape=(width, height)) # shape: 10980, 10980
             similarity_binary_change[~gt_binary_mask.mask] = similarity_binary.ravel()
 
             ## write to raster
