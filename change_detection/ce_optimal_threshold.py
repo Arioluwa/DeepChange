@@ -22,43 +22,42 @@ from sklearn.metrics import auc
 def main(args):
     
     """
-    Desc: Change detection using similarity measure (Euclidean distance)
-          It test binary change/no-change on the several thresholds, based on the optimal threshold with the highest F1-score performance the a final confusion matrix is provided.
+    Desc: Change detection using similarity measure (Cross-entropy)
+          It estimates binary change/no-change threshold using the otsu's threshold and optimal thresholding technique. based on the optimal threshold with the highest F1-score performance the a final confusion matrix is provided.
     INPUT: 
-        similarity_map: a raster file
+        source_prob: source probability distribution matrix (N, k) - N is total number of samples and k number of classes
+        target_prob: target probability distribution matrix (N, k) - N is total number of samples and k number of classes
         gt_source: rasterized ground truth source dataset
         gt_target: rasterized ground truth target dataset
-        threshold: default = None, range btw the min and max value of the similarity_map
+
     OUTPUT: Charts and DataFrame - 
         precision-recall,
         ROC curve,
         Confusion matrix,
         and dataframe of fscore for each threshold
+        binary maps
     """
     pprint.pprint(vars(args))
     prepare_output(args)
     
     outdir = args.outdir
     
-    # read all images to array
-    # similarity_array = rasterio.open(similarity_map).read(1)
-    # with rasterio.open(args.similarity) as src:
-    #     similarity_array = src.read(1)
-    #     profile = src.profile
-    #     profile['nodata'] = 0.0
+    # read all images to probability distribution vectors
     source_ = np.load(args.source_prob)
     target_ = np.load(args.target_prob)
     
     start_time = time.time()
+    # Dissimilarity measuar - Cross entropy
     print("computing dissimilarity")
-    if args.deepl:
+
+    if args.deepl: # for LTAE
         # convert to tensor
         source_ = torch.nn.functional.softmax(torch.from_numpy(source_).float(), dim=-1)
         target_ = torch.nn.functional.log_softmax(torch.from_numpy(target_).float(), dim=-1)
         print('computation start...')
         similarity_array = np.array([cross_entropy_dl(source_[i],target_[i]) for i in range(len(source_))])
         print('computation done...')
-    else:
+    else: # for RF
         source_ = np.clip(source_, args.epsilion, 1. - args.epsilion)
         target_ = np.clip(target_, args.epsilion, 1. - args.epsilion)
         
@@ -72,7 +71,7 @@ def main(args):
         gt_source_ = src.read(1).flatten().astype('int')
         width, height = src.shape
         profile = src.profile
-    # gt_source_ = rasterio.open(args.gt_source).read(1).flatten().astype('int')
+    
     gt_target_ = rasterio.open(args.gt_target).read(1).flatten().astype('int')
     
     # get gt mask (where there are value) and binary (change/no-chnage)
@@ -217,7 +216,7 @@ def main(args):
             with rasterio.open(os.path.join(outdir, 'similiarity-change_map_case_' + args.case + '.tif'), 'w', **profile) as dst:
                 dst.write(change_map, 1)
                 dst.close()
-    if args.otsu:
+    if args.otsu: #otsu threshold
         otsu_threshold = threshold_otsu(similarity_)
         otsu_binary = similarity_ > otsu_threshold
         
@@ -303,7 +302,6 @@ def prepare_output(args):
         os.makedirs(args.outdir, exist_ok=True)
         os.makedirs(os.path.join(args.outdir, './charts'), exist_ok=True)
 
-
 def quality_check(args, cm, f_score, method_):
     """
     method_: thresh approach used; otsu or optimal threshing
@@ -323,14 +321,18 @@ def quality_check(args, cm, f_score, method_):
     
 def cross_entropy_dl(p, q):
     """
-        cross entropy from the output of deep learning probability distribution
+    Desc: cross-entropy for LTAE
+        p & q: (k) probability distribution of each sample vector. 
+            p - source and q - target
     """
     return -(torch.matmul(p, q)).sum()
   
 
 def cross_entropy(p, q):
     """
-        p & q are vectors from RF probability distribution matrix
+    Desc: cross-entropy for RF
+        p & q: (k) probability distribution of each sample vector. 
+            p - source and q - target
     """
     return -(xlogy(p,q)).sum()
 
@@ -352,7 +354,6 @@ if __name__ == '__main__':
     parser.add_argument('--deepl', '-d', default=False, type=bool, help='Cal percent in the confusion matrix')
     parser.add_argument('--epsilion', '-e', default=1e-7, type=float, help='')
     parser.add_argument('--optimal', '-opt', default=True, type=bool, help='')
-    # parser.add_argument('--decimal', '-dec', default=True, type=bool, help='')
     
     
     
