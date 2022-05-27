@@ -110,7 +110,7 @@ def main(args):
                 f.write("\n fscore: {}".format(f_score))
                 f.close()
         quality_check()
-    
+
     ## change map
     # Note:
     # 0 = nodata
