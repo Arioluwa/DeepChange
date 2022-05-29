@@ -6,13 +6,14 @@ import time
 import csv
 import argparse
 import pprint
+import time
+import datetime
+from glob import glob
 
 from yaml import load
 from models.stclassifier import dLtae
 import torch
 import numpy as np
-from models.stclassifier import dLtae
-# from models.ltae import LTAE
 
 import gdal, osr
 from gdalconst import *
@@ -71,11 +72,6 @@ def recursive_todevice(x, device):
     else:
         return [recursive_todevice(c, device) for c in x]
 
-######Read mean and std from the path as in the new train, using the basename from the path
-# mean = np.loadtxt('../ltae/mean_std/source_mean.txt')
-# std = np.loadtxt('../ltae/mean_std/source_std.txt')
-##add n_channel as an argument
-
 dict_ = {0:1, 
         1:2, 
         2:3, 
@@ -96,6 +92,13 @@ dict_ = {0:1,
         17:19,
         18:23}
 
+def date_positions(gfdate_path):
+    with open(gfdate_path, "r") as f:
+        date_list = f.readlines()
+    date_list = [x.strip() for x in date_list]
+    date_list = [datetime.datetime.strptime(x, "%Y%m%d").timetuple().tm_yday for x in date_list]
+    date_ = [x for x in date_list]
+    return date_
 
 def main(args):
     
@@ -103,42 +106,49 @@ def main(args):
 
     out_path = args.output
     model_file = args.model
-    in_img = args.in_img
-    ref_file = args.ref_file
+    # in_img = args.in_img
+    ref_fold = args.ref_path
     str_model = ['rf', 'LTAE']
     m = args.flag
     n_channel = args.n_channel
     case = args.case
-    config = args.config
-
-
+    npz_file = glob(ref_fold +  '/*SITS_data.npz')[0]
+    in_img = glob(ref_fold + '/*GapFilled_Image.tif')[0]
+    
     image_name = in_img.split('/')
     image_name = image_name[-1].split('_')[0]
     device = args.device
     print("device=", device)
-    
-    mean = np.loadtxt('../ltae/mean_std/' + image_name +'_mean.txt')
-    std = np.loadtxt('../ltae/mean_std/'+image_name +'_std.txt')
 
     out_map = out_path + '/' + image_name + '_' + str_model[m-1] + "_case_" + str(case)+ '_map' + '.tif'
     out_soft_pred = out_path + "/" + image_name + '_' +str_model[m-1]+ "_case_"+str(case)+'.npy'
 
     print("out_map: ", out_map)
     print("out_npy: ", out_soft_pred)
-    # if os.path.exists(out_map):
-    #     print("out_map ",out_map,"already exists => exit")
-    #     sys.exit("\n*** not overwriting out_map ***\n")
-
+    if os.path.exists(out_map):
+        print("out_map ",out_map,"already exists => exit")
+        sys.exit("\n*** not overwriting out_map ***\n")
 
     # select model 
     if m==1: # RF
         model = joblib.load(model_file)
     else: # LTAE
+        config = args.config
         config = json.load(open(config))
+        date_ = glob(ref_fold + '/gapfilled*.txt')[0]
+        
+        mean = np.loadtxt('../ltae/mean_std/' + image_name +'_mean.txt')
+        std = np.loadtxt('../ltae/mean_std/'+image_name +'_std.txt')
+        
         stat_dict = torch.load(model_file)['state_dict']
-        model = dLtae(in_channels = config['in_channels'], n_head = config['n_head'], d_k= config['d_k'], n_neurons=config['n_neurons'], dropout=config['dropout'], d_model= config['d_model'],
+        if not args.ltae_comb:
+            model = dLtae(in_channels = config['in_channels'], n_head = config['n_head'], d_k= config['d_k'], n_neurons=config['n_neurons'], dropout=config['dropout'], d_model= config['d_model'],
                     mlp = config['mlp4'], T =config['T'], len_max_seq = config['len_max_seq'], 
                 positions=None, return_att=False)
+        else:
+            model = dLtae(in_channels = config['in_channels'], n_head = config['n_head'], d_k= config['d_k'], n_neurons=config['n_neurons'], dropout=config['dropout'], d_model= config['d_model'],
+                    mlp = config['mlp4'], T =config['T'], len_max_seq = config['len_max_seq'], 
+                positions=date_positions(date_), return_att=False)
         
         print("device=", device)
         model = model.to(device)
@@ -148,12 +158,12 @@ def main(args):
         model.eval() # disable your dropout and layer norm putting the model in evaluation mode.
 
     flag_del = False #-- deleting the training data
-    class_map_file = '.'.join(ref_file.split('.')[0:-1])
+    class_map_file = '.'.join(npz_file.split('.')[0:-1])
     class_map_file = class_map_file + '_classMap.txt'
 
     print("class_map_file: ", class_map_file)
     # if not os.path.exists(class_map_file):
-    #     X_train, y_train = load_npz(ref_file)
+    #     X_train, y_train = load_npz(npz_file)
     #     class_map, revert_class_map = class_mapping(y_train)
     #     save_class_map(class_map_file, class_map, revert_class_map)
     #     flag_del = True
@@ -191,7 +201,6 @@ def main(args):
     out_map_raster.SetGeoTransform([originX, spacingX, 0, originY, 0, spacingY])
     out_map_raster.SetProjection(out_raster_SRS.ExportToWkt())
     out_map_band = out_map_raster.GetRasterBand(1)
-
 
     size_areaX = 10980
     size_areaY = 10
@@ -234,11 +243,11 @@ def main(args):
                 with torch.no_grad(): # disable the autograd engine (which you probably don't want during inference)
                     pred = model(X_test)
                 
-                if args.with_softmax:
-                    soft_pred = torch.nn.functional.softmax(pred, dim=-1)
+                if args.without_softmax:
+                    soft_pred = pred
                     soft_pred = soft_pred.cpu().numpy().astype("float16")
                 else:
-                    soft_pred = pred
+                    soft_pred = torch.nn.functional.softmax(pred, dim=-1)
                     soft_pred = soft_pred.cpu().numpy().astype("float16")
                 
                 hard_pred = pred.argmax(dim=-1).cpu().numpy()
@@ -274,16 +283,17 @@ if __name__ == '__main__':
     
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--flag', dest='flag', type=int, default=1, help='the Model type: 1 for RF, 2 for LTAE')
-    parser.add_argument('--model', dest='model', type=str, help='model path')
-    parser.add_argument('--ref_file', dest='ref_file', type=str, help='data npz file')
-    parser.add_argument('--in_img', dest='in_img', type=str, help='input SITS image')
-    parser.add_argument('--output', dest='output', type=str, help='output classification map')
-    parser.add_argument('--case', dest='case', type=str, help='case name')
-    parser.add_argument('--config', dest='config', type=str, help='Json config file')
-    parser.add_argument('--with_softmax', dest='with_softmax', type=bool, default=False, help='flag for softmax')
-    parser.add_argument('--n_channel', dest='n_channel', type=int, default=10, help='number of channels')
-    parser.add_argument('--device', dest='device', type=str, default='cpu', help='device')
+    parser.add_argument('--flag', '-f',dest='flag', type=int, default=1, help='the Model type: 1 for RF, 2 for LTAE')
+    parser.add_argument('--model','-m', dest='model', type=str, help='model path')
+    parser.add_argument('--ref_path', '-r', dest='ref_path', type=str, help='data npz file')
+    parser.add_argument('--in_img', '-i', dest='in_img', type=str, help='input SITS image')
+    parser.add_argument('--output', '-o', dest='output', type=str, help='output classification map')
+    parser.add_argument('--case', '-c', dest='case', type=str, help='case name')
+    parser.add_argument('--config', '-g', dest='config', type=str, help='Json config file')
+    parser.add_argument('--without_softmax', '-w', dest='without_softmax', type=bool, default=False, help='flag for softmax')
+    parser.add_argument('--n_channel', '-n', dest='n_channel', type=int, default=10, help='number of channels')
+    parser.add_argument('--device', '-d', dest='device', type=str, default='cpu', help='device')
+    parser.add_argument('--ltae_comb', '-l', dest='ltae_comb', type=bool, default=False, help='device')
 
     args = parser.parse_args()
 
@@ -293,4 +303,6 @@ if __name__ == '__main__':
     
 #     python classificationviz.py --model ../../../results/RF/model/2019/Seed_0/rf_case_2.pkl --ref_file ../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz --in_img ../../../data/theiaL2A_zip_img/output/2019/2019_GapFilled_Image.tif --output ../../../results/RF/classificationmap --flag 1 --case 4
 
-# python classificationviz.py --model ../../../results/ltae/model/2018/Seed_0/model.pth.tar --ref_file ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --in_img ../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif --output ../../../results/RF/classificationmap --flag 2 --case 1 --config ../../../results/ltae/model/2018/Seed_0/conf.json --with_softmax True
+
+# LTAE
+# python classificationviz.py -f 2 -m ../../../results/ltae/model/2018/Seed_0/model.pth.tar -r ../../../data/theiaL2A_zip_img/output/2018 -o ../../../results/ltae/classificationmap/with_softmax -c 1 -g ../../../results/ltae/model/2018/Seed_0/conf.json; python classificationviz.py -f 2 -m ../../../results/ltae/model/2018/Seed_0/model.pth.tar -r ../../../data/theiaL2A_zip_img/output/2019 -o ../../../results/ltae/classificationmap/with_softmax -c 1 -g ../../../results/ltae/model/2018/Seed_0/conf.json; python classificationviz.py -f 2 -m ../../../results/ltae/model/2019/Seed_0/model.pth.tar -r ../../../data/theiaL2A_zip_img/output/2019 -o ../../../results/ltae/classificationmap/with_softmax -c 2 -g ../../../results/ltae/model/2019/Seed_0/conf.json; python classificationviz.py -f 2 -m ../../../results/ltae/model/2019/Seed_0/model.pth.tar -r ../../../data/theiaL2A_zip_img/output/2018 -o ../../../results/ltae/classificationmap/with_softmax -c 2 -g ../../../results/ltae/model/2019/Seed_0/conf.json; python classificationviz.py -f 2 -m ../../../results/ltae/model/2018_2019/Seed_0/model.pth.tar -r ../../../data/theiaL2A_zip_img/output/2019 -o ../../../results/ltae/classificationmap/with_softmax -c 3 -g ../../../results/ltae/model/2018_2019/Seed_0/conf.json -l True; python classificationviz.py -f 2 -m ../../../results/ltae/model/2018_2019/Seed_0/model.pth.tar -r ../../../data/theiaL2A_zip_img/output/2018 -o ../../../results/ltae/classificationmap/with_softmax -c 3 -g ../../../results/ltae/model/2018_2019/Seed_0/conf.json -l True
