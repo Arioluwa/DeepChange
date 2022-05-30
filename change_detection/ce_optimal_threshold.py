@@ -50,14 +50,15 @@ def main(args):
     # Dissimilarity measuar - Cross entropy
     print("computing dissimilarity")
 
-    if args.deepl: # for LTAE
+    if args.relu: # for LTAE
         # convert to tensor
         source_ = torch.nn.functional.softmax(torch.from_numpy(source_).float(), dim=-1)
         target_ = torch.nn.functional.log_softmax(torch.from_numpy(target_).float(), dim=-1)
         print('computation start...')
-        similarity_array = np.array([cross_entropy_dl(source_[i],target_[i]) for i in range(len(source_))])
+        similarity_array = np.array([cross_entropy_rl(source_[i],target_[i]) for i in range(len(source_))])
         print('computation done...')
-    else: # for RF
+        
+    else: # for RF & LTAE with softmax == probability matrix btw 0, 1
         source_ = np.clip(source_, args.epsilion, 1. - args.epsilion)
         target_ = np.clip(target_, args.epsilion, 1. - args.epsilion)
         
@@ -165,7 +166,7 @@ def main(args):
         cm = cm_sim.astype('float') / np.sum(cm_sim)
         cm_plot = sns.heatmap(cm, annot=True, fmt='.2%', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
         cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
-            # save the plot
+        # save the plot
         plt.savefig(os.path.join(outdir,'./charts','similarity_error_matrix_percent_case_' + args.case +'.png'), dpi = 500)
         plt.close()
 
@@ -173,11 +174,12 @@ def main(args):
         plt.figure(figsize=(8,5))
         plt.hist(similarity_, bins=10, label='similarity distribution', ec='white', log=True)
         plt.axvline(x=thresholds[opt_threshold_idx], color='r', linestyle='--', label="optimal threshold: {0:0.3f}".format(thresholds[opt_threshold_idx]))
-
         plt.legend()
+        
         # save chart
         plt.savefig(os.path.join(outdir,'./charts', 'similarity_distribution_case_' + args.case +'.png'), dpi = 500)
         plt.close()
+        
         # Quality assurance
         f_score = f1_score(gt_binary_, pred_binary_v)
         quality_check(args, cm_sim, f_score, method_='opt')
@@ -192,7 +194,6 @@ def main(args):
             with rasterio.open(os.path.join(outdir, 'similarity_binary_change_case_' + args.case + '.tif'), 'w', **profile) as dst:
                 dst.write(similarity_binary_change, 1)
                 dst.close()
-
 
             ## change map
             # Note:
@@ -212,19 +213,20 @@ def main(args):
             change_map = np.empty(shape=(width, height)) # shape: 10980, 10980
             change_map[~gt_binary_mask.mask] = change_array.ravel()
 
-            # print(np.unique(change_map))
             with rasterio.open(os.path.join(outdir, 'similiarity-change_map_case_' + args.case + '.tif'), 'w', **profile) as dst:
                 dst.write(change_map, 1)
                 dst.close()
+                
     if args.otsu: #otsu threshold
+        
+        ##""" Otsu's threshold on the similarity masked matrix """##
         otsu_threshold = threshold_otsu(similarity_)
         otsu_binary = similarity_ > otsu_threshold
         
         # similarity histogram distribution
         plt.figure(figsize=(8,5))
-        plt.hist(similarity_, bins=10, label='similarity distribution', ec='white', log=True)
+        plt.hist(similarity_, bins=10, label='similarity distribution', ec='white')
         plt.axvline(x=otsu_threshold, color='r', linestyle='--', label="otsu threshold: {0:0.3f}".format(otsu_threshold))
-        # plt.yticks([])
         plt.legend()
         # save chart
         plt.savefig(os.path.join(outdir,'./charts', 'otsu_similarity_distribution_case_' + args.case +'.png'), dpi = 500)
@@ -263,6 +265,20 @@ def main(args):
         f_score = f1_score(gt_binary_, otsu_binary)
         quality_check(args, cm_sim, f_score, method_='otsu')
         
+        
+        ##""" Otsu's on the whole similarity matrix##
+        otsu_threshold = threshold_otsu(similarity_array)
+        otsu_binary = similarity_array > otsu_threshold
+        
+        # Otsu's similarity histogram distribution
+        plt.figure(figsize=(8,5))
+        plt.hist(similarity_array, bins=10, label='similarity distribution', ec='white')
+        plt.axvline(x=otsu_threshold, color='r', linestyle='--', label="otsu threshold: {0:0.3f}".format(otsu_threshold))
+        plt.legend()
+        # save chart
+        plt.savefig(os.path.join(outdir,'./charts', 'otsu_whole_similarity_distribution_case_' + args.case +'.png'), dpi = 500)
+        plt.close()
+        
         if args.map:
             # similarity binary change
             similarity_binary = np.where(similarity_ >= opt_threshold, 2, 1)
@@ -273,7 +289,6 @@ def main(args):
             with rasterio.open(os.path.join(outdir, 'otsu_similarity_binary_change_case_' + args.case + '.tif'), 'w', **profile) as dst:
                 dst.write(similarity_binary_change, 1)
                 dst.close()
-
 
                 ## change map
                 # Note:
@@ -319,9 +334,9 @@ def quality_check(args, cm, f_score, method_):
                 f.write("\n fscore: {}".format(f_score))
                 f.close()
     
-def cross_entropy_dl(p, q):
+def cross_entropy_rl(p, q):
     """
-    Desc: cross-entropy for LTAE
+    Desc: cross-entropy for LTAE (RELU output (max(0,z)); before softmax)
         p & q: (k) probability distribution of each sample vector. 
             p - source and q - target
     """
@@ -330,7 +345,7 @@ def cross_entropy_dl(p, q):
 
 def cross_entropy(p, q):
     """
-    Desc: cross-entropy for RF
+    Desc: cross-entropy for RF & LTAE (with softmax) == probability matrix btw 0, 1.
         p & q: (k) probability distribution of each sample vector. 
             p - source and q - target
     """
@@ -351,41 +366,18 @@ if __name__ == '__main__':
     parser.add_argument('--otsu', '-ot', default=False, type=bool, help='Compute optimal threshold using otsu-threshold')
     parser.add_argument('--map', '-m', default=False, type=bool, help='generate maps')
     # parser.add_argument('--percent', '-p', default=False, type=bool, help='Cal percent in the confusion matrix')
-    parser.add_argument('--deepl', '-d', default=False, type=bool, help='Cal percent in the confusion matrix')
+    parser.add_argument('--relu', '-r', default=False, type=bool, help='Cal percent in the confusion matrix')
     parser.add_argument('--epsilion', '-e', default=1e-7, type=float, help='')
-    parser.add_argument('--optimal', '-opt', default=True, type=bool, help='')
+    parser.add_argument('--optimal', '-opt', default=False, type=bool, help='')
     
     
     
     
     args = parser.parse_args()
     main(args)
-    # execute 
-#     for case in range(1, 4):
-#         args.case = str(case)
-#         args.similarity = '../../../results/RF/simliarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
-#         args.outdir = "../../../results/RF/simliarity_measure/optimal_threshold"
-#         main(args)
-    
-#     # case 4
-#     args.case = "4"
-#     args.outdir = "../../../results/RF/simliarity_measure/optimal_threshold"
-#     args.similarity = '../../../results/RF/simliarity_measure/case_4_ref_mask_similarity_measure.tif'
-#     main(args)
-    
-    # ##LTAE
-#     for case in range(2, 4):
-#         args.case = str(case)
-#         args.outdir = "../../../results/ltae/Change_detection/similarity_measure"
-#         args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
-#         main(args)
-#         # break
-    
-#     ### case 4
-#     args.case = "4"
-#     args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_4_ref_mask_similarity_measure.tif'
-#     args.outdir = "../../../results/ltae/Change_detection/similarity_measure"
-#     main(args)
+
 
 #RF
 # python ce_optimal_threshold.py -o ../../../results/RF/simliarity_measure/new_optimal_threshold -c 4 -s ../../../results/RF/classificationmap/2018_rf_case_1.npy -t ../../../results/RF/classificationmap/2019_rf_case_2.npy
+
+python ce_optimal_threshold.py -o ../../../results/ltae/Change_detection/similarity_measure-CE -c 4 -s ../../../results/ltae/classificationmap/2018_LTAE_case_1.npy -t ../../../results/ltae/classificationmap/2019_LTAE_case_2.npy -ot True -r True
