@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 import argparse
 import pprint
@@ -46,9 +47,7 @@ def main(args):
     with rasterio.open(args.gt_source) as src:
         gt_source_ = src.read(1).flatten().astype('int')
         width, height = src.shape
-        profile = src.profile
-        profile['dtype'] = 'float16'
-        profile['nodata'] = -999.
+        profile = src.profile        
 
     gt_target_ = rasterio.open(args.gt_target).read(1).flatten().astype('int')
     
@@ -62,12 +61,12 @@ def main(args):
     gt_binary_[gt_binary_ == 2] = 1 # Change
     
     start_time = time.time()
-    # Dissimilarity measuar - Cross entropy
+    # Dissimilarity measure = Cross entropy
     print("computing dissimilarity")
 
     if args.relu: # for LTAE
-        if os.path.exists(os.path.join(outdir, 'case_' + args.case + 'similarity_measure.tif')):
-            with rasterio.open(os.join.path(outdir, 'case_' + args.case + 'similarity_measure.tif')) as src:
+        if os.path.exists(os.path.join(outdir, 'case_' + args.case + '_similarity_measure.tif')):
+            with rasterio.open(os.path.join(outdir, 'case_' + args.case + '_similarity_measure.tif')) as src:
                 similarity_array = src.read(1).flatten()
         else:
             # read all images to probability distribution vectors
@@ -84,7 +83,8 @@ def main(args):
             
             # save similarity_array as an image
             similarity_map = similarity_array.reshape(width, height)
-            with rasterio.open(os.join.path(outdir, 'case_' + args.case + 'similarity_measure.tif'), 'w', **profile) as dst:
+
+            with rasterio.open(os.path.join(outdir, 'case_' + args.case + '_similarity_measure.tif'), 'w', **profile) as dst:
                 dst.write(similarity_map, 1)
                 dst.close()
             del similarity_map
@@ -364,9 +364,9 @@ def main(args):
         # similarity histogram distribution
         plt.figure(figsize=(8,5))
         plt.hist(similarity_, bins=10, label='similarity distribution', ec='white')
+        plt.axvline(x=thresholds[opt_threshold_idx], color='r', linestyle='--', label="optimal threshold: {0:0.3f}".format(thresholds[opt_threshold_idx]))
         plt.axvline(x=otsu_threshold, color='r', linestyle='--', label="otsu threshold: {0:0.3f}".format(otsu_threshold))
         plt.legend()
-        
         # save chart
         plt.savefig(os.path.join(outdir,'./charts', 'otsu_similarity_distribution_case_' + args.case +'.png'), dpi = 500)
         plt.close()
@@ -412,7 +412,7 @@ def main(args):
         # Otsu's similarity histogram distribution
         plt.figure(figsize=(8,5))
         plt.hist(similarity_array, bins=10, label='similarity distribution', ec='white')
-        plt.axvline(x=otsu_threshold, color='r', linestyle='--', label="otsu threshold: {0:0.3f}".format(otsu_threshold))
+        plt.axvline(x=otsu_threshold, color='orange', linestyle='--', label="otsu's threshold: {0:0.3f}".format(otsu_threshold))
         plt.legend()
         # save chart
         plt.savefig(os.path.join(outdir,'./charts', 'otsu_whole_similarity_distribution_case_' + args.case +'.png'), dpi = 500)
@@ -493,7 +493,6 @@ def cross_entropy(p, q):
 
 if __name__ == '__main__':
     
-        
     parser = argparse.ArgumentParser()
     
     parser.add_argument('--outdir', '-o', default='../../../results/RF/simliarity_measure/optimal_threshold', type=str, help='Path to save files.')
