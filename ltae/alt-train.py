@@ -101,7 +101,7 @@ def evaluation(model, criterion, loader, device, config, mode='val'):
     if mode == 'val':
         return metrics
     elif mode == 'test':
-        return metrics, confusion_matrix(y_true, y_pred, labels=list(range(config['num_classes']))), classification_report(y_true, y_pred, target_names=label, digits=4), cohen_kappa_score(y_true, y_pred, labels = label)
+        return metrics, confusion_matrix(y_true, y_pred, labels=list(range(config['num_classes']))), classification_report(y_true, y_pred, target_names=label, digits=4), cohen_kappa_score(y_true, y_pred)
 
 def get_loader(train_dt, val_dt, test_dt, config):
     
