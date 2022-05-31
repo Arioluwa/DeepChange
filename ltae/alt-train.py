@@ -6,6 +6,7 @@ import torchnet as tnt
 import numpy as np
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
+from sklearn.metrics import cohen_kappa_score
 import os
 import json
 import glob
@@ -100,7 +101,7 @@ def evaluation(model, criterion, loader, device, config, mode='val'):
     if mode == 'val':
         return metrics
     elif mode == 'test':
-        return metrics, confusion_matrix(y_true, y_pred, labels=list(range(config['num_classes']))), classification_report(y_true, y_pred, target_names=label, digits=4)
+        return metrics, confusion_matrix(y_true, y_pred, labels=list(range(config['num_classes']))), classification_report(y_true, y_pred, target_names=label, digits=4), cohen_kappa_score(y_true, y_pred, labels = label)
 
 def get_loader(train_dt, val_dt, test_dt, config):
     
@@ -134,13 +135,16 @@ def checkpoint(log, config):
     with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_trainlog.json'.format(config['seed'])), 'w') as outfile:
         json.dump(log, outfile, indent=4)
 
-def save_results(metrics, conf_mat, report, config):
+def save_results(metrics, conf_mat, report, config, kappa):
     with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_test_metrics.json'.format(config['seed'])), 'w') as outfile:
         json.dump(metrics, outfile, indent=4)
     pkl.dump(conf_mat, open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_conf_mat.pkl'.format(config['seed'])), 'wb'))
 
     with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']),'seed_{}_report.txt'.format(config['seed'])), 'w') as f:
         f.write(report)
+        f.close()
+    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']),'seed_{}_kappa.txt'.format(config['seed'])), 'w') as f:
+        f.write(kappa)
         f.close()
 # def overall_performance(config):
 #     cm = np.zeros((config['num_classes'], config['num_classes']))
@@ -256,14 +260,14 @@ def main(config):
         start_time = time.time()
         model.eval()
 
-        test_metrics, conf_mat, report_ = evaluation(model, criterion, test_loader, device=device, mode='test', config=config)
+        test_metrics, conf_mat, report_, kappa = evaluation(model, criterion, test_loader, device=device, mode='test', config=config)
 
         print('Loss {:.4f},  Acc {:.2f},  IoU {:.4f}'.format(test_metrics['test_loss'], test_metrics['test_accuracy'], test_metrics['test_IoU']))
         print("Test time for {} is {}".format(epoch, (time.time() - start_time)/60))
         wandb.log({"test_loss": test_metrics['test_loss'], "test_accuracy": test_metrics['test_accuracy'], "test_IoU": test_metrics['test_IoU']})
         
         
-        save_results(test_metrics, conf_mat, report_, config)
+        save_results(test_metrics, conf_mat, report_, config, kappa)
         
         print("total time taken for all {} epochs: {:.3f} mins.".format(config['epochs'], (time.time() - st_)/60))
 

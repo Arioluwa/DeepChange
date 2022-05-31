@@ -13,7 +13,7 @@ class dLtae(nn.Module):
     """
     
     def __init__(self, in_channels = 10, n_head = 16, d_k= 8, n_neurons=[256,128], dropout=0.2, d_model= 256,
-                 mlp = [128, 64, 32, 19], T =1000, len_max_seq = 33, positions=None, return_att=False):
+                 mlp = [128, 64, 32, 19], T =1000, len_max_seq = 53, positions=None, return_att=False):
         
         super(dLtae, self).__init__()
         self.temporal_encoder = LTAE(in_channels=in_channels, n_head=n_head, d_k=d_k,
