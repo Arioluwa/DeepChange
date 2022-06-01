@@ -1,4 +1,3 @@
-from matplotlib.pyplot import close
 import torch
 import torch.utils.data as data
 from torchvision import transforms
@@ -48,8 +47,7 @@ def train_epoch(model, optimizer, criterion, data_loader, device, config):
         #     optimizer.step()
         #     scheduler.step()
         # else:
-        optimizer.step()
-            
+        optimizer.step()       
 
         pred = out.detach()
         y_p = pred.argmax(dim=1).cpu().numpy()

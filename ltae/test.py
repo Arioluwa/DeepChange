@@ -17,6 +17,7 @@ import sys
 
 from utils import *
 from altdataset import SITSData
+# from altdataset import date_positions
 from models.stclassifier import dLtae
 from models.ltae import LTAE
 from learning.focal_loss import FocalLoss
@@ -68,7 +69,7 @@ def recursive_todevice(x, device):
     
 def save_results(metrics, conf_mat, report, config, kappa, vars_):
     # save the name
-    dataset_name = os.path.basename(vars_.dataset_folder).split('.')
+    dataset_name = os.path.basename(vars_['dataset_folder']).split('.')
     
     with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), '{}_test_metrics.json'.format(dataset_name)), 'w') as outfile:
         json.dump(metrics, outfile, indent=4)
@@ -78,7 +79,7 @@ def save_results(metrics, conf_mat, report, config, kappa, vars_):
         f.write(report)
         f.close()
     with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']),'{}_kappa.txt'.format(dataset_name)), 'w') as f:
-        f.write(kappa)
+        f.write(str(kappa))
         f.close()
 
 def main(vars_):
@@ -113,9 +114,10 @@ def main(vars_):
     
     model = dLtae(in_channels = config['in_channels'], n_head = config['n_head'], d_k= config['d_k'], n_neurons=config['n_neurons'], dropout=config['dropout'], d_model= config['d_model'],
                  mlp = config['mlp4'], T =config['T'], len_max_seq = config['len_max_seq'], 
-              positions=date_positions if config['positions'] == 'bespoke' else None, return_att=False)
+              positions=test_dt.date_positions if config['positions'] == 'bespoke' else None, return_att=False)
     
-    device = config['device']
+    # device = config['device']
+    device = 'cpu'
     model = model.to(device)
     model = model.double()
     model.load_state_dict(state_dict)
@@ -125,8 +127,9 @@ def main(vars_):
     criterion = FocalLoss(config['gamma'])
     
     ## evaluation
+    start_time = time.time()
     test_metrics, conf_mat, report_, kappa = evaluation(model, criterion, test_loader, device=device, mode='test', config=config)
-    
+    print("testing completed in: ", (time.time() - start_time))
     save_results(test_metrics, conf_mat, report_, config, kappa, vars_)
     
 if __name__ == '__main__':
