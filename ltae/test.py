@@ -83,9 +83,12 @@ def save_results(metrics, conf_mat, report, config, kappa, vars_):
 
 def main(vars_):
     
-    config = json.load(vars_.config)
-    model_path = vars_.model
-    dataset_folder =vars_.dataset_folder
+    config = json.load(open(vars_['config']))
+    model_path = vars_['model']
+    dataset_folder = vars_['dataset_folder']
+    
+    state_dict = torch.load(model_path)['state_dict']
+    print('loading completed')
     
     ## mean and std
     mean_ = np.loadtxt(glob.glob(dataset_folder + '/*mean.txt')[0])
@@ -97,21 +100,23 @@ def main(vars_):
     doy = glob.glob(dataset_folder + '/gapfilled*.txt')[0]
     
     ## dataset
+    print('start...')
     test_dt = SITSData(sits_data[0], doy,  transform = transform)
-    
+    print('done...')
     ## dataloader
     test_loader = data.DataLoader(test_dt, batch_size=config['batch_size'],
                                        num_workers=config['num_workers'], 
                                         shuffle=True,
                                          pin_memory=True)
     
-    state_dict = torch.load(model_path)['state_dict']
+    # state_dict = torch.load(model_path)['state_dict']
     
     model = dLtae(in_channels = config['in_channels'], n_head = config['n_head'], d_k= config['d_k'], n_neurons=config['n_neurons'], dropout=config['dropout'], d_model= config['d_model'],
                  mlp = config['mlp4'], T =config['T'], len_max_seq = config['len_max_seq'], 
               positions=date_positions if config['positions'] == 'bespoke' else None, return_att=False)
     
-    model = model.to(config.device)
+    device = config['device']
+    model = model.to(device)
     model = model.double()
     model.load_state_dict(state_dict)
     
@@ -122,17 +127,19 @@ def main(vars_):
     ## evaluation
     test_metrics, conf_mat, report_, kappa = evaluation(model, criterion, test_loader, device=device, mode='test', config=config)
     
-    save_results(test_metrics, conf_mat, report_, config, kappa)
+    save_results(test_metrics, conf_mat, report_, config, kappa, vars_)
     
 if __name__ == '__main__':
     
     parser = argparse.ArgumentParser()
     
     parser.add_argument('--model', '-m', type=str, help='Path to the model file .Pth.')
-    parser.add_argument('--dataset_folder', type=str, help='Path to the dataset folder.')
-    parser.add_argument('--config', type=str, help='Path to config file.')
+    parser.add_argument('--dataset_folder', '-d', type=str, help='Path to the dataset folder.')
+    parser.add_argument('--config', '-c', type=str, help='Path to config file.')
     
     vars_ = parser.parse_args()
-    vars_ = vars(config)
+    vars_ = vars(vars_)
     
     main(vars_)
+    
+# python test.py -m ../../../results/ltae/model/2018/Seed_0/model.pth.tar -d ../../../data/theiaL2A_zip_img/output/2019 -c ../../../results/ltae/model/2018/Seed_0/conf.json
