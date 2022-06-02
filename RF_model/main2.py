@@ -10,11 +10,17 @@ from sklearn.metrics import confusion_matrix
 import joblib
 from utils.utils import load_npz, read_ids
 import argparse
+from sklearn.metrics import cohen_kappa_score
 
 
 class RFmodel:
     def __init__(self, case:int, seed:int, sits, outdir):
-        
+        """
+        Case: [int] Scenario 1-3 corresponding to the SITS trained with
+        seed: gridsplit randomly assigned value
+        sits: SITS reference dataset
+        outdir: folder to save the trained model and metrics
+        """
         super().__init__()
         self.case = case
         self.seed = seed
@@ -122,24 +128,27 @@ class RFmodel:
         
         confusion_ = confusion_matrix(self.ytest, prediction)
         
+        kappa = cohen_kappa_score(self.ytest, prediction)
+        
         with open(os.path.join(self.outdir, "Seed_{}".format(self.seed), "reports/rf_report_case_{}.txt".format(self.case)), "w") as f:
                 f.write("Report: \n")
                 f.write(report)
-                # f.write("\n")
                 f.close()
         
         with open(os.path.join(self.outdir, "Seed_{}".format(self.seed),"reports/confusion_{}.txt".format(self.case)), "w") as f:
                 f.write("Confusion: \n")
                 f.write(str(confusion_))
-                # f.write("\n")
                 f.close()
-                
+        
+        with open(os.path.join(self.outdir, "Seed_{}".format(self.seed),"reports/kappa_{}.txt".format(self.case)), "w") as f:
+                f.write(str(kappa))
+                f.close()        
 if __name__ == '__main__':
     
     parser = argparse.ArgumentParser()
     
     parser.add_argument('--case', type=str, help='case')
-    parser.add_argument('--sits', type=str, help='Path to the data folder')
+    parser.add_argument('--sits', type=str, help='Path to the data npz file')
     parser.add_argument('--seed', type=int, help='Seed')
     parser.add_argument('--outdir', type=str, help='Seed')
     
@@ -162,3 +171,5 @@ if __name__ == '__main__':
     # python main2.py --case "1" --sits "../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz" --seed 0 --outdir ../../../results/ltae/model/2018
     
     # /share/projects/erasmus/deepchange/codebase/DeepChange/RF_model$ python main2.py --case 1 --sits "../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz" --seed 0 --outdir ../../../results/ltae/model/2018 && python main2.py --case 2 --sits "../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz" --seed 0 --outdir ../../../results/ltae/model/2019
+    
+    # python main2.py --case "1" --sits "../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz" --seed 0 --outdir ../../../results/ltae/model/2018/second; python main2.py --case "1" --sits "../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz" --seed 0 --outdir ../../../results/ltae/model/2018/third; python main2.py --case "1" --sits "../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz" --seed 0 --outdir ../../../results/ltae/model/2018/fourth

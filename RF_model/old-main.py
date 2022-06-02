@@ -16,19 +16,13 @@ _2019_SITS_data = "../../../data/theiaL2A_zip_img/output/2019/2019_SITS_data.npz
 
 # np.random.seed(0)
 class RFmodel:
-    def __init__(
-        self,
-        case: int,
-        seed_value: int,
-        source_sits=_2018_SITS_data,
-        # target_sits=_2019_SITS_data,
-        # train_val_eval=_train_val_eval,
-    ):
+    def __init__(self,case: int,seed: int,outdir,source_sits=_2018_SITS_data,target_sits=_2019_SITS_data):
         super().__init__()
         self.case = case
-        self.seed_value = seed_value
+        self.seed = seed
         self.source_sits = source_sits
-        # self.target_sits = target_sits
+        self.target_sits = target_sits
+        self.outdir = outdir
         # self.train_val_eval = train_val_eval
 
     # useful functions
@@ -41,7 +35,7 @@ class RFmodel:
         - returns X and Y:
             X is the data, Y is the label
         """
-        train_ids, val_ids, test_ids = read_ids(self.seed_value)
+        train_ids, val_ids, test_ids = read_ids(self.seed)
 
         if set_name == "train":
             ids = train_ids
@@ -71,7 +65,6 @@ class RFmodel:
         print("Preparing data.........")
 
         X_s, Y_s, block_ids_s = load_npz(self.source_sits)
-        # X_t, Y_t, block_ids_t = load_npz(self.target_sits)
         print("Loading npz files done.........")
 
         # self.train_ids, self.test_ids = read_ids(self.train_val_eval)
@@ -81,28 +74,31 @@ class RFmodel:
         del X_s
         del Y_s
         del block_ids_s
-        # self.total_set_t = np.concatenate(
-        #     (X_t, Y_t[:, None], block_ids_t[:, None]), axis=1
-        # )
-        # del X_t
-        # del Y_t
-        # del block_ids_t
+        print("done.....")
+        
+        X_t, Y_t, block_ids_t = load_npz(self.target_sits)
+        print("Loading npz files done.........")
+        self.total_set_t = np.concatenate((X_t, Y_t[:, None], block_ids_t[:, None]), axis=1)
+        
+        del X_t
+        del Y_t
+        del block_ids_t
         print("Concatenating data done.........")
         
         # Training set for target and source
         self.Xtrain_s, self.Ytrain_s = self.load_set("train", self.total_set_s)
-        # self.Xtrain_t, self.Ytrain_t = self.load_set("train", self.total_set_t)
+        self.Xtrain_t, self.Ytrain_t = self.load_set("train", self.total_set_t)
         
         print("Loading train set done.........")
 
         # Test set for target and source
         self.Xtest_s, self.Ytest_s = self.load_set("test", self.total_set_s)
-        # self.Xtest_t, self.Ytest_t = self.load_set("test", self.total_set_t)
         del self.total_set_s
-        # del self.total_set_t
+        self.Xtest_t, self.Ytest_t = self.load_set("test", self.total_set_t)
+        del self.total_set_t
         print("Loading test set done.........")
 
-        if self.case == 1:
+        if self.case == 3:
             # concatenate training set for target and source
             self.Xtrain = np.concatenate((self.Xtrain_s, self.Xtrain_t), axis=0)
             self.Ytrain = np.concatenate((self.Ytrain_s, self.Ytrain_t), axis=0)
@@ -121,9 +117,9 @@ class RFmodel:
         #     raise ValueError("Please choose a case between 1 and 3")
         
         del self.Xtrain_s
-        # del self.Xtrain_t
+        del self.Xtrain_t
         del self.Ytrain_s
-        # del self.Ytrain_t
+        del self.Ytrain_t
         
         self.Xtrain, self.Ytrain = shuffle(self.Xtrain, self.Ytrain)
         print("Preparing data completed.........")
@@ -150,10 +146,11 @@ class RFmodel:
         print("Training model done.........")
         # print("Training time: %s minutes" % ((time.time() - start_time)/60))
         # create folder to save model if it doesn't exist
-        if not os.path.exists("models"):
-            os.makedirs("models")
+        if not os.path.exists(os.path.join(self.outdir, "Seed_{}".format(self.seed))):
+            os.makedirs(os.path.join(self.outdir, "Seed_{}".format(self.seed)))
         # save model as pickle with the name of the case
-        joblib.dump(self.model, "models/rf_seed_" + str(self.seed_value)+"_case_" +str(self.case) + ".pkl", compress=3)
+        # joblib.dump(self.model, "models/rf_seed_" + str(self.seed_value)+"_case_" +str(self.case) + ".pkl", compress=3)
+        joblib.dump(self.model, os.path.join(self.outdir, "Seed_{}".format(self.seed), "rf_case_" +str(self.case) + ".pkl"), compress=3)
         print("Model saved.........")
 
     def test_model(self):
@@ -162,20 +159,31 @@ class RFmodel:
         - predict the labels for Xval
         - print and write the classification report to txt file
         """
-        if not os.path.exists("reports"):
-                os.makedirs("reports")
+        if not os.path.exists(os.path.join(self.outdir, "Seed_{}".format(self.seed),"reports")):
+                os.makedirs(os.path.join(self.outdir, "Seed_{}".format(self.seed), "reports"))
         label = ["Dense built-up area", "Diffuse built-up area", "Industrial and commercial areas", "Roads", "Oilseeds (Rapeseed)", "Straw cereals (Wheat, Triticale, Barley)", "Protein crops (Beans / Peas)", "Soy", "Sunflower", "Corn",  "Tubers/roots", "Grasslands", "Orchards and fruit growing", "Vineyards", "Hardwood forest", "Softwood forest", "Natural grasslands and pastures", "Woody moorlands", "Water"]
         # print("Testing model.........")
         # start_time = time.time()
         self.Xtest_s, self.Ytest_s = shuffle(self.Xtest_s, self.Ytest_s)
-        # self.Xtest_t, self.Ytest_t = shuffle(self.Xtest_t, self.Ytest_t)
+        self.Xtest_t, self.Ytest_t = shuffle(self.Xtest_t, self.Ytest_t)
         
         self.predictions_s = self.model.predict(self.Xtest_s)
-        # self.predictions_t = self.model.predict(self.Xtest_t)
         del self.Xtest_s
-        # del self.Xtest_t
+        self.predictions_t = self.model.predict(self.Xtest_t)
+        del self.Xtest_t
+        
         self.report_s = classification_report(self.Ytest_s, self.predictions_s, target_names=label, digits=4)
-        # self.report_t = classification_report(self.Ytest_t, self.predictions_t, target_names=label, digits=4)
+        self.report_t = classification_report(self.Ytest_t, self.predictions_t, target_names=label, digits=4)
+        
+        with open(os.path.join(self.outdir, "Seed_{}".format(self.seed), "reports/rf_report_case_{}.txt".format(self.case)), "w") as f:
+                f.write("Report: \n")
+                f.write("Source: \n")
+                f.write(self.report_s)
+                f.write("\n")
+                f.write("Target: \n")
+                f.write(self.report_t)
+                f.write("\n")
+                f.close()
         # print("Source report: \n", self.report_s)
         # print("Target report: \n", self.report_t)
        # print balance score
@@ -183,7 +191,16 @@ class RFmodel:
         # print("target balance accuracy score:", balanced_accuracy_score(self.Ytest_t,self.predictions_t))
         # print("Writing report to txt file.........")
         self.confusion_s = confusion_matrix(self.Ytest_s, self.predictions_s)
-        # self.confusion_t = confusion_matrix(self.Ytest_t, self.predictions_t)
+        self.confusion_t = confusion_matrix(self.Ytest_t, self.predictions_t)
+        
+        with open(os.path.join(self.outdir, "Seed_{}".format(self.seed),"reports/confusion_{}.txt".format(self.case)), "w") as f:
+                f.write("Source Confusion: \n")
+                f.write(str(self.confusion_s))
+                f.write("\n")
+                f.write("Target Confusion: \n")
+                f.write(str(self.confusion_t))
+                f.write("\n")
+                f.close()
         # UA_s = self.confusion_s.diagonal() / self.confusion_s.sum(axis=1)
         # UA_t = self.confusion_t.diagonal() / self.confusion_t.sum(axis=1)
         # PA_s = self.confusion_s.diagonal() / self.confusion_s.sum(axis=0)
@@ -203,22 +220,24 @@ class RFmodel:
         # print("Number of samples in each class Source test: \n", n_sample_s, "\n  Total:", unique_s[1].sum())
         # print("Number of samples in each class Target test: \n", n_sample_t, "\n  Total:", unique_t[1].sum())
            # save report as txt with case value
-        with open("reports/rf_report_case_" + str(self.case)+ "_seed_" + str(self.seed_value) + ".txt", "w") as f:
-                f.write("Source report: \n")
-                f.write(self.report_s)
-                f.write("\n")
+            ###TO BE DELETED
+        # with open("reports/rf_report_case_" + str(self.case)+ "_seed_" + str(self.seed_value) + ".txt", "w") as f:
+        #         f.write("Source report: \n")
+        #         f.write(self.report_s)
+        #         f.write("\n")
                 # f.write("Target report: \n")
                 # f.write(self.report_t)
                 # f.write("\n")
-                f.close()
-        with open("reports/rf_report_case_" + str(self.case)+ "_seed_" + str(self.seed_value) + ".txt", "w") as f:
-                f.write("Source report: \n")
-                f.write(self.report_s)
-                f.write("\n")
-                # f.write("Target report: \n")
-                # f.write(self.report_t)
-                # f.write("\n")
-                f.close()
+                # f.close()
+                ###TO BE DELETED
+        # with open("reports/rf_report_case_" + str(self.case)+ "_seed_" + str(self.seed_value) + ".txt", "w") as f:
+        #         f.write("Source report: \n")
+        #         f.write(self.report_s)
+        #         f.write("\n")
+        #         # f.write("Target report: \n")
+        #         # f.write(self.report_t)
+        #         # f.write("\n")
+        #         f.close()
                 # f.write("OOB score: " + str(self.model.oob_score_ + "\n"))
                 # f.write("Number of samples training in each class: \n")
                 # f.write(str(n_sample_training))
@@ -231,7 +250,7 @@ class RFmodel:
                 # f.write("Number of samples in each class train: \n", n_sample_training, "\n  Total:", unique_training[1].sum())
                 # f.write("Number of samples in each class Source test: \n", n_sample_s, "\n  Total:", unique_s[1].sum())
                 # f.write("Number of samples in each class Target test: \n", n_sample_t, "\n  Total:", unique_t[1].sum())
-                f.close()
+                # f.close()
 
 #         print("Writing report to txt file done.........")
 #         print("Testing model done.........")
@@ -244,16 +263,24 @@ if __name__ == "__main__":
     # case 3: train on target only
     # compute time in minutes
     start_time = time.time()
-    case_ = 1
+    case_ = 3
     seed_value = 0
-    model = RFmodel(case=case_, seed_value=seed_value)
+    outdir = "../../../results/RF/model/2018_2019"
+    model = RFmodel(case=case_, seed=seed_value, outdir = outdir)
     model.prepare_data()
     # check if case model file exits, skip training if it does
-    if not os.path.exists("models/rf_seed_" + str(seed_value) + "_case_"+str(case_) + ".pkl"):
+#     if not os.path.exists("models/rf_seed_" + str(seed_value) + "_case_"+str(case_) + ".pkl"):
+#         model.train_model()
+#     else:
+#         print("model available..")
+#         model.model = joblib.load("models/rf_seed_" + str(seed_value) + "_case_" +str(case_) + ".pkl")
+    
+    # model.test_model()
+    if not os.path.exists(os.path.join(outdir, "Seed_{}".format(seed_value),"rf_case_"+str(case_) + ".pkl")):
         model.train_model()
     else:
         print("model available..")
-        model.model = joblib.load("models/rf_seed_" + str(seed_value) + "_case_" +str(case_) + ".pkl")
+        model.model = joblib.load(os.path.join(outdir, "Seed_{}".format(seed_value),"rf_case_" +str(case_) + ".pkl"))
     
     model.test_model()
     # print time in minutes
