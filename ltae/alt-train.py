@@ -142,7 +142,7 @@ def save_results(metrics, conf_mat, report, config, kappa):
         f.write(report)
         f.close()
     with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']),'seed_{}_kappa.txt'.format(config['seed'])), 'w') as f:
-        f.write(kappa)
+        f.write(str(kappa))
         f.close()
 # def overall_performance(config):
 #     cm = np.zeros((config['num_classes'], config['num_classes']))
@@ -323,3 +323,7 @@ if __name__ == '__main__':
     pprint.pprint(config)
     main(config)
     # python train.py --dataset_folder ../../../data/theiaL2A_zip_img/output/2018 --res_dir ../../../results/ltae/model/2018 --epochs 1
+    
+    
+    #ntruns
+    # python alt-train.py --dataset_folder ../../../data/theiaL2A_zip_img/output/2018 --res_dir ../../../results/ltae/model/2018/second --epochs 10; python alt-train.py --dataset_folder ../../../data/theiaL2A_zip_img/output/2018 --res_dir ../../../results/ltae/model/2018/third --epochs 10; python alt-train.py --dataset_folder ../../../data/theiaL2A_zip_img/output/2018 --res_dir ../../../results/ltae/model/2018/fourth --epochs 10

@@ -69,7 +69,7 @@ def recursive_todevice(x, device):
     
 def save_results(metrics, conf_mat, report, config, kappa, vars_):
     # save the name
-    dataset_name = os.path.basename(vars_['dataset_folder']).split('.')
+    dataset_name = os.path.basename(vars_['dataset_folder']).split('.')[0]
     
     with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), '{}_test_metrics.json'.format(dataset_name)), 'w') as outfile:
         json.dump(metrics, outfile, indent=4)
@@ -77,10 +77,12 @@ def save_results(metrics, conf_mat, report, config, kappa, vars_):
 
     with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']),'{}_report.txt'.format(dataset_name)), 'w') as f:
         f.write(report)
-        f.close()
-    with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']),'{}_kappa.txt'.format(dataset_name)), 'w') as f:
+        f.write('\n kappa coefficient \n')
         f.write(str(kappa))
         f.close()
+    # with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']),'{}_kappa.txt'.format(dataset_name)), 'w') as f:
+    #     f.write(str(kappa))
+    #     f.close()
 
 def main(vars_):
     
