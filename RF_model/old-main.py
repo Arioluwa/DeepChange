@@ -1,5 +1,7 @@
+#### RF scenario 3, combination of the two reference data
 import os
 import time
+import argparse
 
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
@@ -201,56 +203,6 @@ class RFmodel:
                 f.write(str(self.confusion_t))
                 f.write("\n")
                 f.close()
-        # UA_s = self.confusion_s.diagonal() / self.confusion_s.sum(axis=1)
-        # UA_t = self.confusion_t.diagonal() / self.confusion_t.sum(axis=1)
-        # PA_s = self.confusion_s.diagonal() / self.confusion_s.sum(axis=0)
-        # PA_t = self.confusion_t.diagonal() / self.confusion_t.sum(axis=0)
-        # print("Source UA: \n", UA_s, "\nSource PA: \n", PA_s)
-        # print("Target UA: \n", UA_t, "\nTarget PA: \n", PA_t)
-
-        # print("Source: \n", self.confusion_s)
-        # print("Target: \n", self.confusion_t)
-        # unique_training = np.unique(self.Ytrain, return_counts = True)
-        # n_sample_training = dict(zip(label,unique_training[1]))
-        # unique_t = np.unique(self.Ytest_t, return_counts = True)
-        # unique_s = np.unique(self.Ytest_s, return_counts = True)
-        # n_sample_t = dict(zip(label,unique_t[1]))
-        # n_sample_s = dict(zip(label,unique_s[1]))
-        # print("Number of samples in each class train: \n", n_sample_training, "\n  Total:", unique_training[1].sum())
-        # print("Number of samples in each class Source test: \n", n_sample_s, "\n  Total:", unique_s[1].sum())
-        # print("Number of samples in each class Target test: \n", n_sample_t, "\n  Total:", unique_t[1].sum())
-           # save report as txt with case value
-            ###TO BE DELETED
-        # with open("reports/rf_report_case_" + str(self.case)+ "_seed_" + str(self.seed_value) + ".txt", "w") as f:
-        #         f.write("Source report: \n")
-        #         f.write(self.report_s)
-        #         f.write("\n")
-                # f.write("Target report: \n")
-                # f.write(self.report_t)
-                # f.write("\n")
-                # f.close()
-                ###TO BE DELETED
-        # with open("reports/rf_report_case_" + str(self.case)+ "_seed_" + str(self.seed_value) + ".txt", "w") as f:
-        #         f.write("Source report: \n")
-        #         f.write(self.report_s)
-        #         f.write("\n")
-        #         # f.write("Target report: \n")
-        #         # f.write(self.report_t)
-        #         # f.write("\n")
-        #         f.close()
-                # f.write("OOB score: " + str(self.model.oob_score_ + "\n"))
-                # f.write("Number of samples training in each class: \n")
-                # f.write(str(n_sample_training))
-                # f.write(str(self.confusion_s))
-                # f.write(str(self.confusion_t))
-                # f.write("Source confusion matrx: \n", self.confusion_s, "\n")
-                # f.write("Target confusion matrx: \n", self.confusion_t, "\n")
-                # f.write("Source UA: \n", UA_s, "\nSource PA: \n", PA_s)
-                # f.write("Target UA: \n", UA_t, "\nTarget PA: \n", PA_t)
-                # f.write("Number of samples in each class train: \n", n_sample_training, "\n  Total:", unique_training[1].sum())
-                # f.write("Number of samples in each class Source test: \n", n_sample_s, "\n  Total:", unique_s[1].sum())
-                # f.write("Number of samples in each class Target test: \n", n_sample_t, "\n  Total:", unique_t[1].sum())
-                # f.close()
 
 #         print("Writing report to txt file done.........")
 #         print("Testing model done.........")
@@ -262,10 +214,17 @@ if __name__ == "__main__":
     # case 2: train on source only
     # case 3: train on target only
     # compute time in minutes
+    parser = argparse.ArgumentParser()
+    
+    parser.add_argument('--outdir', type=str, help='Seed')
+    args = parser.parse_args()
+    
+    
     start_time = time.time()
     case_ = 3
     seed_value = 0
-    outdir = "../../../results/RF/model/2018_2019"
+    # outdir = "../../../results/RF/model/2018_2019"
+    outdir = args.outdir
     model = RFmodel(case=case_, seed=seed_value, outdir = outdir)
     model.prepare_data()
     # check if case model file exits, skip training if it does
@@ -282,6 +241,6 @@ if __name__ == "__main__":
         print("model available..")
         model.model = joblib.load(os.path.join(outdir, "Seed_{}".format(seed_value),"rf_case_" +str(case_) + ".pkl"))
     
-    model.test_model()
+    # model.test_model()
     # print time in minutes
     print("Total time taken: --- %s minutes ---" % ((time.time() - start_time) / 60))
