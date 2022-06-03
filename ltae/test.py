@@ -86,8 +86,18 @@ def save_results(metrics, conf_mat, report, config, kappa, vars_):
 
 def main(vars_):
     
-    config = json.load(open(vars_['config']))
-    model_path = vars_['model']
+    # config = json.load(open(vars_['config']))
+    # model_path = vars_['model']
+    
+    model_path = glob.glob(os.path.join(vars_['model'], '*.tar'))[0]
+    config = glob.glob(os.path.join(vars_['model'], 'conf.json'))[0]
+    
+#     print(model_path)
+#     print(config)
+    
+#     sys.exit()
+    
+    config = json.load(open(config))
     dataset_folder = vars_['dataset_folder']
     
     state_dict = torch.load(model_path)['state_dict']
@@ -118,8 +128,8 @@ def main(vars_):
                  mlp = config['mlp4'], T =config['T'], len_max_seq = config['len_max_seq'], 
               positions=test_dt.date_positions if config['positions'] == 'bespoke' else None, return_att=False)
     
-    # device = config['device']
-    device = 'cpu'
+    device = config['device']
+    # device = 'cpu'
     model = model.to(device)
     model = model.double()
     model.load_state_dict(state_dict)
@@ -140,7 +150,7 @@ if __name__ == '__main__':
     
     parser.add_argument('--model', '-m', type=str, help='Path to the model file .Pth.')
     parser.add_argument('--dataset_folder', '-d', type=str, help='Path to the dataset folder.')
-    parser.add_argument('--config', '-c', type=str, help='Path to config file.')
+    # parser.add_argument('--config', '-c', type=str, help='Path to config file.')
     
     vars_ = parser.parse_args()
     vars_ = vars(vars_)

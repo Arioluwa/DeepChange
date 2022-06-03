@@ -6,6 +6,8 @@ import torchnet as tnt
 import numpy as np
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
+from sklearn.metrics import cohen_kappa_score
+
 import os
 import json
 import glob
@@ -100,7 +102,7 @@ def evaluation(model, criterion, loader, device, config, mode='val'):
     if mode == 'val':
         return metrics
     elif mode == 'test':
-        return metrics, confusion_matrix(y_true, y_pred, labels=list(range(config['num_classes']))), classification_report(y_true, y_pred, target_names=label, digits=4)
+        return metrics, confusion_matrix(y_true, y_pred, labels=list(range(config['num_classes']))), classification_report(y_true, y_pred, target_names=label, digits=4), cohen_kappa_score(y_true, y_pred)
 
 def get_loader(train_dt, val_dt, test_dt, train_dt2, val_dt2, test_dt2, config, ):
     
@@ -134,13 +136,15 @@ def checkpoint(log, config):
     with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_trainlog.json'.format(config['seed'])), 'w') as outfile:
         json.dump(log, outfile, indent=4)
 
-def save_results(metrics, conf_mat, report, config):
+def save_results(metrics, conf_mat, report, config, kappa):
     with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_test_metrics.json'.format(config['seed'])), 'w') as outfile:
         json.dump(metrics, outfile, indent=4)
     pkl.dump(conf_mat, open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']), 'seed_{}_conf_mat.pkl'.format(config['seed'])), 'wb'))
 
     with open(os.path.join(config['res_dir'], 'Seed_{}'.format(config['seed']),'seed_{}_report.txt'.format(config['seed'])), 'w') as f:
         f.write(report)
+        f.write('\n Kappa Coefficient \n')
+        f.write(str(kappa))
         f.close()
 # def overall_performance(config):
 #     cm = np.zeros((config['num_classes'], config['num_classes']))
@@ -273,14 +277,14 @@ def main(config):
         start_time = time.time()
         model.eval()
 
-        test_metrics, conf_mat, report_ = evaluation(model, criterion, test_loader, device=device, mode='test', config=config)
+        test_metrics, conf_mat, report_, kappa = evaluation(model, criterion, test_loader, device=device, mode='test', config=config)
 
         print('Loss {:.4f},  Acc {:.2f},  IoU {:.4f}'.format(test_metrics['test_loss'], test_metrics['test_accuracy'], test_metrics['test_IoU']))
         print("Test time for {} is {}".format(epoch, (time.time() - start_time)/60))
         wandb.log({"test_loss": test_metrics['test_loss'], "test_accuracy": test_metrics['test_accuracy'], "test_IoU": test_metrics['test_IoU']})
         
         
-        save_results(test_metrics, conf_mat, report_, config)
+        save_results(test_metrics, conf_mat, report_, config, kappa)
         
         print("total time taken for all {} epochs: {:.3f} mins.".format(config['epochs'], (time.time() - st_)/60))
 
@@ -291,10 +295,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     # Set-up parameters
-    parser.add_argument('--dataset_folder', default='../../../data/theiaL2A_zip_img/output/2018', type=str, help='Path to the data folder.') #move npy and date into a folder
-    parser.add_argument('--dataset_folder2', default='../../../data/theiaL2A_zip_img/output/2019', type=str, help='Path to the data folder.')
-    parser.add_argument('--res_dir', default='../../../results/ltae/trials', help='Path to the folder where the results should be stored')
-    parser.add_argument('--num_workers', default=10, type=int, help='Number of data loading workers')
+    parser.add_argument('--dataset_folder', '-d1', default='../../../data/theiaL2A_zip_img/output/2018', type=str, help='Path to the data folder.') #move npy and date into a folder
+    parser.add_argument('--dataset_folder2', '-d2', default='../../../data/theiaL2A_zip_img/output/2019', type=str, help='Path to the data folder.')
+    parser.add_argument('--res_dir', '-r', default='../../../results/ltae/trials', help='Path to the folder where the results should be stored')
+    parser.add_argument('--num_workers', default=20, type=int, help='Number of data loading workers')
     parser.add_argument('--seed', default=0, type=int, help='Random seed')
     parser.add_argument('--device', default='cuda', type=str, help='Name of device to use for tensor computations (cuda/cpu)')
     parser.add_argument('--display_step', default=100, type=int, help='Interval in batches between display of training metrics')
@@ -304,7 +308,7 @@ if __name__ == '__main__':
     
 
     # Training parameters
-    parser.add_argument('--epochs', default=2, type=int, help='Number of epochs per fold')
+    parser.add_argument('--epochs', default=10,  type=int, help='Number of epochs per fold')
     parser.add_argument('--batch_size', default=2048, type=int, help='Batch size')
     parser.add_argument('--lr', default=0.001, type=float, help='Learning rate')
     parser.add_argument('--gamma', default=1, type=float, help='Gamma parameter of the focal loss')
