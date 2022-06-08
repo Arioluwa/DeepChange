@@ -91,6 +91,9 @@ def main(args):
             
         
     else: # for RF 
+        source_ = np.load(args.source_prob)
+        target_ = np.load(args.target_prob)
+        
         source_ = np.clip(source_, args.epsilion, 1. - args.epsilion)
         target_ = np.clip(target_, args.epsilion, 1. - args.epsilion)
         
@@ -194,7 +197,7 @@ def main(args):
         
         # Quality assurance
         f_score = f1_score(gt_binary_, pred_binary_v)
-        quality_check(args, cm_sim, f_score, method_='opt')
+        quality_check(args, cm_sim, cm, f_score, method_='opt')
         
         if args.map:
             # similarity binary change
@@ -319,7 +322,7 @@ def main(args):
 
         # Quality assurance
         f_score = f1_score(gt_binary_, pred_binary_v)
-        quality_check(args, cm_sim, f_score, method_='opt')
+        quality_check(args, cm_sim, cm, f_score, method_='opt')
 
         if args.map:
             # similarity binary change
@@ -402,7 +405,7 @@ def main(args):
         
         # Quality assurance
         f_score = f1_score(gt_binary_, otsu_binary)
-        quality_check(args, cm_sim, f_score, method_='otsu')
+        quality_check(args, cm_sim, cm, f_score, method_='otsu')
         
         
         ##""" Otsu's on the whole similarity matrix##
@@ -456,7 +459,7 @@ def prepare_output(args):
         os.makedirs(args.outdir, exist_ok=True)
         os.makedirs(os.path.join(args.outdir, './charts'), exist_ok=True)
 
-def quality_check(args, cm, f_score, method_):
+def quality_check(args, cm, cm_per, f_score, method_):
     """
     method_: thresh approach used; otsu or optimal threshing
     """
@@ -467,10 +470,11 @@ def quality_check(args, cm, f_score, method_):
     with open(os.path.join(args.outdir, './charts', title + args.case + '.txt'), 'w') as f:
                 f.write("Error matrix \n")
                 f.write(str(cm))
-                # f.write(classif_r)
                 f.write("\n Total error: {}".format((cm[0,1] + cm[1,0])))
                 f.write("\n OA: {}".format(((cm[0,0] + cm[1,1])/(cm[0,0] +cm[0,1]+cm[1,0]+cm[1,1]))))
                 f.write("\n fscore: {}".format(f_score))
+                f.write("\n Error matrix in percent \n")
+                f.write(str(cm_per))
                 f.close()
     
 def cross_entropy_rl(p, q):
@@ -501,8 +505,8 @@ if __name__ == '__main__':
     parser.add_argument('--gt_target', '-gp', default='../../../data/rasterized_samples/2019_rasterizedImage.tif', type=str, help='Target ground truth path')
     parser.add_argument('--source_prob', '-s', type=str, help='class probability distribution')
     parser.add_argument('--target_prob', '-t', type=str, help='class probability distribution')
-    parser.add_argument('--otsu', '-ot', default=False, type=bool, help='Compute optimal threshold using otsu-threshold')
-    parser.add_argument('--map', '-m', default=False, type=bool, help='generate maps')
+    parser.add_argument('--otsu', '-ot', default=True, type=bool, help='Compute optimal threshold using otsu-threshold')
+    parser.add_argument('--map', '-m', default=True, type=bool, help='generate maps')
     # parser.add_argument('--percent', '-p', default=False, type=bool, help='Cal percent in the confusion matrix')
     parser.add_argument('--relu', '-r', default=False, type=bool, help='Cal percent in the confusion matrix')
     parser.add_argument('--epsilion', '-e', default=1e-7, type=float, help='')
@@ -514,6 +518,6 @@ if __name__ == '__main__':
 
 
 #RF
-# python ce_optimal_threshold.py -o ../../../results/RF/simliarity_measure/new_optimal_threshold -c 4 -s ../../../results/RF/classificationmap/2018_rf_case_1.npy -t ../../../results/RF/classificationmap/2019_rf_case_2.npy
+# python ce_optimal_threshold.py -o ../../../results/RF/simliarity_measure/optimal_threshold-CE -c 3 -s ../../../results/RF/classificationmap/2018_rf_case_3.npy -t ../../../results/RF/classificationmap/2019_rf_case_3.npy -per True -opt True
 
 # python ce_optimal_threshold.py -o ../../../results/ltae/Change_detection/similarity_measure-CE -c 4 -s ../../../results/ltae/classificationmap/2018_LTAE_case_1.npy -t ../../../results/ltae/classificationmap/2019_LTAE_case_2.npy -ot True -r True

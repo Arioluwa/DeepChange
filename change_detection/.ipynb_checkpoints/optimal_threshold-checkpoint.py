@@ -41,6 +41,7 @@ def main(args):
     source_ = np.load(args.source_prob)
     target_ = np.load(args.target_prob)
     
+    #compute Eculidean distance
     print('computation start...')
     similarity_array = np.linalg.norm(source_ - target_, axis=1)
     print('computation done...')
@@ -67,12 +68,8 @@ def main(args):
     similarity_mask.mask[gt_binary_mask.data != 0] = False # extract according to the non-zero from ground truth data
     similarity_ = similarity_mask.compressed()
     gt_binary_mask = gt_binary_mask.reshape(width, height)
-    # model_name = os.path.basename(similarity_map).split('.')[-2]
-    # model_name = model_name.split('_')[:2]
-    # model_name = '_'.join(model_name)
-      # model_name
     
-    if not args.otsu:
+    if args.opt:
         thresholds = np.linspace(similarity_.min(), similarity_.max(), 10)
 
         # initiate metrics
@@ -137,8 +134,16 @@ def main(args):
             t.set_text('{:,d}'.format(int(t.get_text())))
         # cm_sim_plot.set_title("")
         # save the plot
-        plt.savefig(os.path.join(outdir,'./charts', 'similarity_confusion_matrix_case_' + args.case +'.png'), dpi=500)
+        plt.savefig(os.path.join(outdir,'./charts', 'similarity_error_matrix_case_' + args.case +'.png'), dpi=500)
         plt.close()
+        
+        #percentage
+        cm = cm_sim.astype('float') / np.sum(cm_sim)
+        cm_plot = sns.heatmap(cm, annot=True, fmt='.2%', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
+        cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
+        # save the plot
+        plt.savefig(os.path.join(outdir,'./charts','similarity_error_matrix_percent_case_' + args.case +'.png'), dpi = 500)
+        plt.close()        
 
         # similarity histogram distribution
         plt.figure(figsize=(8,5))
@@ -151,7 +156,7 @@ def main(args):
         plt.close()
         # Quality assurance
         f_score = f1_score(gt_binary_, pred_binary_v)
-        quality_check(args, cm_sim, f_score)
+        quality_check(args, cm_sim, cm, f_score, method_='opt')
         
         if args.map:
             # similarity binary change
@@ -180,15 +185,139 @@ def main(args):
             change_array[(gt_binary_ == 1) & (similarity_binary == 1)] = 3
             change_array[(gt_binary_ == 1) & (similarity_binary == 2)] = 4
 
-            change_map = np.empty_like(gt_binary) # shape: 10980, 10980
+            change_map = np.empty(shape=(width, height)) # shape: 10980, 10980
             change_map[~gt_binary_mask.mask] = change_array.ravel()
 
             print(np.unique(change_map))
             with rasterio.open(os.path.join(outdir, 'sim-change_map_case_' + args.case + '.tif'), 'w', **profile) as dst:
                 dst.write(change_map, 1)
                 dst.close()
-    
-    else: #otsu thresholding
+                
+    if args.percentile:
+        percent = [5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90]
+        thresholds = np.asarray([np.percentile(similarity_, percent[i]) for i in range(len(percent))])
+
+        # initiate metrics
+        fscore_ = np.zeros(shape=(len(thresholds)))
+        precision_ = np.zeros(shape=(len(thresholds)))
+        recall_ = np.zeros(shape=(len(thresholds)))
+        specificity_ = np.zeros(shape=(len(thresholds)))
+        sensitivity_ = np.zeros(shape=(len(thresholds)))
+        avg_pre = np.zeros(shape=(len(thresholds)))
+        fpr = []
+        tpr = []
+        start_time = time.time()
+        # compute metrics for each threshold, at the same time compute the binary on the similarity using the provided threshold
+            # np.where(similarity_ >= elem, 1, 0) # where similarity measure (euclidean distance) is greater than threshold == 1 otherwise 0.
+        for index, elem in enumerate(thresholds):
+            fscore_[index] = f1_score(gt_binary_, np.where(similarity_ >= elem, 1, 0))
+            precision_[index] = precision_score(gt_binary_, np.where(similarity_ >= elem, 1, 0))
+            recall_[index] = recall_score(gt_binary_, np.where(similarity_ >= elem, 1, 0))
+            cm = confusion_matrix(gt_binary_, np.where(similarity_ >= elem, 1, 0)) # confusion matrix
+            fpr.append(np.float16(cm[0,1]/(cm[0,1] + cm[1,1]))) # fp / (fp+tn)
+            tpr.append(np.float16(cm[0,0]/(cm[0,0] + cm[1,0]))) # tp / (tp + fn)
+
+        print('metrics computation completed: %s seconds' % (time.time()-start_time))  
+
+        ## get the optimal threshold based on fscore
+        opt_threshold_idx = np.argmax(fscore_)
+        opt_threshold = thresholds[opt_threshold_idx]
+
+        # plot precision-recall curve
+        plt.figure()
+        plt.plot(recall_, precision_, label='Precision-Recall curve')
+        plt.plot(recall_[opt_threshold_idx], precision_[opt_threshold_idx], 'o', markersize=5, color='r', label='Optimal threshold: {0:0.4f}'.format(opt_threshold))
+        plt.xlabel('Recall')
+        plt.ylabel('Precision')
+        plt.legend()
+        plt.title( 'AUC={0:0.2f}'.format(auc(recall_, precision_)))#plt.title(model_name +'_Precision-Recall curve, AUC={0:0.2f},'.format(auc(recall_, precision_)))
+        plt.savefig(os.path.join(outdir, './charts', 'case_' + args.case + '_percentile_precision-recall.png'), dpi=500)
+        plt.close()
+
+        # plot ROC curve 
+        plt.figure()
+        plt.plot(fpr, tpr)
+        plt.xlabel('False positive rate')
+        plt.ylabel('True positi/ve rate')
+        # plt.title('case_' + args.case + '_ROC curve')
+        plt.savefig(os.path.join(outdir,'./charts', 'case_' + args.case + '_percentile_roc_curve.png'), dpi=500)
+        plt.close()
+
+        # get the optimal threshold based on fscore
+        df = pd.DataFrame({'threshold':thresholds, 'fscore':fscore_})
+        df.to_csv(os.path.join(outdir, 'case_' + args.case + '_percentile_fscore.csv'), index=False)
+        pred_binary_v = np.where(similarity_ >= opt_threshold, 1, 0)
+        #confusion
+        cm_sim = confusion_matrix(gt_binary_, pred_binary_v)
+        # cm_sim_per = cm_sim.astype('float') / np.sum(cm_sim)
+
+        label = ['No change', 'Change']
+
+        cm_sim_plot = sns.heatmap(cm_sim, annot=True, fmt ='d', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
+        cm_sim_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
+        for t in cm_sim_plot.texts:
+            t.set_text('{:,d}'.format(int(t.get_text())))
+        
+        # save the plot
+        plt.savefig(os.path.join(outdir,'./charts', 'similarity_error_percentile_matrix_case_' + args.case +'.png'), dpi=500)
+        plt.close()
+        
+        #percentage
+        cm = cm_sim.astype('float') / np.sum(cm_sim)
+        cm_plot = sns.heatmap(cm, annot=True, fmt='.2%', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
+        cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
+        # save the plot
+        plt.savefig(os.path.join(outdir,'./charts','similarity_error_percentile_matrix_percent_case_' + args.case +'.png'), dpi = 500)
+        plt.close()
+
+        # similarity histogram distribution
+        plt.figure(figsize=(8,5))
+        plt.hist(similarity_, bins=10, label='similarity distribution', ec='white', log=True)
+        plt.axvline(x=thresholds[opt_threshold_idx], color='r', linestyle='--', label="optimal threshold: {0:0.3f}".format(thresholds[opt_threshold_idx]))
+        plt.legend()
+        
+        # save chart
+        plt.savefig(os.path.join(outdir,'./charts', 'similarity_distribution_percentile__case_' + args.case +'.png'), dpi = 500)
+        plt.close()
+
+        # Quality assurance
+        f_score = f1_score(gt_binary_, pred_binary_v)
+        quality_check(args, cm_sim, cm, f_score, method_='opt_percent')
+
+        if args.map:
+            # similarity binary change
+            similarity_binary = np.where(similarity_ >= opt_threshold, 2, 1)
+            similarity_binary_change = np.empty(shape=(width, height)) # shape: 10980, 10980
+            similarity_binary_change[~gt_binary_mask.mask] = similarity_binary.ravel()
+
+            ## write to raster
+            with rasterio.open(os.path.join(outdir, 'similarity_binary_percentile_change_case_' + args.case + '.tif'), 'w', **profile) as dst:
+                dst.write(similarity_binary_change, 1)
+                dst.close()
+
+            ## change map
+            # Note:
+            # 0 = nodata
+            # 1 = (0 == 1) ~ No change = No change
+            # 2 = (0 == 2) ~ No change = Change
+            # 3 = (1 == 1) ~ Change = No change
+            # 4 = (1 == 2) ~ Change = Change
+
+            ## change array
+            change_array = np.empty_like(gt_binary_) # flatten shape
+            change_array[(gt_binary_ == 0) & (similarity_binary == 1)] = 1
+            change_array[(gt_binary_ == 0) & (similarity_binary == 2)] = 2
+            change_array[(gt_binary_ == 1) & (similarity_binary == 1)] = 3
+            change_array[(gt_binary_ == 1) & (similarity_binary == 2)] = 4
+
+            change_map = np.empty(shape=(width, height)) # shape: 10980, 10980
+            change_map[~gt_binary_mask.mask] = change_array.ravel()
+
+            with rasterio.open(os.path.join(outdir, 'similiarity-change_map_percentile_case_' + args.case + '.tif'), 'w', **profile) as dst:
+                dst.write(change_map, 1)
+                dst.close()
+                
+    if args.otsu: #otsu thresholding
         opt_threshold = threshold_otsu(similarity_)
         otsu_binary = similarity_ > opt_threshold
         
@@ -209,34 +338,31 @@ def main(args):
         f.write('F1 score: {}'.format(fscore))
         f.write('Otsu threshold: {}'.format(opt_threshold))
 
-        #confusion matrix
         cm_sim = confusion_matrix(gt_binary_, otsu_binary)
-        # cm_sim_per = cm_sim.astype('float') / np.sum(cm_sim)
 
         label = ['No change', 'Change']
         
-        # percentage
-        if args.percent:
-            cm = cm_sim.astype('float') / np.sum(cm_sim)
-            cm_plot = sns.heatmap(cm, annot=True, fmt='.2%', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
-            cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
+        # Error matrix in Percentage
+        cm = cm_sim.astype('float') / np.sum(cm_sim)
+        cm_plot = sns.heatmap(cm, annot=True, fmt='.2%', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
+        cm_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
             # save the plot
-            plt.savefig(os.path.join(outdir,'./charts','bcd_change_matrix_percent_case_' + args.case +'.png'), dpi = 500)
-            plt.close()
+        plt.savefig(os.path.join(outdir,'./charts','otsu_bcd_change_matrix_percent_case_' + args.case +'.png'), dpi = 500)
+        plt.close()
         
-
-            cm_sim_plot = sns.heatmap(cm_sim, annot=True, fmt ='d', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
-            cm_sim_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
+        # Error matrix in Figures
+        cm_sim_plot = sns.heatmap(cm_sim, annot=True, fmt ='d', cmap='Blues', xticklabels=label, yticklabels=label, cbar=False, annot_kws={"size": 30})
+        cm_sim_plot.set(xlabel= "Predicted", ylabel= "Ground truth")
             # cm_sim_plot.set_title("")
-            for t in cm_sim_plot.texts:
-                t.set_text('{:,d}'.format(int(t.get_text())))
+        for t in cm_sim_plot.texts:
+            t.set_text('{:,d}'.format(int(t.get_text())))
             # save the plot
-            plt.savefig(os.path.join(outdir, './charts', 'otsu_similarity_confusion_matrix_case_' + args.case +'.png'), dpi =500)
-            plt.close()
+        plt.savefig(os.path.join(outdir, './charts', 'otsu_similarity_confusion_matrix_case_' + args.case +'.png'), dpi =500)
+        plt.close()
         
         # Quality assurance
         f_score = f1_score(gt_binary_, otsu_binary)
-        quality_check(args, cm_sim, f_score)
+        quality_check(args, cm_sim, cm, f_score, method_='otsu')
         
         if args.map:
             # similarity binary change
@@ -265,7 +391,7 @@ def main(args):
             change_array[(gt_binary_ == 1) & (similarity_binary == 1)] = 3
             change_array[(gt_binary_ == 1) & (similarity_binary == 2)] = 4
 
-            change_map = np.empty_like(gt_binary) # shape: 10980, 10980
+            change_map = np.empty(shape=(width, height)) # shape: 10980, 10980
             change_map[~gt_binary_mask.mask] = change_array.ravel()
 
             print(np.unique(change_map))
@@ -278,11 +404,11 @@ def prepare_output(args):
         os.makedirs(os.path.join(args.outdir, './charts'), exist_ok=True)
 
 
-def quality_check(args, cm, f_score):
-    if args.otsu:
+def quality_check(args, cm, cm_per, f_score, method_):
+    if method_=='otsu':
         title = 'otsu_QA_stats'
     else:
-        title = 'QA_stats'
+        title = method_ + '_QA_stats' 
     with open(os.path.join(args.outdir, './charts', title + args.case + '.txt'), 'w') as f:
                 f.write("Error matrix \n")
                 f.write(str(cm))
@@ -290,17 +416,11 @@ def quality_check(args, cm, f_score):
                 f.write("\n Total error: {}".format((cm[0,1] + cm[1,0])))
                 f.write("\n OA: {}".format(((cm[0,0] + cm[1,1])/(cm[0,0] +cm[0,1]+cm[1,0]+cm[1,1]))))
                 f.write("\n fscore: {}".format(f_score))
+                f.write("Error matrix \n")
+                f.write(str(cm_per))
                 f.close()
 
 if __name__ == '__main__':
-    
-#     gt_source = '../../../data/rasterized_samples/2018_rasterizedImage.tif'
-#     gt_target = '../../../data/rasterized_samples/2019_rasterizedImage.tif'
-
-#     for case in ['4']:#['1', '2', '3', '4']:
-#         similarity_map = '../../../results/RF/simliarity_measure/case_'+ case +'_ref_mask_similarity_measure.tif'
-#         outdir = '../../../results/RF/simliarity_measure/optimal_threshold'
-#         optm_threshold(similarity_map, case, gt_source, gt_target, False, outdir)
 
     parser = argparse.ArgumentParser()
     
@@ -309,41 +429,52 @@ if __name__ == '__main__':
     parser.add_argument('--gt_source', '-gs', default='../../../data/rasterized_samples/2018_rasterizedImage.tif', type=str, help='Source ground truth path')
     parser.add_argument('--gt_target', '-gp', default='../../../data/rasterized_samples/2019_rasterizedImage.tif', type=str, help='Target ground truth path')
     # parser.add_argument('--similarity', '-s', default='../../../results/RF/simliarity_measure/case_2_ref_mask_similarity_measure.tif', type=str, help='similarity map')
-    parser.add_argument('--otsu', '-ot', default=False, type=bool, help='Compute optimal threshold using otsu-threshold')
-    parser.add_argument('--map', '-m', default=False, type=bool, help='generate maps')
-    parser.add_argument('--percent', '-p', default=False, type=bool, help='Cal percent in the confusion matrix')
+    parser.add_argument('--otsu', '-ot', default=True, type=bool, help='Compute optimal threshold using otsu-threshold')
+    parser.add_argument('--opt', '-op', default=True, type=bool, help='Compute optimal threshold using optimal thresholding')
+    parser.add_argument('--percentile', '-p', default=True, type=bool, help='Cal percent in the confusion matrix')
+    parser.add_argument('--map', '-m', default=True, type=bool, help='generate maps')
+    parser.add_argument('--percent', '-per', default=True, type=bool, help='Cal percent in the confusion matrix')
     parser.add_argument('--source_prob', '-s', type=str, help='class probability distribution')
     parser.add_argument('--target_prob', '-t', type=str, help='class probability distribution')
     
     
     
     args = parser.parse_args()
-    # execute 
-#     for case in range(1, 4):
-#         args.case = str(case)
-#         args.similarity = '../../../results/RF/simliarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
-#         args.outdir = "../../../results/RF/simliarity_measure/optimal_threshold"
-#         main(args)
+    # main(args)
+    ### RF
+    for case in range(1, 4):
+        args.case = str(case)
+        args.outdir = '../../../results/RF/simliarity_measure/optimal_threshold-ED'
+        args.source_prob = '../../../results/RF/classificationmap/2018_rf_case_{}.npy'.format(case)
+        args.target_prob = '../../../results/RF/classificationmap/2019_rf_case_{}.npy'.format(case)
+        main(args)
+        print('Case {} done'.format(case))
     
-#     # case 4
-#     args.case = "4"
-#     args.outdir = "../../../results/RF/simliarity_measure/optimal_threshold"
-#     args.similarity = '../../../results/RF/simliarity_measure/case_4_ref_mask_similarity_measure.tif'
-#     main(args)
+    ### case 4
+    # args.case = "4"
+    # args.outdir = '../../../results/RF/simliarity_measure/optimal_threshold-ED'
+    # args.source_prob = '../../../results/RF/classificationmap/2018_rf_case_1.npy'
+    # args.target_prob = '../../../results/RF/classificationmap/2019_rf_case_2.npy'
+    # main(args)
+    # print('Case {} done'.format(args.case))
     
-    # ##LTAE
-#     for case in range(2, 4):
-#         args.case = str(case)
-#         args.outdir = "../../../results/ltae/Change_detection/similarity_measure"
-#         args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_{}_ref_mask_similarity_measure.tif'.format(case)
-#         main(args)
-#         # break
+    #LTAE
+    for case in range(1, 4):
+        args.case = str(case)
+        args.outdir = '../../../results/ltae/Change_detection/similarity_measure-ED'
+        args.source_prob = '../../../results/ltae/classificationmap/2018_LTAE_case_{}.npy'.format(case)
+        args.target_prob = '../../../results/ltae/classificationmap/2019_LTAE_case_{}.npy'.format(case)
+        main(args)
+        print('Case {} done'.format(case))
     
 #     ### case 4
-#     args.case = "4"
-#     args.similarity = '../../../results/ltae/Change_detection/similarity_measure/case_4_ref_mask_similarity_measure.tif'
-#     args.outdir = "../../../results/ltae/Change_detection/similarity_measure"
+    args.case = "4"
+    args.outdir = '../../../results/ltae/Change_detection/similarity_measure-ED'
+    args.source_prob = '../../../results/ltae/classificationmap/2018_LTAE_case_1.npy'
+    args.target_prob = '../../../results/ltae/classificationmap/2019_LTAE_case_2.npy'
     main(args)
+    print('Case {} done'.format(args.case))
+    
 #RF
 # python optimal_threshold.py -s ../../../results/RF/classificationmap/2018_rf_case_1.npy -t ../../../results/RF/classificationmap/2019_rf_case_2.npy -o ../../../results/RF/simliarity_measure/optimal_threshold-ED -c 4
 
