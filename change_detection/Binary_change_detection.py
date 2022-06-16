@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 import rasterio
 import pandas as pd
@@ -73,9 +74,10 @@ def main(args):
     pred_binary_map[~gt_binary_mask.mask] = pred_binary_values.ravel()
     # write the change map
     # HP Hard prediction
-    # with rasterio.open(os.path.join(outdir_, 'HP_binary_change_map'+ args.case +'.tif'), 'w', **profile) as dst:
-    #     dst.write(pred_binary_map, 1)
+    with rasterio.open(os.path.join(outdir, 'HP_binary_change_map'+ args.case +'.tif'), 'w', **profile) as dst:
+        dst.write(pred_binary_map, 1)
     # print("--- %s minutes ---" % ((time.time() - starttime) / 60))
+    sys.exit()
 #     # change matrix
     cm = confusion_matrix(gt_binary_values, pred_binary_values)
     label = ['No change', 'Change']
