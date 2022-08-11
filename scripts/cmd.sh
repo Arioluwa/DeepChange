@@ -54,8 +54,8 @@ OTB-7.4.0-Linux64/bin/otbcli_MultivariateAlterationDetector -in1 ../results/RF/2
 OTB-7.4.0-Linux64/bin/otbcli_ComputeConfusionMatrix -in ../results/RF/2018_rf_model_1_map.tif -out ../results/RF/change_D/rf_model_1_cm.csv -format confusionmatrix -ref raster -ref.raster.in ../results/RF/2019_rf_model_1_map.tif -ram 2000
 
 # similarity measure
-similarity_measure.py -s '../../../results/RF/simliarity_measure/2018_rf_model_2.npy' -t '../../../results/RF/simliarity_measure/2019_rf_model_2.npy' - i '../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif' -o '../../../results/RF/simliarity_measure/'
-python similarity_mesure.py -s '../../../results/RF/simliarity_measure/2018_rf_model_2.npy' -t '../../../results/RF/simliarity_measure/2019_rf_model_2.npy' -i '../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif' -o '../../../results/RF/simliarity_measure' -gs '../../../data/rasterized_samples/2018_rasterizedImage.tif' -gt '../../../data/rasterized_samples/2019_rasterizedImage.tif'
+# similarity_measure.py -s '../../../results/RF/simliarity_measure/2018_rf_model_2.npy' -t '../../../results/RF/simliarity_measure/2019_rf_model_2.npy' - i '../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif' -o '../../../results/RF/simliarity_measure/'
+# python similarity_mesure.py -s '../../../results/RF/simliarity_measure/2018_rf_model_2.npy' -t '../../../results/RF/simliarity_measure/2019_rf_model_2.npy' -i '../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif' -o '../../../results/RF/simliarity_measure' -gs '../../../data/rasterized_samples/2018_rasterizedImage.tif' -gt '../../../data/rasterized_samples/2019_rasterizedImage.tif'
 
 # LTAE train 
 python train.py --dates dates.txt --positions bespoke --seed 4 
@@ -70,7 +70,7 @@ python predict.py -m ../RF_model/models/rf_seed_0_case_1.pkl -r ../../../data/th
 # train
 python train.py --npy ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --epoch 10 --seed 0 --res_dir ../../../results/ltae/results/2018 --num_workers 10 --batch_size 128 --lr 0.01 --positions bespoke --_scheduler True
 
-C#ategory H2
+Category H2
 python train.py --npy ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --epoch 30 --seed 0 --res_dir ../../../results/ltae/results/2018 --num_workers 10 --batch_size 2048 --factor 5266 --positions Bespoke --scheduler_ True >>../logs/log20220429.txt
 
 python train.py --npy ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --epoch 15 --seed 0 --res_dir ../../../results/ltae/results/2018 --num_workers 10 --batch_size 2048 --factor 5266 --positions Bespoke --scheduler_ True >>../logs/log202205012326.txt
@@ -79,3 +79,12 @@ python train.py --npy ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.
 python optimal_threshold.py -o ../../../results/ltae/Change_detection/similarity_measure 
 python optimal_threshold.py -o ../../../results/ltae/Change_detection/similarity_measure -ot True
 
+
+python classification.py --model ../RF_model/models/rf_seed_0_case_1.pkl --ref_file ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --in_img ../../../data/theiaL2A_zip_img/output/2018/2018_GapFilled_Image.tif --output ../../../results/RF/classificationmap --flag 1 --case 1 --with_softmax True --device cuda:0
+
+
+# test (for confidence interval)
+#RF
+python test.py -m ../../../results/RF/model/2018_2019/Seed_0 -d ../../../data/theiaL2A_zip_img/output/2018; python test.py -m ../../../results/RF/model/2018_2019/Seed_0 -d ../../../data/theiaL2A_zip_img/output/2019; python test.py -m ../../../results/RF/model/2019/Seed_0 -d ../../../data/theiaL2A_zip_img/output/2018; python test.py -m ../../../results/RF/model/2019/Seed_0 -d ../../../data/theiaL2A_zip_img/output/2019; python test.py -m ../../../results/RF/model/2018/Seed_0 -d ../../../data/theiaL2A_zip_img/output/2018; python test.py -m ../../../results/RF/model/2018/Seed_0 -d ../../../data/theiaL2A_zip_img/output/2019
+
+#LTAE
