@@ -70,7 +70,7 @@ python predict.py -m ../RF_model/models/rf_seed_0_case_1.pkl -r ../../../data/th
 # train
 python train.py --npy ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --epoch 10 --seed 0 --res_dir ../../../results/ltae/results/2018 --num_workers 10 --batch_size 128 --lr 0.01 --positions bespoke --_scheduler True
 
-Category H2
+# Category H2
 python train.py --npy ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --epoch 30 --seed 0 --res_dir ../../../results/ltae/results/2018 --num_workers 10 --batch_size 2048 --factor 5266 --positions Bespoke --scheduler_ True >>../logs/log20220429.txt
 
 python train.py --npy ../../../data/theiaL2A_zip_img/output/2018/2018_SITS_data.npz --epoch 15 --seed 0 --res_dir ../../../results/ltae/results/2018 --num_workers 10 --batch_size 2048 --factor 5266 --positions Bespoke --scheduler_ True >>../logs/log202205012326.txt
