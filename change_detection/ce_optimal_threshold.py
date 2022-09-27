@@ -278,7 +278,7 @@ def main(args):
         plt.figure()
         plt.plot(fpr, tpr)
         plt.xlabel('False positive rate')
-        plt.ylabel('True positi/ve rate')
+        plt.ylabel('True positive rate')
         # plt.title('case_' + args.case + '_ROC curve')
         plt.savefig(os.path.join(outdir,'./charts', 'case_' + args.case + '_percentile_roc_curve.png'), dpi=500)
         plt.close()
